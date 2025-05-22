@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import "tailwindcss";
- @plugin "@tailwindcss/typography";
- @plugin "daisyui" {
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake;
- }
+}
+body {
+  font-family: 'Fredoka', sans-serif;
+}
