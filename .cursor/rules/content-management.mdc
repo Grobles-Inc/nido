@@ -1,0 +1,70 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Content Management Guide
+
+This project uses Astro's Content Collections for managing content. Content is primarily written in MDX format and organized in the `src/content/` directory.
+
+## Content Structure
+
+- Content is organized into collections defined in [src/content.config.ts](mdc:src/content.config.ts)
+- Each collection has its own directory in `src/content/`
+- Content files use the `.mdx` extension
+- Frontmatter is used for metadata and configuration
+
+## Content Types
+
+1. **Blog Posts** (`src/content/blog/`)
+   - Blog articles and posts
+   - Include frontmatter for title, date, author, etc.
+   - Can use MDX for rich content
+
+2. **Pages** (`src/content/pages/`)
+   - Static content pages
+   - Can be used for about, contact, or other static content
+   - Supports MDX for rich formatting
+
+## Content Features
+
+- **MDX Support**: Write content using MDX for enhanced markdown
+- **Type Safety**: Content schemas are defined in `content.config.ts`
+- **RSS Feed**: Blog posts are automatically included in the RSS feed
+- **Sitemap**: Content is automatically included in the sitemap
+
+## Best Practices
+
+- Use consistent frontmatter across content types
+- Keep content files focused and well-organized
+- Use MDX components for interactive elements
+- Follow the defined content schema
+- Use relative links for internal content references
+
+## Example Content Structure
+
+```
+src/content/
+├── blog/
+│   ├── post-1.mdx
+│   └── post-2.mdx
+├── pages/
+│   ├── about.mdx
+│   └── contact.mdx
+└── config.ts        # Collection configuration
+```
+
+## Content Frontmatter Example
+
+```mdx
+---
+title: "My Blog Post"
+description: "A brief description of the post"
+pubDate: "2024-03-20"
+author: "Author Name"
+tags: ["astro", "web development"]
+---
+
+Content goes here...
+```
+

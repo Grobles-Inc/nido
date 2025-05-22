@@ -1,0 +1,58 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Component Structure Guide
+
+Components in this project are organized in the `src/components/` directory. Components should follow these guidelines:
+
+## Component Organization
+
+- Components should be organized by feature or functionality
+- Each component should be in its own directory when it has associated assets or sub-components
+- Use TypeScript for all component files
+- Follow Astro's component conventions for props and slots
+
+## Component Types
+
+1. **Page Components** (`src/pages/`)
+   - Route-based components that define pages
+   - Use layouts from `src/layouts/`
+   - Can be `.astro` or `.mdx` files
+
+2. **Layout Components** (`src/layouts/`)
+   - Define the structure of pages
+   - Handle common elements like headers, footers, and navigation
+   - Can be nested for different page types
+
+3. **UI Components** (`src/components/`)
+   - Reusable interface elements
+   - Should be self-contained and composable
+   - Use Tailwind CSS and DaisyUI for styling
+
+## Best Practices
+
+- Keep components focused and single-responsibility
+- Use TypeScript interfaces for props
+- Document complex components with comments
+- Follow Astro's component API for client-side interactivity
+- Use Tailwind CSS utility classes for styling
+- Leverage DaisyUI components when appropriate
+
+## Example Component Structure
+
+```
+src/components/
+├── common/           # Shared UI components
+│   ├── Button.astro
+│   └── Card.astro
+├── layout/          # Layout-specific components
+│   ├── Header.astro
+│   └── Footer.astro
+└── feature/         # Feature-specific components
+    └── FeatureName/
+        ├── index.astro
+        └── sub-component.astro
+```
+

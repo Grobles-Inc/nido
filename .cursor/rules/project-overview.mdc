@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Nido Project Overview
+
+This is an Astro-based web project that uses Tailwind CSS and DaisyUI for styling. The project follows Astro's standard directory structure and includes MDX support for content.
+
+## Key Directories
+
+- `src/pages/` - Contains all route components and pages
+- `src/components/` - Reusable UI components
+- `src/layouts/` - Page layouts and templates
+- `src/content/` - Content collections and MDX files
+- `src/styles/` - Global styles and Tailwind configuration
+- `public/` - Static assets served directly
+
+## Important Files
+
+- [astro.config.mjs](mdc:astro.config.mjs) - Astro configuration including MDX, RSS, and sitemap plugins
+- [package.json](mdc:package.json) - Project dependencies and scripts
+- [src/content.config.ts](mdc:src/content.config.ts) - Content collection configuration
+- [src/consts.ts](mdc:src/consts.ts) - Project constants and configuration
+
+## Development
+
+The project uses the following key technologies:
+- Astro v5.8.0 for the framework
+- Tailwind CSS v4.1.7 for styling
+- DaisyUI v5.0.37 for UI components
+- MDX for content authoring
+
+Common development commands:
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun run preview` - Preview production build
+
