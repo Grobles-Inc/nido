@@ -5,14 +5,15 @@ alwaysApply: false
 ---
 # Component Structure Guide
 
-Components in this project are organized in the `src/components/` directory. Components should follow these guidelines:
+Components in this project are organized in the `src/components/` directory, following a child-friendly design approach for Nido Perunilas kindergarten website.
 
 ## Component Organization
 
 - Components should be organized by feature or functionality
-- Each component should be in its own directory when it has associated assets or sub-components
+- Each component should be in its own directory when it has associated assets
 - Use TypeScript for all component files
 - Follow Astro's component conventions for props and slots
+- All component text must be in Spanish
 
 ## Component Types
 
@@ -20,25 +21,64 @@ Components in this project are organized in the `src/components/` directory. Com
    - Route-based components that define pages
    - Use layouts from `src/layouts/`
    - Can be `.astro` or `.mdx` files
+   - Examples:
+     - Home page
+     - About us
+     - Programs
+     - Contact forms
+     - Photo galleries
+     - News and events
 
 2. **Layout Components** (`src/layouts/`)
    - Define the structure of pages
    - Handle common elements like headers, footers, and navigation
-   - Can be nested for different page types
+   - Include child-friendly navigation and UI elements
+   - Responsive design for all screen sizes
 
 3. **UI Components** (`src/components/`)
-   - Reusable interface elements
+   - Reusable interface elements with child-friendly design
    - Should be self-contained and composable
-   - Use Tailwind CSS and DaisyUI for styling
+   - Primary use of DaisyUI components and classes
+   - Examples:
+     - Contact forms
+     - Image galleries
+     - News cards
+     - Program information cards
+     - Testimonials
+     - Call-to-action buttons
+
+## Styling Guidelines
+
+1. **Theme Usage**
+   - Use DaisyUI themes as the primary styling system
+   - Implement pastel colors through DaisyUI theme customization
+   - Use Tailwind CSS classes only when DaisyUI doesn't provide the needed functionality
+
+2. **Color Usage**
+   - Primary colors should come from the DaisyUI theme
+   - Use Tailwind colors only for:
+     - Custom gradients
+     - Specific hover states
+     - Unique interactive elements
+     - When DaisyUI doesn't provide the needed color
+
+3. **Component Design**
+   - Use rounded corners for a friendly feel
+   - Implement soft shadows for depth
+   - Use appropriate spacing for readability
+   - Ensure all interactive elements are clearly visible
+   - Maintain consistent padding and margins
 
 ## Best Practices
 
 - Keep components focused and single-responsibility
 - Use TypeScript interfaces for props
-- Document complex components with comments
+- Document complex components with comments (in Spanish)
 - Follow Astro's component API for client-side interactivity
-- Use Tailwind CSS utility classes for styling
-- Leverage DaisyUI components when appropriate
+- Prioritize DaisyUI classes over Tailwind utilities
+- Ensure all components are responsive
+- Include proper alt text for images
+- Follow accessibility guidelines
 
 ## Example Component Structure
 
@@ -46,13 +86,53 @@ Components in this project are organized in the `src/components/` directory. Com
 src/components/
 ├── common/           # Shared UI components
 │   ├── Button.astro
-│   └── Card.astro
+│   ├── Card.astro
+│   └── ContactForm.astro
 ├── layout/          # Layout-specific components
 │   ├── Header.astro
-│   └── Footer.astro
-└── feature/         # Feature-specific components
-    └── FeatureName/
-        ├── index.astro
-        └── sub-component.astro
+│   ├── Footer.astro
+│   └── Navigation.astro
+├── features/        # Feature-specific components
+│   ├── Programs/
+│   │   ├── ProgramCard.astro
+│   │   └── ProgramList.astro
+│   ├── Gallery/
+│   │   ├── ImageGallery.astro
+│   │   └── ImageCard.astro
+│   └── Contact/
+│       ├── ContactForm.astro
+│       └── LocationMap.astro
+└── sections/        # Page section components
+    ├── Hero.astro
+    ├── Testimonials.astro
+    └── NewsSection.astro
+```
+
+## Component Example
+
+```astro
+---
+// Example of a child-friendly card component
+interface Props {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+const { title, description, imageUrl } = Astro.props;
+---
+
+<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+  <figure>
+    <img src={imageUrl} alt={title} class="w-full h-48 object-cover" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title text-primary">{title}</h2>
+    <p class="text-base-content">{description}</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Leer más</button>
+    </div>
+  </div>
+</div>
 ```
 

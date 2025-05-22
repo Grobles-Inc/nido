@@ -5,7 +5,7 @@ alwaysApply: false
 ---
 # Content Management Guide
 
-This project uses Astro's Content Collections for managing content. Content is primarily written in MDX format and organized in the `src/content/` directory.
+This project uses Astro's Content Collections for managing content for Nido Perunilas kindergarten. All content is written in Spanish using MDX format and organized in the `src/content/` directory.
 
 ## Content Structure
 
@@ -13,25 +13,80 @@ This project uses Astro's Content Collections for managing content. Content is p
 - Each collection has its own directory in `src/content/`
 - Content files use the `.mdx` extension
 - Frontmatter is used for metadata and configuration
+- All content must be in Spanish
 
 ## Content Types
 
-1. **Blog Posts** (`src/content/blog/`)
-   - Blog articles and posts
-   - Include frontmatter for title, date, author, etc.
-   - Can use MDX for rich content
+1. **Programas** (`src/content/programas/`)
+   - Information about kindergarten programs
+   - Age groups and schedules
+   - Educational approach
+   - Activities and curriculum
+   - Example frontmatter:
+     ```mdx
+     ---
+     title: "Programa Maternal"
+     description: "Programa educativo para niños de 2 a 3 años"
+     edadMinima: 2
+     edadMaxima: 3
+     horario: "8:00 AM - 1:00 PM"
+     ---
+     ```
 
-2. **Pages** (`src/content/pages/`)
+2. **Noticias** (`src/content/noticias/`)
+   - News and updates about the kindergarten
+   - Events and activities
+   - Important announcements
+   - Example frontmatter:
+     ```mdx
+     ---
+     title: "Fiesta de Fin de Año"
+     description: "Celebración de fin de año escolar 2024"
+     fecha: "2024-12-15"
+     categoria: "eventos"
+     imagenDestacada: "/assets/eventos/fin-de-ano.jpg"
+     ---
+     ```
+
+3. **Páginas** (`src/content/paginas/`)
    - Static content pages
-   - Can be used for about, contact, or other static content
-   - Supports MDX for rich formatting
+   - About us
+   - Contact information
+   - Policies and procedures
+   - Example frontmatter:
+     ```mdx
+     ---
+     title: "Sobre Nosotros"
+     description: "Conoce más sobre Nido Perunilas"
+     orden: 1
+     menu: "principal"
+     ---
+     ```
+
+4. **Galería** (`src/content/galeria/`)
+   - Photo galleries
+   - Event photos
+   - Student activities
+   - Example frontmatter:
+     ```mdx
+     ---
+     title: "Actividades Artísticas"
+     fecha: "2024-03-20"
+     categoria: "arte"
+     imagenes:
+       - "/assets/galeria/arte-1.jpg"
+       - "/assets/galeria/arte-2.jpg"
+     ---
+     ```
 
 ## Content Features
 
 - **MDX Support**: Write content using MDX for enhanced markdown
 - **Type Safety**: Content schemas are defined in `content.config.ts`
-- **RSS Feed**: Blog posts are automatically included in the RSS feed
-- **Sitemap**: Content is automatically included in the sitemap
+- **RSS Feed**: News and updates are automatically included in the RSS feed
+- **Sitemap**: All content is automatically included in the sitemap
+- **Image Optimization**: Automatic image optimization for gallery content
+- **SEO**: Metadata and structured data for better search engine visibility
 
 ## Best Practices
 
@@ -40,6 +95,46 @@ This project uses Astro's Content Collections for managing content. Content is p
 - Use MDX components for interactive elements
 - Follow the defined content schema
 - Use relative links for internal content references
+- Include proper alt text for all images
+- Maintain a friendly, professional tone
+- Use appropriate headings and formatting
+- Include relevant metadata for SEO
+
+## Content Organization
+
+```
+src/content/
+├── programas/        # Educational programs
+│   ├── maternal.mdx
+│   ├── inicial.mdx
+│   └── verano.mdx
+├── noticias/         # News and updates
+│   ├── eventos.mdx
+│   └── anuncios.mdx
+├── paginas/          # Static pages
+│   ├── sobre-nosotros.mdx
+│   ├── contacto.mdx
+│   └── politicas.mdx
+└── galeria/          # Photo galleries
+    ├── actividades.mdx
+    └── eventos.mdx
+```
+
+## Asset Management
+
+- All media assets should be stored in `public/assets/`
+- Organize assets by type and content:
+  ```
+  public/assets/
+  ├── imagenes/       # General images
+  ├── galeria/        # Gallery images
+  ├── documentos/     # PDFs and other documents
+  └── videos/         # Video content
+  ```
+- Use descriptive Spanish filenames
+- Optimize images before uploading
+- Include proper alt text in Spanish
+- Maintain consistent image dimensions for similar content types
 
 ## Example Content Structure
 

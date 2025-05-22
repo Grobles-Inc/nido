@@ -3,18 +3,28 @@ description:
 globs: 
 alwaysApply: false
 ---
-# Nido Project Overview
+# Nido Perunilas - Kindergarten Website
 
-This is an Astro-based web project that uses Tailwind CSS and DaisyUI for styling. The project follows Astro's standard directory structure and includes MDX support for content.
+This is the official website for Nido Perunilas, a kindergarten located in Lima, Perú. The website is built with Astro, using Tailwind CSS and DaisyUI for a friendly, child-oriented design.
+
+## Project Purpose
+
+The website serves as a comprehensive information platform for parents and guardians, featuring:
+- Information about the kindergarten's programs and services
+- Contact forms for inquiries and registrations
+- News and updates about activities
+- Photo galleries and event information
+- Resources for parents
 
 ## Key Directories
 
-- `src/pages/` - Contains all route components and pages
-- `src/components/` - Reusable UI components
+- `src/pages/` - Contains all route components and pages (in Spanish)
+- `src/components/` - Reusable UI components with child-friendly design
 - `src/layouts/` - Page layouts and templates
-- `src/content/` - Content collections and MDX files
-- `src/styles/` - Global styles and Tailwind configuration
+- `src/content/` - Content collections and MDX files (in Spanish)
+- `src/styles/` - Global styles and theme configuration
 - `public/` - Static assets served directly
+- `public/assets/` - All media assets (images, videos, documents)
 
 ## Important Files
 
@@ -23,16 +33,36 @@ This is an Astro-based web project that uses Tailwind CSS and DaisyUI for stylin
 - [src/content.config.ts](mdc:src/content.config.ts) - Content collection configuration
 - [src/consts.ts](mdc:src/consts.ts) - Project constants and configuration
 
+## Design Guidelines
+
+- Use DaisyUI themes as the primary styling system
+- Implement pastel colors and child-friendly design elements
+- Maintain a clean, professional look while being approachable
+- Ensure all content is in Spanish
+- Optimize for both desktop and mobile viewing
+- Follow accessibility guidelines for better user experience
+
 ## Development
 
 The project uses the following key technologies:
 - Astro v5.8.0 for the framework
-- Tailwind CSS v4.1.7 for styling
-- DaisyUI v5.0.37 for UI components
+- Tailwind CSS v4.1.7 for custom styling when needed
+- DaisyUI v5.0.37 for UI components and theming
 - MDX for content authoring
 
 Common development commands:
-- `bun run dev` - Start development server
-- `bun run build` - Build for production
-- `bun run preview` - Preview production build
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+## Content Language
+
+All content must be written in Spanish, including:
+- Page content
+- Component text
+- Form labels and messages
+- Metadata and SEO content
+- Documentation and comments
+
+
 
