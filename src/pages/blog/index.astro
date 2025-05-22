@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import BlogCard from "../../components/BlogCard.astro";
+import { ClientRouter } from "astro:transitions";
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -15,6 +16,7 @@ const posts = (await getCollection("blog")).sort(
 <html lang="es" data-theme="cupcake">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<ClientRouter />
 	</head>
 	<body class="min-h-screen bg-base-100">
 		<Header />
@@ -34,22 +36,28 @@ const posts = (await getCollection("blog")).sort(
 					</p>
 				</div>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+					transition:animate="fade"
+				>
 					{
 						posts.map((post) => (
-							<BlogCard
-								title={post.data.title}
-								category={post.data.category || "Blog"}
-								date={post.data.pubDate}
-								href={`/blog/${post.id}/`}
-								image={post.data.heroImage || ""}
-							/>
+							<div transition:name={`post-${post.id}`}>
+								<BlogCard
+									title={post.data.title}
+									category={post.data.category || "Blog"}
+									date={post.data.pubDate}
+									href={`/blog/${post.id}/`}
+									image={post.data.heroImage || ""}
+								/>
+							</div>
 						))
 					}
 				</div>
 
 				<div
 					class="mt-20 bg-primary text-primary-content rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden"
+					transition:animate="fade"
 				>
 					<div class="absolute top-4 left-4 text-3xl">💎</div>
 					<div class="absolute bottom-4 right-4 text-3xl">⭐</div>

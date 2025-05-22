@@ -10,16 +10,21 @@ interface Props {
 const { title, category, date, href, image } = Astro.props;
 
 function formatDate(date: Date) {
-  return date.toLocaleDateString("en-US", {
+  return date.toLocaleDateString("es-ES", {
     month: "short",
     day: "2-digit",
     year: "numeric",
   });
 }
+
+const postId = href.split("/").filter(Boolean).pop();
 ---
 
 <a href={href} class="card bg-base-100 shadow-xl h-full">
-  <figure class="relative h-48 overflow-hidden">
+  <figure
+    class="relative h-48 overflow-hidden"
+    transition:name={`hero-${postId}`}
+  >
     <img
       src={image}
       alt={title}
@@ -33,6 +38,7 @@ function formatDate(date: Date) {
     </div>
     <h3
       class="card-title text-lg font-semibold line-clamp-2 hover:text-primary transition-colors"
+      transition:name={`title-${postId}`}
     >
       {title}
     </h3>
