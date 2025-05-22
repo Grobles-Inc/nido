@@ -1,0 +1,59 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
+import { Image } from "astro:assets";
+
+const { title, description, heroImage } = Astro.props;
+const ogImage = heroImage
+	? new URL(heroImage, Astro.url)
+	: new URL("/og-image-blog.jpg", Astro.url);
+---
+
+<html lang="es" data-theme="cupcake">
+	<head>
+		<BaseHead title={title} description={description}>
+			<meta property="og:type" content="website" />
+			<meta property="og:title" content={title} />
+			<meta property="og:description" content={description} />
+			<meta property="og:url" content={Astro.url} />
+			<meta property="og:image" content={ogImage} />
+
+			<meta name="twitter:card" content="summary_large_image" />
+			<link rel="canonical" href={Astro.url} />
+		</BaseHead>
+		<ClientRouter />
+	</head>
+
+	<body class="min-h-screen bg-base-100">
+		<Header />
+		<main
+			class="container mx-auto px-4 py-8 lg:py-12"
+			transition:animate="slide"
+		>
+			{
+				heroImage && (
+					<figure class="relative w-full h-[300px] mb-8 rounded-2xl overflow-hidden">
+						<Image
+							src={heroImage}
+							alt={`Imagen principal para la página: ${title}`}
+							class="w-full h-full object-cover"
+							width={1024}
+							height={768}
+						/>
+						<div
+							class="absolute inset-0 bg-gradient-to-t from-base-100/50 to-transparent"
+							aria-hidden="true"
+						/>
+					</figure>
+				)
+			}
+
+			<div class="max-w-5xl mx-auto">
+				<slot />
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

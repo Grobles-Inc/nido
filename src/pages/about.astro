@@ -1,73 +1,305 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Page.astro";
 ---
 
 <Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	category="About"
-	pubDate={new Date("August 08 2021")}
-	heroImage="/blog-placeholder-about.jpg"
+	title="Sobre Nosotros"
+	description="Conoce nuestra historia, misión, valores y equipo."
 >
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo
-		integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis
-		egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In
-		hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat.
-		Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu
-		non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim.
-		Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed
-		vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+	<section
+		class="relative w-full min-h-[300px] flex flex-col justify-center items-center bg-base-200 text-center overflow-hidden"
+	>
+		<Image
+			src="https://images.unsplash.com/photo-1740493430383-a0bfff9550a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+			alt="Aula de nido"
+			class="absolute inset-0 w-full h-full object-cover opacity-40"
+			width={1470}
+			height={300}
+		/>
+		<div class="relative z-10 py-16">
+			<h1 class="text-4xl md:text-6xl font-bold text-primary mb-4">
+				Sobre Nosotros
+			</h1>
+			<p class="text-lg md:text-xl text-base-content max-w-2xl mx-auto">
+				Ofrecemos un espacio seguro y estimulante donde los niños crecen
+				emocional, social e intelectualmente a través de una atención
+				personalizada.
+			</p>
+		</div>
+	</section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida
-		rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus
-		sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris
-		rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus
-		dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius
-		morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras
-		ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est
-		ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa
-		ultricies mi.
-	</p>
+	<section
+		class="container mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center"
+		data-aos="fade-up"
+	>
+		<div>
+			<h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+				El bienestar de tu hijo es nuestra prioridad
+			</h2>
+			<p class="mb-4">
+				Aquí va un texto inspirador sobre el compromiso con el desarrollo
+				integral de los niños y la importancia de un entorno seguro y feliz.
+			</p>
+			<button class="btn btn-primary">Contáctanos</button>
+		</div>
+		<div class="flex flex-col gap-4">
+			<Image
+				src="https://plus.unsplash.com/premium_photo-1684173661926-6c0e24b3b23a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+				alt="Educador con niños"
+				class="rounded-2xl shadow-lg w-full max-h-60 object-cover"
+				width={700}
+				height={240}
+			/>
+			<Image
+				src="https://images.unsplash.com/photo-1548096027-926a68d14d95?q=80&w=1580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+				alt="Aula de juegos"
+				class="rounded-2xl shadow-lg w-2/3 self-end max-h-40 object-cover"
+				width={500}
+				height={160}
+			/>
+		</div>
+	</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque.
-		Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac
-		felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit
-		amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed
-		elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra.
-		Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum
-		consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus
-		ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed
-		risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor
-		vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus
-		non. Amet dictum sit amet justo donec enim.
-	</p>
+	<section class="bg-base-200 py-8">
+		<div
+			class="container mx-auto px-4 flex flex-wrap justify-center gap-8 text-center"
+		>
+			<div class="flex flex-col items-center">
+				<span class="text-3xl font-bold text-primary">10+</span>
+				<span class="text-base-content">Años de experiencia</span>
+			</div>
+			<div class="flex flex-col items-center">
+				<span class="text-3xl font-bold text-primary">200+</span>
+				<span class="text-base-content">Familias felices</span>
+			</div>
+			<div class="flex flex-col items-center">
+				<span class="text-3xl font-bold text-primary">95%</span>
+				<span class="text-base-content">Satisfacción de padres</span>
+			</div>
+			<div class="flex flex-col items-center">
+				<span class="text-3xl font-bold text-primary">15</span>
+				<span class="text-base-content">Colaboradores</span>
+			</div>
+		</div>
+	</section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac
-		ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem
-		viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu
-		ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac
-		tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim
-		sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam.
-		Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
-	</p>
+	<section
+		class="container mx-auto px-4 py-12 grid md:grid-cols-2 gap-8"
+		data-aos="fade-up"
+	>
+		<div class="bg-base-100 rounded-xl shadow p-6">
+			<h3 class="text-xl font-bold text-primary mb-2">Nuestra Misión</h3>
+			<p>Aquí va la misión de la institución.</p>
+		</div>
+		<div class="bg-base-100 rounded-xl shadow p-6">
+			<h3 class="text-xl font-bold text-primary mb-2">Nuestra Visión</h3>
+			<p>Aquí va la visión de la institución.</p>
+		</div>
+	</section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-		imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-		cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum.
-		Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit
-		libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed
-		pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique
-		magna.
-	</p>
+	<section class="container mx-auto px-4 py-12" data-aos="fade-up">
+		<h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8">
+			Nuestros Valores
+		</h2>
+		<div class="grid md:grid-cols-2 gap-8 items-center">
+			<div class="flex justify-center">
+				<Image
+					src="https://plus.unsplash.com/premium_photo-1686920244658-f3db03fe22e3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+					alt="Niños jugando"
+					class="rounded-full w-64 h-64 object-cover shadow-lg"
+					width={256}
+					height={256}
+				/>
+			</div>
+			<div class="grid grid-cols-2 gap-4">
+				<div class="card bg-base-100 shadow p-4">
+					<h4 class="font-bold text-primary">Cuidado Especial</h4>
+					<p>Descripción breve del valor.</p>
+				</div>
+				<div class="card bg-base-100 shadow p-4">
+					<h4 class="font-bold text-primary">Mejor Servicio</h4>
+					<p>Descripción breve del valor.</p>
+				</div>
+				<div class="card bg-base-100 shadow p-4">
+					<h4 class="font-bold text-primary">Calidad</h4>
+					<p>Descripción breve del valor.</p>
+				</div>
+				<div class="card bg-base-100 shadow p-4">
+					<h4 class="font-bold text-primary">Valor Único</h4>
+					<p>Descripción breve del valor.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container mx-auto px-4 py-12" data-aos="fade-up">
+		<h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8">
+			Nuestro Equipo
+		</h2>
+		<div class="grid md:grid-cols-4 gap-6">
+			<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
+				<figure class="px-6 pt-6">
+					<Image
+						src="https://mighty.tools/mockmind-api/content/human/124.jpg"
+						alt="María Rodríguez"
+						class="mask mask-circle w-32 h-32 object-cover"
+						width={128}
+						height={128}
+					/>
+				</figure>
+				<div class="card-body items-center text-center">
+					<div class="badge badge-primary mb-2">Directora</div>
+					<h4 class="card-title text-primary">María Rodríguez</h4>
+					<p class="text-sm opacity-75">Directora Pedagógica</p>
+					<div class="divider my-2"></div>
+					<p class="text-sm">
+						15 años de experiencia en educación inicial. Especialista en
+						desarrollo infantil temprano.
+					</p>
+				</div>
+			</div>
+
+			<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
+				<figure class="px-6 pt-6">
+					<Image
+						src="https://mighty.tools/mockmind-api/content/human/108.jpg"
+						alt="Carlos Mendoza"
+						class="mask mask-circle w-32 h-32 object-cover"
+						width={128}
+						height={128}
+					/>
+				</figure>
+				<div class="card-body items-center text-center">
+					<div class="badge badge-secondary mb-2">Psicología</div>
+					<h4 class="card-title text-primary">Carlos Mendoza</h4>
+					<p class="text-sm opacity-75">Psicólogo Infantil</p>
+					<div class="divider my-2"></div>
+					<p class="text-sm">
+						Especialista en desarrollo socioemocional y apoyo familiar.
+					</p>
+				</div>
+			</div>
+
+			<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
+				<figure class="px-6 pt-6">
+					<Image
+						src="https://mighty.tools/mockmind-api/content/human/125.jpg"
+						alt="Ana García"
+						class="mask mask-circle w-32 h-32 object-cover"
+						width={128}
+						height={128}
+					/>
+				</figure>
+				<div class="card-body items-center text-center">
+					<div class="badge badge-accent mb-2">Educación</div>
+					<h4 class="card-title text-primary">Ana García</h4>
+					<p class="text-sm opacity-75">Educadora Principal</p>
+					<div class="divider my-2"></div>
+					<p class="text-sm">
+						Experta en metodologías activas y estimulación temprana.
+					</p>
+				</div>
+			</div>
+
+			<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
+				<figure class="px-6 pt-6">
+					<Image
+						src="https://mighty.tools/mockmind-api/content/human/125.jpg"
+						alt="Luis Torres"
+						class="mask mask-circle w-32 h-32 object-cover"
+						width={128}
+						height={128}
+					/>
+				</figure>
+				<div class="card-body items-center text-center">
+					<div class="badge badge-info mb-2">Coordinación</div>
+					<h4 class="card-title text-primary">Luis Torres</h4>
+					<p class="text-sm opacity-75">Coordinador de Actividades</p>
+					<div class="divider my-2"></div>
+					<p class="text-sm">
+						Especializado en desarrollo psicomotor y actividades lúdicas.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container mx-auto px-4 py-12" data-aos="fade-up">
+		<h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8">
+			Alianzas
+		</h2>
+		<div class="flex flex-wrap justify-center gap-8 items-center">
+			<div class="flex flex-col items-center">
+				<Image
+					src="https://img.icons8.com/?size=100&id=108789&format=png&color=000000"
+					alt="Logo alianza 1"
+					class="h-16"
+					width={64}
+					height={64}
+				/>
+				<p class="text-sm mt-2">Alianza 1</p>
+			</div>
+			<div class="flex flex-col items-center">
+				<Image
+					src="https://img.icons8.com/?size=100&id=108789&format=png&color=000000"
+					alt="Logo alianza 2"
+					class="h-16"
+					width={64}
+					height={64}
+				/>
+				<p class="text-sm mt-2">Alianza 2</p>
+			</div>
+			<div class="flex flex-col items-center">
+				<Image
+					src="https://img.icons8.com/?size=100&id=108789&format=png&color=000000"
+					alt="Logo alianza 3"
+					class="h-16"
+					width={64}
+					height={64}
+				/>
+				<p class="text-sm mt-2">Alianza 3</p>
+			</div>
+			<div class="flex flex-col items-center">
+				<Image
+					src="https://img.icons8.com/?size=100&id=108789&format=png&color=000000"
+					alt="Logo alianza 4"
+					class="h-16"
+					width={64}
+					height={64}
+				/>
+				<p class="text-sm mt-2">Alianza 4</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-primary py-12 mt-8" data-aos="fade-up">
+		<div
+			class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8"
+		>
+			<div class="text-white flex-1">
+				<h2 class="text-2xl md:text-3xl font-bold mb-2">
+					¿Listo para darle a tu hijo el mejor comienzo?
+				</h2>
+				<p class="mb-4">
+					Con educadores experimentados, un entorno seguro y un enfoque en el
+					crecimiento individual.
+				</p>
+				<button class="btn btn-accent">Solicita información</button>
+			</div>
+			<div class="flex-1 flex justify-center">
+				<Image
+					src="https://images.unsplash.com/photo-1597113117918-eb40fe0b84e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+					alt="Niño feliz"
+					class="rounded-2xl shadow-lg w-64 h-48 object-cover"
+					width={256}
+					height={192}
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Animaciones AOS/Wellington
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" /> -->
 </Layout>
