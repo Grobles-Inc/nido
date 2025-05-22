@@ -2,9 +2,8 @@
 title: 'Aprendizaje a Través del Juego en Preescolar'
 description: 'Descubre cómo el juego es fundamental para el desarrollo y aprendizaje de los niños en edad preescolar'
 pubDate: 'Oct 17 2024'
-heroImage: '/blog-placeholder-2.jpg'
-category: 'Educación'
-
+heroImage: 'https://images.unsplash.com/photo-1524503033411-c9566986fc8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+category: 'novedades'
 ---
 
 El juego no es solo diversión; es la forma natural de aprendizaje de los niños. En el preescolar, utilizamos el juego como una herramienta poderosa para desarrollar habilidades fundamentales y fomentar el amor por el aprendizaje.

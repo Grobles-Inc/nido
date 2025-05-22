@@ -20,23 +20,30 @@ function formatDate(date: Date) {
 const postId = href.split("/").filter(Boolean).pop();
 ---
 
-<a href={href} class="card bg-base-100 shadow-xl h-full">
+<a
+  href={href}
+  class="card bg-base-100 shadow-xl h-full"
+  aria-labelledby={`post-title-${postId}`}
+>
   <figure
     class="relative h-48 overflow-hidden"
     transition:name={`hero-${postId}`}
   >
     <img
       src={image}
-      alt={title}
+      alt={`Imagen ilustrativa para el artículo: ${title}`}
       class="w-full h-full object-cover hover:scale-105 transition-all duration-300"
     />
   </figure>
   <div class="card-body p-4">
     <div class="flex items-center gap-2 mb-2">
-      <span class="badge badge-primary">{category}</span>
-      <span class="text-sm opacity-70">{formatDate(date)}</span>
+      <span class="badge badge-primary" aria-label={category}>{category}</span>
+      <time datetime={date.toISOString()} class="text-sm opacity-70">
+        {formatDate(date)}
+      </time>
     </div>
     <h3
+      id={`post-title-${postId}`}
       class="card-title text-lg font-semibold line-clamp-2 hover:text-primary transition-colors"
       transition:name={`title-${postId}`}
     >

@@ -6,61 +6,114 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import BlogCard from "../../components/BlogCard.astro";
 import { ClientRouter } from "astro:transitions";
-
+import { BLOG_CATEGORIES } from "../../content.config";
+export const prerender = false;
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const category = Astro.url.searchParams.get("category");
+const filteredPosts = category
+	? posts.filter((post) => post.data.category === category)
+	: posts;
+
+const ogImage = new URL("/og-image-blog.jpg", Astro.url);
 ---
 
 <!doctype html>
 <html lang="es" data-theme="cupcake">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title={`Blog - ${SITE_TITLE}`}
+			description="Artículos educativos sobre el desarrollo infantil, actividades preescolares y consejos para padres."
+		>
+			<meta property="og:type" content="website" />
+			<meta property="og:url" content={Astro.url} />
+			<meta property="og:image" content={ogImage} />
+			<meta name="twitter:card" content="summary_large_image" />
+			<link rel="canonical" href={Astro.url} />
+		</BaseHead>
 		<ClientRouter />
 	</head>
 	<body class="min-h-screen bg-base-100">
 		<Header />
 		<main class="container mx-auto px-4 py-8 lg:py-12">
 			<div class="max-w-6xl mx-auto">
-				<div class="text-center mb-12">
+				<header class="text-center mb-12" role="banner">
 					<div class="flex items-center justify-center gap-2 mb-4">
 						<h1 class="text-4xl lg:text-5xl font-bold text-primary">
 							Últimas Publicaciones
 						</h1>
-						<span class="text-3xl">✨</span>
+						<span class="text-3xl" role="img" aria-label="Decoración brillante"
+							>✨</span
+						>
 					</div>
 					<p class="text-lg text-base-content/80 max-w-2xl mx-auto">
 						Nuestro blog cubre una variedad de temas diseñados para apoyar el
 						crecimiento de tu hijo, desde actividades de aprendizaje divertidas
 						hasta consejos de salud y seguridad.
 					</p>
-				</div>
+				</header>
 
-				<div
+				<nav
+					class="flex gap-2 mb-8 justify-center"
+					aria-label="Filtrar por categoría"
+				>
+					<a
+						href="/blog"
+						class="btn btn-sm"
+						aria-current={!category ? "page" : undefined}>Todos</a
+					>
+					{
+						BLOG_CATEGORIES.map((cat: string) => (
+							<a
+								href={`/blog?category=${encodeURIComponent(cat)}`}
+								class="btn btn-sm"
+								aria-current={category === cat ? "page" : undefined}
+							>
+								{cat.charAt(0).toUpperCase() + cat.slice(1)}
+							</a>
+						))
+					}
+				</nav>
+
+				<section
 					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-					transition:animate="fade"
+					aria-label="Lista de artículos del blog"
 				>
 					{
-						posts.map((post) => (
-							<div transition:name={`post-${post.id}`}>
+						filteredPosts.map((post) => (
+							<article transition:name={`post-${post.id}`}>
 								<BlogCard
 									title={post.data.title}
-									category={post.data.category || "Blog"}
+									category={post.data.category}
 									date={post.data.pubDate}
 									href={`/blog/${post.id}/`}
 									image={post.data.heroImage || ""}
 								/>
-							</div>
+							</article>
 						))
 					}
-				</div>
+				</section>
 
-				<div
+				<section
 					class="mt-20 bg-primary text-primary-content rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden"
-					transition:animate="fade"
+					aria-label="Sección de contacto"
 				>
-					<div class="absolute top-4 left-4 text-3xl">💎</div>
-					<div class="absolute bottom-4 right-4 text-3xl">⭐</div>
+					<div
+						class="absolute top-4 left-4 text-3xl"
+						role="img"
+						aria-label="Decoración diamante"
+					>
+						💎
+					</div>
+					<div
+						class="absolute bottom-4 right-4 text-3xl"
+						role="img"
+						aria-label="Decoración estrella"
+					>
+						⭐
+					</div>
 					<h2 class="text-3xl lg:text-4xl font-bold mb-4">
 						Dale a tu Hijo el Mejor Comienzo
 					</h2>
@@ -68,8 +121,15 @@ const posts = (await getCollection("blog")).sort(
 						Con educadores experimentados, un ambiente seguro y estimulante, y
 						un enfoque en el desarrollo individual.
 					</p>
-					<a href="/contact" class="btn btn-secondary btn-lg">Contáctanos</a>
-				</div>
+					<a
+						href="/contact"
+						class="btn btn-secondary btn-lg"
+						role="button"
+						aria-label="Contactar con nosotros"
+					>
+						Contáctanos
+					</a>
+				</section>
 			</div>
 		</main>
 		<Footer />
