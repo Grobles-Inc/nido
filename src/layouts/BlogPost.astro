@@ -54,6 +54,20 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					<slot />
 				</div>
 			</article>
+			<div
+				class="mt-20 bg-primary text-primary-content rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden"
+			>
+				<div class="absolute top-4 left-4 text-3xl">💎</div>
+				<div class="absolute bottom-4 right-4 text-3xl">⭐</div>
+				<h2 class="text-3xl lg:text-4xl font-bold mb-4">
+					Dale a tu Hijo el Mejor Comienzo
+				</h2>
+				<p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+					Con educadores experimentados, un ambiente seguro y estimulante, y un
+					enfoque en el desarrollo individual.
+				</p>
+				<a href="/contact" class="btn btn-secondary btn-lg">Contáctanos</a>
+			</div>
 		</main>
 		<Footer />
 	</body>

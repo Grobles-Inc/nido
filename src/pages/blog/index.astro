@@ -12,23 +12,29 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <!doctype html>
-<html lang="en" data-theme="cupcake">
+<html lang="es" data-theme="cupcake">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="min-h-screen bg-base-100">
 		<Header />
-		<main>
-			<div class="container">
-				<div class="header">
-					<h1>Latest Blog Post</h1>
-					<p>
-						Our blog covers a range of topics designed to support your child's
-						growth, from fun learning activities to health and safety advice.
+		<main class="container mx-auto px-4 py-8 lg:py-12">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-12">
+					<div class="flex items-center justify-center gap-2 mb-4">
+						<h1 class="text-4xl lg:text-5xl font-bold text-primary">
+							Últimas Publicaciones
+						</h1>
+						<span class="text-3xl">✨</span>
+					</div>
+					<p class="text-lg text-base-content/80 max-w-2xl mx-auto">
+						Nuestro blog cubre una variedad de temas diseñados para apoyar el
+						crecimiento de tu hijo, desde actividades de aprendizaje divertidas
+						hasta consejos de salud y seguridad.
 					</p>
 				</div>
 
-				<div class="blog-grid">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{
 						posts.map((post) => (
 							<BlogCard
@@ -42,129 +48,22 @@ const posts = (await getCollection("blog")).sort(
 					}
 				</div>
 
-				<div class="cta-section">
-					<div class="cta-content">
-						<div class="icon">💎</div>
-						<h2>Ready to Give Your Child the Best Start</h2>
-						<p>
-							With experienced educators, a safe and engaging environment, and a
-							focus on individual growth.
-						</p>
-						<a href="/contact" class="cta-button">Enquire Now</a>
-					</div>
+				<div
+					class="mt-20 bg-primary text-primary-content rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden"
+				>
+					<div class="absolute top-4 left-4 text-3xl">💎</div>
+					<div class="absolute bottom-4 right-4 text-3xl">⭐</div>
+					<h2 class="text-3xl lg:text-4xl font-bold mb-4">
+						Dale a tu Hijo el Mejor Comienzo
+					</h2>
+					<p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+						Con educadores experimentados, un ambiente seguro y estimulante, y
+						un enfoque en el desarrollo individual.
+					</p>
+					<a href="/contact" class="btn btn-secondary btn-lg">Contáctanos</a>
 				</div>
 			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
-
-<style>
-	.container {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 2rem;
-	}
-
-	.header {
-		text-align: center;
-		margin-bottom: 3rem;
-	}
-
-	.header h1 {
-		font-size: 2.5rem;
-		color: #0a2540;
-		margin-bottom: 1rem;
-		position: relative;
-		display: inline-block;
-	}
-
-	.header h1::after {
-		content: "✨";
-		position: absolute;
-		top: 0;
-		right: -2rem;
-	}
-
-	.header p {
-		color: #666;
-		max-width: 600px;
-		margin: 0 auto;
-		line-height: 1.6;
-	}
-
-	.blog-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 2rem;
-		margin-bottom: 4rem;
-	}
-
-	.cta-section {
-		background: #ff7849;
-		border-radius: 2rem;
-		padding: 3rem 2rem;
-		text-align: center;
-		color: white;
-		margin-top: 4rem;
-	}
-
-	.cta-content {
-		max-width: 600px;
-		margin: 0 auto;
-	}
-
-	.icon {
-		font-size: 2rem;
-		margin-bottom: 1rem;
-	}
-
-	.cta-content h2 {
-		font-size: 2rem;
-		margin-bottom: 1rem;
-	}
-
-	.cta-content p {
-		margin-bottom: 2rem;
-		opacity: 0.9;
-	}
-
-	.cta-button {
-		display: inline-block;
-		background: #0a2540;
-		color: white;
-		padding: 0.8rem 2rem;
-		border-radius: 2rem;
-		text-decoration: none;
-		font-weight: 600;
-		transition: background 0.2s ease-in-out;
-	}
-
-	.cta-button:hover {
-		background: #1a3550;
-	}
-
-	@media (max-width: 768px) {
-		.container {
-			padding: 1rem;
-		}
-
-		.header h1 {
-			font-size: 2rem;
-		}
-
-		.blog-grid {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-		}
-
-		.cta-section {
-			padding: 2rem 1rem;
-			border-radius: 1.5rem;
-		}
-
-		.cta-content h2 {
-			font-size: 1.5rem;
-		}
-	}
-</style>
