@@ -1,0 +1,95 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  date: Date;
+  href: string;
+  image: string;
+}
+
+const { title, category, date, href, image } = Astro.props;
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
+}
+---
+
+<a href={href} class="blog-card">
+  <div class="image-container">
+    <img src={image} alt={title} />
+  </div>
+  <div class="content">
+    <div class="meta">
+      <span class="category">{category}</span>
+      <span class="date">{formatDate(date)}</span>
+    </div>
+    <h3>{title}</h3>
+  </div>
+</a>
+
+<style>
+  .blog-card {
+    display: block;
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .blog-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #0a2540;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .image-container {
+      height: 180px;
+    }
+
+    .content {
+      padding: 1rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
+  }
+</style>
