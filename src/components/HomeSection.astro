@@ -1,12 +1,12 @@
 ---
-import { Image } from 'astro:assets';
-import homeSection from '../assets/images/HomeSection.png';
-import faqSection from '../assets/images/FAQSection.png';
-import decoration1 from '../assets/images/Adorno1.png';
-import decoration2 from '../assets/images/Adorno2.png';
-import decoration3 from '../assets/images/Adorno3.png';
-import decoration4 from '../assets/images/Adorno4.png';
-import decoration5 from '../assets/images/Adorno5.png';
+import { Image } from "astro:assets";
+import homeSection from "../assets/images/HomeSection.png";
+import faqSection from "../assets/images/FAQSection.png";
+import decoration1 from "../assets/images/Adorno1.png";
+import decoration2 from "../assets/images/Adorno2.png";
+import decoration3 from "../assets/images/Adorno3.png";
+import decoration4 from "../assets/images/Adorno4.png";
+import decoration5 from "../assets/images/Adorno5.png";
 
 interface Props {
   title?: string;
@@ -15,107 +15,172 @@ interface Props {
 
 <!--! Sección de por qué somos diferentes -->
 <section class="py-20 px-4">
-    <div class="container mx-auto max-w-7xl">
-      <h3 class="text-coral-red text-center text-lg font-medium mb-4">¿Por qué somos diferentes?</h3>
-      
-      <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-6">
-        Comprometidos con el crecimiento<br />y la felicidad de tu hijo
-      </h2>
-      
-      <p class="text-center text-sm text-gray-600 max-w-3xl mx-auto mb-16">
-        En Nido Perulinas, nuestra principal prioridad es el crecimiento y la felicidad de tu hijo. Ofrecemos un entorno acogedor y estimulante donde los niños pueden explorar, aprender y desarrollar habilidades esenciales para la vida.
-      </p>
+  <div class="container mx-auto max-w-7xl">
+    <h3 class="text-coral-red text-center text-lg font-medium mb-4">
+      ¿Por qué somos diferentes?
+    </h3>
 
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="grid grid-cols-2 gap-8">
-          <div class="text-center">
-            <div class="bg-lavender-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <img src="https://img.icons8.com/?size=160&id=110234&format=png" alt="icono">
-            </div>
-            <h4 class="text-navy-blue text-xl font-bold mb-2">¿Qué nos distingue?</h4>
-            <p class="text-gray-600 text-sm">Metodologías innovadoras y prácticas pedagógicas integrales con nuestro programa "PRODIGIE".</p>
-          </div>
+    <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-6">
+      Comprometidos con el crecimiento<br />y la felicidad de tu hijo
+    </h2>
 
-          <div class="text-center">
-            <div class="bg-sky-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <img src="https://img.icons8.com/?size=160&id=122688&format=png" alt="icono">
-            </div>
-            <h4 class="text-navy-blue text-xl font-bold mb-2">¿Qué nos apasiona?</h4>
-            <p class="text-gray-600 text-sm">Impulsar el desarrollo integral infantil para transformar la educación tradicional.</p>
-          </div>
+    <p class="text-center text-sm text-gray-600 max-w-3xl mx-auto mb-16">
+      En Nido Perulinas, nuestra principal prioridad es el crecimiento y la
+      felicidad de tu hijo. Ofrecemos un entorno acogedor y estimulante donde
+      los niños pueden explorar, aprender y desarrollar habilidades esenciales
+      para la vida.
+    </p>
 
-          <div class="text-center">
-            <div class="bg-peach-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <img src="https://img.icons8.com/?size=160&id=111275&format=png" alt="icono">
-            </div>
-            <h4 class="text-navy-blue text-xl font-bold mb-2">¿Por qué somos diferentes?</h4>
-            <p class="text-gray-600 text-sm">Creamos y gestionamos nuestros propios materiales educativos para un aprendizaje integral.</p>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-2 gap-8">
+        <div class="text-center">
+          <div
+            class="bg-lavender-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+          >
+            <img
+              src="https://img.icons8.com/?size=160&id=110234&format=png"
+              alt="icono"
+            />
           </div>
-
-          <div class="text-center">
-            <div class="bg-yellow-50 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <img src="https://img.icons8.com/?size=160&id=109684&format=png" alt="icono">
-            </div>
-            <h4 class="text-navy-blue text-xl font-bold mb-2">¿Qué nos motiva?</h4>
-            <p class="text-gray-600 text-sm">Crear eventos inspiradores para potenciar el desarrollo infantil.</p>
-          </div>
+          <h4 class="text-navy-blue text-xl font-bold mb-2">
+            ¿Qué nos distingue?
+          </h4>
+          <p class="text-gray-600 text-sm">
+            Metodologías innovadoras y prácticas pedagógicas integrales con
+            nuestro programa "PRODIGIE".
+          </p>
         </div>
 
-        <div>
-          <Image 
-            src={homeSection} 
-            alt="Child playing with educational toys while caregiver assists"
-            class="w-full h-auto rounded-[40px] object-cover"
-          />
+        <div class="text-center">
+          <div
+            class="bg-sky-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+          >
+            <img
+              src="https://img.icons8.com/?size=160&id=122688&format=png"
+              alt="icono"
+            />
+          </div>
+          <h4 class="text-navy-blue text-xl font-bold mb-2">
+            ¿Qué nos apasiona?
+          </h4>
+          <p class="text-gray-600 text-sm">
+            Impulsar el desarrollo integral infantil para transformar la
+            educación tradicional.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="bg-peach-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+          >
+            <img
+              src="https://img.icons8.com/?size=160&id=111275&format=png"
+              alt="icono"
+            />
+          </div>
+          <h4 class="text-navy-blue text-xl font-bold mb-2">
+            ¿Por qué somos diferentes?
+          </h4>
+          <p class="text-gray-600 text-sm">
+            Creamos y gestionamos nuestros propios materiales educativos para un
+            aprendizaje integral.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="bg-yellow-50 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+          >
+            <img
+              src="https://img.icons8.com/?size=160&id=109684&format=png"
+              alt="icono"
+            />
+          </div>
+          <h4 class="text-navy-blue text-xl font-bold mb-2">
+            ¿Qué nos motiva?
+          </h4>
+          <p class="text-gray-600 text-sm">
+            Crear eventos inspiradores para potenciar el desarrollo infantil.
+          </p>
         </div>
       </div>
+
+      <div>
+        <Image
+          src={homeSection}
+          alt="Child playing with educational toys while caregiver assists"
+          class="w-full h-auto rounded-[40px] object-cover"
+        />
+      </div>
     </div>
+  </div>
 </section>
 
 <!--! Sección de pasos -->
 <section class="py-20 px-4 bg-[#eef8ff]">
   <div class="container mx-auto max-w-7xl">
     <h3 class="text-coral-red text-center text-lg font-medium mb-4">PASOS</h3>
-    
+
     <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16">
       Un Proceso Simple para Unirte<br />a Nuestra Familia
     </h2>
 
     <div class="grid md:grid-cols-3 gap-8 relative">
       <!-- Líneas conectoras en desktop -->
-      <div class="hidden md:block absolute top-[20%] left-[25%] w-[20%] h-[2px]" style="background: linear-gradient(90deg, transparent, #0A2472);"></div>
-      <div class="hidden md:block absolute top-[20%] right-[25%] w-[20%] h-[2px]" style="background: linear-gradient(90deg, #0A2472, transparent);"></div>
+      <div
+        class="hidden md:block absolute top-[20%] left-[25%] w-[20%] h-[2px]"
+        style="background: linear-gradient(90deg, transparent, #0A2472);"
+      >
+      </div>
+      <div
+        class="hidden md:block absolute top-[20%] right-[25%] w-[20%] h-[2px]"
+        style="background: linear-gradient(90deg, #0A2472, transparent);"
+      >
+      </div>
 
       <!-- Paso 1 -->
       <div class="text-center relative">
-        <div class="bg-yellow-50 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center">
+        <div
+          class="bg-yellow-50 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
+        >
           <span class="text-4xl font-bold text-navy-blue">1</span>
         </div>
         <h4 class="text-navy-blue text-2xl font-bold mb-4">Agenda un Tour</h4>
         <p class="text-gray-600 text-sm">
-          Visita Nido Perulinas para explorar nuestras instalaciones, conocer a nuestro personal y aprender más sobre nuestros programas.
+          Visita Nido Perulinas para explorar nuestras instalaciones, conocer a
+          nuestro personal y aprender más sobre nuestros programas.
         </p>
       </div>
 
       <!-- Paso 2 -->
       <div class="text-center relative">
-        <div class="bg-lavender-100 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center">
+        <div
+          class="bg-lavender-100 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
+        >
           <span class="text-4xl font-bold text-navy-blue">2</span>
         </div>
-        <h4 class="text-navy-blue text-2xl font-bold mb-4">Completa la Solicitud</h4>
+        <h4 class="text-navy-blue text-2xl font-bold mb-4">
+          Completa la Solicitud
+        </h4>
         <p class="text-gray-600 text-sm">
-          Llena nuestro formulario de inscripción con los detalles importantes sobre las necesidades y horarios de tu hijo.
+          Llena nuestro formulario de inscripción con los detalles importantes
+          sobre las necesidades y horarios de tu hijo.
         </p>
       </div>
 
       <!-- Paso 3 -->
       <div class="text-center relative">
-        <div class="bg-peach-100 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center">
+        <div
+          class="bg-peach-100 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
+        >
           <span class="text-4xl font-bold text-navy-blue">3</span>
         </div>
-        <h4 class="text-navy-blue text-2xl font-bold mb-4">Finaliza la Inscripción</h4>
+        <h4 class="text-navy-blue text-2xl font-bold mb-4">
+          Finaliza la Inscripción
+        </h4>
         <p class="text-gray-600 text-sm">
-          Reúnete con nuestro equipo para finalizar los detalles y establecer la fecha de inicio del viaje de tu hijo.
+          Reúnete con nuestro equipo para finalizar los detalles y establecer la
+          fecha de inicio del viaje de tu hijo.
         </p>
       </div>
     </div>
@@ -125,8 +190,10 @@ interface Props {
 <!--! Sección de testimonios -->
 <section class="py-20 bg-[#eef8ff] px-4 mb-10">
   <div class="container mx-auto max-w-7xl">
-    <h3 class="text-coral-red text-center text-lg font-medium mb-4">TESTIMONIOS</h3>
-    
+    <h3 class="text-coral-red text-center text-lg font-medium mb-4">
+      TESTIMONIOS
+    </h3>
+
     <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16">
       Testimonios de Padres
     </h2>
@@ -134,11 +201,18 @@ interface Props {
     <div class="carousel w-full mb-10">
       <!-- Slide 1 -->
       <div id="slide1" class="carousel-item relative w-full">
-        <div class="flex flex-col md:flex-row gap-6 justify-center items-stretch max-w-[1200px] mx-auto">
+        <div
+          class="flex flex-col md:flex-row gap-6 justify-center items-stretch max-w-[1200px] mx-auto"
+        >
           <div class="max-w-xl w-full bg-white rounded-3xl p-8">
             <div class="flex items-start gap-4 mb-6">
-              <div class="w-16 h-16 rounded-full overflow-hidden bg-lavender-100 flex items-center justify-center">
-                <img src="https://mighty.tools/mockmind-api/content/human/80.jpg" alt="avatar">
+              <div
+                class="w-16 h-16 rounded-full overflow-hidden bg-lavender-100 flex items-center justify-center"
+              >
+                <img
+                  src="https://mighty.tools/mockmind-api/content/human/80.jpg"
+                  alt="avatar"
+                />
               </div>
               <div>
                 <h4 class="text-navy-blue text-2xl font-bold">Juan Pérez</h4>
@@ -146,14 +220,22 @@ interface Props {
               </div>
             </div>
             <p class="text-gray-600 text-lg italic">
-              "Nido Perulinas se ha convertido en un segundo hogar para nuestro hijo. El personal es increíblemente cariñoso y sabemos que nuestro pequeño está en buenas manos todos los días. ¡Hemos visto tanto crecimiento desde que comenzamos aquí!"
+              "Nido Perulinas se ha convertido en un segundo hogar para nuestro
+              hijo. El personal es increíblemente cariñoso y sabemos que nuestro
+              pequeño está en buenas manos todos los días. ¡Hemos visto tanto
+              crecimiento desde que comenzamos aquí!"
             </p>
           </div>
-          
+
           <div class="max-w-xl w-full bg-white rounded-3xl p-8">
             <div class="flex items-start gap-4 mb-6">
-              <div class="w-16 h-16 rounded-full overflow-hidden bg-peach-100 flex items-center justify-center">
-                <img src="https://mighty.tools/mockmind-api/content/human/125.jpg" alt="avatar">
+              <div
+                class="w-16 h-16 rounded-full overflow-hidden bg-peach-100 flex items-center justify-center"
+              >
+                <img
+                  src="https://mighty.tools/mockmind-api/content/human/125.jpg"
+                  alt="avatar"
+                />
               </div>
               <div>
                 <h4 class="text-navy-blue text-2xl font-bold">María García</h4>
@@ -161,7 +243,10 @@ interface Props {
               </div>
             </div>
             <p class="text-gray-600 text-lg italic">
-              "Los maestros y el personal de Nido Perulinas van más allá de sus responsabilidades. Mi hijo llega a casa feliz, emocionado y lleno de historias sobre su día. ¡Estoy agradecida por el ambiente enriquecedor que brindan!"
+              "Los maestros y el personal de Nido Perulinas van más allá de sus
+              responsabilidades. Mi hijo llega a casa feliz, emocionado y lleno
+              de historias sobre su día. ¡Estoy agradecida por el ambiente
+              enriquecedor que brindan!"
             </p>
           </div>
         </div>
@@ -169,26 +254,43 @@ interface Props {
 
       <!-- Slide 2 -->
       <div id="slide2" class="carousel-item relative w-full">
-        <div class="flex flex-col md:flex-row gap-6 justify-center items-stretch max-w-[1200px] mx-auto">
+        <div
+          class="flex flex-col md:flex-row gap-6 justify-center items-stretch max-w-[1200px] mx-auto"
+        >
           <div class="max-w-xl w-full bg-white rounded-3xl p-8">
             <div class="flex items-start gap-4 mb-6">
-              <div class="w-16 h-16 rounded-full overflow-hidden bg-sky-100 flex items-center justify-center">
-                <img src="https://mighty.tools/mockmind-api/content/human/104.jpg" alt="avatar">
+              <div
+                class="w-16 h-16 rounded-full overflow-hidden bg-sky-100 flex items-center justify-center"
+              >
+                <img
+                  src="https://mighty.tools/mockmind-api/content/human/104.jpg"
+                  alt="avatar"
+                />
               </div>
               <div>
-                <h4 class="text-navy-blue text-2xl font-bold">Carlos Rodríguez</h4>
+                <h4 class="text-navy-blue text-2xl font-bold">
+                  Carlos Rodríguez
+                </h4>
                 <p class="text-gray-600">Padre de Familia</p>
               </div>
             </div>
             <p class="text-gray-600 text-lg italic">
-              "La dedicación del equipo de Nido Perulinas es excepcional. Han creado un ambiente donde nuestro hijo no solo aprende, sino que también se divierte y desarrolla habilidades sociales importantes. Estamos muy contentos con nuestra elección."
+              "La dedicación del equipo de Nido Perulinas es excepcional. Han
+              creado un ambiente donde nuestro hijo no solo aprende, sino que
+              también se divierte y desarrolla habilidades sociales importantes.
+              Estamos muy contentos con nuestra elección."
             </p>
           </div>
 
           <div class="max-w-xl w-full bg-white rounded-3xl p-8">
             <div class="flex items-start gap-4 mb-6">
-              <div class="w-16 h-16 rounded-full overflow-hidden bg-lavender-100 flex items-center justify-center">
-                <img src="https://mighty.tools/mockmind-api/content/human/125.jpg" alt="avatar">
+              <div
+                class="w-16 h-16 rounded-full overflow-hidden bg-lavender-100 flex items-center justify-center"
+              >
+                <img
+                  src="https://mighty.tools/mockmind-api/content/human/125.jpg"
+                  alt="avatar"
+                />
               </div>
               <div>
                 <h4 class="text-navy-blue text-2xl font-bold">Ana Martínez</h4>
@@ -196,7 +298,10 @@ interface Props {
               </div>
             </div>
             <p class="text-gray-600 text-lg italic">
-              "Elegir Nido Perulinas fue la mejor decisión para nuestra familia. El programa educativo es excepcional y el cariño con el que tratan a los niños es incomparable. Mi hija ha florecido aquí de maneras que nunca imaginé."
+              "Elegir Nido Perulinas fue la mejor decisión para nuestra familia.
+              El programa educativo es excepcional y el cariño con el que tratan
+              a los niños es incomparable. Mi hija ha florecido aquí de maneras
+              que nunca imaginé."
             </p>
           </div>
         </div>
@@ -205,43 +310,55 @@ interface Props {
 
     <!-- Navigation buttons below -->
     <div class="flex justify-center gap-4 mt-8">
-      <button class="btn btn-circle bg-yellow-50 border-none hover:bg-yellow-100 carousel-prev" data-target="#slide1">❮</button>
-      <button class="btn btn-circle bg-yellow-50 border-none hover:bg-yellow-100 carousel-next" data-target="#slide2">❯</button>
+      <button class="btn btn-circle carousel-prev" data-target="#slide1"
+        >❮</button
+      >
+      <button class="btn btn-circle carousel-next" data-target="#slide2"
+        >❯</button
+      >
     </div>
   </div>
 </section>
 
 <script>
   // Prevent scroll jump and handle carousel navigation
-  document.addEventListener('DOMContentLoaded', () => {
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
-    
+  document.addEventListener("DOMContentLoaded", () => {
+    const prevButton = document.querySelector(".carousel-prev");
+    const nextButton = document.querySelector(".carousel-next");
+
     function handleCarouselNavigation(e: MouseEvent) {
       e.preventDefault();
       const targetId = (e.target as HTMLButtonElement).dataset.target;
       if (targetId) {
-        document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        document
+          .querySelector(targetId)
+          ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
     }
-    prevButton?.addEventListener('click', (e: Event) => handleCarouselNavigation(e as MouseEvent));
-    nextButton?.addEventListener('click', (e: Event) => handleCarouselNavigation(e as MouseEvent));
+    prevButton?.addEventListener("click", (e: Event) =>
+      handleCarouselNavigation(e as MouseEvent),
+    );
+    nextButton?.addEventListener("click", (e: Event) =>
+      handleCarouselNavigation(e as MouseEvent),
+    );
   });
 </script>
 
 <!--! Sección de FAQ -->
 <section class="py-20 px-4 bg-white">
   <div class="container mx-auto max-w-7xl">
-    <h3 class="text-coral-red text-center text-lg font-medium mb-4">PREGUNTAS FRECUENTES</h3>
-    
+    <h3 class="text-coral-red text-center text-lg font-medium mb-4">
+      PREGUNTAS FRECUENTES
+    </h3>
+
     <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16">
       Preguntas Más Frecuentes
     </h2>
 
     <div class="grid md:grid-cols-2 gap-12 items-start">
       <div class="relative">
-        <Image 
-          src={faqSection} 
+        <Image
+          src={faqSection}
           alt="Área de juegos con juguetes y estantes organizados"
           class="w-full h-auto rounded-[40px] object-cover"
         />
@@ -250,45 +367,67 @@ interface Props {
       <div class="space-y-4">
         <!-- FAQ 1 -->
         <div class="collapse collapse-plus bg-white rounded-2xl">
-          <input type="radio" name="my-accordion-3" checked="checked" /> 
+          <input type="radio" name="my-accordion-3" checked="checked" />
           <div class="collapse-title text-lg font-bold text-navy-blue">
             ¿Qué grupos de edad aceptan en Nido Perulinas?
           </div>
           <div class="collapse-content text-sm text-gray-600">
-            <p>Brindamos cuidado para niños desde las 6 semanas hasta los 5 años de edad, con programas especializados para bebés, niños pequeños y preescolares.</p>
+            <p>
+              Brindamos cuidado para niños desde las 6 semanas hasta los 5 años
+              de edad, con programas especializados para bebés, niños pequeños y
+              preescolares.
+            </p>
           </div>
         </div>
 
         <!-- FAQ 2 -->
         <div class="collapse collapse-plus bg-white rounded-2xl">
-          <input type="radio" name="my-accordion-3" /> 
+          <input type="radio" name="my-accordion-3" />
           <div class="collapse-title text-lg font-bold text-navy-blue">
             ¿Qué medidas de seguridad tienen en Nido Perulinas?
           </div>
           <div class="collapse-content text-sm text-gray-600">
-            <p>Contamos con un sistema integral de seguridad que incluye cámaras de vigilancia, acceso controlado, personal capacitado en primeros auxilios, y protocolos estrictos de entrada y salida. Nuestras instalaciones están diseñadas pensando en la seguridad de los niños.</p>
+            <p>
+              Contamos con un sistema integral de seguridad que incluye cámaras
+              de vigilancia, acceso controlado, personal capacitado en primeros
+              auxilios, y protocolos estrictos de entrada y salida. Nuestras
+              instalaciones están diseñadas pensando en la seguridad de los
+              niños.
+            </p>
           </div>
         </div>
 
         <!-- FAQ 3 -->
         <div class="collapse collapse-plus bg-white rounded-2xl">
-          <input type="radio" name="my-accordion-3" /> 
+          <input type="radio" name="my-accordion-3" />
           <div class="collapse-title text-lg font-bold text-navy-blue">
             ¿Cómo apoyan el desarrollo temprano de mi hijo?
           </div>
           <div class="collapse-content text-sm text-gray-600">
-            <p>Implementamos un programa educativo integral que estimula el desarrollo cognitivo, social, emocional y físico. Nuestras actividades están diseñadas para fomentar la curiosidad, creatividad y habilidades fundamentales a través del juego y el aprendizaje guiado.</p>
+            <p>
+              Implementamos un programa educativo integral que estimula el
+              desarrollo cognitivo, social, emocional y físico. Nuestras
+              actividades están diseñadas para fomentar la curiosidad,
+              creatividad y habilidades fundamentales a través del juego y el
+              aprendizaje guiado.
+            </p>
           </div>
         </div>
 
         <!-- FAQ 4 -->
         <div class="collapse collapse-plus bg-white rounded-2xl">
-          <input type="radio" name="my-accordion-3" /> 
+          <input type="radio" name="my-accordion-3" />
           <div class="collapse-title text-lg font-bold text-navy-blue">
             ¿Cuáles son las rutinas y actividades diarias?
           </div>
           <div class="collapse-content text-sm text-gray-600">
-            <p>Nuestro día incluye una mezcla equilibrada de actividades estructuradas y juego libre, incluyendo tiempo para arte, música, actividades físicas, lectura y descanso. Las rutinas están diseñadas para proporcionar estructura mientras se mantiene la flexibilidad según las necesidades individuales.</p>
+            <p>
+              Nuestro día incluye una mezcla equilibrada de actividades
+              estructuradas y juego libre, incluyendo tiempo para arte, música,
+              actividades físicas, lectura y descanso. Las rutinas están
+              diseñadas para proporcionar estructura mientras se mantiene la
+              flexibilidad según las necesidades individuales.
+            </p>
           </div>
         </div>
       </div>
@@ -298,8 +437,11 @@ interface Props {
 
 <!--! Sección CTA -->
 <section class="relative py-20 px-4">
-  <div class="absolute inset-0 w-full h-full bg-[#fe753b] rounded-[40px] mx-auto max-w-7xl"></div>
-  
+  <div
+    class="absolute inset-0 w-full h-full bg-[#fe753b] rounded-[40px] mx-auto max-w-7xl"
+  >
+  </div>
+
   <div class="container mx-auto max-w-7xl relative">
     <div class="flex flex-col items-center text-center text-white">
       <!-- Icono de diamante -->
@@ -310,55 +452,69 @@ interface Props {
       <h2 class="text-4xl md:text-5xl font-bold mb-6">
         Listos para Darle a Tu Hijo<br />el Mejor Comienzo
       </h2>
-      
+
       <p class="text-lg mb-10 max-w-2xl">
-        Con educadores experimentados, un ambiente seguro y estimulante, y un enfoque en el crecimiento individual.
+        Con educadores experimentados, un ambiente seguro y estimulante, y un
+        enfoque en el crecimiento individual.
       </p>
 
-      <a href="/contact" class="btn bg-white text-black border-none hover:text-orange-500 normal-case text-lg px-8 py-6">
+      <a
+        href="/contact"
+        class="btn bg-white text-black border-none hover:text-orange-500 normal-case text-lg px-8 py-6"
+      >
         Consultar Ahora
       </a>
     </div>
 
     <!-- Elementos decorativos -->
     <div class="absolute left-8 top-8">
-      <Image src={decoration1} alt="Decoración" width={90} height={90} class="text-white/20" />
+      <Image
+        src={decoration1}
+        alt="Decoración"
+        width={90}
+        height={90}
+        class="text-white/20"
+      />
     </div>
 
     <div class="absolute right-8 bottom-8">
-      <Image src={decoration2} alt="Decoración" width={90} height={90} class="text-white/20" />
+      <Image
+        src={decoration2}
+        alt="Decoración"
+        width={90}
+        height={90}
+        class="text-white/20"
+      />
     </div>
   </div>
 </section>
 
 <style>
   .text-coral-red {
-    color: #FF6B6B;
+    color: #ff6b6b;
   }
-  
+
   .text-navy-blue {
-    color: #0A2472;
+    color: #0a2472;
   }
-  
+
   .bg-lavender-100 {
-    background-color: #F3E8FF;
+    background-color: #f3e8ff;
   }
-  
+
   .bg-peach-100 {
-    background-color: #FFE8E0;
+    background-color: #ffe8e0;
   }
 
   .collapse-plus .collapse-title:after {
-    color: #FF6B6B;
+    color: #ff6b6b;
   }
 
   .bg-coral-red {
-    background-color: #FF6B6B;
+    background-color: #ff6b6b;
   }
 
   .bg-navy-blue {
-    background-color: #0A2472;
+    background-color: #0a2472;
   }
 </style>
-
-
