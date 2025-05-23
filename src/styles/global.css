@@ -11,12 +11,44 @@
   font-weight: 400;
   font-display: swap;
 }
-
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cupcake;
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "nido";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(93% 0 0);
+  --color-base-300: oklch(86% 0 0);
+  --color-base-content: oklch(44% 0.043 257.281);
+  --color-primary: oklch(0.5252 0.1104 249.09);
+  --color-primary-content: oklch(98% 0.003 247.858);
+  --color-secondary: #fc866b;
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(0.8203 0.0982 33.2);
+  --color-accent-content: oklch(37% 0.044 257.287);
+  --color-neutral: oklch(0.9166 0.141 97.6);
+  --color-neutral-content: oklch(37% 0.044 257.287);
+  --color-info: oklch(0.883 0.0445 220.04);
+  --color-info-content: oklch(44% 0.043 257.281);
+  --color-success: oklch(87% 0.15 154.449);
+  --color-success-content: oklch(37% 0.044 257.287);
+  --color-warning: oklch(94% 0.129 101.54);
+  --color-warning-content: oklch(37% 0.044 257.287);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-error-content: oklch(27% 0.041 260.031);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'DarkerGrotesque', sans-serif;

@@ -1,11 +1,14 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import logoPrincipal from '../assets/images/logoPrincipal.png';
-import logoPrincipal2 from '../assets/images/logoSecundario.png';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import logoPrincipal from "../assets/images/logoPrincipal.png";
+import logoPrincipal2 from "../assets/images/logoSecundario.png";
+import { SITE_TITLE } from "../consts";
 ---
 
-<header id="main-header" class="fixed w-full py-6 bg-white/20 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300">
+<header
+	id="main-header"
+	class="fixed w-full py-6 bg-white/20 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
+>
 	<div class="container mx-auto flex items-center justify-between">
 		<div class="flex items-center">
 			<img src={logoPrincipal2.src} alt="Logo" class="h-10" />
@@ -14,38 +17,119 @@ import { SITE_TITLE } from '../consts';
 		<!-- Desktop Navigation -->
 		<nav class="hidden md:block">
 			<ul class="flex space-x-8 font-semibold">
-				<li><HeaderLink href="/" class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80">Inicio</HeaderLink></li>
-				<li><HeaderLink href="/about" class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80">Nosotros</HeaderLink></li>
-				<li><HeaderLink href="/services" class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80">Programas & Servicios</HeaderLink></li>
-				<li><HeaderLink href="/contact" class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80">Contacto</HeaderLink></li>
-				<li><HeaderLink href="/blog" class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80">Blog</HeaderLink></li>
+				<li>
+					<HeaderLink
+						href="/"
+						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						>Inicio</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink
+						href="/about"
+						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						>Nosotros</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink
+						href="/services"
+						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						>Programas & Servicios</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink
+						href="/contact"
+						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						>Contacto</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink
+						href="/blog"
+						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						>Blog</HeaderLink>
+				</li>
 			</ul>
 		</nav>
 
 		<div class="flex items-center">
-			<button id="mobile-menu-button" class="md:hidden flex items-center justify-center w-8 h-8 relative">
-				<img id="menu-icon" src="https://img.icons8.com/?size=100&id=3096&format=png" alt="menu" class="w-6 h-6 absolute transition-opacity duration-300">
-				<img id="close-icon" src="https://img.icons8.com/?size=48&id=K7OXfoF0zHXw&format=png" alt="closemenu" class="w-6 h-6 absolute opacity-0 transition-opacity duration-300">
+			<button
+				id="mobile-menu-button"
+				class="md:hidden flex items-center justify-center w-8 h-8 relative"
+			>
+				<img
+					id="menu-icon"
+					src="https://img.icons8.com/?size=100&id=3096&format=png"
+					alt="menu"
+					class="w-6 h-6 absolute transition-opacity duration-300"
+				/>
+				<img
+					id="close-icon"
+					src="https://img.icons8.com/?size=48&id=K7OXfoF0zHXw&format=png"
+					alt="closemenu"
+					class="w-6 h-6 absolute opacity-0 transition-opacity duration-300"
+				/>
 			</button>
-			<a href="/contact" class="hidden md:block rounded-full border border-white text-white px-6 py-3 text-lg hover:bg-orange-500 hover:border-orange-400 transition-all duration-300">Contactenos</a>
+			<a
+				href="/contact"
+				class="hidden md:block rounded-full border border-white text-white px-6 py-3 text-lg hover:bg-orange-500 hover:border-orange-400 transition-all duration-300"
+				>Contactenos</a
+			>
 		</div>
 	</div>
 
 	<!-- Mobile Navigation -->
-	<nav id="mobile-menu" class="md:hidden fixed top-0 right-0 w-full h-0 bg-white overflow-hidden transition-all duration-300 ease-in-out shadow-lg">
+	<nav
+		id="mobile-menu"
+		class="md:hidden fixed top-0 right-0 w-full h-0 bg-white overflow-hidden transition-all duration-300 ease-in-out shadow-lg"
+	>
 		<div class="flex justify-end p-6">
-			<button id="mobile-menu-close" class="text-gray-800 flex items-center justify-center w-8 h-8">
-				<img src="https://img.icons8.com/?size=48&id=K7OXfoF0zHXw&format=png" alt="closemenu" class="w-6 h-6">
+			<button
+				id="mobile-menu-close"
+				class="text-gray-800 flex items-center justify-center w-8 h-8"
+			>
+				<img
+					src="https://img.icons8.com/?size=48&id=K7OXfoF0zHXw&format=png"
+					alt="closemenu"
+					class="w-6 h-6"
+				/>
 			</button>
 		</div>
 		<ul class="flex flex-col space-y-6 p-6 font-semibold">
-			<li><HeaderLink href="/" class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl">Inicio</HeaderLink></li>
-			<li><HeaderLink href="/about" class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl">Nosotros</HeaderLink></li>
-			<li><HeaderLink href="/services" class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl">Programas & Servicios</HeaderLink></li>
-			<li><HeaderLink href="/contact" class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl">Contacto</HeaderLink></li>
-			<li><HeaderLink href="/blog" class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl">Blog</HeaderLink></li>
+			<li>
+				<HeaderLink
+					href="/"
+					class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl"
+					>Inicio</HeaderLink>
+			</li>
+			<li>
+				<HeaderLink
+					href="/about"
+					class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl"
+					>Nosotros</HeaderLink>
+			</li>
+			<li>
+				<HeaderLink
+					href="/services"
+					class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl"
+					>Programas & Servicios</HeaderLink>
+			</li>
+			<li>
+				<HeaderLink
+					href="/contact"
+					class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl"
+					>Contacto</HeaderLink>
+			</li>
+			<li>
+				<HeaderLink
+					href="/blog"
+					class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl"
+					>Blog</HeaderLink>
+			</li>
 			<li class="pt-4">
-				<a href="/contact" class="inline-block rounded-full bg-orange-500 text-white px-8 py-3 text-lg hover:bg-orange-600 transition-all duration-300">Contactenos</a>
+				<a
+					href="/contact"
+					class="inline-block rounded-full bg-orange-500 text-white px-8 py-3 text-lg hover:bg-orange-600 transition-all duration-300"
+					>Contactenos</a
+				>
 			</li>
 		</ul>
 	</nav>
@@ -53,65 +137,70 @@ import { SITE_TITLE } from '../consts';
 
 <script>
 	let lastScrollY = window.scrollY;
-	
-	window.addEventListener('load', () => {
-		const header = document.getElementById('main-header');
-		const mobileMenuButton = document.getElementById('mobile-menu-button');
-		const mobileMenuClose = document.getElementById('mobile-menu-close');
-		const mobileMenu = document.getElementById('mobile-menu');
-		const menuIcon = document.getElementById('menu-icon');
-		const closeIcon = document.getElementById('close-icon');
-		
-		if (!header || !mobileMenuButton || !mobileMenu || !menuIcon || !closeIcon || !mobileMenuClose) return;
+
+	window.addEventListener("load", () => {
+		const header = document.getElementById("main-header");
+		const mobileMenuButton = document.getElementById("mobile-menu-button");
+		const mobileMenuClose = document.getElementById("mobile-menu-close");
+		const mobileMenu = document.getElementById("mobile-menu");
+		const menuIcon = document.getElementById("menu-icon");
+		const closeIcon = document.getElementById("close-icon");
+
+		if (
+			!header ||
+			!mobileMenuButton ||
+			!mobileMenu ||
+			!menuIcon ||
+			!closeIcon ||
+			!mobileMenuClose
+		)
+			return;
 
 		let isMenuOpen = false;
 
 		const toggleMenu = (open: boolean) => {
 			isMenuOpen = open;
 			if (open) {
-				mobileMenu.style.height = '100vh';
-				menuIcon.style.opacity = '0';
-				closeIcon.style.opacity = '1';
-				document.body.style.overflow = 'hidden'; // Previene el scroll cuando el menú está abierto
+				mobileMenu.style.height = "100vh";
+				menuIcon.style.opacity = "0";
+				closeIcon.style.opacity = "1";
+				document.body.style.overflow = "hidden"; // Previene el scroll cuando el menú está abierto
 			} else {
-				mobileMenu.style.height = '0';
-				menuIcon.style.opacity = '1';
-				closeIcon.style.opacity = '0';
-				document.body.style.overflow = ''; // Restaura el scroll
+				mobileMenu.style.height = "0";
+				menuIcon.style.opacity = "1";
+				closeIcon.style.opacity = "0";
+				document.body.style.overflow = ""; // Restaura el scroll
 			}
 		};
 
-		mobileMenuButton.addEventListener('click', () => toggleMenu(!isMenuOpen));
-		mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+		mobileMenuButton.addEventListener("click", () => toggleMenu(!isMenuOpen));
+		mobileMenuClose.addEventListener("click", () => toggleMenu(false));
 
 		// Cerrar el menú al hacer clic en un enlace
-		const mobileLinks = mobileMenu.getElementsByTagName('a');
-		Array.from(mobileLinks).forEach(link => {
-			link.addEventListener('click', () => toggleMenu(false));
+		const mobileLinks = mobileMenu.getElementsByTagName("a");
+		Array.from(mobileLinks).forEach((link) => {
+			link.addEventListener("click", () => toggleMenu(false));
 		});
 
-		window.addEventListener('scroll', () => {
+		window.addEventListener("scroll", () => {
 			const currentScrollY = window.scrollY;
 			const isTop = currentScrollY === 0;
-			
+
 			if (isTop) {
-				header.classList.remove('bg-[#1a4162]', '-translate-y-full');
-				header.classList.add('bg-white/20');
-			}
-			else if (currentScrollY > lastScrollY) {
-				header.classList.remove('bg-[#1a4162]', 'bg-white/20');
-				header.classList.add('-translate-y-full');
+				header.classList.remove("bg-[#1a4162]", "-translate-y-full");
+				header.classList.add("bg-white/20");
+			} else if (currentScrollY > lastScrollY) {
+				header.classList.remove("bg-[#1a4162]", "bg-white/20");
+				header.classList.add("-translate-y-full");
 				if (isMenuOpen) {
 					toggleMenu(false);
 				}
+			} else {
+				header.classList.remove("-translate-y-full", "bg-white/20");
+				header.classList.add("bg-[#1a4162]");
 			}
-			else {
-				header.classList.remove('-translate-y-full', 'bg-white/20');
-				header.classList.add('bg-[#1a4162]');
-			}
-			
+
 			lastScrollY = currentScrollY;
 		});
 	});
 </script>
-
