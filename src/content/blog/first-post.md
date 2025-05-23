@@ -1,7 +1,7 @@
 ---
 title: 'Estableciendo Rutinas Efectivas para Niños de Preescolar'
 description: 'Guía práctica para crear rutinas que ayuden a tu hijo a tener éxito en el preescolar'
-pubDate: 'Oct 20 2024'
+pubDate: 'Mayo 22 2025'
 heroImage: 'https://plus.unsplash.com/premium_photo-1686920245950-58617c8a602e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 category: 'actividades'
 
