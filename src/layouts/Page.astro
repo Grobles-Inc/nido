@@ -11,7 +11,7 @@ const ogImage = heroImage
 	: new URL("/og-image-blog.jpg", Astro.url);
 ---
 
-<html lang="es" data-theme="cupcake">
+<html lang="es" data-theme="nido">
 	<head>
 		<BaseHead title={title} description={description}>
 			<meta property="og:type" content="website" />
@@ -28,13 +28,10 @@ const ogImage = heroImage
 
 	<body class="min-h-screen bg-base-100">
 		<Header />
-		<main
-			class="container mx-auto px-4 py-8 lg:py-12"
-			transition:animate="slide"
-		>
+		<main transition:animate="slide">
 			{
 				heroImage && (
-					<figure class="relative w-full h-[300px] mb-8 rounded-2xl overflow-hidden">
+					<figure class="relative w-full md:h-[600px] h-[400px] mb-16  overflow-hidden  ">
 						<Image
 							src={heroImage}
 							alt={`Imagen principal para la página: ${title}`}
@@ -42,8 +39,12 @@ const ogImage = heroImage
 							width={1024}
 							height={768}
 						/>
+						<div class="absolute z-10 top-1/2 left-1/2 space-y-4 -translate-x-1/2 -translate-y-1/2 text-center w-full md:w-1/2 px-4">
+							<h1 class="text-4xl text-white md:text-8xl font-bold">{title}</h1>
+							<p class="text-white  md:text-xl ">{description}</p>
+						</div>
 						<div
-							class="absolute inset-0 bg-gradient-to-t from-base-100/50 to-transparent"
+							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
 							aria-hidden="true"
 						/>
 					</figure>
