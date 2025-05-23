@@ -12,57 +12,113 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </head>
   <body class="bg-white">
     <Header />
+    <!-- Banner Section -->
+    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      <!-- Fondo con overlay -->
+      <div 
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+      >
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      <!-- Contenido del banner -->
+      <div class="relative z-10 text-center px-4">
+        <h1 class="text-6xl md:text-[86px] font-bold text-white mb-6">
+          Contáctanos
+        </h1>
+        <p class="text-lg text-white/90 max-w-2xl mx-auto">
+          ¡Nos encantaría saber de ti! Ya sea que tengas preguntas, desee programar una visita o simplemente quieras decir hola, estamos aquí para ayudarte.
+        </p>
+      </div>
+    </section>
     <main class="container mx-auto px-4 py-24">
-      <h1 class="text-4xl font-bold text-center mb-8">Contáctanos</h1>
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-bold text-[#002B5B] text-center mb-4">Póngase en contacto con nosotros</h1>
+        <p class="text-center text-gray-600 mb-12">¿Tiene alguna pregunta o necesita más información? Estamos aquí para ayudarlo!</p>
 
-      <div class="max-w-2xl mx-auto">
-        <form class="space-y-6">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700"
-              >Nombre</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-            />
+        <form class="space-y-6 bg-[#F8FBFF] p-12 rounded-lg">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Nombre y apellido"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="usuario@gmail.com"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+
+            <div class="md:col-span-2">
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Número de teléfono</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+51 987654321"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+              />
+            </div>
           </div>
 
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700"
-              >Email</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-            />
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700"
-              >Mensaje</label
-            >
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
             <textarea
               id="message"
               name="message"
               rows="4"
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+              placeholder="Escribe tu mensaje"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
             ></textarea>
           </div>
 
-          <button type="submit" class="w-full btn btn-primary"
-            >Enviar mensaje</button
+          <button 
+            type="submit" 
+            class="w-full bg-[#FF7051] hover:bg-[#ff8366] text-white font-medium py-3 px-6 rounded-lg transition duration-200 cursor-pointer"
           >
+            Enviar mensaje
+          </button>
         </form>
 
-        <div class="mt-12 text-center">
-          <h2 class="text-2xl font-semibold mb-4">Información de contacto</h2>
-          <p class="mb-2">📍 Dirección: Av. Example 123, Lima</p>
-          <p class="mb-2">📞 Teléfono: (01) 123-4567</p>
-          <p>📧 Email: info@nidoperulinas.com</p>
+        <div class="mt-12">
+          <h2 class="text-3xl font-semibold mb-8 text-center">Información de contacto</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all">
+              <div class="w-16 h-16 bg-[#fff9e6] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <img src="https://img.icons8.com/?size=160&id=108647&format=png" alt="Dirección" class="w-10 h-10">
+              </div>
+              <h3 class="font-medium mb-2 text-navy-blue">Dirección</h3>
+              <p class="text-gray-600">Av. Agustín de la Rosa Toro 908, Lima</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all">
+              <div class="w-16 h-16 bg-[#f3eeff] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <img src="https://img.icons8.com/?size=160&id=CCDYqb5KK5vI&format=png" alt="Teléfono" class="w-10 h-10">
+              </div>
+              <h3 class="font-medium mb-2 text-navy-blue">Teléfono</h3>
+              <p class="text-gray-600">+51 922 935 447</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all">
+              <div class="w-16 h-16 bg-[#e8f5e9] rounded-full mx-auto mb-4 flex items-center justify-center">
+                <img src="https://img.icons8.com/?size=160&id=ksVpaaAJGe1o&format=png" alt="Email" class="w-10 h-10">
+              </div>
+              <h3 class="font-medium mb-2 text-navy-blue">Email</h3>
+              <p class="text-gray-600">info@nidoperulinas.com</p>
+            </div>
+          </div>
         </div>
       </div>
     </main>
