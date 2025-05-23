@@ -1,8 +1,9 @@
 ---
+import logoPrincipal from "../assets/images/logoSecundario.png";
 const today = new Date();
 ---
 
-<footer class="bg-navy-blue text-white py-20">
+<footer class="bg-[#1a4162] text-white py-20 mt-32">
   <!-- Información de contacto -->
   <div class="container mx-auto max-w-7xl px-4">
     <div
@@ -94,25 +95,10 @@ const today = new Date();
     </div>
 
     <!-- Logo y horarios -->
-    <div class="grid md:grid-cols-4 gap-8 pb-12 border-b border-gray-700">
+    <div class="grid md:grid-cols-4 gap-8 pb-12 border-b border-gray-500">
       <div class="md:col-span-1">
         <div class="flex items-center gap-2 mb-6">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-[#fe753b]"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-            ></path>
-          </svg>
-          <span class="text-2xl font-bold">Nido Perulinas</span>
+          <img src={logoPrincipal.src} alt="Logo" class="h-10" />
         </div>
         <p class="text-lg font-semibold mb-2">Horario de atención:</p>
         <p class="text-gray-400">Lunes a Viernes: 7:00 AM - 6:00 PM</p>
@@ -246,16 +232,10 @@ const today = new Date();
       </p>
     </div>
   </div>
-  <div class="text-center text-xl mt-10 text-gray-400">
+  <div class="text-center text-lg mt-10 text-gray-400">
     Desarrollado por <a
       href="https://grobles.framer.website/"
       class="text-white underline">Grobles Labs.</a
     >
   </div>
 </footer>
-
-<style>
-  .bg-navy-blue {
-    background-color: #0a2472;
-  }
-</style>
