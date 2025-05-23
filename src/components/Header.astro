@@ -3,7 +3,7 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header class="bg-white/20 py-9 px-6 absolute top-0 left-0 right-0 z-50 pointer-events-auto">
+<header id="main-header" class="fixed w-full py-10 bg-white/20 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300">
 	<div class="container mx-auto flex items-center justify-between text-lg">
 		<div class="flex items-center">
 			<!-- <img src="/logo-kiddie.svg" alt="Kiddie" class="h-8" /> -->
@@ -21,8 +21,36 @@ import { SITE_TITLE } from '../consts';
 		</nav>
 
 		<div>
-			<a href="/contact" class="rounded-full border border-white text-white px-6 py-2 text-lg hover:bg-orange-500 hover:border-orange-400 transition-all duration-300">Contactenos</a>
+			<a href="/contact" class="rounded-full border border-white text-white px-6 py-3 text-lg hover:bg-orange-500 hover:border-orange-400 transition-all duration-300">Contactenos</a>
 		</div>
 	</div>
 </header>
+
+<script>
+	let lastScrollY = window.scrollY;
+	
+	window.addEventListener('load', () => {
+		const header = document.getElementById('main-header');
+		if (!header) return;
+
+		window.addEventListener('scroll', () => {
+			const currentScrollY = window.scrollY;
+			
+			if (currentScrollY === 0) {
+				header.classList.remove('bg-[#1a4162]', '-translate-y-full');
+				header.classList.add('bg-white/20');
+			}
+			else if (currentScrollY > lastScrollY) {
+				header.classList.remove('bg-[#1a4162]', 'bg-white/20');
+				header.classList.add('-translate-y-full');
+			}
+			else {
+				header.classList.remove('-translate-y-full', 'bg-white/20');
+				header.classList.add('bg-[#1a4162]');
+			}
+			
+			lastScrollY = currentScrollY;
+		});
+	});
+</script>
 
