@@ -1,5 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import logoPrincipal from '../assets/images/logoPrincipal.png';
+import logoPrincipal2 from '../assets/images/logoSecundario.png';
 import { SITE_TITLE } from '../consts';
 import { Menu, X } from 'lucide-react';
 ---
@@ -7,8 +9,7 @@ import { Menu, X } from 'lucide-react';
 <header id="main-header" class="fixed w-full py-6 bg-white/20 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300">
 	<div class="container mx-auto flex items-center justify-between">
 		<div class="flex items-center">
-			<!-- <img src="/logo-kiddie.svg" alt="Kiddie" class="h-8" /> -->
-			<span class="text-2xl font-medium text-white">PeruLinas</span>
+			<img src={logoPrincipal2.src} alt="Logo" class="h-10" />
 		</div>
 
 		<!-- Desktop Navigation -->
