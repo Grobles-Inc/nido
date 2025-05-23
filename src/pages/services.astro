@@ -12,29 +12,145 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </head>
   <body class="bg-white">
     <Header />
-    <main class="container mx-auto px-4 py-24">
-      <h1 class="text-4xl font-bold text-center mb-8">Nuestros Servicios</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title">Servicio 1</h2>
-            <p>Descripción del servicio 1</p>
+    <!-- Banner Section -->
+    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      <!-- Fondo con overlay -->
+      <div 
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('https://images.unsplash.com/photo-1564429238817-393bd4286b2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+      >
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      <!-- Contenido del banner -->
+      <div class="relative z-10 text-center px-4">
+        <h1 class="text-6xl md:text-[86px] font-bold text-white mb-6">
+          Nuestros Servicios
+        </h1>
+        <p class="text-lg text-white/90 max-w-2xl mx-auto">
+          Dele a su hijo la oportunidad de aprender, crecer y prosperar en un entorno seguro, enriquecedor y amoroso.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="py-16 px-4 max-w-7xl mx-auto">
+        <div class="container mx-auto text-center">          
+          <div class="relative">
+            <h3 class="text-4xl md:text-5xl  font-bold text-navy-blue mb-16">
+              Atención Personalizada, Grandes Sonrisas,<br/> 
+              y Habilidades a lo largo de la vida
+            </h3>
           </div>
-        </div>
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title">Servicio 2</h2>
-            <p>Descripción del servicio 2</p>
+
+          <div class="grid md:grid-cols-3 gap-8 mt-12">
+            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+              <div class="w-24 h-24 bg-[#fff2ee] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <img src="https://img.icons8.com/?size=100&id=112289&format=png&color=000000" alt="icono">
+              </div>
+              <h4 class="text-2xl text-navy-blue mb-4">Programa Educativo Integral</h4>
+              <p class="text-gray-600 mb-6 text-sm">
+                Aprendizaje personalizado basado en el DUA, con enfoque lúdico, creativo y afectivo.
+              </p>
+              <div class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors">
+                <a href="/services" class="">
+                  Conocer más
+                </a>
+                <span class="ml-1">→</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+              <div class="w-24 h-24 bg-[#f3eeff] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <img src="https://img.icons8.com/?size=160&id=VBOrjlKDikDY&format=png" alt="icono">
+              </div>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">Talleres y Actividades</h4>
+              <p class="text-gray-600 mb-6 text-sm">
+                Música, arte, teatro, circo y juegos que estimulan el desarrollo integral y la expresión.
+              </p>
+              <div class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors">
+                <a href="/services" class="">
+                  Conocer más
+                </a>
+                <span class="ml-1">→</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+              <div class="w-24 h-24 bg-[#fff9e6] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <img src="https://img.icons8.com/?size=160&id=-FKtqMr9WF0u&format=png" alt="icono">
+              </div>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">Acompañamiento Familiar</h4>
+              <p class="text-gray-600 mb-6 text-sm">
+                Asesoría continua para padres, entrevistas personalizadas y apoyo emocional y legal.
+              </p>
+              <div class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors">
+                <a href="/services" class="">
+                  Conocer más
+                </a>
+                <span class="ml-1">→</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title">Servicio 3</h2>
-            <p>Descripción del servicio 3</p>
+
+          <div class="grid md:grid-cols-3 gap-8 mt-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+              <div class="w-24 h-24 bg-[#e8f5e9] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <img src="https://img.icons8.com/?size=160&id=uUcxc_qe4Vlp&format=png" alt="icono">
+              </div>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">Seguimiento Individualizado</h4>
+              <p class="text-gray-600 mb-6 text-sm">
+                Evaluación constante del progreso de cada niño por un equipo multidisciplinario.
+              </p>
+              <div class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors">
+                <a href="/services" class="">
+                  Conocer más
+                </a>
+                <span class="ml-1">→</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+              <div class="w-24 h-24 bg-[#e3f2fd] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <img src="https://img.icons8.com/?size=160&id=116997&format=png" alt="icono">
+              </div>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">Formación y Reconocimiento</h4>
+              <p class="text-gray-600 mb-6 text-sm">
+                Contamos con un equipo de docentes altamente calificados, reconocidos por su compromiso y vocación.
+              </p>
+              <div class="flex flex-row text-black items-center justify-center group-hover:text-orange-500 transition-colors">
+                <a href="/services" class="">
+                  Conocer más
+                </a>
+                <span class="ml-1">→</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+              <div class="w-24 h-24 bg-[#fce4ec] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <img src="https://img.icons8.com/?size=160&id=XaOSGwKF6rN2&format=png" alt="icono">
+              </div>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">Alianzas y Reconocimientos</h4>
+              <p class="text-gray-600 mb-6 text-sm">
+                Participamos en proyectos educativos, convenios y redes locales que avalan nuestra calidad.
+              </p>
+              <div class="flex flex-row text-black items-center justify-center group-hover:text-orange-500 transition-colors">
+                <a href="/services" class="">
+                  Conocer más
+                </a>
+                <span class="ml-1">→</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </section>
     <Footer />
   </body>
 </html>
+
+<style>
+  .text-navy-blue {
+    color: #0a2342;
+  }
+</style>
