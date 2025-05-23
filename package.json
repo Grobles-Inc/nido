@@ -11,11 +11,15 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/netlify": "^6.3.4",
+    "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.4.0",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.8.0",
     "gsap": "^3.13.0",
+    "lucide-react": "^0.511.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {

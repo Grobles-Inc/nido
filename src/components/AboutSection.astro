@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/images/AboutSection.png';
+---
+
+<section class="py-16 px-4 bg-white max-w-7xl mx-auto">
+  <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-coral-red uppercase mb-4">Sobre Nosotros</h2>
+      
+      <h3 class="text-4xl md:text-5xl font-bold text-navy-blue mb-6">
+        Comprometidos con el Crecimiento<br/> y la Felicidad de tu Hijo
+      </h3>
+
+      <p class="text-gray-700 max-w-2xl mb-12">
+        En Perulinas, proporcionamos un ambiente seguro, acogedor y alegre donde los niños prosperan. 
+        Nuestro equipo dedicado está apasionado por inspirar el amor por el aprendizaje 
+        y la curiosidad en cada niño.
+      </p>
+
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="bg-lavender rounded-xl p-8">
+          <div class="text-4xl font-bold text-navy-blue counter" data-target="10">0</div>
+          <p class="text-gray-700">
+            Años de experiencia comprobada<br/>
+            en el cuidado infantil.
+          </p>
+        </div>
+
+        <div class="bg-cream rounded-xl p-8">
+          <div class="text-4xl font-bold text-navy-blue counter" data-target="200">0</div>
+          <p class="text-gray-700">
+            Familias felices<br/>
+            utilizando nuestros servicios.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative h-full">
+      <Image
+        src={aboutImage}
+        alt="Niños jugando y aprendiendo"
+        class="w-full h-full object-cover rounded-2xl"
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const animateCounter = (element: HTMLElement) => {
+    const target = parseInt(element.getAttribute('data-target') || '0');
+    
+    gsap.fromTo(element, 
+      { innerText: '0' },
+      {
+        innerText: target,
+        duration: 2,
+        ease: "power2.out",
+        snap: { innerText: 1 },
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+        },
+        onUpdate: function() {
+          element.innerText = Math.floor(Number(element.innerText)) + '+';
+        }
+      }
+    );
+  };
+
+  // Animate all counters when they come into view
+  document.querySelectorAll('.counter').forEach(counter => {
+    animateCounter(counter as HTMLElement);
+  });
+</script>
+
+<style>
+  .bg-lavender {
+    background-color: #f8f0ff;
+  }
+  .bg-cream {
+    background-color: #fff9e6;
+  }
+  .text-coral-red {
+    color: #ff6b6b;
+  }
+  .text-navy-blue {
+    color: #0a2342;
+  }
+</style>

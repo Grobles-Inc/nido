@@ -4,6 +4,9 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import HeroSection from "../components/HeroSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import HomeSection from "../components/HomeSection.astro";
 ---
 
 <!doctype html>
@@ -11,9 +14,12 @@ import HeroSection from "../components/HeroSection.astro";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="bg-white">
 		<Header />
 		<HeroSection />
+		<AboutSection />
+		<ServicesSection />
+		<HomeSection />
 		<Footer />
 	</body>
 </html>

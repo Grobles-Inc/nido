@@ -1,0 +1,78 @@
+---
+import { Baby, ArrowRight, GraduationCap, Users } from 'lucide-react';
+---
+
+<section class="bg-[#eef8ff]">
+    <div class="py-16 px-4 max-w-7xl mx-auto">
+      <div class="container mx-auto text-center">
+        <h2 class="text-coral-red uppercase mb-4">SERVICIOS</h2>
+        
+        <div class="relative">
+          <h3 class="text-4xl md:text-5xl font-bold text-navy-blue mb-16">
+            Atención Personalizada, Grandes Sonrisas,<br/> 
+            y Habilidades a lo largo de la vida
+          </h3>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+          <!-- Infant Care Card -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+            <div class="w-24 h-24 bg-[#fff2ee] rounded-full mx-auto mb-6 flex items-center justify-center">
+              <Baby client:load className="w-12 h-12 text-coral-red transition-transform group-hover:scale-110" />
+            </div>
+            <h4 class="text-2xl font-bold text-navy-blue mb-4">Cuidado Infantil</h4>
+            <p class="text-gray-600 mb-6 text-lg">
+              Especializado en el cuidado de bebés (6 semanas a 12 meses) en un entorno seguro con equipos adecuados.
+            </p>
+            <div class="flex flex-row items-center justify-center group-hover:text-orange-500 transition-colors">
+              <a href="/services" class="">
+                Conocer más
+              </a>
+              <ArrowRight client:load className="w-4 h-4 ml-2" />
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+            <div class="w-24 h-24 bg-[#f3eeff] rounded-full mx-auto mb-6 flex items-center justify-center">
+              <Users client:load className="w-12 h-12 text-purple-500 transition-transform group-hover:scale-110" />
+            </div>
+            <h4 class="text-2xl font-bold text-navy-blue mb-4">Cuidado de los 2 a 3 años</h4>
+            <p class="text-gray-600 mb-6 text-lg">
+              Especializado en el cuidado de los niños de 2 a 3 años, enfocándose en la exploración y los hitos de desarrollo.
+            </p>
+            <div class="flex flex-row items-center justify-center group-hover:text-orange-500 transition-colors">
+              <a href="/services" class="">
+                Conocer más
+              </a>
+              <ArrowRight client:load className="w-4 h-4 ml-2" />
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer">
+            <div class="w-24 h-24 bg-[#fff9e6] rounded-full mx-auto mb-6 flex items-center justify-center">
+              <GraduationCap client:load className="w-12 h-12 text-yellow-500 transition-transform group-hover:scale-110" />
+            </div>
+            <h4 class="text-2xl font-bold text-navy-blue mb-4">Programas de Pre-Escolar</h4>
+            <p class="text-gray-600 mb-6 text-lg">
+              Programas de educación infantil para niños de 3 a 5 años, preparándolos de manera adecuada para la escuela.
+            </p>
+            <div class="flex flex-row items-center justify-center group-hover:text-orange-500 transition-colors">
+              <a href="/services" class="">
+                Conocer más
+              </a>
+              <ArrowRight client:load className="w-4 h-4 ml-2" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<style>
+  .text-coral-red {
+    color: #ff6b6b;
+  }
+  .text-navy-blue {
+    color: #0a2342;
+  }
+</style>
