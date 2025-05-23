@@ -5,30 +5,9 @@ import Layout from "../layouts/Page.astro";
 
 <Layout
 	title="Sobre Nosotros"
-	description="Conoce nuestra historia, misión, valores y equipo."
+	heroImage="https://images.unsplash.com/photo-1740493430383-a0bfff9550a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+	description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
 >
-	<section
-		class="relative w-full min-h-[300px] flex flex-col justify-center items-center bg-base-200 text-center overflow-hidden"
-	>
-		<Image
-			src="https://images.unsplash.com/photo-1740493430383-a0bfff9550a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-			alt="Aula de nido"
-			class="absolute inset-0 w-full h-full object-cover opacity-40"
-			width={1470}
-			height={300}
-		/>
-		<div class="relative z-10 py-16">
-			<h1 class="text-4xl md:text-6xl font-bold text-primary mb-4">
-				Sobre Nosotros
-			</h1>
-			<p class="text-lg md:text-xl text-base-content max-w-2xl mx-auto">
-				Ofrecemos un espacio seguro y estimulante donde los niños crecen
-				emocional, social e intelectualmente a través de una atención
-				personalizada.
-			</p>
-		</div>
-	</section>
-
 	<section
 		class="container mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center"
 		data-aos="fade-up"
@@ -66,19 +45,27 @@ import Layout from "../layouts/Page.astro";
 			class="container mx-auto px-4 flex flex-wrap justify-center gap-8 text-center"
 		>
 			<div class="flex flex-col items-center">
-				<span class="text-3xl font-bold text-primary">10+</span>
+				<div class="text-3xl font-bold text-primary counter" data-target="10">
+					0
+				</div>
 				<span class="text-base-content">Años de experiencia</span>
 			</div>
 			<div class="flex flex-col items-center">
-				<span class="text-3xl font-bold text-primary">200+</span>
+				<div class="text-3xl font-bold text-primary counter" data-target="200">
+					0
+				</div>
 				<span class="text-base-content">Familias felices</span>
 			</div>
 			<div class="flex flex-col items-center">
-				<span class="text-3xl font-bold text-primary">95%</span>
+				<div class="text-3xl font-bold text-primary counter" data-target="95">
+					0
+				</div>
 				<span class="text-base-content">Satisfacción de padres</span>
 			</div>
 			<div class="flex flex-col items-center">
-				<span class="text-3xl font-bold text-primary">15</span>
+				<div class="text-3xl font-bold text-primary counter" data-target="15">
+					0
+				</div>
 				<span class="text-base-content">Colaboradores</span>
 			</div>
 		</div>
@@ -303,3 +290,37 @@ import Layout from "../layouts/Page.astro";
 	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 	<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" /> -->
 </Layout>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	const animateCounter = (element: HTMLElement) => {
+		const target = parseInt(element.getAttribute("data-target") || "0");
+
+		gsap.fromTo(
+			element,
+			{ innerText: "0" },
+			{
+				innerText: target,
+				duration: 2,
+				ease: "power2.out",
+				snap: { innerText: 1 },
+				scrollTrigger: {
+					trigger: element,
+					start: "top 80%",
+				},
+				onUpdate: function () {
+					element.innerText = Math.floor(Number(element.innerText)) + "+";
+				},
+			},
+		);
+	};
+
+	// Animate all counters when they come into view
+	document.querySelectorAll(".counter").forEach((counter) => {
+		animateCounter(counter as HTMLElement);
+	});
+</script>

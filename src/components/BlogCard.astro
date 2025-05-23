@@ -5,9 +5,10 @@ interface Props {
   date: Date;
   href: string;
   image: string;
+  key: number;
 }
 
-const { title, category, date, href, image } = Astro.props;
+const { title, category, date, href, image, key } = Astro.props;
 
 function formatDate(date: Date) {
   return date.toLocaleDateString("es-ES", {
@@ -22,7 +23,7 @@ const postId = href.split("/").filter(Boolean).pop();
 
 <a
   href={href}
-  class="card bg-base-100 shadow-xl h-full"
+  class="card card-lg bg-base-100 shadow-xl h-full"
   aria-labelledby={`post-title-${postId}`}
 >
   <figure
@@ -35,16 +36,19 @@ const postId = href.split("/").filter(Boolean).pop();
       class="w-full h-full object-cover hover:scale-105 transition-all duration-300"
     />
   </figure>
-  <div class="card-body p-4">
+  <div class="card-body p-4 rounded-b-2xl">
     <div class="flex items-center gap-2 mb-2">
-      <span class="badge badge-primary" aria-label={category}>{category}</span>
+      <span aria-label={category}>
+        {category}
+      </span>
+      •
       <time datetime={date.toISOString()} class="text-sm opacity-70">
         {formatDate(date)}
       </time>
     </div>
     <h3
       id={`post-title-${postId}`}
-      class="card-title text-lg font-semibold line-clamp-2 hover:text-primary transition-colors"
+      class="card-title text-2xl font-semibold line-clamp-2 hover:text-primary transition-colors"
       transition:name={`title-${postId}`}
     >
       {title}

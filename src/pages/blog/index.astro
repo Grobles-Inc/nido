@@ -38,54 +38,80 @@ const ogImage = new URL("/og-image-blog.jpg", Astro.url);
 	</head>
 	<body class="min-h-screen bg-base-100">
 		<Header />
-		<main class="container mx-auto px-4 py-8 lg:py-12">
+		<main class="container mx-auto pt-12 md:pt-8 md:py-8 lg:py-12">
 			<div class="max-w-6xl mx-auto">
-				<header class="text-center mb-12" role="banner">
-					<div class="flex items-center justify-center gap-2 mb-4">
-						<h1 class="text-4xl lg:text-6xl font-bold text-primary">
-							Últimas Publicaciones
+				<header class="text-center mb-12 px-4" role="banner">
+					<div class="flex items-center justify-center gap-2 mb-4 pt-24">
+						<h1 class="text-4xl lg:text-8xl font-bold text-primary">
+							Nuestro Blog
 						</h1>
-						<span class="text-3xl" role="img" aria-label="Decoración brillante"
-							>✨</span
+						<span
+							class="text-3xl hidden lg:block"
+							role="img"
+							aria-label="Decoración brillante">✨</span
 						>
 					</div>
 					<p class="text-base-content/80 max-w-2xl mx-auto">
 						Variedad de temas diseñados para apoyar el crecimiento de tu hijo,
-						desde actividades de aprendizaje divertidas hasta consejos de salud
-						y seguridad.
+						actividades de aprendizaje divertidas, consejos de salud y más.
 					</p>
 				</header>
 
 				<nav
-					class="flex gap-2 mb-8 justify-center"
+					class="flex flex-col md:justify-center md:flex-row gap-6 mb-8 pb-2 px-4"
 					aria-label="Filtrar por categoría"
 				>
-					<a
-						href="/blog"
-						class="btn btn-sm"
-						aria-current={!category ? "page" : undefined}>Todos</a
-					>
-					{
-						BLOG_CATEGORIES.map((cat: string) => (
-							<a
-								href={`/blog?category=${encodeURIComponent(cat)}`}
-								class="btn btn-sm"
-								aria-current={category === cat ? "page" : undefined}
+					<div class="flex flex-wrap gap-2 md:min-w-max">
+						<a
+							href="/blog"
+							class="btn btn-lg btn-outline rounded-full"
+							aria-current={!category ? "page" : undefined}>Todos</a
+						>
+						{
+							BLOG_CATEGORIES.map((cat: string) => (
+								<a
+									href={`/blog?category=${encodeURIComponent(cat)}`}
+									class="btn btn-lg btn-outline rounded-full"
+									aria-current={category === cat ? "page" : undefined}
+								>
+									{cat.charAt(0).toUpperCase() + cat.slice(1)}
+								</a>
+							))
+						}
+					</div>
+					<div class="flex items-center gap-2 justify-center">
+						<input
+							type="text"
+							placeholder="Buscar"
+							class="input input-lg rounded-full"
+						/>
+						<button class="btn btn-lg btn-secondary btn-circle">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="2.5"
+								stroke="currentColor"
+								class="size-[1.2em]"
+								><path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+								></path></svg
 							>
-								{cat.charAt(0).toUpperCase() + cat.slice(1)}
-							</a>
-						))
-					}
+						</button>
+					</div>
 				</nav>
 
 				<section
-					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+					class="grid grid-cols-1 md:grid-cols-2 px-4 lg:grid-cols-3 gap-6"
 					aria-label="Lista de artículos del blog"
 				>
 					{
-						filteredPosts.map((post) => (
+						filteredPosts.map((post, index) => (
 							<article transition:name={`post-${post.id}`}>
 								<BlogCard
+									key={index}
 									title={post.data.title}
 									category={post.data.category}
 									date={post.data.pubDate}
@@ -98,7 +124,7 @@ const ogImage = new URL("/og-image-blog.jpg", Astro.url);
 				</section>
 
 				<section
-					class="mt-20 bg-primary text-primary-content rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden"
+					class="mt-20 bg-primary text-primary-content md:rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden md:px-4"
 					aria-label="Sección de contacto"
 				>
 					<Image
@@ -106,7 +132,7 @@ const ogImage = new URL("/og-image-blog.jpg", Astro.url);
 						height={100}
 						src="/addons/u.png"
 						alt="Decoración estrella"
-						class="absolute top-4 left-4"
+						class="absolute top-4 md:left-4 -left-4"
 					/>
 
 					<Image
