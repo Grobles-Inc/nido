@@ -11,20 +11,21 @@ import TeachersSection from "../components/TeachersSection.astro";
 	heroImage="https://images.unsplash.com/photo-1740493430383-a0bfff9550a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 	description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
 >
-	<section class="py-16 px-4 bg-white mx-auto">
-		<div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-			<div class="col_1">
-				<h3 class="text-4xl md:text-5xl font-bold text-navy-blue mb-6">
+	<section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
+		<div class="container mx-auto grid md:grid-cols-2 items-center">
+			<div>
+				<h3 class="text-4xl md:text-6xl font-bold mb-8">
 					Comprometidos con el Crecimiento<br /> y la Felicidad de tu Hijo
 				</h3>
 
-				<p class="text-gray-700 max-w-2xl mb-12">
+				<p class="max-w-xl mb-8">
 					En Perulinas, proporcionamos un ambiente seguro, acogedor y alegre
 					donde los niños prosperan. Nuestro equipo dedicado está apasionado por
 					inspirar el amor por el aprendizaje y la curiosidad en cada niño.
 				</p>
+				<a href="/contact" class="btn btn-neutral btn-xl">Contáctanos</a>
 			</div>
-			<div class="col_2 relative h-full">
+			<div class="relative h-full pb-12">
 				<Image
 					src={aboutImage}
 					alt="Niños jugando y aprendiendo"
@@ -168,7 +169,6 @@ import TeachersSection from "../components/TeachersSection.astro";
 			</div>
 		</div>
 	</section>
-
 	<TeachersSection />
 </Layout>
 
@@ -255,6 +255,7 @@ import TeachersSection from "../components/TeachersSection.astro";
 		y: 30,
 		duration: 0.8,
 		stagger: 0.2,
+		delay: 0.54,
 		ease: "back.out(1.7)",
 		scrollTrigger: {
 			trigger: coreValues[0],
