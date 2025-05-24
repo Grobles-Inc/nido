@@ -13,4 +13,17 @@ export default defineConfig({
       plugins: [tailwindcss()],
 	},
   adapter: netlify(),
+  image: {
+    domains: ["images.unsplash.com", "img.icons8.com"],
+    remotePatterns: [
+      { 
+        protocol: "https",
+        hostname: "images.unsplash.com"
+      },
+      {
+        protocol: "https",
+        hostname: "img.icons8.com"
+      }
+    ],
+  }
 });
