@@ -170,6 +170,7 @@ import TeachersSection from "../components/TeachersSection.astro";
 
 	gsap.registerPlugin(ScrollTrigger);
 
+	// Counter animation function
 	const animateCounter = (element: HTMLElement) => {
 		const target = parseInt(element.getAttribute("data-target") || "0");
 
@@ -196,26 +197,95 @@ import TeachersSection from "../components/TeachersSection.astro";
 	document.querySelectorAll(".counter").forEach((counter) => {
 		animateCounter(counter as HTMLElement);
 	});
+
+	// Hero section animations
 	let col_1 = document.querySelector(".col_1");
 	let col_2 = document.querySelector(".col_2");
+
 	gsap.from(col_1, {
 		opacity: 0,
-		y: -100,
-		duration: 1,
+		y: -50,
+		duration: 1.2,
+		ease: "back.out(1.2)",
 		scrollTrigger: {
 			trigger: col_1,
 			start: "top 80%",
-			toggleActions: "play none none none", // Ensures the animation only plays once
 		},
 	});
+
 	gsap.from(col_2, {
 		opacity: 0,
-		x: 100,
-		duration: 1,
+		x: 50,
+		duration: 1.2,
+		ease: "back.out(1.2)",
 		scrollTrigger: {
 			trigger: col_2,
 			start: "top 80%",
-			toggleActions: "play none none none",
 		},
+	});
+
+	// Mission and Vision cards animation
+	const cards = document.querySelectorAll(".bg-purple-100, .bg-orange-100");
+	cards.forEach((card, index) => {
+		gsap.from(card, {
+			opacity: 0,
+			y: 50,
+			rotation: index === 0 ? -5 : 5,
+			duration: 1,
+			ease: "power2.out",
+			scrollTrigger: {
+				trigger: card,
+				start: "top 85%",
+			},
+		});
+	});
+
+	// Core values animations
+	const coreValues = document.querySelectorAll(".grid.md\\:grid-cols-2 > div");
+	gsap.from(coreValues, {
+		opacity: 0,
+		y: 30,
+		duration: 0.8,
+		stagger: 0.2,
+		ease: "back.out(1.7)",
+		scrollTrigger: {
+			trigger: coreValues[0],
+			start: "top 85%",
+		},
+	});
+
+	// Animate core values icons with a bounce effect
+	const icons = document.querySelectorAll(".grid.md\\:grid-cols-2 img");
+	icons.forEach((icon) => {
+		icon.addEventListener("mouseenter", () => {
+			gsap.to(icon, {
+				scale: 1.2,
+				duration: 0.3,
+				ease: "back.out(2)",
+			});
+		});
+
+		icon.addEventListener("mouseleave", () => {
+			gsap.to(icon, {
+				scale: 1,
+				duration: 0.3,
+				ease: "power2.out",
+			});
+		});
+	});
+
+	// Animate section headings
+	const sectionHeadings = document.querySelectorAll("h2.text-4xl, h3.text-2xl");
+	sectionHeadings.forEach((heading) => {
+		gsap.from(heading, {
+			opacity: 0,
+			y: -20,
+			duration: 1,
+			ease: "power2.out",
+			scrollTrigger: {
+				trigger: heading,
+				start: "top 85%",
+			},
+		});
 	});
 </script>
