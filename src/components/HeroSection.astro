@@ -1,13 +1,13 @@
 ---
-
+import VideoInicio from "../assets/videos/video-inicio.mp4";
 ---
 
 <section class="relative min-h-screen bg-gray-800 text-white">
   <!-- Background Image con overlay -->
   <div class="absolute inset-0 z-0">
     <video
-      src="https://videocdn.cdnpk.net/videos/f40be1a1-a7c9-458a-8a9f-8d5152fd0569/horizontal/previews/clear/large.mp4?token=exp=1748077475~hmac=39f60c9f45ffbc7614cad03402b51e104805a298639e6acdba213e19fdff80e6"
-      autoplay
+      src={VideoInicio}
+      autoplay  
       muted
       loop
       class="w-full h-full object-cover"
@@ -31,7 +31,8 @@
       <div class="flex justify-center">
         <a
           href="/contact"
-          class="relative overflow-hidden inflate-button bg-orange-500 hover:bg-white text-white hover:text-black font-medium rounded-full px-10 py-4 text-xl transition-all duration-300 hover:shadow-lg hover:scale-105"
+          id="btn-contact"
+          class=" relative overflow-hidden inflate-button bg-orange-500 hover:bg-white text-white hover:text-black font-medium rounded-full px-10 py-4 text-xl transition-all duration-300 hover:shadow-lg hover:scale-105"
         >
           <span class="ripple bg-[rgba(255, 255, 255, 0.3)]"></span>
           Consulte Ahora
