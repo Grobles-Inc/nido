@@ -14,7 +14,7 @@ import { SITE_TITLE } from "../consts";
 			<img src={logoPrincipal2.src} alt="Logo" class="h-10" />
 		</div>
 
-		<!-- Desktop Navigation -->
+		<!-- Navegación de escritorio -->
 		<nav class="hidden md:block">
 			<ul class="flex space-x-8 font-semibold">
 				<li>
@@ -81,12 +81,13 @@ import { SITE_TITLE } from "../consts";
 		</div>
 	</div>
 
-	<!-- Mobile Navigation -->
+	<!-- Navegación móvil -->
 	<nav
 		id="mobile-menu"
 		class="md:hidden fixed top-0 right-0 w-full h-0 bg-white overflow-hidden transition-all duration-300 ease-in-out shadow-lg"
 	>
-		<div class="flex justify-end p-6">
+		<div class="flex items-center justify-between p-6">
+			<img src={logoPrincipal.src} alt="Logo" class="h-10" />
 			<button
 				id="mobile-menu-close"
 				class="text-gray-800 flex items-center justify-center w-8 h-8"
