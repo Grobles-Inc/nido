@@ -14,7 +14,7 @@ export default defineConfig({
 	},
   adapter: netlify(),
   image: {
-    domains: ["images.unsplash.com", "img.icons8.com"],
+    domains: ["images.unsplash.com", "img.icons8.com", "mighty.tools"],
     remotePatterns: [
       { 
         protocol: "https",
@@ -23,6 +23,10 @@ export default defineConfig({
       {
         protocol: "https",
         hostname: "img.icons8.com"
+      },
+      {
+        protocol: "https",
+        hostname: "mighty.tools",
       }
     ],
   }
