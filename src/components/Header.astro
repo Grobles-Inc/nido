@@ -142,72 +142,96 @@ import { SITE_TITLE } from "../consts";
 	</nav>
 </header>
 
-<script>
-	let lastScrollY = window.scrollY;
+<script is:inline>
+    let lastScrollY = window.scrollY;
 
-	window.addEventListener("load", () => {
-		const header = document.getElementById("main-header");
-		const mobileMenuButton = document.getElementById("mobile-menu-button");
-		const mobileMenuClose = document.getElementById("mobile-menu-close");
-		const mobileMenu = document.getElementById("mobile-menu");
-		const menuIcon = document.getElementById("menu-icon");
-		const closeIcon = document.getElementById("close-icon");
+    window.addEventListener("load", () => {
+        const header = document.getElementById("main-header");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenuClose = document.getElementById("mobile-menu-close");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        const heroSection = document.getElementById("hero-section"); // Asegúrate de poner este id en tu HeroSection
 
-		if (
-			!header ||
-			!mobileMenuButton ||
-			!mobileMenu ||
-			!menuIcon ||
-			!closeIcon ||
-			!mobileMenuClose
-		)
-			return;
+        if (
+            !header ||
+            !mobileMenuButton ||
+            !mobileMenu ||
+            !menuIcon ||
+            !closeIcon ||
+            !mobileMenuClose
+        )
+            return;
 
-		let isMenuOpen = false;
+        let isMenuOpen = false;
 
-		const toggleMenu = (open: boolean) => {
-			isMenuOpen = open;
-			if (open) {
-				mobileMenu.style.height = "100vh";
-				menuIcon.style.opacity = "0";
-				closeIcon.style.opacity = "1";
-				document.body.style.overflow = "hidden"; // Previene el scroll cuando el menú está abierto
-			} else {
-				mobileMenu.style.height = "0";
-				menuIcon.style.opacity = "1";
-				closeIcon.style.opacity = "0";
-				document.body.style.overflow = ""; // Restaura el scroll
-			}
-		};
+        const toggleMenu = (open) => {
+            isMenuOpen = open;
+            if (open) {
+                mobileMenu.style.height = "100vh";
+                menuIcon.style.opacity = "0";
+                closeIcon.style.opacity = "1";
+                document.body.style.overflow = "hidden";
+            } else {
+                mobileMenu.style.height = "0";
+                menuIcon.style.opacity = "1";
+                closeIcon.style.opacity = "0";
+                document.body.style.overflow = "";
+            }
+        };
 
-		mobileMenuButton.addEventListener("click", () => toggleMenu(!isMenuOpen));
-		mobileMenuClose.addEventListener("click", () => toggleMenu(false));
+        mobileMenuButton.addEventListener("click", () => toggleMenu(!isMenuOpen));
+        mobileMenuClose.addEventListener("click", () => toggleMenu(false));
 
-		// Cerrar el menú al hacer clic en un enlace
-		const mobileLinks = mobileMenu.getElementsByTagName("a");
-		Array.from(mobileLinks).forEach((link) => {
-			link.addEventListener("click", () => toggleMenu(false));
-		});
+        const mobileLinks = mobileMenu.getElementsByTagName("a");
+        Array.from(mobileLinks).forEach((link) => {
+            link.addEventListener("click", () => toggleMenu(false));
+        });
 
-		window.addEventListener("scroll", () => {
-			const currentScrollY = window.scrollY;
-			const isTop = currentScrollY === 0;
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+            const isTop = currentScrollY === 0;
 
-			if (isTop) {
-				header.classList.remove("bg-[#1a4162]", "-translate-y-full");
-				header.classList.add("bg-white/20");
-			} else if (currentScrollY > lastScrollY) {
-				header.classList.remove("bg-[#1a4162]", "bg-white/20");
-				header.classList.add("-translate-y-full");
-				if (isMenuOpen) {
-					toggleMenu(false);
-				}
-			} else {
-				header.classList.remove("-translate-y-full", "bg-white/20");
-				header.classList.add("bg-[#1a4162]");
-			}
+            if (isTop) {
+                header.classList.remove("bg-[#1a4162]", "-translate-y-full");
+                header.classList.add("bg-white/20");
+            } else if (currentScrollY > lastScrollY) {
+                header.classList.remove("bg-[#1a4162]", "bg-white/20");
+                header.classList.add("-translate-y-full");
+                if (isMenuOpen) {
+                    toggleMenu(false);
+                }
+            } else {
+                header.classList.remove("-translate-y-full", "bg-white/20");
+                header.classList.add("bg-[#1a4162]");
+            }
 
-			lastScrollY = currentScrollY;
-		});
-	});
+            lastScrollY = currentScrollY;
+        });
+
+        // --- Intersection Observer para color dinámico ---
+        if (heroSection) {
+            const observer = new window.IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            // Está sobre el HeroSection (fondo claro/oscuro)
+                            header.classList.remove("bg-[#1a4162]");
+                            header.classList.add("bg-white/20");
+                        } else {
+                            // Ya no está sobre el HeroSection
+                            header.classList.remove("bg-white/20");
+                            header.classList.add("bg-[#1a4162]");
+                        }
+                    });
+                },
+                {
+                    root: null,
+                    threshold: 0.1,
+                }
+            );
+            observer.observe(heroSection);
+        }
+    });
 </script>

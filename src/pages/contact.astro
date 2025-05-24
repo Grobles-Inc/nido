@@ -4,119 +4,118 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
-
 <!doctype html>
 <html lang="es" data-theme="cupcake">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="bg-white">
+  <body class="bg-white contact-body">
     <Header />
     <!-- Banner Section -->
-    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden contact-banner-section">
       <!-- Fondo con overlay -->
       <div 
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat contact-banner-bg"
         style="background-image: url('https://images.unsplash.com/photo-1541692641319-981cc79ee10a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
       >
-        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 bg-black/50 contact-banner-overlay"></div>
       </div>
 
       <!-- Contenido del banner -->
-      <div class="relative z-10 text-center px-4">
-        <h1 class="text-6xl md:text-[86px] font-bold text-white mb-6">
+      <div class="relative z-10 text-center px-4 contact-banner-content">
+        <h1 class="text-6xl md:text-[86px] font-bold text-white mb-6 contact-banner-title">
           Contáctanos
         </h1>
-        <p class="text-lg text-white/90 max-w-2xl mx-auto">
+        <p class="text-lg text-white/90 max-w-2xl mx-auto contact-banner-desc">
           ¡Nos encantaría saber de ti! Ya sea que tengas preguntas, desee programar una visita o simplemente quieras decir hola, estamos aquí para ayudarte.
         </p>
       </div>
     </section>
-    <main class="container mx-auto px-4 py-24">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-bold text-[#002B5B] text-center mb-4">Póngase en contacto con nosotros</h1>
-        <p class="text-center text-gray-600 mb-12">¿Tiene alguna pregunta o necesita más información? Estamos aquí para ayudarlo!</p>
+    <main class="container mx-auto px-4 py-24 contact-main">
+      <div class="max-w-3xl mx-auto contact-main-inner">
+        <h1 class="text-4xl font-bold text-[#002B5B] text-center mb-4 contact-form-title">Póngase en contacto con nosotros</h1>
+        <p class="text-center text-gray-600 mb-12 contact-form-desc">¿Tiene alguna pregunta o necesita más información? Estamos aquí para ayudarlo!</p>
 
-        <form class="space-y-6 bg-[#F8FBFF] p-12 rounded-lg">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+        <form class="space-y-6 bg-[#F8FBFF] p-12 rounded-lg contact-form">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 contact-form-row">
+            <div class="contact-form-field-name">
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2 contact-label-name">Nombre</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 placeholder="Nombre y apellido"
-                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 contact-input-name"
               />
             </div>
 
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico</label>
+            <div class="contact-form-field-email">
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2 contact-label-email">Correo electrónico</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="usuario@gmail.com"
-                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 contact-input-email"
               />
             </div>
 
-            <div class="md:col-span-2">
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Número de teléfono</label>
+            <div class="md:col-span-2 contact-form-field-phone">
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 contact-label-phone">Número de teléfono</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 placeholder="+51 987654321"
-                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 contact-input-phone"
               />
             </div>
           </div>
 
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+          <div class="contact-form-field-message">
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2 contact-label-message">Mensaje</label>
             <textarea
               id="message"
               name="message"
               rows="4"
               placeholder="Escribe tu mensaje"
-              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 contact-input-message"
             ></textarea>
           </div>
 
           <button 
             type="submit" 
-            class="w-full bg-[#FF7051] hover:bg-[#ff8366] text-white font-medium py-3 px-6 rounded-lg transition duration-200 cursor-pointer"
+            class="w-full bg-[#FF7051] hover:bg-[#ff8366] text-white font-medium py-3 px-6 rounded-lg transition duration-200 cursor-pointer contact-submit-btn"
           >
             Enviar mensaje
           </button>
         </form>
 
-        <div class="mt-12">
-          <h2 class="text-3xl font-semibold mb-8 text-center">Información de contacto</h2>
-          <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all">
-              <div class="w-16 h-16 bg-[#fff9e6] rounded-full mx-auto mb-4 flex items-center justify-center">
-                <img src="https://img.icons8.com/?size=160&id=108647&format=png" alt="Dirección" class="w-10 h-10">
+        <div class="mt-12 contact-info-section">
+          <h2 class="text-3xl font-semibold mb-8 text-center contact-info-title">Información de contacto</h2>
+          <div class="grid md:grid-cols-3 gap-6 contact-info-grid">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all contact-info-card contact-info-address">
+              <div class="w-16 h-16 bg-[#fff9e6] rounded-full mx-auto mb-4 flex items-center justify-center contact-info-icon-bg">
+                <img src="https://img.icons8.com/?size=160&id=108647&format=png" alt="Dirección" class="w-10 h-10 contact-info-icon">
               </div>
-              <h3 class="font-medium mb-2 text-navy-blue">Dirección</h3>
-              <p class="text-gray-600">Av. Agustín de la Rosa Toro 908, Lima</p>
+              <h3 class="font-medium mb-2 text-navy-blue contact-info-label">Dirección</h3>
+              <p class="text-gray-600 contact-info-value">Av. Agustín de la Rosa Toro 908, Lima</p>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all">
-              <div class="w-16 h-16 bg-[#f3eeff] rounded-full mx-auto mb-4 flex items-center justify-center">
-                <img src="https://img.icons8.com/?size=160&id=CCDYqb5KK5vI&format=png" alt="Teléfono" class="w-10 h-10">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all contact-info-card contact-info-phone">
+              <div class="w-16 h-16 bg-[#f3eeff] rounded-full mx-auto mb-4 flex items-center justify-center contact-info-icon-bg">
+                <img src="https://img.icons8.com/?size=160&id=CCDYqb5KK5vI&format=png" alt="Teléfono" class="w-10 h-10 contact-info-icon">
               </div>
-              <h3 class="font-medium mb-2 text-navy-blue">Teléfono</h3>
-              <p class="text-gray-600">+51 922 935 447</p>
+              <h3 class="font-medium mb-2 text-navy-blue contact-info-label">Teléfono</h3>
+              <p class="text-gray-600 contact-info-value">+51 922 935 447</p>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all">
-              <div class="w-16 h-16 bg-[#e8f5e9] rounded-full mx-auto mb-4 flex items-center justify-center">
-                <img src="https://img.icons8.com/?size=160&id=ksVpaaAJGe1o&format=png" alt="Email" class="w-10 h-10">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all contact-info-card contact-info-email">
+              <div class="w-16 h-16 bg-[#e8f5e9] rounded-full mx-auto mb-4 flex items-center justify-center contact-info-icon-bg">
+                <img src="https://img.icons8.com/?size=160&id=ksVpaaAJGe1o&format=png" alt="Email" class="w-10 h-10 contact-info-icon">
               </div>
-              <h3 class="font-medium mb-2 text-navy-blue">Email</h3>
-              <p class="text-gray-600">info@nidoperulinas.com</p>
+              <h3 class="font-medium mb-2 text-navy-blue contact-info-label">Email</h3>
+              <p class="text-gray-600 contact-info-value">info@nidoperulinas.com</p>
             </div>
           </div>
         </div>
@@ -125,3 +124,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <Footer />
   </body>
 </html>
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".contact-banner-section",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+</script>

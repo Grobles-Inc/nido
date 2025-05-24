@@ -5,7 +5,7 @@ import aboutImage from '../assets/images/AboutSection.png';
 
 <section class="py-16 px-4 bg-white max-w-7xl mx-auto">
   <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-    <div>
+    <div class="col_1">
       <h2 class="text-coral-red uppercase mb-4">Sobre Nosotros</h2>
       
       <h3 class="text-4xl md:text-5xl font-bold text-navy-blue mb-6">
@@ -37,7 +37,7 @@ import aboutImage from '../assets/images/AboutSection.png';
       </div>
     </div>
 
-    <div class="relative h-full">
+    <div class="col_2 relative h-full">
       <Image
         src={aboutImage}
         alt="Niños jugando y aprendiendo"
@@ -73,10 +73,38 @@ import aboutImage from '../assets/images/AboutSection.png';
       }
     );
   };
-
+gsap.to(".counter", {
+    scrollTrigger: {
+      trigger: ".counter",
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
+  });
   // Animate all counters when they come into view
   document.querySelectorAll('.counter').forEach(counter => {
     animateCounter(counter as HTMLElement);
+  });
+  let col_1 = document.querySelector(".col_1");
+  let col_2 = document.querySelector(".col_2");
+  gsap.from(col_1, {
+    opacity: 0,
+    y: -100,
+    duration: 1,
+    scrollTrigger: {
+      trigger: col_1,
+      start: "top 80%",
+      toggleActions: "play none none none", // Ensures the animation only plays once
+    },
+  });
+  gsap.from(col_2, {
+    opacity: 0,
+    x: -100,
+    duration: 1,
+    scrollTrigger: {
+      trigger: col_2,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
   });
 </script>
 
