@@ -1,9 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
-import decoration1 from "../assets/images/Adorno1.png";
-import decoration2 from "../assets/images/Adorno2.png";
-import decoration4 from "../assets/images/Adorno4.png";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -63,15 +60,6 @@ const ogImage = heroImage
 
 				<div class="container mx-auto max-w-7xl relative">
 					<div class="flex flex-col items-center text-center text-white">
-						<!-- Icono de diamante -->
-						<div class="mb-8">
-							<Image
-								src={decoration4}
-								alt="Decoración"
-								width={90}
-								height={90}
-							/>
-						</div>
 
 						<h2 class="text-4xl md:text-5xl font-bold mb-6">
 							Listos para Darle a Tu Hijo<br />el Mejor Comienzo
@@ -88,27 +76,6 @@ const ogImage = heroImage
 						>
 							Consultar Ahora
 						</a>
-					</div>
-
-					<!-- Elementos decorativos -->
-					<div class="absolute left-8 top-8">
-						<Image
-							src={decoration1}
-							alt="Decoración"
-							width={90}
-							height={90}
-							class="text-white/20"
-						/>
-					</div>
-
-					<div class="absolute right-8 bottom-8">
-						<Image
-							src={decoration2}
-							alt="Decoración"
-							width={90}
-							height={90}
-							class="text-white/20"
-						/>
 					</div>
 				</div>
 			</section>

@@ -13,10 +13,20 @@ const blog = defineCollection({
 	}),
 });
 
+const services = defineCollection({
+	loader: glob({ base: './src/content/services', pattern: '**/*.{md,mdx}' }),
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		heroImage: z.string().optional(),
+	}),
+});
+
 export const BLOG_CATEGORIES = [
   'actividades',
   'consejos pedagógicos',
   'novedades'
 ] as const;
 
-export const collections = { blog };
+export const collections = { blog, services };
+
