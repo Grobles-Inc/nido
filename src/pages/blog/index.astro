@@ -64,14 +64,16 @@ const ogImage = new URL("/og-image-blog.jpg", Astro.url);
 					<div class="flex flex-wrap gap-2 md:min-w-max">
 						<a
 							href="/blog"
-							class="btn btn-lg btn-outline rounded-full"
-							aria-current={!category ? "page" : undefined}>Todos</a
+							class={`btn btn-lg ${!category ? "btn-primary" : "btn-outline"} rounded-full`}
+							aria-current={!category ? "page" : undefined}
 						>
+							Todos
+						</a>
 						{
 							BLOG_CATEGORIES.map((cat: string) => (
 								<a
 									href={`/blog?category=${encodeURIComponent(cat)}`}
-									class="btn btn-lg btn-outline rounded-full"
+									class={`btn btn-lg ${category === cat ? "btn-primary" : "btn-outline"} rounded-full ${cat}`}
 									aria-current={category === cat ? "page" : undefined}
 								>
 									{cat.charAt(0).toUpperCase() + cat.slice(1)}

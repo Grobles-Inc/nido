@@ -1,0 +1,132 @@
+---
+import TeacherCard from "./TeacherCard.astro";
+import teachersData from "../data/teachers.json";
+
+// Group teachers into sets of 5 for desktop view
+const teacherGroupsDesktop = teachersData.reduce(
+  (acc, teacher, i) => {
+    const groupIndex = Math.floor(i / 5);
+    if (!acc[groupIndex]) {
+      acc[groupIndex] = [];
+    }
+    acc[groupIndex].push(teacher);
+    return acc;
+  },
+  [] as (typeof teachersData)[],
+);
+---
+
+<section class="px-4 py-12 bg-blue-50" data-aos="fade-up">
+  <div class="space-y-4 py-12">
+    <h3 class="text-2xl md:text-3xl uppercase text-center text-accent">
+      Nuestro Equipo
+    </h3>
+    <h2 class="text-4xl md:text-6xl font-bold text-center text-primary">
+      Nuestros Docentes
+    </h2>
+    <h4 class="text-center text-xl">
+      En Perulinas, nuestros docentes son fundamentales para el desarrollo de
+      nuestros niños.
+    </h4>
+  </div>
+  {/* Desktop Carousel (5 teachers per slide) */}
+  <div class="hidden md:block">
+    <div class="carousel w-full">
+      {
+        teacherGroupsDesktop.map((group, groupIndex) => (
+          <div
+            id={`slide-desktop-${groupIndex + 1}`}
+            class="carousel-item relative w-full pt-12"
+          >
+            <div class="w-full grid grid-cols-5 gap-6 px-4">
+              {group.map((teacher) => (
+                <TeacherCard teacher={teacher} />
+              ))}
+            </div>
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a
+                href={`#slide-desktop-${
+                  groupIndex === 0 ? teacherGroupsDesktop.length : groupIndex
+                }`}
+                class="btn btn-circle bg-base-100"
+              >
+                ❮
+              </a>
+              <a
+                href={`#slide-desktop-${
+                  groupIndex === teacherGroupsDesktop.length - 1
+                    ? 1
+                    : groupIndex + 2
+                }`}
+                class="btn btn-circle bg-base-100"
+              >
+                ❯
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex justify-center w-full py-2 gap-2 mt-4">
+      {
+        teacherGroupsDesktop.map((_, index) => (
+          <a href={`#slide-desktop-${index + 1}`} class="btn btn-xs">
+            {index + 1}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  {/* Mobile Carousel (1 teacher per slide) */}
+  <div class="block md:hidden">
+    <div class="carousel w-full">
+      {
+        teachersData.map((teacher, index) => (
+          <div
+            id={`slide-mobile-${index + 1}`}
+            class="carousel-item relative w-full"
+          >
+            <div class="w-full max-w-sm mx-auto px-4">
+              <TeacherCard teacher={teacher} />
+            </div>
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a
+                href={`#slide-mobile-${
+                  index === 0 ? teachersData.length : index
+                }`}
+                class="btn btn-circle bg-base-100"
+              >
+                ❮
+              </a>
+              <a
+                href={`#slide-mobile-${
+                  index === teachersData.length - 1 ? 1 : index + 2
+                }`}
+                class="btn btn-circle bg-base-100"
+              >
+                ❯
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex justify-center w-full py-2 gap-2 mt-4">
+      {
+        teachersData.map((_, index) => (
+          <a href={`#slide-mobile-${index + 1}`} class="btn btn-xs">
+            {index + 1}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  {/* Modals - rendered at root level */}
+  {
+    teachersData.map((teacher) => (
+      <TeacherCard teacher={teacher} showModal={true} />
+    ))
+  }
+</section>

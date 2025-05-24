@@ -2,6 +2,8 @@
 import Layout from "../layouts/Page.astro";
 import { Image } from "astro:assets";
 import aboutImage from "../assets/images/AboutSection.png";
+import coreValuesImage from "../assets/images/CoreValues.jpg";
+import TeachersSection from "../components/TeachersSection.astro";
 ---
 
 <Layout
@@ -11,9 +13,7 @@ import aboutImage from "../assets/images/AboutSection.png";
 >
 	<section class="py-16 px-4 bg-white mx-auto">
 		<div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-			<div class="col_1">	
-				<h2 class="text-coral-red uppercase mb-4">Sobre Nosotros</h2>
-
+			<div class="col_1">
 				<h3 class="text-4xl md:text-5xl font-bold text-navy-blue mb-6">
 					Comprometidos con el Crecimiento<br /> y la Felicidad de tu Hijo
 				</h3>
@@ -36,7 +36,7 @@ import aboutImage from "../assets/images/AboutSection.png";
 
 	<section class="bg-accent">
 		<div
-			class="container mx-auto py-36 flex flex-wrap justify-center gap-36 text-center"
+			class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
 		>
 			<div class="flex flex-col items-center">
 				<div class="text-8xl font-bold text-white counter" data-target="10">
@@ -66,223 +66,102 @@ import aboutImage from "../assets/images/AboutSection.png";
 	</section>
 
 	<section
-		class="container mx-auto px-4 py-12 grid md:grid-cols-2 gap-8"
+		class="container mx-auto px-6 py-24 grid md:grid-cols-2 gap-8"
 		data-aos="fade-up"
 	>
-		<div class="bg-base-100 rounded-xl shadow p-6">
-			<h3 class="text-xl font-bold text-primary mb-2">Nuestra Misión</h3>
-			<p>Aquí va la misión de la institución.</p>
+		<div class="bg-purple-100 rounded-3xl shadow p-12">
+			<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Misión</h3>
+			<p>
+				Promover el desarrollo del aprendizaje y la creatividad desde la
+				infancia, siendo pioneros de metodologías y prácticas pedagógicas,
+				innovadoras e integrales, que resulten accesibles y beneficiosas para
+				las personas.
+			</p>
 		</div>
-		<div class="bg-base-100 rounded-xl shadow p-6">
-			<h3 class="text-xl font-bold text-primary mb-2">Nuestra Visión</h3>
-			<p>Aquí va la visión de la institución.</p>
-		</div>
-	</section>
-
-	<section class="container mx-auto px-4 py-12" data-aos="fade-up">
-		<h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8">
-			Nuestros Valores
-		</h2>
-		<div class="grid md:grid-cols-2 gap-8 items-center">
-			<div class="flex justify-center">
-				<Image
-					src="https://plus.unsplash.com/premium_photo-1686920244658-f3db03fe22e3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					alt="Niños jugando"
-					class="rounded-full w-64 h-64 object-cover shadow-lg"
-					width={256}
-					height={256}
-				/>
-			</div>
-			<div class="grid grid-cols-2 gap-4">
-				<div class="card bg-base-100 shadow p-4">
-					<h4 class="font-bold text-primary">Cuidado Especial</h4>
-					<p>Descripción breve del valor.</p>
-				</div>
-				<div class="card bg-base-100 shadow p-4">
-					<h4 class="font-bold text-primary">Mejor Servicio</h4>
-					<p>Descripción breve del valor.</p>
-				</div>
-				<div class="card bg-base-100 shadow p-4">
-					<h4 class="font-bold text-primary">Calidad</h4>
-					<p>Descripción breve del valor.</p>
-				</div>
-				<div class="card bg-base-100 shadow p-4">
-					<h4 class="font-bold text-primary">Valor Único</h4>
-					<p>Descripción breve del valor.</p>
-				</div>
-			</div>
+		<div class="bg-orange-100 rounded-3xl shadow p-12">
+			<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Visión</h3>
+			<p>
+				Ser uno de los mayores referentes de educación infantil, reconocida por
+				sentar las bases de nuevos modelos educativos capaces de formar en los
+				niños mentes ágiles y creativas, además de expandir nuestra propuesta
+				educativa en un corto plazo de tiempo a más zonas de Lima y el Perú.
+			</p>
 		</div>
 	</section>
 
 	<section class="container mx-auto px-4 py-12" data-aos="fade-up">
-		<h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8">
-			Nuestro Equipo
-		</h2>
-		<div class="grid md:grid-cols-4 gap-6">
-			<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
-				<figure class="px-6 pt-6">
-					<Image
-						src="https://mighty.tools/mockmind-api/content/human/124.jpg"
-						alt="María Rodríguez"
-						class="mask mask-circle w-32 h-32 object-cover"
-						width={128}
-						height={128}
+		<div class="space-y-4">
+			<h3 class="text-2xl md:text-3xl uppercase text-center text-accent">
+				Lo que nos distingue
+			</h3>
+			<h2 class="text-4xl md:text-6xl font-bold text-center text-primary">
+				Nuestro Core de Diferenciación
+			</h2>
+			<h4 class="text-center text-xl">
+				Nos esforzamos por alcanzar los más altos estándares en todo lo que
+				hacemos.
+			</h4>
+		</div>
+		<div class="flex flex-col md:flex-row gap-8 mt-16 items-center">
+			<Image
+				src={coreValuesImage}
+				alt="Niños jugando"
+				class="w-full h-full object-cover"
+			/>
+
+			<div class="grid md:grid-cols-2 grid-cols-1 gap-5">
+				<div class="flex flex-col items-center">
+					<img
+						src="https://img.icons8.com/?size=200&id=24730&format=png&color=000000"
+						alt="Excelencia"
+						class="w-20 h-20 bg-blue-100 rounded-full p-5"
 					/>
-				</figure>
-				<div class="card-body items-center text-center">
-					<div class="badge badge-primary mb-2">Directora</div>
-					<h4 class="card-title text-primary">María Rodríguez</h4>
-					<p class="text-sm opacity-75">Directora Pedagógica</p>
-					<div class="divider my-2"></div>
-					<p class="text-sm">
-						15 años de experiencia en educación inicial. Especialista en
-						desarrollo infantil temprano.
+					<h4 class="font-bold text-4xl text-primary">Excelencia</h4>
+					<p class="text-center">
+						Servicio excepcional y personalizado para cada niño y familia.
 					</p>
 				</div>
-			</div>
-
-			<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
-				<figure class="px-6 pt-6">
-					<Image
-						src="https://mighty.tools/mockmind-api/content/human/108.jpg"
-						alt="Carlos Mendoza"
-						class="mask mask-circle w-32 h-32 object-cover"
-						width={128}
-						height={128}
+				<div class="flex flex-col items-center">
+					<img
+						src="https://img.icons8.com/?size=100&id=79142&format=png&color=000000"
+						alt="Innovación"
+						class="w-20 h-20 bg-orange-100 rounded-full p-5"
 					/>
-				</figure>
-				<div class="card-body items-center text-center">
-					<div class="badge badge-secondary mb-2">Psicología</div>
-					<h4 class="card-title text-primary">Carlos Mendoza</h4>
-					<p class="text-sm opacity-75">Psicólogo Infantil</p>
-					<div class="divider my-2"></div>
-					<p class="text-sm">
-						Especialista en desarrollo socioemocional y apoyo familiar.
+					<h4 class="font-bold text-4xl text-primary">Innovación</h4>
+					<p class="text-center">
+						Promovemos la innovación en nuestras prácticas y metodologías
+						educativas.
 					</p>
 				</div>
-			</div>
-
-			<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
-				<figure class="px-6 pt-6">
-					<Image
-						src="https://mighty.tools/mockmind-api/content/human/125.jpg"
-						alt="Ana García"
-						class="mask mask-circle w-32 h-32 object-cover"
-						width={128}
-						height={128}
+				<div class="flex flex-col items-center">
+					<img
+						src="https://img.icons8.com/?size=100&id=36728&format=png&color=000000"
+						alt="Integridad"
+						class="w-20 h-20 bg-yellow-100 rounded-full p-5"
 					/>
-				</figure>
-				<div class="card-body items-center text-center">
-					<div class="badge badge-accent mb-2">Educación</div>
-					<h4 class="card-title text-primary">Ana García</h4>
-					<p class="text-sm opacity-75">Educadora Principal</p>
-					<div class="divider my-2"></div>
-					<p class="text-sm">
-						Experta en metodologías activas y estimulación temprana.
+					<h4 class="font-bold text-4xl text-primary">Integridad</h4>
+					<p class="text-center">
+						Preparamos a los niños para el futuro, con un enfoque integral,
+						emocional e intelectual.
 					</p>
 				</div>
-			</div>
-
-			<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all">
-				<figure class="px-6 pt-6">
-					<Image
-						src="https://mighty.tools/mockmind-api/content/human/125.jpg"
-						alt="Luis Torres"
-						class="mask mask-circle w-32 h-32 object-cover"
-						width={128}
-						height={128}
+				<div class="flex flex-col items-center">
+					<img
+						src="https://img.icons8.com/?size=100&id=BWTtWf1TESVQ&format=png&color=000000"
+						alt="Accesibilidad"
+						class="w-20 h-20 bg-green-100 rounded-full p-5"
 					/>
-				</figure>
-				<div class="card-body items-center text-center">
-					<div class="badge badge-info mb-2">Coordinación</div>
-					<h4 class="card-title text-primary">Luis Torres</h4>
-					<p class="text-sm opacity-75">Coordinador de Actividades</p>
-					<div class="divider my-2"></div>
-					<p class="text-sm">
-						Especializado en desarrollo psicomotor y actividades lúdicas.
+					<h4 class="font-bold text-4xl text-primary">Accesibilidad</h4>
+					<p class="text-center">
+						Para todas las familias, independientemente de su situación
+						económica o geográfica.
 					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="container mx-auto px-4 py-12" data-aos="fade-up">
-		<h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8">
-			Alianzas
-		</h2>
-		<div class="flex flex-wrap justify-center gap-8 items-center">
-			<div class="flex flex-col items-center">
-				<Image
-					src="https://img.icons8.com/?size=100&id=108789&format=png&color=000000"
-					alt="Logo alianza 1"
-					class="h-16"
-					width={64}
-					height={64}
-				/>
-				<p class="text-sm mt-2">Alianza 1</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<Image
-					src="https://img.icons8.com/?size=100&id=108789&format=png&color=000000"
-					alt="Logo alianza 2"
-					class="h-16"
-					width={64}
-					height={64}
-				/>
-				<p class="text-sm mt-2">Alianza 2</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<Image
-					src="https://img.icons8.com/?size=100&id=108789&format=png&color=000000"
-					alt="Logo alianza 3"
-					class="h-16"
-					width={64}
-					height={64}
-				/>
-				<p class="text-sm mt-2">Alianza 3</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<Image
-					src="https://img.icons8.com/?size=100&id=108789&format=png&color=000000"
-					alt="Logo alianza 4"
-					class="h-16"
-					width={64}
-					height={64}
-				/>
-				<p class="text-sm mt-2">Alianza 4</p>
-			</div>
-		</div>
-	</section>
-
-	<section class="bg-primary py-12 mt-8" data-aos="fade-up">
-		<div
-			class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8"
-		>
-			<div class="text-white flex-1">
-				<h2 class="text-2xl md:text-3xl font-bold mb-2">
-					¿Listo para darle a tu hijo el mejor comienzo?
-				</h2>
-				<p class="mb-4">
-					Con educadores experimentados, un entorno seguro y un enfoque en el
-					crecimiento individual.
-				</p>
-				<button class="btn btn-accent">Solicita información</button>
-			</div>
-			<div class="flex-1 flex justify-center">
-				<Image
-					src="https://images.unsplash.com/photo-1597113117918-eb40fe0b84e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					alt="Niño feliz"
-					class="rounded-2xl shadow-lg w-64 h-48 object-cover"
-					width={256}
-					height={192}
-				/>
-			</div>
-		</div>
-	</section>
-
-	<!-- Animaciones AOS/Wellington
-	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-	<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" /> -->
+	<TeachersSection />
 </Layout>
 
 <script>
@@ -319,24 +198,24 @@ import aboutImage from "../assets/images/AboutSection.png";
 	});
 	let col_1 = document.querySelector(".col_1");
 	let col_2 = document.querySelector(".col_2");
-  gsap.from(col_1, {
-    opacity: 0,
-    y: -100,
-    duration: 1,
-    scrollTrigger: {
-      trigger: col_1,
-      start: "top 80%",
-      toggleActions: "play none none none", // Ensures the animation only plays once
-    },
-  });
-  gsap.from(col_2, {
-    opacity: 0,
-    x: 100,
-    duration: 1,
-    scrollTrigger: {
-      trigger: col_2,
-      start: "top 80%",
-      toggleActions: "play none none none",
-    },
-  });
+	gsap.from(col_1, {
+		opacity: 0,
+		y: -100,
+		duration: 1,
+		scrollTrigger: {
+			trigger: col_1,
+			start: "top 80%",
+			toggleActions: "play none none none", // Ensures the animation only plays once
+		},
+	});
+	gsap.from(col_2, {
+		opacity: 0,
+		x: 100,
+		duration: 1,
+		scrollTrigger: {
+			trigger: col_2,
+			start: "top 80%",
+			toggleActions: "play none none none",
+		},
+	});
 </script>

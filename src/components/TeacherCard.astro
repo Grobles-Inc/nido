@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+	teacher: {
+		id: string;
+		name: string;
+		position: string;
+		badge: string;
+		badgeStyle: string;
+		image: string;
+		shortDescription: string;
+		fullDescription: string;
+		education: string[];
+		achievements: string[];
+	};
+	showModal?: boolean;
+}
+
+const { teacher, showModal = false } = Astro.props;
+---
+
+{
+	showModal ? (
+		<dialog id={`${teacher.id}_modal`} class="modal">
+			<div class="modal-box">
+				<form method="dialog">
+					<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+						✕
+					</button>
+				</form>
+				<div class="flex flex-col items-center gap-4">
+					<Image
+						src={teacher.image}
+						alt={teacher.name}
+						class="mask mask-circle w-40 h-40 object-cover"
+						width={160}
+						height={160}
+					/>
+					<h3 class="font-bold text-3xl text-primary">{teacher.name}</h3>
+					<div class={`badge ${teacher.badgeStyle}`}>{teacher.position}</div>
+					<div class="divider" />
+					<div class="text-left space-y-4">
+						<p>{teacher.fullDescription}</p>
+						<h4 class="font-bold hidden md:block text-lg">
+							Formación Académica:
+						</h4>
+						<ul class="list-disc hidden md:block list-inside">
+							{teacher.education.map((edu) => (
+								<li>{edu}</li>
+							))}
+						</ul>
+						<h4 class="font-bold text-lg">Logros Destacados:</h4>
+						<ul class="list-disc list-inside">
+							{teacher.achievements.map((achievement) => (
+								<li>{achievement}</li>
+							))}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<form method="dialog" class="modal-backdrop">
+				<button>close</button>
+			</form>
+		</dialog>
+	) : (
+		<div
+			class="card bg-base-100 rounded-2xl py-8 group transition-all cursor-pointer h-full space-y-4"
+			onclick={`window.${teacher.id}_modal.showModal()`}
+		>
+			<figure class="group-hover:scale-110 transition-all duration-300">
+				<Image
+					src={teacher.image}
+					alt={teacher.name}
+					class="mask mask-circle w-28 h-28 object-cover "
+					width={112}
+					height={112}
+				/>
+			</figure>
+			<div class="card-body items-center text-center p-3">
+				<div class={`badge ${teacher.badgeStyle} mb-1`}>{teacher.badge}</div>
+				<h4 class="card-title text-primary md:text-2xl text-3xl">
+					{teacher.name}
+				</h4>
+				<p class="text-xs opacity-75">{teacher.position}</p>
+			</div>
+		</div>
+	)
+}

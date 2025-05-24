@@ -1,0 +1,122 @@
+[
+  {
+    "id": "maria",
+    "name": "María Rodríguez",
+    "position": "Directora Pedagógica",
+    "badge": "Directora",
+    "badgeStyle": "badge-primary",
+    "image": "https://mighty.tools/mockmind-api/content/human/124.jpg",
+    "shortDescription": "15 años de experiencia en educación inicial. Especialista en desarrollo infantil temprano.",
+    "fullDescription": "Con más de 15 años de experiencia en educación inicial, María lidera nuestro equipo pedagógico con pasión y dedicación.",
+    "education": [
+      "Maestría en Educación Infantil - Universidad de Lima",
+      "Especialización en Desarrollo Infantil Temprano",
+      "Certificación en Metodologías Activas"
+    ],
+    "achievements": [
+      "Desarrollo e implementación del programa educativo Perulinas",
+      "Ponente en conferencias internacionales de educación",
+      "Publicaciones sobre metodologías innovadoras en educación inicial"
+    ]
+  },
+  {
+    "id": "karina",
+    "name": "Karina Cornejo",
+    "position": "Psicóloga Infantil",
+    "badge": "Psicología",
+    "badgeStyle": "badge-secondary",
+    "image": "https://mighty.tools/mockmind-api/content/human/108.jpg",
+    "shortDescription": "Especialista en desarrollo socioemocional y apoyo familiar.",
+    "fullDescription": "Con más de 12 años de experiencia en psicología infantil, Carlos se especializa en el desarrollo socioemocional de los niños y el apoyo integral a las familias.",
+    "education": [
+      "Licenciatura en Psicología - Universidad Nacional Mayor de San Marcos",
+      "Maestría en Psicología Infantil y Adolescente",
+      "Especialización en Terapia Familiar Sistémica"
+    ],
+    "achievements": [
+      "Implementación de programas de desarrollo socioemocional",
+      "Talleres de escuela para padres con más de 500 familias atendidas",
+      "Investigaciones publicadas sobre desarrollo infantil temprano"
+    ]
+  },
+  {
+    "id": "ana",
+    "name": "Ana García",
+    "position": "Educadora Principal",
+    "badge": "Educación",
+    "badgeStyle": "badge",
+    "image": "https://mighty.tools/mockmind-api/content/human/125.jpg",
+    "shortDescription": "Experta en metodologías activas y estimulación temprana.",
+    "fullDescription": "Ana cuenta con 10 años de experiencia en educación inicial, especializándose en metodologías activas que promueven el aprendizaje significativo y la estimulación temprana.",
+    "education": [
+      "Licenciatura en Educación Inicial - Universidad Cayetano Heredia",
+      "Especialización en Metodologías Activas",
+      "Certificación en Estimulación Temprana y Desarrollo Motor"
+    ],
+    "achievements": [
+      "Diseño de actividades pedagógicas innovadoras",
+      "Capacitadora en metodologías Montessori y Reggio Emilia",
+      "Coordinadora de proyectos de estimulación temprana"
+    ]
+  },
+  {
+    "id": "luis",
+    "name": "Valeria Torres",
+    "position": "Coordinador de Actividades",
+    "badge": "Coordinación",
+    "badgeStyle": "badge-secondary",
+    "image": "https://mighty.tools/mockmind-api/content/human/126.jpg",
+    "shortDescription": "Especializado en desarrollo psicomotor y actividades lúdicas.",
+    "fullDescription": "Luis tiene 8 años de experiencia en coordinación de actividades educativas, enfocándose en el desarrollo psicomotor y la implementación de actividades lúdicas que favorecen el aprendizaje integral.",
+    "education": [
+      "Licenciatura en Educación Física - Universidad Nacional de Educación",
+      "Especialización en Psicomotricidad Infantil",
+      "Certificación en Actividades Lúdicas y Recreativas"
+    ],
+    "achievements": [
+      "Desarrollo de programas de psicomotricidad innovadores",
+      "Organización de más de 100 eventos recreativos educativos",
+      "Entrenador certificado en deportes adaptados para niños"
+    ]
+  },
+  {
+    "id": "luisa",
+    "name": "Daniella Torres",
+    "position": "Coordinadora de Actividades",
+    "badge": "Coordinación",
+    "badgeStyle": "badge-primary",
+    "image": "https://mighty.tools/mockmind-api/content/human/126.jpg",
+    "shortDescription": "Especializado en desarrollo psicomotor y actividades lúdicas.",
+    "fullDescription": "Luis tiene 8 años de experiencia en coordinación de actividades educativas, enfocándose en el desarrollo psicomotor y la implementación de actividades lúdicas que favorecen el aprendizaje integral.",
+    "education": [
+      "Licenciatura en Educación Física - Universidad Nacional de Educación",
+      "Especialización en Psicomotricidad Infantil",
+      "Certificación en Actividades Lúdicas y Recreativas"
+    ],
+    "achievements": [
+      "Desarrollo de programas de psicomotricidad innovadores",
+      "Organización de más de 100 eventos recreativos educativos",
+      "Entrenador certificado en deportes adaptados para niños"
+    ]
+  },
+  {
+    "id": "luz",
+    "name": "Luz Torres",
+    "position": "Coordinadora de Actividades",
+    "badge": "Coordinación",
+    "badgeStyle": "badge-secondary",
+    "image": "https://mighty.tools/mockmind-api/content/human/126.jpg",
+    "shortDescription": "Especializado en desarrollo psicomotor y actividades lúdicas.",
+    "fullDescription": "Luz tiene 8 años de experiencia en coordinación de actividades educativas, enfocándose en el desarrollo psicomotor y la implementación de actividades lúdicas que favorecen el aprendizaje integral.",
+    "education": [
+      "Licenciatura en Educación Física - Universidad Nacional de Educación",
+      "Especialización en Psicomotricidad Infantil",
+      "Certificación en Actividades Lúdicas y Recreativas"
+    ],
+    "achievements": [
+      "Desarrollo de programas de psicomotricidad innovadores",
+      "Organización de más de 100 eventos recreativos educativos",
+      "Entrenador certificado en deportes adaptados para niños"
+    ]
+  }
+] 
