@@ -3,12 +3,15 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
+import GoogleTagManager from "../components/GoogleTagManager.astro";
 ---
 
 <!doctype html>
 <html lang="en" data-theme="cupcake">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <GoogleTagManager/>
   </head>
   <body class="bg-white">
     <Header />
@@ -146,6 +149,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       </div>
     </section>
     <Footer />
+    <GoogleTagManagerNoScript />
   </body>
 </html>
 
