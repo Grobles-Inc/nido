@@ -1,0 +1,100 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="bg-base-100 py-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h3 class="text-2xl md:text-3xl uppercase text-accent mb-4">Covenios</h3>
+      <h2 class="text-4xl md:text-6xl font-bold text-primary mb-6">
+        Nuestras Alianzas y Convenios
+      </h2>
+      <p class="max-w-2xl mx-auto text-xl">
+        Formamos parte de alianzas y convenios con instituciones y
+        organizaciones que nos ayudan a mejorar la calidad de nuestros programas
+        y servicios.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div
+        class="card bg-accent shadow-xl"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <figure class="px-6 pt-6">
+          <Image
+            src="https://img.icons8.com/?size=300&id=4AiWeJfBh0pJ&format=png&color=000000"
+            alt="Premio a la Excelencia Educativa"
+            width={100}
+            height={100}
+            class="rounded-xl"
+          />
+        </figure>
+        <div class="card-body items-center text-center space-y-4">
+          <h3 class="card-title uppercase text-2xl text-white font-bold">
+            123 English
+          </h3>
+          <p class="text-white">
+            Tenemos un convenio con 123 English para ofrecer un programa de
+            inglés de alta calidad para nuestros alumnos.
+          </p>
+          <div class="badge badge-primary">2023</div>
+        </div>
+      </div>
+
+      <div
+        class="card bg-neutral shadow-xl"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <figure class="px-6 pt-6">
+          <Image
+            src="https://img.icons8.com/?size=300&id=hGzLo79r7KzD&format=png&color=000000"
+            alt="Certificación Internacional"
+            width={100}
+            height={100}
+            class="rounded-xl"
+          />
+        </figure>
+        <div class="card-body items-center text-center space-y-4">
+          <h3 class="card-title uppercase text-2xl font-bold">
+            Recomendaciones
+          </h3>
+          <p>
+            Nuestros alumnos pueden trasladarse a la institución de su
+            preferencia por recomendación de Perulinas, aceptando el traslado en
+            toda Lima Metropolitana y provincias.
+          </p>
+          <div class="badge badge-accent">2022</div>
+        </div>
+      </div>
+      <div
+        class="card bg-primary shadow-xl"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <figure class="px-6 pt-6">
+          <Image
+            src="https://img.icons8.com/?size=300&id=G0eKuLRCR7RF&format=png&color=000000"
+            alt="Premio a la Innovación"
+            width={100}
+            height={100}
+            class="rounded-xl"
+          />
+        </figure>
+        <div class="card-body items-center text-center space-y-4">
+          <h3 class="card-title uppercase text-2xl font-bold text-white">
+            Mancomunidad
+          </h3>
+          <p class="text-white">
+            Formamos parte de la Mancomunidad de Educación de la Ugel 7,en la
+            que nos alianzamos con otras instituciones para ofrecer programas de
+            educación y más servicios de alta calidad para nuestros alumnos.
+          </p>
+          <div class="badge badge-neutral">2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
