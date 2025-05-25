@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+import 'aos/dist/aos.css';
 import { SITE_TITLE } from '../consts';
 
 interface Props {
@@ -53,3 +54,23 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- AOS Global Initialization -->
+<script>
+  import AOS from 'aos';
+  
+  // Initialize AOS when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-in-out'
+    });
+  });
+  
+  // Refresh AOS on page navigation (for SPAs)
+  document.addEventListener('astro:page-load', function() {
+    AOS.refresh();
+  });
+</script>

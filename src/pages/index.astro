@@ -7,7 +7,6 @@ import HeroSection from "../components/HeroSection.astro";
 import AboutSection from "../components/AboutSection.astro";
 import ServicesSection from "../components/ServicesSection.astro";
 import HomeSection from "../components/HomeSection.astro";
-import 'aos/dist/aos.css';
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 ---
@@ -41,13 +40,6 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
 		<HomeSection />
 		<Footer />
 
-		<script>
-			import AOS from 'aos';
-			AOS.init({
-				duration: 800,
-				once: true,
-			});
-		</script>
 		<GoogleTagManagerNoScript />
 	</body>
 </html>

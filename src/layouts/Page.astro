@@ -42,8 +42,20 @@ const ogImage = heroImage
 							height={768}
 						/>
 						<div class="absolute z-10 top-1/2 left-1/2 space-y-4 -translate-x-1/2 -translate-y-1/2 text-center w-full md:w-1/2 px-4">
-							<h1 class="text-4xl text-white md:text-8xl font-bold">{title}</h1>
-							<p class="text-white  md:text-xl ">{description}</p>
+							<h1 
+								class="text-4xl text-white md:text-8xl font-bold"
+								data-aos="fade-up"
+								data-aos-delay="200"
+							>
+								{title}
+							</h1>
+							<p 
+								class="text-white  md:text-xl "
+								data-aos="fade-up"
+								data-aos-delay="400"
+							>
+								{description}
+							</p>
 						</div>
 						<div
 							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
@@ -57,17 +69,27 @@ const ogImage = heroImage
 			<section class="relative md:my-20 py-20 px-4">
 				<div
 					class="absolute inset-0 w-full h-full bg-[#fe753b] md:rounded-[40px] mx-auto max-w-7xl"
+					data-aos="zoom-in"
+					data-aos-delay="100"
 				>
 				</div>
 
 				<div class="container mx-auto max-w-7xl relative">
 					<div class="flex flex-col items-center text-center text-white">
 
-						<h2 class="text-4xl md:text-5xl font-bold mb-6">
+						<h2 
+							class="text-4xl md:text-5xl font-bold mb-6"
+							data-aos="fade-up"
+							data-aos-delay="200"
+						>
 							Listos para Darle a Tu Hijo<br />el Mejor Comienzo
 						</h2>
 
-						<p class="text-lg mb-10 max-w-2xl">
+						<p 
+							class="text-lg mb-10 max-w-2xl"
+							data-aos="fade-up"
+							data-aos-delay="300"
+						>
 							Con educadores experimentados, un ambiente seguro y estimulante, y
 							un enfoque en el crecimiento individual.
 						</p>
@@ -75,6 +97,8 @@ const ogImage = heroImage
 						<a
 							href="/contact"
 							class="btn bg-white text-black border-none hover:text-orange-500 normal-case text-lg px-8 py-6"
+							data-aos="fade-up"
+							data-aos-delay="400"
 						>
 							Consultar Ahora
 						</a>
