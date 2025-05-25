@@ -11,8 +11,10 @@ const ogImage = heroImage
 	: new URL("/og-image-blog.jpg", Astro.url);
 ---
 
+<!doctype html>
 <html lang="es" data-theme="nido">
 	<head>
+		<meta charset="UTF-8" />
 		<BaseHead title={title} description={description}>
 			<meta property="og:type" content="website" />
 			<meta property="og:title" content={title} />
