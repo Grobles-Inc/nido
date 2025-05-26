@@ -1,13 +1,11 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
 import logoPrincipal from "../assets/images/logoPrincipal.png";
-import logoPrincipal2 from "../assets/images/logoSecundario.png";
-import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header
 	id="main-header"
-	class="fixed w-full py-6 backdrop-blur-xl bg-white px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
+	class="fixed w-full py-6 backdrop-blur-sm bg-white/30 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
 >
 	<div class="container mx-auto flex items-center justify-between">
 		<div class="flex items-center">
@@ -87,9 +85,7 @@ import { SITE_TITLE } from "../consts";
 					class="w-6 h-6 absolute opacity-0 transition-opacity duration-300"
 				/>
 			</button>
-			<a
-				href="/contact"
-				class="hidden md:block rounded-full border border-gray-800 text-gray-800 px-6 py-3 text-lg hover:bg-orange-500 hover:border-orange-400 hover:text-white transition-all duration-300"
+			<a href="/contact" class="btn btn-secondary btn-lg hidden md:flex"
 				>Contáctanos</a
 			>
 		</div>
@@ -150,7 +146,7 @@ import { SITE_TITLE } from "../consts";
 				>
 			</li>
 			<li class="pt-4">
-				<a href="/contact" class="btn btn-primary btn-lg">Contactenos</a>
+				<a href="/contact" class="btn btn-secondary btn-lg">Contáctanos</a>
 			</li>
 		</ul>
 	</nav>

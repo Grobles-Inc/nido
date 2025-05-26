@@ -121,7 +121,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 					class="w-full h-full object-cover"
 				/>
 
-				<div class="grid md:grid-cols-2 grid-cols-1 gap-5">
+				<div class="grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-12 px-2">
 					<div class="flex flex-col items-center">
 						<Image
 							src="https://img.icons8.com/?size=200&id=24730&format=png&color=000000"
@@ -180,6 +180,66 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 				</div>
 			</div>
 		</section>
+
+		<section class="container mx-auto py-24 bg-base-100">
+			<div class="hero min-h-[600px]">
+				<div class="hero-content flex-col lg:flex-row-reverse gap-12">
+					<div class="lg:w-1/2">
+						<Image
+							src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?q=80&w=1469&auto=format&fit=crop"
+							alt="Directora del centro educativo"
+							width={600}
+							height={800}
+							class="rounded-2xl shadow-2xl w-full md:h-[600px] h-[300px] object-cover"
+						/>
+					</div>
+					<div class="lg:w-1/2">
+						<h2 class="text-4xl md:text-5xl font-bold text-primary mb-2">
+							Palabras de la Directora
+						</h2>
+						<div class="divider"></div>
+						<div class="prose max-w-none">
+							<p class="text-lg mb-6 italic">
+								"En Perulinas, creemos en el potencial ilimitado de cada niño.
+								Nuestra misión es nutrir ese potencial a través de una educación
+								integral que combine excelencia académica con desarrollo
+								emocional y social."
+							</p>
+							<p class="mb-6">
+								Con más de 15 años de experiencia en educación infantil, he
+								tenido el privilegio de ver crecer y desarrollarse a cientos de
+								niños. Cada sonrisa, cada descubrimiento y cada pequeño logro
+								reafirma nuestra dedicación a la excelencia educativa.
+							</p>
+						</div>
+						<div
+							class="stats stats-vertical lg:stats-horizontal shadow mt-8 grid grid-cols-2 md:grid-cols-3"
+						>
+							<div class="stat">
+								<div class="stat-title">Experiencia</div>
+								<div class="stat-value">15+</div>
+								<div class="stat-desc">Años en educación</div>
+							</div>
+							<div class="stat">
+								<div class="stat-title">Certificaciones</div>
+								<div class="stat-value">12</div>
+								<div class="stat-desc">Internacionales</div>
+							</div>
+							<div class="stat">
+								<div class="stat-title">Reconocimientos</div>
+								<div class="stat-value">8</div>
+								<div class="stat-desc">Premios educativos</div>
+							</div>
+						</div>
+						<div class="mt-8 text-center md:text-left">
+							<h3 class="text-xl font-bold mb-2">Dra. Ada Gisela Tello</h3>
+							<p class="text-accent">Directora General - Perulinas</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<TeachersSection />
 		<AwardsSection />
 		<GoogleTagManagerNoScript />
