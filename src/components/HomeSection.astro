@@ -1,12 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import homeSection from "../assets/images/HomeSection.png";
 import faqSection from "../assets/images/FAQSection.png";
-import decoration1 from "../assets/images/Adorno1.png";
-import decoration2 from "../assets/images/Adorno2.png";
-import decoration3 from "../assets/images/Adorno3.png";
-import decoration4 from "../assets/images/Adorno4.png";
-import decoration5 from "../assets/images/Adorno5.png";
+import homeSection from "../assets/images/HomeSection.png";
 
 interface Props {
   title?: string;
@@ -16,17 +11,17 @@ interface Props {
 <!--! Sección de por qué somos diferentes -->
 <section class="py-20 px-4">
   <div class="container mx-auto max-w-7xl">
-    <div
-      data-aos="fade-up"
-    >
+    <div data-aos="fade-up">
       <h3 class="text-coral-red text-center text-lg font-medium mb-4">
         ¿Por qué somos diferentes?
       </h3>
-  
-      <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-6">
+
+      <h2
+        class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-6"
+      >
         Comprometidos con el crecimiento<br />y la felicidad de tu hijo
       </h2>
-  
+
       <p class="text-center text-sm text-gray-600 max-w-3xl mx-auto mb-16">
         En Nido Perulinas, nuestra principal prioridad es el crecimiento y la
         felicidad de tu hijo. Ofrecemos un entorno acogedor y estimulante donde
@@ -37,10 +32,7 @@ interface Props {
 
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="text-center"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
           <div
             class="bg-lavender-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
           >
@@ -58,10 +50,7 @@ interface Props {
           </p>
         </div>
 
-        <div class="text-center"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
           <div
             class="bg-sky-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
           >
@@ -79,10 +68,7 @@ interface Props {
           </p>
         </div>
 
-        <div class="text-center"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
           <div
             class="bg-peach-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
           >
@@ -100,10 +86,7 @@ interface Props {
           </p>
         </div>
 
-        <div class="text-center"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
+        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
           <div
             class="bg-yellow-50 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
           >
@@ -121,10 +104,7 @@ interface Props {
         </div>
       </div>
 
-      <div
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
+      <div data-aos="fade-up" data-aos-delay="500">
         <Image
           src={homeSection}
           alt="Child playing with educational toys while caregiver assists"
@@ -138,12 +118,12 @@ interface Props {
 <!--! Sección de pasos -->
 <section class="py-20 px-4 bg-[#eef8ff]">
   <div class="container mx-auto max-w-7xl">
-    <div
-      data-aos="fade-up"
-    >
+    <div data-aos="fade-up">
       <h3 class="text-coral-red text-center text-lg font-medium mb-4">PASOS</h3>
-  
-      <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16">
+
+      <h2
+        class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16"
+      >
         Un Proceso Simple para Unirte<br />a Nuestra Familia
       </h2>
     </div>
@@ -166,10 +146,7 @@ interface Props {
       </div>
 
       <!-- Paso 1 -->
-      <div class="text-center relative"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
+      <div class="text-center relative" data-aos="fade-up" data-aos-delay="300">
         <div
           class="bg-yellow-50 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
         >
@@ -183,10 +160,7 @@ interface Props {
       </div>
 
       <!-- Paso 2 -->
-      <div class="text-center relative"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
+      <div class="text-center relative" data-aos="fade-up" data-aos-delay="400">
         <div
           class="bg-lavender-100 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
         >
@@ -202,10 +176,7 @@ interface Props {
       </div>
 
       <!-- Paso 3 -->
-      <div class="text-center relative"
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
+      <div class="text-center relative" data-aos="fade-up" data-aos-delay="500">
         <div
           class="bg-peach-100 w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
         >
@@ -226,23 +197,23 @@ interface Props {
 <!--! Sección de testimonios -->
 <section class="py-20 bg-[#eef8ff] px-4 mb-10">
   <div class="container mx-auto max-w-7xl">
-    <div
-      data-aos="fade-up"
-    >
+    <div data-aos="fade-up">
       <h3 class="text-coral-red text-center text-lg font-medium mb-4">
         TESTIMONIOS
       </h3>
 
-      <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16">
+      <h2
+        class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16"
+      >
         Testimonios de Padres
       </h2>
     </div>
 
-    <div class="carousel w-full mb-10"
-      data-aos="fade-up"
-    >
+    <div class="carousel w-full mb-10" data-aos="fade-up">
       <!-- Slide 1 -->
-      <div id="slide1" class="carousel-item relative w-full"
+      <div
+        id="slide1"
+        class="carousel-item relative w-full"
         data-aos="fade-up"
         data-aos-delay="100"
       >
@@ -298,7 +269,9 @@ interface Props {
       </div>
 
       <!-- Slide 2 -->
-      <div id="slide2" class="carousel-item relative w-full"
+      <div
+        id="slide2"
+        class="carousel-item relative w-full"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -395,23 +368,20 @@ interface Props {
 <!--! Sección de FAQ -->
 <section class="py-20 px-4 bg-white">
   <div class="container mx-auto max-w-7xl">
-    <div
-      data-aos="fade-up"
-    >
+    <div data-aos="fade-up">
       <h3 class="text-coral-red text-center text-lg font-medium mb-4">
         PREGUNTAS FRECUENTES
       </h3>
 
-      <h2 class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16">
+      <h2
+        class="text-4xl md:text-5xl text-navy-blue text-center font-bold mb-16"
+      >
         Preguntas Más Frecuentes
       </h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-12 items-start">
-      <div class="relative"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
+      <div class="relative" data-aos="fade-up" data-aos-delay="100">
         <Image
           src={faqSection}
           alt="Área de juegos con juguetes y estantes organizados"
@@ -502,13 +472,12 @@ interface Props {
     <div class="flex flex-col items-center text-center text-white">
       <!-- Icono de diamante -->
 
-      <h2 class="text-4xl md:text-5xl font-bold mb-6"
-        data-aos="fade-up"
-      >
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
         Listos para Darle a Tu Hijo<br />el Mejor Comienzo
       </h2>
 
-      <p class="text-lg mb-10 max-w-2xl"
+      <p
+        class="text-lg mb-10 max-w-2xl"
         data-aos="fade-up"
         data-aos-delay="100"
       >
@@ -525,7 +494,6 @@ interface Props {
         Consultar Ahora
       </a>
     </div>
-
   </div>
 </section>
 

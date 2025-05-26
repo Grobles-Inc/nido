@@ -7,11 +7,21 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
+  // TODO: change to the correct production url
   site: 'https://nidoperulina.netlify.app',
   integrations: [mdx(), sitemap()],
   vite: {
-      plugins: [tailwindcss()],
-	},
+    plugins: [tailwindcss()],
+    server: {
+      proxy: {
+        '/api/contact': {
+          target: 'https://script.google.com',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api\/contact/, '/macros/s/AKfycbyrYzqQU0QwI7tjay9xaFEiHr0aCsMCtsVmf-rP9xKkLz3DLZ5fvW9e2xVVO8hPZhQb/exec')
+        }
+      }
+    }
+  },
   adapter: netlify(),
   image: {
     domains: ["images.unsplash.com", "img.icons8.com", "mighty.tools"],

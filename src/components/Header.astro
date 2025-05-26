@@ -1,18 +1,16 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
 import logoPrincipal from "../assets/images/logoPrincipal.png";
-import logoPrincipal2 from "../assets/images/logoSecundario.png";
-import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header
 	id="main-header"
-	class="fixed w-full py-6 backdrop-blur-xl bg-white/20 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
+	class="fixed w-full py-6 backdrop-blur-sm bg-white/30 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
 >
 	<div class="container mx-auto flex items-center justify-between">
 		<div class="flex items-center">
 			<a href="/">
-				<img src={logoPrincipal2.src} alt="Logo" class="h-10" />
+				<img src={logoPrincipal.src} alt="Logo" class="h-10" />
 			</a>
 		</div>
 
@@ -22,35 +20,35 @@ import { SITE_TITLE } from "../consts";
 				<li>
 					<HeaderLink
 						href="/"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Inicio</HeaderLink
 					>
 				</li>
 				<li>
 					<HeaderLink
 						href="/about"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Nosotros</HeaderLink
 					>
 				</li>
 				<li>
 					<HeaderLink
 						href="/services"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Programas & Servicios</HeaderLink
 					>
 				</li>
 				<li>
 					<HeaderLink
 						href="/infrastructure"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Infraestructura</HeaderLink
 					>
 				</li>
 				<li>
 					<HeaderLink
 						href="/blog"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Blog</HeaderLink
 					>
 				</li>
@@ -62,12 +60,24 @@ import { SITE_TITLE } from "../consts";
 				id="mobile-menu-button"
 				class="md:hidden flex items-center justify-center w-8 h-8 relative"
 			>
-				<img
+				<svg
 					id="menu-icon"
-					src="https://img.icons8.com/?size=100&id=3096&format=png"
-					alt="menu"
-					class="w-6 h-6 absolute transition-opacity duration-300"
-				/>
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+						id="SVGRepo_tracerCarrier"
+						stroke-linecap="round"
+						stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+						<path
+							d="M4 6H20M4 12H20M4 18H20"
+							stroke="#1f2937"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</g></svg
+				>
+
 				<img
 					id="close-icon"
 					src="https://img.icons8.com/?size=160&id=XBRxNqBV78jJ&format=png"
@@ -75,10 +85,8 @@ import { SITE_TITLE } from "../consts";
 					class="w-6 h-6 absolute opacity-0 transition-opacity duration-300"
 				/>
 			</button>
-			<a
-				href="/contact"
-				class="hidden md:block rounded-full border border-white text-white px-6 py-3 text-lg hover:bg-orange-500 hover:border-orange-400 transition-all duration-300"
-				>Contactenos</a
+			<a href="/contact" class="btn btn-secondary btn-lg hidden md:flex"
+				>Contáctanos</a
 			>
 		</div>
 	</div>
@@ -138,7 +146,7 @@ import { SITE_TITLE } from "../consts";
 				>
 			</li>
 			<li class="pt-4">
-				<a href="/contact" class="btn btn-primary btn-lg">Contactenos</a>
+				<a href="/contact" class="btn btn-secondary btn-lg">Contáctanos</a>
 			</li>
 		</ul>
 	</nav>
@@ -154,7 +162,6 @@ import { SITE_TITLE } from "../consts";
 		const mobileMenu = document.getElementById("mobile-menu");
 		const menuIcon = document.getElementById("menu-icon");
 		const closeIcon = document.getElementById("close-icon");
-		const heroSection = document.getElementById("hero-section"); // Asegúrate de poner este id en tu HeroSection
 
 		if (
 			!header ||
@@ -193,47 +200,19 @@ import { SITE_TITLE } from "../consts";
 
 		window.addEventListener("scroll", () => {
 			const currentScrollY = window.scrollY;
-			const isTop = currentScrollY === 0;
 
-			if (isTop) {
-				header.classList.remove("bg-[#1a4162]", "-translate-y-full");
-				header.classList.add("bg-white/20");
-			} else if (currentScrollY > lastScrollY) {
-				header.classList.remove("bg-[#1a4162]", "bg-white/20");
+			if (currentScrollY > lastScrollY && currentScrollY > 100) {
+				// Ocultar header al hacer scroll hacia abajo
 				header.classList.add("-translate-y-full");
 				if (isMenuOpen) {
 					toggleMenu(false);
 				}
 			} else {
-				header.classList.remove("-translate-y-full", "bg-white/20");
-				header.classList.add("bg-[#1a4162]");
+				// Mostrar header al hacer scroll hacia arriba
+				header.classList.remove("-translate-y-full");
 			}
 
 			lastScrollY = currentScrollY;
 		});
-
-		// --- Intersection Observer para color dinámico ---
-		if (heroSection) {
-			const observer = new window.IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							// Está sobre el HeroSection (fondo claro/oscuro)
-							header.classList.remove("bg-[#1a4162]");
-							header.classList.add("bg-white/20");
-						} else {
-							// Ya no está sobre el HeroSection
-							header.classList.remove("bg-white/20");
-							header.classList.add("bg-[#1a4162]");
-						}
-					});
-				},
-				{
-					root: null,
-					threshold: 0.1,
-				},
-			);
-			observer.observe(heroSection);
-		}
 	});
 </script>

@@ -39,7 +39,7 @@ const ogImage = heroImage
 	<body class="min-h-screen bg-base-100">
 		<Header />
 		<main
-			class="container mx-auto px-4 py-8 lg:py-12"
+			class="container mx-auto md:px-4 md:py-8 lg:py-12"
 			transition:animate="slide"
 		>
 			<article
@@ -130,20 +130,76 @@ const ogImage = heroImage
 					</div>
 				</div>
 			</article>
-			<div
-				class="mt-20 bg-primary text-primary-content rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden"
-			>
-				<div class="absolute top-4 left-4 text-3xl">💎</div>
-				<div class="absolute bottom-4 right-4 text-3xl">⭐</div>
-				<h2 class="text-3xl lg:text-4xl font-bold mb-4">
-					Dale a tu Hijo el Mejor Comienzo
-				</h2>
-				<p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-					Con educadores experimentados, un ambiente seguro y estimulante, y un
-					enfoque en el desarrollo individual.
-				</p>
-				<a href="/contact" class="btn btn-secondary btn-lg">Contáctanos</a>
-			</div>
+			<section class="relative md:my-20 py-20 px-4">
+				<div
+					class="absolute inset-0 w-full h-full bg-[#fe753b] md:rounded-[40px] mx-auto max-w-7xl"
+					data-aos="zoom-in"
+					data-aos-delay="100"
+				>
+				</div>
+				<img
+					src="/addons/a.png"
+					alt="addons"
+					class="absolute md:top-10 top-2 md:left-64 left-4"
+					width={100}
+					height={100}
+					data-aos="fade-up"
+					data-aos-delay="800"
+				/>
+				<img
+					src="/addons/e.png"
+					alt="addons"
+					class="absolute bottom-10 md:left-48 right-4"
+					width={100}
+					height={100}
+					data-aos="fade-up"
+					data-aos-delay="800"
+				/>
+				<img
+					src="/addons/i.png"
+					alt="addons"
+					class="absolute bottom-10 md:right-48"
+					width={100}
+					height={100}
+					data-aos="fade-up"
+					data-aos-delay="800"
+				/>
+				<img
+					src="/addons/u.png"
+					alt="addons"
+					class="absolute top-5 md:right-36 right-4"
+					width={100}
+					height={100}
+					data-aos="fade-up"
+					data-aos-delay="800"
+				/>
+
+				<div class="container mx-auto relative">
+					<div class="flex flex-col items-center text-center text-white">
+						<h2 class="text-4xl md:text-5xl font-bold mb-6" id="title">
+							¡Dale a tu hijo el mejor Comienzo!
+						</h2>
+
+						<p
+							class="text-lg mb-10 max-w-2xl"
+							data-aos="fade-up"
+							data-aos-delay="300"
+						>
+							Con educadores experimentados, un ambiente seguro y estimulante, y
+							un enfoque en el crecimiento individual.
+						</p>
+
+						<a
+							href="/contact"
+							class="btn bg-white text-black border-none hover:text-orange-500 normal-case text-lg px-8 py-6"
+							data-aos="fade-up"
+							data-aos-delay="400"
+						>
+							Consultar Ahora
+						</a>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
