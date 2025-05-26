@@ -7,7 +7,7 @@ import { SITE_TITLE } from "../consts";
 
 <header
 	id="main-header"
-	class="fixed w-full py-6 backdrop-blur-xl bg-white/20 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
+	class="fixed w-full py-6 backdrop-blur-xl bg-transparent px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
 >
 	<div class="container mx-auto flex items-center justify-between">
 		<div class="flex items-center">
@@ -62,12 +62,24 @@ import { SITE_TITLE } from "../consts";
 				id="mobile-menu-button"
 				class="md:hidden flex items-center justify-center w-8 h-8 relative"
 			>
-				<img
+				<svg
 					id="menu-icon"
-					src="https://img.icons8.com/?size=100&id=3096&format=png"
-					alt="menu"
-					class="w-6 h-6 absolute transition-opacity duration-300"
-				/>
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+						id="SVGRepo_tracerCarrier"
+						stroke-linecap="round"
+						stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+						<path
+							d="M4 6H20M4 12H20M4 18H20"
+							stroke="#ffffff"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</g></svg
+				>
+
 				<img
 					id="close-icon"
 					src="https://img.icons8.com/?size=160&id=XBRxNqBV78jJ&format=png"
@@ -78,7 +90,7 @@ import { SITE_TITLE } from "../consts";
 			<a
 				href="/contact"
 				class="hidden md:block rounded-full border border-white text-white px-6 py-3 text-lg hover:bg-orange-500 hover:border-orange-400 transition-all duration-300"
-				>Contactenos</a
+				>Contáctanos</a
 			>
 		</div>
 	</div>

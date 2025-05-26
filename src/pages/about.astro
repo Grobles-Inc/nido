@@ -8,303 +8,311 @@ import AwardsSection from "../components/AwardsSection.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 ---
+
 <!doctype html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8" />
-	<GoogleTagManager />
-</head>
-<Layout
-	title="Sobre Nosotros"
-	heroImage="https://images.unsplash.com/photo-1740493430383-a0bfff9550a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-	description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
->
-	<section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
-		<div class="container mx-auto grid md:grid-cols-2 items-center">
-			<div>
-				<h3 class="text-4xl md:text-6xl font-bold mb-8">
-					Comprometidos con el Crecimiento<br /> y la Felicidad de tu Hijo
-				</h3>
-
-				<p class="max-w-xl mb-8">
-					En Perulinas, proporcionamos un ambiente seguro, acogedor y alegre
-					donde los niños prosperan. Nuestro equipo dedicado está apasionado por
-					inspirar el amor por el aprendizaje y la curiosidad en cada niño.
-				</p>
-				<a href="/contact" class="btn btn-neutral btn-xl">Contáctanos</a>
-			</div>
-			<div class="relative h-full pb-12">
-				<Image
-					src={aboutImage}
-					alt="Niños jugando y aprendiendo"
-					class="w-full h-full object-cover rounded-2xl"
-				/>
-			</div>
-		</div>
-	</section>
-
-	<section class="bg-accent">
-		<div
-			class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
-		>
-			<div class="flex flex-col items-center">
-				<div class="text-8xl font-bold text-white counter" data-target="10">
-					0
-				</div>
-				<span class="text-base-content">Años de experiencia</span>
-			</div>
-			<div class="flex flex-col items-center">
-				<div class="text-8xl font-bold text-white counter" data-target="200">
-					0
-				</div>
-				<span class="text-base-content">Familias felices</span>
-			</div>
-			<div class="flex flex-col items-center">
-				<div class="text-8xl font-bold text-white counter" data-target="95">
-					0
-				</div>
-				<span class="text-base-content">Satisfacción de padres</span>
-			</div>
-			<div class="flex flex-col items-center">
-				<div class="text-8xl font-bold text-white counter" data-target="15">
-					0
-				</div>
-				<span class="text-base-content">Colaboradores</span>
-			</div>
-		</div>
-	</section>
-
-	<section
-		class="container mx-auto px-6 py-24 grid md:grid-cols-2 gap-8"
-		data-aos="fade-up"
+	<head>
+		<meta charset="UTF-8" />
+		<GoogleTagManager />
+	</head>
+	<Layout
+		title="Sobre Nosotros"
+		heroImage="https://images.unsplash.com/photo-1740493430383-a0bfff9550a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+		description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
 	>
-		<div class="bg-purple-100 rounded-3xl shadow p-12">
-			<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Misión</h3>
-			<p>
-				Promover el desarrollo del aprendizaje y la creatividad desde la
-				infancia, siendo pioneros de metodologías y prácticas pedagógicas,
-				innovadoras e integrales, que resulten accesibles y beneficiosas para
-				las personas.
-			</p>
-		</div>
-		<div class="bg-orange-100 rounded-3xl shadow p-12">
-			<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Visión</h3>
-			<p>
-				Ser uno de los mayores referentes de educación infantil, reconocida por
-				sentar las bases de nuevos modelos educativos capaces de formar en los
-				niños mentes ágiles y creativas, además de expandir nuestra propuesta
-				educativa en un corto plazo de tiempo a más zonas de Lima y el Perú.
-			</p>
-		</div>
-	</section>
+		<section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
+			<div class="container mx-auto grid md:grid-cols-2 items-center">
+				<div>
+					<h3 class="text-4xl md:text-6xl font-bold mb-8">
+						Comprometidos con el Crecimiento<br /> y la Felicidad de tu Hijo
+					</h3>
 
-	<section class="container mx-auto px-4 py-12" data-aos="fade-up">
-		<div class="space-y-4">
-			<h3 class="text-2xl md:text-3xl uppercase text-center text-accent">
-				Lo que nos distingue
-			</h3>
-			<h2 class="text-4xl md:text-6xl font-bold text-center text-primary">
-				Nuestro Core de Diferenciación
-			</h2>
-			<h4 class="text-center text-xl">
-				Nos esforzamos por alcanzar los más altos estándares en todo lo que
-				hacemos.
-			</h4>
-		</div>
-		<div class="flex flex-col md:flex-row gap-8 mt-16 items-center">
-			<Image
-				src={coreValuesImage}
-				alt="Niños jugando"
-				class="w-full h-full object-cover"
-			/>
-
-			<div class="grid md:grid-cols-2 grid-cols-1 gap-5">
-				<div class="flex flex-col items-center">
-					<Image
-						src="https://img.icons8.com/?size=200&id=24730&format=png&color=000000"
-						alt="Excelencia"
-						width={80}
-						height={80}
-						class="bg-blue-100 rounded-full p-5"
-					/>
-					<h4 class="font-bold text-4xl text-primary">Excelencia</h4>
-					<p class="text-center">
-						Servicio excepcional y personalizado para cada niño y familia.
+					<p class="max-w-xl mb-8">
+						En Perulinas, proporcionamos un ambiente seguro, acogedor y alegre
+						donde los niños prosperan. Nuestro equipo dedicado está apasionado
+						por inspirar el amor por el aprendizaje y la curiosidad en cada
+						niño.
 					</p>
+					<a href="/contact" class="btn btn-neutral btn-xl">Contáctanos</a>
 				</div>
-				<div class="flex flex-col items-center">
+				<div class="relative h-full pb-12">
 					<Image
-						src="https://img.icons8.com/?size=100&id=79142&format=png&color=000000"
-						alt="Innovación"
-						width={80}
-						height={80}
-						class="bg-orange-100 rounded-full p-5"
+						src={aboutImage}
+						alt="Niños jugando y aprendiendo"
+						class="w-full h-full object-cover rounded-2xl"
 					/>
-					<h4 class="font-bold text-4xl text-primary">Innovación</h4>
-					<p class="text-center">
-						Promovemos la innovación en nuestras prácticas y metodologías
-						educativas.
-					</p>
-				</div>
-				<div class="flex flex-col items-center">
-					<Image
-						src="https://img.icons8.com/?size=100&id=36728&format=png&color=000000"
-						alt="Integridad"
-						width={80}
-						height={80}
-						class="bg-yellow-100 rounded-full p-5"
-					/>
-					<h4 class="font-bold text-4xl text-primary">Integridad</h4>
-					<p class="text-center">
-						Preparamos a los niños para el futuro, con un enfoque integral,
-						emocional e intelectual.
-					</p>
-				</div>
-				<div class="flex flex-col items-center">
-					<Image
-						src="https://img.icons8.com/?size=100&id=BWTtWf1TESVQ&format=png&color=000000"
-						alt="Accesibilidad"
-						width={80}
-						height={80}
-						class="bg-green-100 rounded-full p-5"
-					/>
-					<h4 class="font-bold text-4xl text-primary">Accesibilidad</h4>
-					<p class="text-center">
-						Para todas las familias, independientemente de su situación
-						económica o geográfica.
-					</p>
 				</div>
 			</div>
-		</div>
-	</section>
-	<TeachersSection />
-	<AwardsSection />
-	<GoogleTagManagerNoScript />
-</Layout>
+		</section>
 
-<script>
-	import { gsap } from "gsap";
-	import { ScrollTrigger } from "gsap/ScrollTrigger";
+		<section class="bg-accent">
+			<div
+				class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
+			>
+				<div class="flex flex-col items-center">
+					<div class="text-8xl font-bold text-white counter" data-target="10">
+						0
+					</div>
+					<span class="text-base-content">Años de experiencia</span>
+				</div>
+				<div class="flex flex-col items-center">
+					<div class="text-8xl font-bold text-white counter" data-target="200">
+						0
+					</div>
+					<span class="text-base-content">Familias felices</span>
+				</div>
+				<div class="flex flex-col items-center">
+					<div class="text-8xl font-bold text-white counter" data-target="95">
+						0
+					</div>
+					<span class="text-base-content">Satisfacción de padres</span>
+				</div>
+				<div class="flex flex-col items-center">
+					<div class="text-8xl font-bold text-white counter" data-target="15">
+						0
+					</div>
+					<span class="text-base-content">Colaboradores</span>
+				</div>
+			</div>
+		</section>
 
-	gsap.registerPlugin(ScrollTrigger);
+		<section
+			class="container mx-auto px-6 py-24 grid md:grid-cols-2 gap-8"
+			data-aos="fade-up"
+		>
+			<div class="bg-purple-100 rounded-3xl shadow p-12">
+				<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Misión</h3>
+				<p>
+					Promover el desarrollo del aprendizaje y la creatividad desde la
+					infancia, siendo pioneros de metodologías y prácticas pedagógicas,
+					innovadoras e integrales, que resulten accesibles y beneficiosas para
+					las personas.
+				</p>
+			</div>
+			<div class="bg-orange-100 rounded-3xl shadow p-12">
+				<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Visión</h3>
+				<p>
+					Ser uno de los mayores referentes de educación infantil, reconocida
+					por sentar las bases de nuevos modelos educativos capaces de formar en
+					los niños mentes ágiles y creativas, además de expandir nuestra
+					propuesta educativa en un corto plazo de tiempo a más zonas de Lima y
+					el Perú.
+				</p>
+			</div>
+		</section>
 
-	// Counter animation function
-	const animateCounter = (element: HTMLElement) => {
-		const target = parseInt(element.getAttribute("data-target") || "0");
+		<section class="container mx-auto px-4 py-12" data-aos="fade-up">
+			<div class="space-y-4">
+				<h3 class="text-2xl md:text-3xl uppercase text-center text-accent">
+					Lo que nos distingue
+				</h3>
+				<h2 class="text-4xl md:text-6xl font-bold text-center text-primary">
+					Nuestro Core de Diferenciación
+				</h2>
+				<h4 class="text-center text-xl">
+					Nos esforzamos por alcanzar los más altos estándares en todo lo que
+					hacemos.
+				</h4>
+			</div>
+			<div class="flex flex-col md:flex-row gap-8 mt-16 items-center">
+				<Image
+					src={coreValuesImage}
+					alt="Niños jugando"
+					class="w-full h-full object-cover"
+				/>
 
-		gsap.fromTo(
-			element,
-			{ innerText: "0" },
-			{
-				innerText: target,
-				duration: 2,
+				<div class="grid md:grid-cols-2 grid-cols-1 gap-5">
+					<div class="flex flex-col items-center">
+						<Image
+							src="https://img.icons8.com/?size=200&id=24730&format=png&color=000000"
+							alt="Excelencia"
+							width={80}
+							height={80}
+							class="bg-blue-100 rounded-full p-5"
+						/>
+						<h4 class="font-bold text-4xl text-primary">Excelencia</h4>
+						<p class="text-center">
+							Servicio excepcional y personalizado para cada niño y familia.
+						</p>
+					</div>
+					<div class="flex flex-col items-center">
+						<Image
+							src="https://img.icons8.com/?size=100&id=79142&format=png&color=000000"
+							alt="Innovación"
+							width={80}
+							height={80}
+							class="bg-orange-100 rounded-full p-5"
+						/>
+						<h4 class="font-bold text-4xl text-primary">Innovación</h4>
+						<p class="text-center">
+							Promovemos la innovación en nuestras prácticas y metodologías
+							educativas.
+						</p>
+					</div>
+					<div class="flex flex-col items-center">
+						<Image
+							src="https://img.icons8.com/?size=100&id=36728&format=png&color=000000"
+							alt="Integridad"
+							width={80}
+							height={80}
+							class="bg-yellow-100 rounded-full p-5"
+						/>
+						<h4 class="font-bold text-4xl text-primary">Integridad</h4>
+						<p class="text-center">
+							Preparamos a los niños para el futuro, con un enfoque integral,
+							emocional e intelectual.
+						</p>
+					</div>
+					<div class="flex flex-col items-center">
+						<Image
+							src="https://img.icons8.com/?size=100&id=BWTtWf1TESVQ&format=png&color=000000"
+							alt="Accesibilidad"
+							width={80}
+							height={80}
+							class="bg-green-100 rounded-full p-5"
+						/>
+						<h4 class="font-bold text-4xl text-primary">Accesibilidad</h4>
+						<p class="text-center">
+							Para todas las familias, independientemente de su situación
+							económica o geográfica.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<TeachersSection />
+		<AwardsSection />
+		<GoogleTagManagerNoScript />
+	</Layout>
+
+	<script>
+		import { gsap } from "gsap";
+		import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+		gsap.registerPlugin(ScrollTrigger);
+
+		// Counter animation function
+		const animateCounter = (element: HTMLElement) => {
+			const target = parseInt(element.getAttribute("data-target") || "0");
+
+			gsap.fromTo(
+				element,
+				{ innerText: "0" },
+				{
+					innerText: target,
+					duration: 2,
+					ease: "power2.out",
+					snap: { innerText: 1 },
+					scrollTrigger: {
+						trigger: element,
+						start: "top 80%",
+					},
+					onUpdate: function () {
+						element.innerText = Math.floor(Number(element.innerText)) + "+";
+					},
+				},
+			);
+		};
+
+		// Animate all counters when they come into view
+		document.querySelectorAll(".counter").forEach((counter) => {
+			animateCounter(counter as HTMLElement);
+		});
+
+		// Hero section animations
+		let col_1 = document.querySelector(".col_1");
+		let col_2 = document.querySelector(".col_2");
+
+		gsap.from(col_1, {
+			opacity: 0,
+			y: -50,
+			duration: 1.2,
+			ease: "back.out(1.2)",
+			scrollTrigger: {
+				trigger: col_1,
+				start: "top 80%",
+			},
+		});
+
+		gsap.from(col_2, {
+			opacity: 0,
+			x: 50,
+			duration: 1.2,
+			ease: "back.out(1.2)",
+			scrollTrigger: {
+				trigger: col_2,
+				start: "top 80%",
+			},
+		});
+
+		// Mission and Vision cards animation
+		const cards = document.querySelectorAll(".bg-purple-100, .bg-orange-100");
+		cards.forEach((card, index) => {
+			gsap.from(card, {
+				opacity: 0,
+				y: 50,
+				rotation: index === 0 ? -5 : 5,
+				duration: 1,
 				ease: "power2.out",
-				snap: { innerText: 1 },
 				scrollTrigger: {
-					trigger: element,
-					start: "top 80%",
+					trigger: card,
+					start: "top 85%",
 				},
-				onUpdate: function () {
-					element.innerText = Math.floor(Number(element.innerText)) + "+";
-				},
-			},
+			});
+		});
+
+		// Core values animations
+		const coreValues = document.querySelectorAll(
+			".grid.md\\:grid-cols-2 > div",
 		);
-	};
-
-	// Animate all counters when they come into view
-	document.querySelectorAll(".counter").forEach((counter) => {
-		animateCounter(counter as HTMLElement);
-	});
-
-	// Hero section animations
-	let col_1 = document.querySelector(".col_1");
-	let col_2 = document.querySelector(".col_2");
-
-	gsap.from(col_1, {
-		opacity: 0,
-		y: -50,
-		duration: 1.2,
-		ease: "back.out(1.2)",
-		scrollTrigger: {
-			trigger: col_1,
-			start: "top 80%",
-		},
-	});
-
-	gsap.from(col_2, {
-		opacity: 0,
-		x: 50,
-		duration: 1.2,
-		ease: "back.out(1.2)",
-		scrollTrigger: {
-			trigger: col_2,
-			start: "top 80%",
-		},
-	});
-
-	// Mission and Vision cards animation
-	const cards = document.querySelectorAll(".bg-purple-100, .bg-orange-100");
-	cards.forEach((card, index) => {
-		gsap.from(card, {
+		gsap.from(coreValues, {
 			opacity: 0,
-			y: 50,
-			rotation: index === 0 ? -5 : 5,
-			duration: 1,
-			ease: "power2.out",
+			y: 30,
+			duration: 0.8,
+			stagger: 0.2,
+			delay: 0.54,
+			ease: "back.out(1.7)",
 			scrollTrigger: {
-				trigger: card,
+				trigger: coreValues[0],
 				start: "top 85%",
 			},
 		});
-	});
 
-	// Core values animations
-	const coreValues = document.querySelectorAll(".grid.md\\:grid-cols-2 > div");
-	gsap.from(coreValues, {
-		opacity: 0,
-		y: 30,
-		duration: 0.8,
-		stagger: 0.2,
-		delay: 0.54,
-		ease: "back.out(1.7)",
-		scrollTrigger: {
-			trigger: coreValues[0],
-			start: "top 85%",
-		},
-	});
+		// Animate core values icons with a bounce effect
+		const icons = document.querySelectorAll(".grid.md\\:grid-cols-2 img");
+		icons.forEach((icon) => {
+			icon.addEventListener("mouseenter", () => {
+				gsap.to(icon, {
+					scale: 1.2,
+					duration: 0.3,
+					ease: "back.out(2)",
+				});
+			});
 
-	// Animate core values icons with a bounce effect
-	const icons = document.querySelectorAll(".grid.md\\:grid-cols-2 img");
-	icons.forEach((icon) => {
-		icon.addEventListener("mouseenter", () => {
-			gsap.to(icon, {
-				scale: 1.2,
-				duration: 0.3,
-				ease: "back.out(2)",
+			icon.addEventListener("mouseleave", () => {
+				gsap.to(icon, {
+					scale: 1,
+					duration: 0.3,
+					ease: "power2.out",
+				});
 			});
 		});
 
-		icon.addEventListener("mouseleave", () => {
-			gsap.to(icon, {
-				scale: 1,
-				duration: 0.3,
+		// Animate section headings
+		const sectionHeadings = document.querySelectorAll(
+			"h2.text-4xl, h3.text-2xl",
+		);
+		sectionHeadings.forEach((heading) => {
+			gsap.from(heading, {
+				opacity: 0,
+				y: -20,
+				duration: 1,
 				ease: "power2.out",
+				scrollTrigger: {
+					trigger: heading,
+					start: "top 85%",
+				},
 			});
 		});
-	});
-
-	// Animate section headings
-	const sectionHeadings = document.querySelectorAll("h2.text-4xl, h3.text-2xl");
-	sectionHeadings.forEach((heading) => {
-		gsap.from(heading, {
-			opacity: 0,
-			y: -20,
-			duration: 1,
-			ease: "power2.out",
-			scrollTrigger: {
-				trigger: heading,
-				start: "top 85%",
-			},
-		});
-	});
-</script>
+	</script>
+</html>

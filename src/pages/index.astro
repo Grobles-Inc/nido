@@ -16,22 +16,26 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<GoogleTagManager />
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GJBQGEGTLW" is:inline></script>
-<script>
-  declare global {
-	interface Window {
-	  dataLayer: any[];
-	}
-  }
-  window.dataLayer = window.dataLayer || [];
-  function gtag(...args: any[]) { window.dataLayer.push(args); }
-  gtag('js', new Date());
-  gtag('config', 'G-GJBQGEGTLW');
-</script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GJBQGEGTLW"
+			is:inline></script>
+		<script>
+			declare global {
+				interface Window {
+					dataLayer: any[];
+				}
+			}
+			window.dataLayer = window.dataLayer || [];
+			function gtag(...args: any[]) {
+				window.dataLayer.push(args);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-GJBQGEGTLW");
 		</script>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-
 	</head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
 	<body class="bg-white">
 		<Header />
 		<HeroSection />
