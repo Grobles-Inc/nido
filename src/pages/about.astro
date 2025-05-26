@@ -338,26 +338,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 			},
 		});
 
-		// Animate core values icons with a bounce effect
-		const icons = document.querySelectorAll(".grid.md\\:grid-cols-2 img");
-		icons.forEach((icon) => {
-			icon.addEventListener("mouseenter", () => {
-				gsap.to(icon, {
-					scale: 1.2,
-					duration: 0.3,
-					ease: "back.out(2)",
-				});
-			});
-
-			icon.addEventListener("mouseleave", () => {
-				gsap.to(icon, {
-					scale: 1,
-					duration: 0.3,
-					ease: "power2.out",
-				});
-			});
-		});
-
+		
 		// Animate section headings
 		const sectionHeadings = document.querySelectorAll(
 			"h2.text-4xl, h3.text-2xl",
