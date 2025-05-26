@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/api/contact"
+  to = "https://script.google.com/macros/s/AKfycbyrYzqQU0QwI7tjay9xaFEiHr0aCsMCtsVmf-rP9xKkLz3DLZ5fvW9e2xVVO8hPZhQb/exec"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[build]
+  command = "npm run build"
+  publish = "dist" 
