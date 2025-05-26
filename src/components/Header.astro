@@ -7,12 +7,12 @@ import { SITE_TITLE } from "../consts";
 
 <header
 	id="main-header"
-	class="fixed w-full py-6 backdrop-blur-xl bg-transparent px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
+	class="fixed w-full py-6 backdrop-blur-xl bg-white px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
 >
 	<div class="container mx-auto flex items-center justify-between">
 		<div class="flex items-center">
 			<a href="/">
-				<img src={logoPrincipal2.src} alt="Logo" class="h-10" />
+				<img src={logoPrincipal.src} alt="Logo" class="h-10" />
 			</a>
 		</div>
 
@@ -22,35 +22,35 @@ import { SITE_TITLE } from "../consts";
 				<li>
 					<HeaderLink
 						href="/"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Inicio</HeaderLink
 					>
 				</li>
 				<li>
 					<HeaderLink
 						href="/about"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Nosotros</HeaderLink
 					>
 				</li>
 				<li>
 					<HeaderLink
 						href="/services"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Programas & Servicios</HeaderLink
 					>
 				</li>
 				<li>
 					<HeaderLink
 						href="/infrastructure"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Infraestructura</HeaderLink
 					>
 				</li>
 				<li>
 					<HeaderLink
 						href="/blog"
-						class="text-white hover:text-orange-500 transition-all duration-300 hover:opacity-80"
+						class="text-gray-800 hover:text-orange-500 transition-all duration-300 hover:opacity-80"
 						>Blog</HeaderLink
 					>
 				</li>
@@ -73,7 +73,7 @@ import { SITE_TITLE } from "../consts";
 						stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
 						<path
 							d="M4 6H20M4 12H20M4 18H20"
-							stroke="#ffffff"
+							stroke="#1f2937"
 							stroke-width="2"
 							stroke-linecap="round"
 							stroke-linejoin="round"></path>
@@ -89,7 +89,7 @@ import { SITE_TITLE } from "../consts";
 			</button>
 			<a
 				href="/contact"
-				class="hidden md:block rounded-full border border-white text-white px-6 py-3 text-lg hover:bg-orange-500 hover:border-orange-400 transition-all duration-300"
+				class="hidden md:block rounded-full border border-gray-800 text-gray-800 px-6 py-3 text-lg hover:bg-orange-500 hover:border-orange-400 hover:text-white transition-all duration-300"
 				>Contáctanos</a
 			>
 		</div>
@@ -166,7 +166,6 @@ import { SITE_TITLE } from "../consts";
 		const mobileMenu = document.getElementById("mobile-menu");
 		const menuIcon = document.getElementById("menu-icon");
 		const closeIcon = document.getElementById("close-icon");
-		const heroSection = document.getElementById("hero-section"); // Asegúrate de poner este id en tu HeroSection
 
 		if (
 			!header ||
@@ -205,47 +204,19 @@ import { SITE_TITLE } from "../consts";
 
 		window.addEventListener("scroll", () => {
 			const currentScrollY = window.scrollY;
-			const isTop = currentScrollY === 0;
 
-			if (isTop) {
-				header.classList.remove("bg-[#1a4162]", "-translate-y-full");
-				header.classList.add("bg-white/20");
-			} else if (currentScrollY > lastScrollY) {
-				header.classList.remove("bg-[#1a4162]", "bg-white/20");
+			if (currentScrollY > lastScrollY && currentScrollY > 100) {
+				// Ocultar header al hacer scroll hacia abajo
 				header.classList.add("-translate-y-full");
 				if (isMenuOpen) {
 					toggleMenu(false);
 				}
 			} else {
-				header.classList.remove("-translate-y-full", "bg-white/20");
-				header.classList.add("bg-[#1a4162]");
+				// Mostrar header al hacer scroll hacia arriba
+				header.classList.remove("-translate-y-full");
 			}
 
 			lastScrollY = currentScrollY;
 		});
-
-		// --- Intersection Observer para color dinámico ---
-		if (heroSection) {
-			const observer = new window.IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							// Está sobre el HeroSection (fondo claro/oscuro)
-							header.classList.remove("bg-[#1a4162]");
-							header.classList.add("bg-white/20");
-						} else {
-							// Ya no está sobre el HeroSection
-							header.classList.remove("bg-white/20");
-							header.classList.add("bg-[#1a4162]");
-						}
-					});
-				},
-				{
-					root: null,
-					threshold: 0.1,
-				},
-			);
-			observer.observe(heroSection);
-		}
 	});
 </script>
