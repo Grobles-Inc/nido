@@ -5,9 +5,9 @@ import HeaderLink from "./HeaderLink.astro";
 
 <header
 	id="main-header"
-	class="fixed w-full py-6 backdrop-blur-sm bg-white/30 px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
+	class="fixed w-full py-6 backdrop-blur-sm bg-white px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
 >
-	<div class="container mx-auto flex items-center justify-between">
+	<div class="container max-w-7xl mx-auto flex items-center justify-between">
 		<div class="flex items-center">
 			<a href="/">
 				<img src={logoPrincipal.src} alt="Logo" class="h-10" />
@@ -60,23 +60,12 @@ import HeaderLink from "./HeaderLink.astro";
 				id="mobile-menu-button"
 				class="md:hidden flex items-center justify-center w-8 h-8 relative"
 			>
-				<svg
+				<img
 					id="menu-icon"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-						id="SVGRepo_tracerCarrier"
-						stroke-linecap="round"
-						stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
-						<path
-							d="M4 6H20M4 12H20M4 18H20"
-							stroke="#1f2937"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"></path>
-					</g></svg
-				>
+					src="https://img.icons8.com/?size=100&id=8113&format=png"
+					alt="menu"
+					class="w-6 h-6 transition-opacity duration-300"
+				/>
 
 				<img
 					id="close-icon"
@@ -85,9 +74,8 @@ import HeaderLink from "./HeaderLink.astro";
 					class="w-6 h-6 absolute opacity-0 transition-opacity duration-300"
 				/>
 			</button>
-			<a href="/contact" class="btn btn-secondary btn-lg hidden md:flex"
-				>Contáctanos</a
-			>
+			<a href="/contact" class="btn btn-lg hidden md:flex bg-white text-gray-800 border border-gray-300 hover:bg-[#fc866b] hover:text-white hover:border-transparent transition-all duration-300"
+				>Contáctanos</a>
 		</div>
 	</div>
 
@@ -133,9 +121,9 @@ import HeaderLink from "./HeaderLink.astro";
 			</li>
 			<li>
 				<HeaderLink
-					href="/contact"
+					href="/infrastructure"
 					class="text-gray-800 hover:text-orange-500 transition-all duration-300 block py-2 text-xl"
-					>Contacto</HeaderLink
+					>Infraestructura</HeaderLink
 				>
 			</li>
 			<li>
@@ -146,7 +134,8 @@ import HeaderLink from "./HeaderLink.astro";
 				>
 			</li>
 			<li class="pt-4">
-				<a href="/contact" class="btn btn-secondary btn-lg">Contáctanos</a>
+				<a href="/contact" class="btn btn-lg bg-white text-gray-800 border border-gray-300 hover:bg-[#fc866b] hover:text-white hover:border-transparent transition-all duration-300"
+				>Contáctanos</a>
 			</li>
 		</ul>
 	</nav>
