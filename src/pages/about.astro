@@ -17,12 +17,35 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 	</head>
 	<Layout
 		title="Sobre Nosotros"
-		heroImage="https://images.unsplash.com/photo-1740493430383-a0bfff9550a5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 		description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
 	>
-		<section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
+		<!-- Hero Section -->
+		<section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+			<!-- Fondo con overlay -->
+			<div 
+				class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+				style="background-image: url('https://images.unsplash.com/photo-1601339434203-130259102db6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+			>
+				<div class="absolute inset-0 bg-black/50"></div>
+			</div>
+
+			<!-- Contenido del banner -->
+			<div class="relative z-10 text-center px-4"
+				data-aos="zoom-in"
+				data-aos-delay="100"
+			>
+				<h1 class="text-6xl md:text-[86px] font-bold text-white mb-6">
+					Sobre Nosotros
+				</h1>
+				<p class="text-lg text-white/90 max-w-2xl mx-auto">
+					Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente.
+				</p>
+			</div>
+		</section>
+
+		<section class="md:py-16 md:px-16 px-6 bg-white mx-auto max-w-7xl">
 			<div class="container mx-auto grid md:grid-cols-2 items-center">
-				<div>
+				<div data-aos="fade-up">
 					<h3 class="text-4xl md:text-6xl font-bold mb-8">
 						Comprometidos con el Crecimiento<br /> y la Felicidad de tu Hijo
 					</h3>
@@ -35,7 +58,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 					</p>
 					<a href="/contact" class="btn btn-neutral btn-xl">Contáctanos</a>
 				</div>
-				<div class="relative h-full pb-12">
+				<div class="relative h-full pb-12" data-aos="fade-up">
 					<Image
 						src={aboutImage}
 						alt="Niños jugando y aprendiendo"
@@ -77,10 +100,9 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 		</section>
 
 		<section
-			class="container mx-auto px-6 py-24 grid md:grid-cols-2 gap-8"
-			data-aos="fade-up"
+			class="container mx-auto px-6 py-24 grid md:grid-cols-2 gap-8 max-w-7xl"
 		>
-			<div class="bg-purple-100 rounded-3xl shadow p-12">
+			<div class="bg-purple-100 rounded-3xl shadow p-12" data-aos="fade-up">
 				<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Misión</h3>
 				<p>
 					Promover el desarrollo del aprendizaje y la creatividad desde la
@@ -89,7 +111,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 					las personas.
 				</p>
 			</div>
-			<div class="bg-orange-100 rounded-3xl shadow p-12">
+			<div class="bg-orange-100 rounded-3xl shadow p-12" data-aos="fade-up">
 				<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Visión</h3>
 				<p>
 					Ser uno de los mayores referentes de educación infantil, reconocida
@@ -101,15 +123,15 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 			</div>
 		</section>
 
-		<section class="container mx-auto px-4 py-12" data-aos="fade-up">
+		<section class="container mx-auto px-4 py-12 max-w-7xl" data-aos="fade-up">
 			<div class="space-y-4">
-				<h3 class="text-2xl md:text-3xl uppercase text-center text-accent">
+				<h3 class="text-2xl md:text-3xl uppercase text-center text-accent" data-aos="fade-up">
 					Lo que nos distingue
 				</h3>
-				<h2 class="text-4xl md:text-6xl font-bold text-center text-primary">
+				<h2 class="text-4xl md:text-6xl font-bold text-center text-primary" data-aos="fade-up" data-aos-delay="100">
 					Nuestro Core de Diferenciación
 				</h2>
-				<h4 class="text-center text-xl">
+				<h4 class="text-center text-xl" data-aos="fade-up" data-aos-delay="200">
 					Nos esforzamos por alcanzar los más altos estándares en todo lo que
 					hacemos.
 				</h4>
@@ -122,7 +144,10 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 				/>
 
 				<div class="grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-12 px-2">
-					<div class="flex flex-col items-center">
+					<div class="flex flex-col items-center"
+						data-aos="fade-up"
+						data-aos-delay="100"
+					>
 						<Image
 							src="https://img.icons8.com/?size=200&id=24730&format=png&color=000000"
 							alt="Excelencia"
@@ -135,7 +160,10 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 							Servicio excepcional y personalizado para cada niño y familia.
 						</p>
 					</div>
-					<div class="flex flex-col items-center">
+					<div class="flex flex-col items-center"
+						data-aos="fade-up"
+						data-aos-delay="200"
+					>
 						<Image
 							src="https://img.icons8.com/?size=100&id=79142&format=png&color=000000"
 							alt="Innovación"
@@ -149,7 +177,10 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 							educativas.
 						</p>
 					</div>
-					<div class="flex flex-col items-center">
+					<div class="flex flex-col items-center"
+						data-aos="fade-up"
+						data-aos-delay="300"
+					>
 						<Image
 							src="https://img.icons8.com/?size=100&id=36728&format=png&color=000000"
 							alt="Integridad"
@@ -163,7 +194,10 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 							emocional e intelectual.
 						</p>
 					</div>
-					<div class="flex flex-col items-center">
+					<div class="flex flex-col items-center"
+						data-aos="fade-up"
+						data-aos-delay="400"
+					>
 						<Image
 							src="https://img.icons8.com/?size=100&id=BWTtWf1TESVQ&format=png&color=000000"
 							alt="Accesibilidad"
@@ -181,10 +215,10 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 			</div>
 		</section>
 
-		<section class="container mx-auto py-24 bg-base-100">
+		<section class="container mx-auto py-24 bg-base-100 max-w-7xl">
 			<div class="hero min-h-[600px]">
 				<div class="hero-content flex-col lg:flex-row-reverse gap-12">
-					<div class="lg:w-1/2">
+					<div class="lg:w-1/2" data-aos="fade-up">
 						<Image
 							src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?q=80&w=1469&auto=format&fit=crop"
 							alt="Directora del centro educativo"
@@ -193,7 +227,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 							class="rounded-2xl shadow-2xl w-full md:h-[600px] h-[300px] object-cover"
 						/>
 					</div>
-					<div class="lg:w-1/2">
+					<div class="lg:w-1/2" data-aos="fade-up">
 						<h2 class="text-4xl md:text-5xl font-bold text-primary mb-2">
 							Palabras de la Directora
 						</h2>
@@ -231,7 +265,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 								<div class="stat-desc">Premios educativos</div>
 							</div>
 						</div>
-						<div class="mt-8 text-center md:text-left">
+						<div class="mt-8 text-center md:text-up">
 							<h3 class="text-xl font-bold mb-2">Dra. Ada Gisela Tello</h3>
 							<p class="text-accent">Directora General - Perulinas</p>
 						</div>
@@ -277,83 +311,6 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 		// Animate all counters when they come into view
 		document.querySelectorAll(".counter").forEach((counter) => {
 			animateCounter(counter as HTMLElement);
-		});
-
-		// Hero section animations
-		let col_1 = document.querySelector(".col_1");
-		let col_2 = document.querySelector(".col_2");
-
-		gsap.from(col_1, {
-			opacity: 0,
-			y: -50,
-			duration: 1.2,
-			ease: "back.out(1.2)",
-			scrollTrigger: {
-				trigger: col_1,
-				start: "top 80%",
-			},
-		});
-
-		gsap.from(col_2, {
-			opacity: 0,
-			x: 50,
-			duration: 1.2,
-			ease: "back.out(1.2)",
-			scrollTrigger: {
-				trigger: col_2,
-				start: "top 80%",
-			},
-		});
-
-		// Mission and Vision cards animation
-		const cards = document.querySelectorAll(".bg-purple-100, .bg-orange-100");
-		cards.forEach((card, index) => {
-			gsap.from(card, {
-				opacity: 0,
-				y: 50,
-				rotation: index === 0 ? -5 : 5,
-				duration: 1,
-				ease: "power2.out",
-				scrollTrigger: {
-					trigger: card,
-					start: "top 85%",
-				},
-			});
-		});
-
-		// Core values animations
-		const coreValues = document.querySelectorAll(
-			".grid.md\\:grid-cols-2 > div",
-		);
-		gsap.from(coreValues, {
-			opacity: 0,
-			y: 30,
-			duration: 0.8,
-			stagger: 0.2,
-			delay: 0.54,
-			ease: "back.out(1.7)",
-			scrollTrigger: {
-				trigger: coreValues[0],
-				start: "top 85%",
-			},
-		});
-
-		
-		// Animate section headings
-		const sectionHeadings = document.querySelectorAll(
-			"h2.text-4xl, h3.text-2xl",
-		);
-		sectionHeadings.forEach((heading) => {
-			gsap.from(heading, {
-				opacity: 0,
-				y: -20,
-				duration: 1,
-				ease: "power2.out",
-				scrollTrigger: {
-					trigger: heading,
-					start: "top 85%",
-				},
-			});
 		});
 	</script>
 </html>
