@@ -5,7 +5,6 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import BlogCard from "../../components/BlogCard.astro";
-import { ClientRouter } from "astro:transitions";
 import { BLOG_CATEGORIES } from "../../content.config";
 import { Image } from "astro:assets";
 export const prerender = false;
@@ -36,7 +35,6 @@ const ogImage = new URL("/og-image-blog.jpg", Astro.url);
 			<meta name="twitter:card" content="summary_large_image" />
 			<link rel="canonical" href={Astro.url} />
 		</BaseHead>
-		<ClientRouter />
 		<GoogleTagManager />
 	</head>
 	<body class="min-h-screen bg-base-100">
@@ -114,7 +112,7 @@ const ogImage = new URL("/og-image-blog.jpg", Astro.url);
 				>
 					{
 						filteredPosts.map((post, index) => (
-							<article transition:name={`post-${post.id}`}>
+							<article>
 								<BlogCard
 									key={index}
 									title={post.data.title}
