@@ -2,128 +2,91 @@
 import TeacherCard from "./TeacherCard.astro";
 import teachersData from "../data/teachers.json";
 
-// Group teachers into sets of 5 for desktop view
-const teacherGroupsDesktop = teachersData.reduce(
-  (acc, teacher, i) => {
-    const groupIndex = Math.floor(i / 5);
-    if (!acc[groupIndex]) {
-      acc[groupIndex] = [];
-    }
-    acc[groupIndex].push(teacher);
-    return acc;
-  },
-  [] as (typeof teachersData)[],
-);
+// Define los colores de fondo para cada tarjeta (siguiendo el diseño de la imagen)
+const backgroundColors = [
+  "bg-yellow-100",  // Amarillo claro
+  "bg-blue-100",    // Azul claro  
+  "bg-purple-100",  // Morado claro
+  "bg-pink-100",    // Rosa claro
+  "bg-green-100",   // Verde claro
+  "bg-orange-100"   // Naranja claro
+];
+
+// Limitar a los primeros 4 profesores para coincidir con el diseño
+const displayTeachers = teachersData.slice(0, 4);
 ---
 
-<section class="px-4 py-12 bg-blue-50" data-aos="fade-up">
-  <div class="space-y-4 py-12">
-    <h3 class="text-2xl md:text-3xl uppercase text-center text-accent">
-      Nuestro Equipo
-    </h3>
-    <h2 class="text-4xl md:text-6xl font-bold text-center text-primary">
-      Nuestros Docentes
-    </h2>
-    <h4 class="text-center text-xl">
-      En Perulinas, nuestros docentes son fundamentales para el desarrollo de
-      nuestros niños.
-    </h4>
-  </div>
-  {/* Desktop Carousel (5 teachers per slide) */}
-  <div class="hidden md:block">
-    <div class="carousel w-full">
+<section class="px-4 py-16 bg-blue-50" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header Section -->
+    <div class="space-y-4 pb-16 text-center">
+      <h3 class="text-2xl md:text-3xl uppercase text-accent font-medium">
+        Nuestro Equipo
+      </h3>
+      <h2 class="text-4xl md:text-6xl font-bold text-primary">
+        Nuestros Docentes
+      </h2>
+      <p class="text-center text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        En Perulinas, nuestros docentes son fundamentales para el desarrollo de
+        nuestros niños. Conoce a nuestro equipo especializado.
+      </p>
+    </div>
+
+    <!-- Teachers Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {
-        teacherGroupsDesktop.map((group, groupIndex) => (
-          <div
-            id={`slide-desktop-${groupIndex + 1}`}
-            class="carousel-item relative w-full pt-12"
-          >
-            <div class="w-full grid grid-cols-5 gap-6 px-4">
-              {group.map((teacher) => (
-                <TeacherCard teacher={teacher} />
-              ))}
-            </div>
-            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a
-                href={`#slide-desktop-${
-                  groupIndex === 0 ? teacherGroupsDesktop.length : groupIndex
-                }`}
-                class="btn btn-circle bg-base-100"
-              >
-                ❮
-              </a>
-              <a
-                href={`#slide-desktop-${
-                  groupIndex === teacherGroupsDesktop.length - 1
-                    ? 1
-                    : groupIndex + 2
-                }`}
-                class="btn btn-circle bg-base-100"
-              >
-                ❯
-              </a>
-            </div>
+        displayTeachers.map((teacher, index) => (
+          <div class="h-full">
+            <TeacherCard 
+              teacher={teacher} 
+              bgColor={backgroundColors[index % backgroundColors.length]}
+            />
           </div>
         ))
       }
     </div>
-    <div class="flex justify-center w-full py-2 gap-2 mt-4">
-      {
-        teacherGroupsDesktop.map((_, index) => (
-          <a href={`#slide-desktop-${index + 1}`} class="btn btn-xs">
-            {index + 1}
-          </a>
-        ))
-      }
-    </div>
+
+    <!-- Ver más profesores link (opcional) -->
+    {teachersData.length > 4 && (
+      <div class="text-center mt-12">
+        <button 
+          class="btn btn-primary btn-lg px-8"
+          onclick="document.getElementById('all-teachers-modal').showModal()"
+        >
+          Ver Todo el Equipo
+        </button>
+      </div>
+    )}
   </div>
 
-  {/* Mobile Carousel (1 teacher per slide) */}
-  <div class="block md:hidden">
-    <div class="carousel w-full">
-      {
-        teachersData.map((teacher, index) => (
-          <div
-            id={`slide-mobile-${index + 1}`}
-            class="carousel-item relative w-full"
-          >
-            <div class="w-full max-w-sm mx-auto px-4">
-              <TeacherCard teacher={teacher} />
-            </div>
-            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a
-                href={`#slide-mobile-${
-                  index === 0 ? teachersData.length : index
-                }`}
-                class="btn btn-circle bg-base-100"
-              >
-                ❮
-              </a>
-              <a
-                href={`#slide-mobile-${
-                  index === teachersData.length - 1 ? 1 : index + 2
-                }`}
-                class="btn btn-circle bg-base-100"
-              >
-                ❯
-              </a>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-    <div class="flex justify-center w-full py-2 gap-2 mt-4">
-      {
-        teachersData.map((_, index) => (
-          <a href={`#slide-mobile-${index + 1}`} class="btn btn-xs">
-            {index + 1}
-          </a>
-        ))
-      }
-    </div>
-  </div>
+  <!-- Modal para ver todos los profesores -->
+  {teachersData.length > 4 && (
+    <dialog id="all-teachers-modal" class="modal">
+      <div class="modal-box max-w-6xl">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+        </form>
+        <h3 class="font-bold text-4xl mb-6 text-center">Todo Nuestro Equipo</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {
+            teachersData.map((teacher, index) => (
+              <TeacherCard 
+                teacher={teacher} 
+                bgColor={backgroundColors[index % backgroundColors.length]}
+              />
+            ))
+          }
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+  )}
 
-  {/* Modals - rendered at root level */}
+  <!-- Modals individuales para cada profesor -->
   {
     teachersData.map((teacher) => (
       <TeacherCard teacher={teacher} showModal={true} />

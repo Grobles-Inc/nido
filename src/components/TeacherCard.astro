@@ -15,15 +15,16 @@ interface Props {
 		achievements: string[];
 	};
 	showModal?: boolean;
+	bgColor?: string;
 }
 
-const { teacher, showModal = false } = Astro.props;
+const { teacher, showModal = false, bgColor = "bg-yellow-100" } = Astro.props;
 ---
 
 {
 	showModal ? (
 		<dialog id={`${teacher.id}_modal`} class="modal">
-			<div class="modal-box">
+			<div class="modal-box max-w-2xl">
 				<form method="dialog">
 					<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
 						✕
@@ -37,21 +38,21 @@ const { teacher, showModal = false } = Astro.props;
 						width={160}
 						height={160}
 					/>
-					<h3 class="font-bold text-3xl text-primary">{teacher.name}</h3>
-					<div class={`badge ${teacher.badgeStyle}`}>{teacher.position}</div>
+					<h3 class="font-bold text-3xl text-gray-800">{teacher.name}</h3>
+					<div class="text-lg text-blue-600 font-medium">{teacher.position}</div>
 					<div class="divider" />
 					<div class="text-left space-y-4">
-						<p>{teacher.fullDescription}</p>
-						<h4 class="font-bold hidden md:block text-lg">
+						<p class="text-gray-600 leading-relaxed">{teacher.fullDescription}</p>
+						<h4 class="font-bold hidden md:block text-lg text-gray-800">
 							Formación Académica:
 						</h4>
-						<ul class="list-disc hidden md:block list-inside">
+						<ul class="list-disc hidden md:block list-inside text-gray-600">
 							{teacher.education.map((edu) => (
 								<li>{edu}</li>
 							))}
 						</ul>
-						<h4 class="font-bold text-lg">Logros Destacados:</h4>
-						<ul class="list-disc list-inside">
+						<h4 class="font-bold text-lg text-gray-800">Logros Destacados:</h4>
+						<ul class="list-disc list-inside text-gray-600">
 							{teacher.achievements.map((achievement) => (
 								<li>{achievement}</li>
 							))}
@@ -65,24 +66,36 @@ const { teacher, showModal = false } = Astro.props;
 		</dialog>
 	) : (
 		<div
-			class="card bg-base-100 rounded-2xl py-8 group transition-all cursor-pointer h-full space-y-4"
+			class={`${bgColor} rounded-3xl p-8 group transition-all duration-300 hover:shadow-lg cursor-pointer h-full flex flex-col md:flex-row md:items-center gap-6`}
 			onclick={`window.${teacher.id}_modal.showModal()`}
 		>
-			<figure class="group-hover:scale-110 transition-all duration-300">
-				<Image
-					src={teacher.image}
-					alt={teacher.name}
-					class="mask mask-circle w-28 h-28 object-cover "
-					width={112}
-					height={112}
-				/>
-			</figure>
-			<div class="card-body items-center text-center p-3">
-				<div class={`badge ${teacher.badgeStyle} mb-1`}>{teacher.badge}</div>
-				<h4 class="card-title text-primary md:text-2xl text-3xl">
-					{teacher.name}
-				</h4>
-				<p class="text-xs opacity-75">{teacher.position}</p>
+			<!-- Imagen del profesor -->
+			<div class="flex-shrink-0 flex justify-center md:justify-start">
+				<div class="group-hover:scale-105 transition-all duration-300">
+					<Image
+						src={teacher.image}
+						alt={teacher.name}
+						class="rounded-full md:rounded-2xl w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-cover"
+						width={160}
+						height={160}
+					/>
+				</div>
+			</div>
+			
+			<!-- Contenido del profesor -->
+			<div class="flex-1 space-y-3 text-center md:text-left">
+				<div class="flex flex-col md:flex-row md:items-center md:gap-4">
+					<h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">
+						{teacher.name}
+					</h3>
+					<div class="hidden md:block w-px h-6 bg-gray-300"></div>
+					<p class="text-blue-600 font-medium text-sm md:text-base">
+						{teacher.position}
+					</p>
+				</div>
+				<p class="text-gray-600 leading-relaxed text-sm md:text-base">
+					{teacher.shortDescription}
+				</p>
 			</div>
 		</div>
 	)

@@ -7,22 +7,29 @@ import TeachersSection from "../components/TeachersSection.astro";
 import AwardsSection from "../components/AwardsSection.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="nido">
 	<head>
 		<meta charset="UTF-8" />
+		<BaseHead
+			title="Sobre Nosotros"
+			description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
+		/>
 		<GoogleTagManager />
 	</head>
-	<Layout
-		title="Sobre Nosotros"
-		description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
-	>
+	<body class="bg-white">
+		<Header />
 		<!-- Hero Section -->
-		<section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+		<section
+			class="relative h-[70vh] flex items-center justify-center overflow-hidden"
+		>
 			<!-- Fondo con overlay -->
-			<div 
+			<div
 				class="absolute inset-0 bg-cover bg-center bg-no-repeat"
 				style="background-image: url('https://images.unsplash.com/photo-1601339434203-130259102db6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
 			>
@@ -30,7 +37,8 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 			</div>
 
 			<!-- Contenido del banner -->
-			<div class="relative z-10 text-center px-4"
+			<div
+				class="relative z-10 text-center px-4"
 				data-aos="zoom-in"
 				data-aos-delay="100"
 			>
@@ -38,12 +46,13 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 					Sobre Nosotros
 				</h1>
 				<p class="text-lg text-white/90 max-w-2xl mx-auto">
-					Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente.
+					Ofrecemos un espacio seguro y estimulante donde los niños crecen
+					emocional, social e intelectualmente.
 				</p>
 			</div>
 		</section>
 
-		<section class="md:py-16 md:px-16 px-6 bg-white mx-auto max-w-7xl">
+		<section class="md:py-16 md:px-16 px-6 bg-white mx-auto max-w-7xl mt-16">
 			<div class="container mx-auto grid md:grid-cols-2 items-center">
 				<div data-aos="fade-up">
 					<h3 class="text-4xl md:text-6xl font-bold mb-8">
@@ -125,10 +134,17 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 
 		<section class="container mx-auto px-4 py-12 max-w-7xl" data-aos="fade-up">
 			<div class="space-y-4">
-				<h3 class="text-2xl md:text-3xl uppercase text-center text-accent" data-aos="fade-up">
+				<h3
+					class="text-2xl md:text-3xl uppercase text-center text-accent"
+					data-aos="fade-up"
+				>
 					Lo que nos distingue
 				</h3>
-				<h2 class="text-4xl md:text-6xl font-bold text-center text-primary" data-aos="fade-up" data-aos-delay="100">
+				<h2
+					class="text-4xl md:text-6xl font-bold text-center text-primary"
+					data-aos="fade-up"
+					data-aos-delay="100"
+				>
 					Nuestro Core de Diferenciación
 				</h2>
 				<h4 class="text-center text-xl" data-aos="fade-up" data-aos-delay="200">
@@ -144,7 +160,8 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 				/>
 
 				<div class="grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-12 px-2">
-					<div class="flex flex-col items-center"
+					<div
+						class="flex flex-col items-center"
 						data-aos="fade-up"
 						data-aos-delay="100"
 					>
@@ -160,7 +177,8 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 							Servicio excepcional y personalizado para cada niño y familia.
 						</p>
 					</div>
-					<div class="flex flex-col items-center"
+					<div
+						class="flex flex-col items-center"
 						data-aos="fade-up"
 						data-aos-delay="200"
 					>
@@ -177,7 +195,8 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 							educativas.
 						</p>
 					</div>
-					<div class="flex flex-col items-center"
+					<div
+						class="flex flex-col items-center"
 						data-aos="fade-up"
 						data-aos-delay="300"
 					>
@@ -194,7 +213,8 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 							emocional e intelectual.
 						</p>
 					</div>
-					<div class="flex flex-col items-center"
+					<div
+						class="flex flex-col items-center"
 						data-aos="fade-up"
 						data-aos-delay="400"
 					>
@@ -276,9 +296,82 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 
 		<TeachersSection />
 		<AwardsSection />
-		<GoogleTagManagerNoScript />
-	</Layout>
 
+		<!-- CTA Section -->
+		<section class="relative md:my-20 py-20 px-4">
+			<div
+				class="absolute inset-0 w-full h-full bg-[#fe753b] md:rounded-[40px] mx-auto max-w-7xl"
+				data-aos="zoom-in"
+				data-aos-delay="100"
+			>
+			</div>
+			<img
+				src="/addons/a.png"
+				alt="addons"
+				class="absolute top-10 left-64"
+				width={100}
+				height={100}
+				data-aos="fade-up"
+				data-aos-delay="800"
+			/>
+			<img
+				src="/addons/e.png"
+				alt="addons"
+				class="absolute bottom-10 left-48"
+				width={100}
+				height={100}
+				data-aos="fade-up"
+				data-aos-delay="800"
+			/>
+			<img
+				src="/addons/i.png"
+				alt="addons"
+				class="absolute bottom-10 right-48"
+				width={100}
+				height={100}
+				data-aos="fade-up"
+				data-aos-delay="800"
+			/>
+			<img
+				src="/addons/u.png"
+				alt="addons"
+				class="absolute top-5 right-36"
+				width={100}
+				height={100}
+				data-aos="fade-up"
+				data-aos-delay="800"
+			/>
+
+			<div class="container mx-auto relative">
+				<div class="flex flex-col items-center text-center text-white">
+					<h2 class="text-4xl md:text-5xl font-bold mb-6" id="title">
+						¡Dale a tu hijo el mejor Comienzo!
+					</h2>
+
+					<p
+						class="text-lg mb-10 max-w-2xl"
+						data-aos="fade-up"
+						data-aos-delay="300"
+					>
+						Con educadores experimentados, un ambiente seguro y estimulante, y
+						un enfoque en el crecimiento individual.
+					</p>
+
+					<a
+						href="/contact"
+						class="btn bg-white text-black border-none hover:text-orange-500 normal-case text-lg px-8 py-6"
+						data-aos="fade-up"
+						data-aos-delay="400"
+					>
+						Consultar Ahora
+					</a>
+				</div>
+			</div>
+		</section>
+		<Footer />
+		<GoogleTagManagerNoScript />
+	</body>
+	
 	<script>
 		import { gsap } from "gsap";
 		import { ScrollTrigger } from "gsap/ScrollTrigger";
