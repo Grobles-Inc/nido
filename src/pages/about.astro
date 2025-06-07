@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/Page.astro";
 import { Image } from "astro:assets";
 import aboutImage from "../assets/images/AboutSection.png";
 import coreValuesImage from "../assets/images/CoreValues.jpg";
-import TeachersSection from "../components/TeachersSection.astro";
 import AwardsSection from "../components/AwardsSection.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
-import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import TeachersSection from "../components/TeachersSection.astro";
+import CTASection from "../components/CTASection.astro";
 ---
 
 <!doctype html>
@@ -31,7 +31,7 @@ import Footer from "../components/Footer.astro";
 			<!-- Fondo con overlay -->
 			<div
 				class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-				style="background-image: url('https://images.unsplash.com/photo-1601339434203-130259102db6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+				style="background-image: url('https://i.ibb.co/BRjnGr1/IMG-9447.webp');"
 			>
 				<div class="absolute inset-0 bg-black/50"></div>
 			</div>
@@ -55,18 +55,21 @@ import Footer from "../components/Footer.astro";
 		<section class="md:py-16 md:px-16 px-6 bg-white mx-auto max-w-7xl mt-16">
 			<div class="container mx-auto grid md:grid-cols-2 items-center">
 				<div data-aos="fade-up">
-					<h3 class="text-4xl md:text-6xl font-bold mb-8">
-						¿Quiénes somos?
-					</h3>
+					<h3 class="text-4xl md:text-6xl font-bold mb-8">¿Quiénes somos?</h3>
 
 					<p class="max-w-xl mb-8">
-						<span class="font-bold">Nido Perulina</span> es una institución educativa infantil que forma parte del grupo <span class="font-bold">Iberoamericano para el desarrollo de los niños</span>, fundada por el <br> Sr. Iván Tello Carbajal. Inspirado en el personaje de la literatura infantil "Perulina", el nido busca brindar una educación de excelencia a través de su programa pedagógico exclusivo "PRODIGIE".
+						<span class="font-bold">Nido Perulina</span> es una institución educativa
+						infantil que forma parte del grupo <span class="font-bold"
+							>Iberoamericano para el desarrollo de los niños</span
+						>, fundada por el <br /> Sr. Iván Tello Carbajal. Inspirado en el personaje
+						de la literatura infantil "Perulina", el nido busca brindar una educación
+						de excelencia a través de su programa pedagógico exclusivo "PRODIGIE".
 					</p>
 					<a href="/contact" class="btn btn-neutral btn-xl">Contáctanos</a>
 				</div>
 				<div class="relative h-full pb-12" data-aos="fade-up">
-					<Image
-						src={aboutImage}
+					<img
+						src="https://i.ibb.co/YBbYGGHG/White-and-Gray-Modern-New-Product-Instagram-Post.png"
 						alt="Niños jugando y aprendiendo"
 						class="w-full h-full object-cover rounded-2xl"
 					/>
@@ -111,13 +114,22 @@ import Footer from "../components/Footer.astro";
 			<div class="bg-purple-100 rounded-3xl shadow p-12" data-aos="fade-up">
 				<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Misión</h3>
 				<p>
-					<span class="font-bold">Promover el desarrollo del aprendizaje y la creatividad</span> desde la infancia, siendo pioneros de metodologías y prácticas pedagógicas, innovadoras e integrales, que resulten accesibles y beneficiosas para las personas.
+					<span class="font-bold"
+						>Promover el desarrollo del aprendizaje y la creatividad</span
+					> desde la infancia, siendo pioneros de metodologías y prácticas pedagógicas,
+					innovadoras e integrales, que resulten accesibles y beneficiosas para las
+					personas.
 				</p>
 			</div>
 			<div class="bg-orange-100 rounded-3xl shadow p-12" data-aos="fade-up">
 				<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Visión</h3>
 				<p>
-					Ser uno de los <span class="font-bold">mayores referentes de educación infantil</span>, reconocida por sentar las bases de nuevos modelos educativos capaces de formar en los niños mentes ágiles y creativas, además de expandir nuestra propuesta educativa en un corto plazo de tiempo a más zonas de Lima y el Perú.
+					Ser uno de los <span class="font-bold"
+						>mayores referentes de educación infantil</span
+					>, reconocida por sentar las bases de nuevos modelos educativos
+					capaces de formar en los niños mentes ágiles y creativas, además de
+					expandir nuestra propuesta educativa en un corto plazo de tiempo a más
+					zonas de Lima y el Perú.
 				</p>
 			</div>
 		</section>
@@ -138,14 +150,17 @@ import Footer from "../components/Footer.astro";
 					Nuestro Core de Diferenciación
 				</h2>
 				<p class="text-center text-lg" data-aos="fade-up" data-aos-delay="200">
-					En Nido Perulina, impulsamos una educación innovadora que potencia el talento y la creatividad desde los primeros años.
+					En Nido Perulina, impulsamos una educación innovadora que potencia el
+					talento y la creatividad desde los primeros años.
 				</p>
 			</div>
 			<div class="flex flex-col md:flex-row gap-8 mt-16 items-center">
-				<Image
-					src={coreValuesImage}
+				<img
+					src="https://i.ibb.co/jPhmKtPH/about-image.png"
 					alt="Niños jugando"
-					class="w-full h-full object-cover"
+					class="rounded-2xl"
+					width={600}
+					height={600}
 				/>
 
 				<div class="grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-12 px-2">
@@ -163,7 +178,8 @@ import Footer from "../components/Footer.astro";
 						/>
 						<h4 class="font-bold text-4xl text-primary">Excelencia</h4>
 						<p class="text-center">
-							Educación de alta calidad, personalizada y centrada en el desarrollo integral.
+							Educación de alta calidad, personalizada y centrada en el
+							desarrollo integral.
 						</p>
 					</div>
 					<div
@@ -180,7 +196,8 @@ import Footer from "../components/Footer.astro";
 						/>
 						<h4 class="font-bold text-4xl text-primary">Innovación</h4>
 						<p class="text-center">
-							Metodología exclusiva "PRODIGIE" que estimula el aprendizaje ágil y creativo.
+							Metodología exclusiva "PRODIGIE" que estimula el aprendizaje ágil
+							y creativo.
 						</p>
 					</div>
 					<div
@@ -214,7 +231,8 @@ import Footer from "../components/Footer.astro";
 						/>
 						<h4 class="font-bold text-4xl text-primary">Accesibilidad</h4>
 						<p class="text-center">
-							Educación de calidad al alcance de más familias, sin importar su situación.
+							Educación de calidad al alcance de más familias, sin importar su
+							situación.
 						</p>
 					</div>
 				</div>
@@ -226,7 +244,7 @@ import Footer from "../components/Footer.astro";
 				<div class="hero-content flex-col lg:flex-row-reverse gap-12">
 					<div class="lg:w-1/2" data-aos="fade-up">
 						<Image
-							src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?q=80&w=1469&auto=format&fit=crop"
+							src="https://i.ibb.co/VWRDNwfx/IMG-9473.webp"
 							alt="Directora del centro educativo"
 							width={600}
 							height={800}
@@ -284,81 +302,10 @@ import Footer from "../components/Footer.astro";
 		<AwardsSection />
 
 		<!-- CTA Section -->
-		<section class="relative md:my-20 py-20 px-4">
-			<div
-				class="absolute inset-0 w-full h-full bg-[#fe753b] md:rounded-[40px] mx-auto max-w-7xl"
-				data-aos="zoom-in"
-				data-aos-delay="100"
-			>
-			</div>
-			<img
-				src="/addons/a.png"
-				alt="addons"
-				class="absolute top-10 left-64"
-				width={100}
-				height={100}
-				data-aos="fade-up"
-				data-aos-delay="800"
-			/>
-			<img
-				src="/addons/e.png"
-				alt="addons"
-				class="absolute bottom-10 left-48"
-				width={100}
-				height={100}
-				data-aos="fade-up"
-				data-aos-delay="800"
-			/>
-			<img
-				src="/addons/i.png"
-				alt="addons"
-				class="absolute bottom-10 right-48"
-				width={100}
-				height={100}
-				data-aos="fade-up"
-				data-aos-delay="800"
-			/>
-			<img
-				src="/addons/u.png"
-				alt="addons"
-				class="absolute top-5 right-36"
-				width={100}
-				height={100}
-				data-aos="fade-up"
-				data-aos-delay="800"
-			/>
-
-			<div class="container mx-auto relative">
-				<div class="flex flex-col items-center text-center text-white">
-					<h2 class="text-4xl md:text-5xl font-bold mb-6" id="title">
-						¡Dale a tu hijo el mejor Comienzo!
-					</h2>
-
-					<p
-						class="text-lg mb-10 max-w-2xl"
-						data-aos="fade-up"
-						data-aos-delay="300"
-					>
-						Con educadores experimentados, un ambiente seguro y estimulante, y
-						un enfoque en el crecimiento individual.
-					</p>
-
-					<a
-						href="/contact"
-						class="btn bg-white text-black border-none hover:text-orange-500 normal-case text-lg px-8 py-6"
-						data-aos="fade-up"
-						data-aos-delay="400"
-					>
-						Consultar Ahora
-					</a>
-				</div>
-			</div>
-		</section>
+		<CTASection />
 		<Footer />
 		<GoogleTagManagerNoScript />
-	</body>
-	
-	<script>
+	</body><script>
 		import { gsap } from "gsap";
 		import { ScrollTrigger } from "gsap/ScrollTrigger";
 

@@ -5,21 +5,27 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
+import CTASection from "../components/CTASection.astro";
 ---
 
 <!doctype html>
 <html lang="es" data-theme="nido">
   <head>
     <meta charset="UTF-8" />
-    <BaseHead title="Nuestros Servicios" description="Descubre nuestros servicios diseñados para el aprendizaje y el crecimiento." />
-    <GoogleTagManager/>
+    <BaseHead
+      title="Nuestros Servicios"
+      description="Descubre nuestros servicios diseñados para el aprendizaje y el crecimiento."
+    />
+    <GoogleTagManager />
   </head>
   <body class="bg-white">
     <Header />
     <!-- Banner Section -->
-    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section
+      class="relative h-[70vh] flex items-center justify-center overflow-hidden"
+    >
       <!-- Fondo con overlay -->
-      <div 
+      <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style="background-image: url('https://images.unsplash.com/photo-1564429238817-393bd4286b2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
       >
@@ -27,7 +33,8 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
       </div>
 
       <!-- Contenido del banner -->
-      <div class="relative z-10 text-center px-4"
+      <div
+        class="relative z-10 text-center px-4"
         data-aos="zoom-in"
         data-aos-delay="100"
       >
@@ -35,37 +42,46 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
           Nuestros Servicios
         </h1>
         <p class="text-lg text-white/90 max-w-2xl mx-auto">
-          Dele a su hijo la oportunidad de aprender, crecer y prosperar en un entorno seguro, enriquecedor y amoroso.
+          Dele a su hijo la oportunidad de aprender, crecer y prosperar en un
+          entorno seguro, enriquecedor y amoroso.
         </p>
       </div>
     </section>
 
     <section>
       <div class="py-16 px-4 max-w-7xl mx-auto">
-        <div class="container mx-auto text-center">          
-          <div class="relative"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <h3 class="text-4xl md:text-5xl  font-bold text-navy-blue mb-16">
-              Atención Personalizada, Grandes Sonrisas,<br/> 
+        <div class="container mx-auto text-center">
+          <div class="relative" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-4xl md:text-5xl font-bold text-navy-blue mb-16">
+              Atención Personalizada, Grandes Sonrisas,<br />
               y Habilidades a lo largo de la vida
             </h3>
           </div>
 
           <div class="grid md:grid-cols-3 gap-8 mt-12">
-            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
+            <div
+              class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div class="w-24 h-24 bg-[#fff2ee] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <img src="https://img.icons8.com/?size=100&id=112289&format=png&color=000000" alt="icono">
+              <div
+                class="w-24 h-24 bg-[#fff2ee] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://img.icons8.com/?size=100&id=112289&format=png&color=000000"
+                  alt="icono"
+                />
               </div>
-              <h4 class="text-2xl text-navy-blue mb-4">Programa Educativo Integral</h4>
+              <h4 class="text-2xl text-navy-blue mb-4">
+                Programa Educativo Integral
+              </h4>
               <p class="text-gray-600 mb-6 text-sm">
-                Aprendizaje personalizado basado en el DUA, con enfoque lúdico, creativo y afectivo.
+                Aprendizaje personalizado basado en el DUA, con enfoque lúdico,
+                creativo y afectivo.
               </p>
-              <div class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors">
+              <div
+                class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors"
+              >
                 <a href="/services/programa-educativo" class="">
                   Conocer más
                 </a>
@@ -73,18 +89,29 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
               </div>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
+            <div
+              class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <div class="w-24 h-24 bg-[#f3eeff] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <img src="https://img.icons8.com/?size=160&id=VBOrjlKDikDY&format=png" alt="icono">
+              <div
+                class="w-24 h-24 bg-[#f3eeff] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://img.icons8.com/?size=160&id=VBOrjlKDikDY&format=png"
+                  alt="icono"
+                />
               </div>
-              <h4 class="text-2xl font-bold text-navy-blue mb-4">Talleres y Actividades</h4>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">
+                Talleres y Actividades
+              </h4>
               <p class="text-gray-600 mb-6 text-sm">
-                Música, arte, teatro, circo y juegos que estimulan el desarrollo integral y la expresión.
+                Música, arte, teatro, circo y juegos que estimulan el desarrollo
+                integral y la expresión.
               </p>
-              <div class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors">
+              <div
+                class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors"
+              >
                 <a href="/services/talleres-actividades" class="">
                   Conocer más
                 </a>
@@ -92,39 +119,59 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
               </div>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
+            <div
+              class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <div class="w-24 h-24 bg-[#fff9e6] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <img src="https://img.icons8.com/?size=160&id=-FKtqMr9WF0u&format=png" alt="icono">
+              <div
+                class="w-24 h-24 bg-[#fff9e6] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://img.icons8.com/?size=160&id=-FKtqMr9WF0u&format=png"
+                  alt="icono"
+                />
               </div>
-              <h4 class="text-2xl font-bold text-navy-blue mb-4">Acompañamiento Familiar</h4>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">
+                Acompañamiento Familiar
+              </h4>
               <p class="text-gray-600 mb-6 text-sm">
-                Asesoría continua para padres, entrevistas personalizadas y apoyo emocional y legal.
+                Asesoría continua para padres, entrevistas personalizadas y
+                apoyo emocional y legal.
               </p>
-              <div class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors">
-                <a href="/services/servicio-familiar" class="">
-                  Conocer más
-                </a>
+              <div
+                class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors"
+              >
+                <a href="/services/servicio-familiar" class=""> Conocer más </a>
                 <span class="ml-1">→</span>
               </div>
             </div>
           </div>
 
           <div class="grid md:grid-cols-3 gap-8 mt-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
+            <div
+              class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
               data-aos="fade-up"
               data-aos-delay="500"
             >
-              <div class="w-24 h-24 bg-[#e8f5e9] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <img src="https://img.icons8.com/?size=160&id=uUcxc_qe4Vlp&format=png" alt="icono">
+              <div
+                class="w-24 h-24 bg-[#e8f5e9] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://img.icons8.com/?size=160&id=uUcxc_qe4Vlp&format=png"
+                  alt="icono"
+                />
               </div>
-              <h4 class="text-2xl font-bold text-navy-blue mb-4">Seguimiento Individualizado</h4>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">
+                Seguimiento Individualizado
+              </h4>
               <p class="text-gray-600 mb-6 text-sm">
-                Evaluación constante del progreso de cada niño por un equipo multidisciplinario.
+                Evaluación constante del progreso de cada niño por un equipo
+                multidisciplinario.
               </p>
-              <div class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors">
+              <div
+                class="flex flex-row items-center text-black justify-center group-hover:text-orange-500 transition-colors"
+              >
                 <a href="/services/seguimiento-escolar" class="">
                   Conocer más
                 </a>
@@ -132,18 +179,29 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
               </div>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
+            <div
+              class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
               data-aos="fade-up"
               data-aos-delay="600"
             >
-              <div class="w-24 h-24 bg-[#e3f2fd] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <img src="https://img.icons8.com/?size=160&id=116997&format=png" alt="icono">
+              <div
+                class="w-24 h-24 bg-[#e3f2fd] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://img.icons8.com/?size=160&id=116997&format=png"
+                  alt="icono"
+                />
               </div>
-              <h4 class="text-2xl font-bold text-navy-blue mb-4">Formación y Reconocimiento</h4>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">
+                Formación y Reconocimiento
+              </h4>
               <p class="text-gray-600 mb-6 text-sm">
-                Contamos con un equipo de docentes altamente calificados, reconocidos por su compromiso y vocación.
+                Contamos con un equipo de docentes altamente calificados,
+                reconocidos por su compromiso y vocación.
               </p>
-              <div class="flex flex-row text-black items-center justify-center group-hover:text-orange-500 transition-colors">
+              <div
+                class="flex flex-row text-black items-center justify-center group-hover:text-orange-500 transition-colors"
+              >
                 <a href="/services/formacion-reconocimiento" class="">
                   Conocer más
                 </a>
@@ -151,21 +209,30 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
               </div>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
+            <div
+              class="bg-white p-8 rounded-2xl shadow-sm transition-all hover:shadow-lg group cursor-pointer"
               data-aos="fade-up"
               data-aos-delay="700"
             >
-              <div class="w-24 h-24 bg-[#fce4ec] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <img src="https://img.icons8.com/?size=160&id=XaOSGwKF6rN2&format=png" alt="icono">
+              <div
+                class="w-24 h-24 bg-[#fce4ec] rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://img.icons8.com/?size=160&id=XaOSGwKF6rN2&format=png"
+                  alt="icono"
+                />
               </div>
-              <h4 class="text-2xl font-bold text-navy-blue mb-4">Alianzas y Reconocimientos</h4>
+              <h4 class="text-2xl font-bold text-navy-blue mb-4">
+                Alianzas y Reconocimientos
+              </h4>
               <p class="text-gray-600 mb-6 text-sm">
-                Participamos en proyectos educativos, convenios y redes locales que avalan nuestra calidad.
+                Participamos en proyectos educativos, convenios y redes locales
+                que avalan nuestra calidad.
               </p>
-              <div class="flex flex-row text-black items-center justify-center group-hover:text-orange-500 transition-colors">
-                <a href="/services/alianzas" class="">
-                  Conocer más
-                </a>
+              <div
+                class="flex flex-row text-black items-center justify-center group-hover:text-orange-500 transition-colors"
+              >
+                <a href="/services/alianzas" class=""> Conocer más </a>
                 <span class="ml-1">→</span>
               </div>
             </div>
@@ -173,6 +240,7 @@ import GoogleTagManager from "../components/GoogleTagManager.astro";
         </div>
       </div>
     </section>
+    <CTASection />
     <Footer />
     <GoogleTagManagerNoScript />
   </body>
