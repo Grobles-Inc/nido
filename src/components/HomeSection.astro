@@ -30,7 +30,7 @@ interface Props {
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="text-center" data-aos="fade-up" data-aos-delay="100">
           <div
@@ -104,12 +104,14 @@ interface Props {
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-delay="500">
-        <Image
-          src={homeSection}
-          alt="Child playing with educational toys while caregiver assists"
-          class="w-full h-auto rounded-[40px] object-cover"
-        />
+      <div class="relative" data-aos="fade-up" data-aos-delay="500">
+        <div class="relative overflow-hidden">
+          <img
+            src="https://i.ibb.co/Nd04KSLR/4.webp"
+            alt="Maestras con niños"
+            class="w-full h-[300px] md:h-[600px] object-cover transform transition-transform duration-500"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -366,7 +368,7 @@ interface Props {
 </script>
 
 <!--! Sección de FAQ -->
-<section class="py-20 px-4 bg-white">
+<section class="py-20 px-4 bg-white mb-10">
   <div class="container mx-auto max-w-7xl">
     <div data-aos="fade-up">
       <h3 class="text-coral-red text-center text-lg font-medium mb-4">
@@ -382,10 +384,10 @@ interface Props {
 
     <div class="grid md:grid-cols-2 gap-12 items-start">
       <div class="relative" data-aos="fade-up" data-aos-delay="100">
-        <Image
-          src={faqSection}
+        <img
+          src="https://i.ibb.co/BHLt94QP/5.webp"
           alt="Área de juegos con juguetes y estantes organizados"
-          class="w-full h-auto rounded-[40px] object-cover"
+          class="w-full h-auto object-cover"
         />
       </div>
 
