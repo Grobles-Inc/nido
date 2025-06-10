@@ -4,12 +4,12 @@ import teachersData from "../data/teachers.json";
 
 // Define los colores de fondo para cada tarjeta (siguiendo el diseño de la imagen)
 const backgroundColors = [
-  "bg-yellow-100",  // Amarillo claro
-  "bg-blue-100",    // Azul claro  
-  "bg-purple-100",  // Morado claro
-  "bg-pink-100",    // Rosa claro
-  "bg-green-100",   // Verde claro
-  "bg-orange-100"   // Naranja claro
+  "bg-yellow-100", // Amarillo claro
+  "bg-blue-100", // Azul claro
+  "bg-purple-100", // Morado claro
+  "bg-pink-100", // Rosa claro
+  "bg-green-100", // Verde claro
+  "bg-orange-100", // Naranja claro
 ];
 
 // Limitar a los primeros 4 profesores para coincidir con el diseño
@@ -26,9 +26,11 @@ const displayTeachers = teachersData.slice(0, 4);
       <h2 class="text-4xl md:text-6xl font-bold text-primary">
         Nuestros Docentes
       </h2>
-      <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        En Perulinas, nuestros docentes son fundamentales para el desarrollo de
-        nuestros niños. Conoce a nuestro equipo especializado.
+      <p
+        class="text-center text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
+      >
+        En Perulinas, nuestros docentes son perennes y cumplen un rol muy
+        importante en el desarrollo de nuestros alumnos.
       </p>
     </div>
 
@@ -37,8 +39,8 @@ const displayTeachers = teachersData.slice(0, 4);
       {
         displayTeachers.map((teacher, index) => (
           <div class="h-full">
-            <TeacherCard 
-              teacher={teacher} 
+            <TeacherCard
+              teacher={teacher}
               bgColor={backgroundColors[index % backgroundColors.length]}
             />
           </div>
@@ -47,44 +49,48 @@ const displayTeachers = teachersData.slice(0, 4);
     </div>
 
     <!-- Ver más profesores link (opcional) -->
-    {teachersData.length > 4 && (
-      <div class="text-center mt-12">
-        <button 
-          class="btn btn-primary btn-lg px-8"
-          onclick="document.getElementById('all-teachers-modal').showModal()"
-        >
-          Ver Todo el Equipo
-        </button>
-      </div>
-    )}
+    {
+      teachersData.length > 4 && (
+        <div class="text-center mt-12">
+          <button
+            class="btn btn-primary btn-lg px-8"
+            onclick="document.getElementById('all-teachers-modal').showModal()"
+          >
+            Ver Todo el Equipo
+          </button>
+        </div>
+      )
+    }
   </div>
 
   <!-- Modal para ver todos los profesores -->
-  {teachersData.length > 4 && (
-    <dialog id="all-teachers-modal" class="modal">
-      <div class="modal-box max-w-6xl">
-        <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-            ✕
-          </button>
-        </form>
-        <h3 class="font-bold text-4xl mb-6 text-center">Todo Nuestro Equipo</h3>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {
-            teachersData.map((teacher, index) => (
-              <TeacherCard 
-                teacher={teacher} 
+  {
+    teachersData.length > 4 && (
+      <dialog id="all-teachers-modal" class="modal">
+        <div class="modal-box max-w-6xl">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
+          <h3 class="font-bold text-4xl mb-6 text-center">
+            Todo Nuestro Equipo
+          </h3>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {teachersData.map((teacher, index) => (
+              <TeacherCard
+                teacher={teacher}
                 bgColor={backgroundColors[index % backgroundColors.length]}
               />
-            ))
-          }
+            ))}
+          </div>
         </div>
-      </div>
-      <form method="dialog" class="modal-backdrop">
-        <button>close</button>
-      </form>
-    </dialog>
-  )}
+        <form method="dialog" class="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+    )
+  }
 
   <!-- Modals individuales para cada profesor -->
   {
