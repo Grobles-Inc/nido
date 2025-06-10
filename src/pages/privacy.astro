@@ -1,0 +1,348 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import GoogleTagManager from "../components/GoogleTagManager.astro";
+import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
+import CTASection from "../components/CTASection.astro";
+---
+
+<!doctype html>
+<html lang="es" data-theme="nido">
+  <head>
+    <meta charset="UTF-8" />
+    <BaseHead
+      title="Políticas de Privacidad - Nido Perulina"
+      description="Conoce nuestras políticas de privacidad y protección de datos en Nido Perulina. Tu privacidad es importante para nosotros."
+    />
+    <GoogleTagManager />
+  </head>
+  <body class="bg-white">
+    <Header />
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-[50vh] flex items-center justify-center overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('https://i.ibb.co/BRjnGr1/IMG-9447.webp');"
+      >
+        <div class="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      <div
+        class="relative z-10 text-center px-4"
+        data-aos="zoom-in"
+        data-aos-delay="100"
+      >
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
+          Políticas de Privacidad
+        </h1>
+        <p class="text-lg text-white/90 max-w-2xl mx-auto">
+          En Nido Perulina respetamos y protegemos tu privacidad y la de tu
+          familia
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="container mx-auto px-6 py-16 max-w-4xl">
+      <div class="prose prose-lg max-w-none" data-aos="fade-up">
+        <!-- Última actualización -->
+        <div class="bg-blue-50 border-l-4 border-primary p-6 mb-8 rounded-r-lg">
+          <p class="text-sm text-gray-600 mb-2">
+            <strong>Última actualización:</strong> Diciembre de 2024
+          </p>
+          <p class="text-gray-700">
+            Esta política de privacidad describe cómo Nido Perulina recopila,
+            utiliza y protege la información personal que nos proporciona.
+          </p>
+        </div>
+
+        <!-- 1. Información que recopilamos -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="text-3xl font-bold text-primary mb-6">
+            1. Información que Recopilamos
+          </h2>
+
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            Información de estudiantes y familias:
+          </h3>
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>
+              Datos personales del menor (nombre, fecha de nacimiento,
+              dirección)
+            </li>
+            <li>Información de contacto de los padres o tutores</li>
+            <li>Información médica relevante para el cuidado del menor</li>
+            <li>Fotografías y videos para actividades educativas</li>
+            <li>Registros académicos y de desarrollo</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            Información del sitio web:
+          </h3>
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>Datos de navegación a través de cookies</li>
+            <li>Información de formularios de contacto</li>
+            <li>Dirección IP y tipo de navegador</li>
+            <li>Páginas visitadas y tiempo de permanencia</li>
+          </ul>
+        </div>
+
+        <!-- 2. Cómo utilizamos la información -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="text-3xl font-bold text-primary mb-6">
+            2. Cómo Utilizamos la Información
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-purple-50 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-primary mb-3">
+                Propósitos Educativos
+              </h3>
+              <ul class="list-disc pl-5 space-y-1 text-sm">
+                <li>Seguimiento del desarrollo académico</li>
+                <li>Planificación de actividades educativas</li>
+                <li>Comunicación con padres de familia</li>
+                <li>Cuidado y seguridad del menor</li>
+              </ul>
+            </div>
+            <div class="bg-orange-50 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-primary mb-3">
+                Propósitos Administrativos
+              </h3>
+              <ul class="list-disc pl-5 space-y-1 text-sm">
+                <li>Gestión de matrículas y pagos</li>
+                <li>Cumplimiento de requisitos legales</li>
+                <li>Mejora de nuestros servicios</li>
+                <li>Comunicaciones institucionales</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Protección de datos -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="300">
+          <h2 class="text-3xl font-bold text-primary mb-6">
+            3. Protección de Datos
+          </h2>
+
+          <div class="bg-green-50 border border-green-200 p-6 rounded-lg mb-6">
+            <h3 class="text-lg font-semibold text-primary mb-3">
+              🔒 Medidas de Seguridad
+            </h3>
+            <p class="mb-4">
+              Implementamos las siguientes medidas para proteger tu información:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Acceso restringido solo a personal autorizado</li>
+              <li>Sistemas de almacenamiento seguros y encriptados</li>
+              <li>Protocolos de backup y recuperación de datos</li>
+              <li>Capacitación continua del personal en protección de datos</li>
+            </ul>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            Compartir información con terceros:
+          </h3>
+          <p class="mb-4">
+            <strong>No vendemos, alquilamos o compartimos</strong> información personal
+            con terceros, excepto en los siguientes casos:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Cuando sea requerido por ley o autoridades competentes</li>
+            <li>
+              Para servicios externos necesarios (seguros, servicios médicos de
+              emergencia)
+            </li>
+            <li>Con el consentimiento explícito de los padres</li>
+          </ul>
+        </div>
+
+        <!-- 4. Derechos de los padres -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="400">
+          <h2 class="text-3xl font-bold text-primary mb-6">
+            4. Derechos de los Padres y Tutores
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="bg-accent text-white rounded-full p-2 mt-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Derecho de Acceso</h3>
+                  <p class="text-sm text-gray-600">
+                    Solicitar información sobre los datos que tenemos de su
+                    hijo/a
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="bg-accent text-white rounded-full p-2 mt-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Derecho de Rectificación</h3>
+                  <p class="text-sm text-gray-600">
+                    Corregir datos inexactos o incompletos
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="bg-accent text-white rounded-full p-2 mt-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Derecho de Supresión</h3>
+                  <p class="text-sm text-gray-600">
+                    Solicitar la eliminación de datos cuando sea apropiado
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="bg-accent text-white rounded-full p-2 mt-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Derecho de Oposición</h3>
+                  <p class="text-sm text-gray-600">
+                    Oponerse al tratamiento de datos en casos específicos
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="bg-accent text-white rounded-full p-2 mt-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Derecho de Portabilidad</h3>
+                  <p class="text-sm text-gray-600">
+                    Obtener una copia de los datos en formato estructurado
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="bg-accent text-white rounded-full p-2 mt-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Derecho de Limitación</h3>
+                  <p class="text-sm text-gray-600">
+                    Solicitar la limitación del tratamiento de datos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Cookies y tecnologías de seguimiento -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="500">
+          <h2 class="text-3xl font-bold text-primary mb-6">
+            5. Cookies y Tecnologías de Seguimiento
+          </h2>
+
+          <p class="mb-6">
+            Nuestro sitio web utiliza cookies para mejorar la experiencia del
+            usuario y analizar el tráfico del sitio. Las cookies son pequeños
+            archivos de texto que se almacenan en su dispositivo.
+          </p>
+
+          <div class="bg-yellow-50 border border-yellow-200 p-6 rounded-lg">
+            <h3 class="text-lg font-semibold text-primary mb-3">
+              Tipos de cookies que utilizamos:
+            </h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>
+                <strong>Cookies esenciales:</strong> Necesarias para el funcionamiento
+                básico del sitio
+              </li>
+              <li>
+                <strong>Cookies de análisis:</strong> Nos ayudan a entender cómo
+                los usuarios interactúan con nuestro sitio
+              </li>
+              <li>
+                <strong>Cookies de funcionalidad:</strong> Permiten recordar sus
+                preferencias
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 6. Menores de edad -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="600">
+          <h2 class="text-3xl font-bold text-primary mb-6">
+            6. Protección de Menores de Edad
+          </h2>
+
+          <div class="bg-red-50 border border-red-200 p-6 rounded-lg">
+            <p class="mb-4">
+              <strong>Protección especial:</strong> Como institución educativa que
+              trabaja con menores de edad, aplicamos medidas de protección adicionales:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>
+                Requerimos consentimiento explícito de los padres para cualquier
+                actividad
+              </li>
+              <li>Limitamos el acceso a información personal del menor</li>
+              <li>No utilizamos información de menores para marketing</li>
+              <li>
+                Eliminamos datos cuando ya no son necesarios para propósitos
+                educativos
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 8. Cambios en la política -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="800">
+          <h2 class="text-3xl font-bold text-primary mb-6">
+            7. Cambios en esta Política
+          </h2>
+
+          <p class="mb-4">
+            Nos reservamos el derecho de actualizar esta política de privacidad
+            cuando sea necesario. Los cambios serán publicados en esta página y,
+            si son significativos, notificaremos a los padres de familia a
+            través de:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Correo electrónico a la dirección registrada</li>
+            <li>Aviso en el portal de padres</li>
+            <li>Comunicación impresa si es necesario</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection />
+    <Footer />
+    <GoogleTagManagerNoScript />
+  </body>
+</html>

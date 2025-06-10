@@ -38,7 +38,7 @@ const ogImage = heroImage
 		<Header />
 		<main class="container mx-auto md:px-4 md:py-8 lg:py-12">
 			<article
-				class="max-w-4xl mx-auto"
+				class="max-w-4xl mt-28 mx-auto"
 				itemscope
 				itemtype="https://schema.org/BlogPosting"
 			>
@@ -56,11 +56,11 @@ const ogImage = heroImage
 				}
 
 				<div
-					class="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-bold prose-p:text-gray-700 prose-img:rounded-xl prose-blockquote:bg-base-200 prose-blockquote:border-primary prose-blockquote:rounded-lg prose-blockquote:not-italic"
+					class="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-bold prose-p:text-gray-700 md:prose-img:rounded-xl prose-blockquote:bg-base-200 prose-blockquote:border-primary prose-blockquote:rounded-lg prose-blockquote:not-italic"
 				>
-					<header class="mb-8 text-center">
+					<header class="mb-8 px-4 text-center">
 						<h1
-							class="text-4xl lg:text-5xl mb-8 leading-tight"
+							class="text-3xl lg:text-5xl mb-8 leading-tight"
 							itemprop="headline"
 						>
 							{title}
@@ -69,14 +69,14 @@ const ogImage = heroImage
 							class="flex items-center justify-center gap-2 text-sm mb-4 not-prose"
 						>
 							<span
-								class="text-xl"
+								class="md:text-xl"
 								aria-label={Astro.props.category}
 								itemprop="articleSection">{Astro.props.category || "Blog"}</span
 							>
-							<span class="text-xl mx-2">•</span>
+							<span class="text-xl md:mx-2">•</span>
 							<time
 								datetime={pubDate.toLocaleDateString()}
-								class="opacity-75 text-xl"
+								class="opacity-75 md:text-xl"
 								itemprop="datePublished"
 							>
 								<FormattedDate date={pubDate} />
@@ -100,23 +100,17 @@ const ogImage = heroImage
 					</header>
 					{
 						heroImage && (
-							<figure class="relative w-full h-[400px] mb-8 rounded-2xl overflow-hidden">
-								<img
-									src={heroImage}
-									alt={`Imagen principal para el artículo: ${title}`}
-									class="w-full h-full object-cover"
-									itemprop="image"
-								/>
-								<div
-									class="absolute inset-0 bg-gradient-to-t from-base-100/50 to-transparent"
-									aria-hidden="true"
-								/>
-							</figure>
+							<img
+								src={heroImage}
+								alt={`Imagen principal para el artículo: ${title}`}
+								class="w-full min-h-[400px] object-cover "
+								itemprop="image"
+							/>
 						)
 					}
 					<div class="divider my-8" role="separator"></div>
 
-					<div itemprop="articleBody">
+					<div itemprop="articleBody" class="px-4">
 						<slot />
 					</div>
 				</div>

@@ -96,18 +96,10 @@ import contactImage from "../assets/images/FAQSection.png";
 
         <form
           id="form-contacto"
-          class="space-y-6 bg-neutral p-12 rounded-3xl contact-form"
+          class="space-y-6 bg-neutral md:p-12 p-6 rounded-3xl contact-form"
           data-aos="zoom-in"
           data-aos-delay="200"
         >
-          <div class="success-message" id="success-message">
-            ¡Gracias por contactarnos! Te responderemos pronto.
-          </div>
-          <div class="error-alert" id="error-alert">
-            Hubo un error al enviar el formulario. Por favor, inténtalo de
-            nuevo.
-          </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 contact-form-row">
             <div class="md:col-span-2 contact-form-field-request">
               <label
@@ -184,7 +176,7 @@ import contactImage from "../assets/images/FAQSection.png";
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="+51 987654321"
+                placeholder="987654321"
                 class="w-full input input-bordered contact-input-phone"
                 required
                 aria-required="true"
@@ -220,6 +212,13 @@ import contactImage from "../assets/images/FAQSection.png";
           >
             Enviar mensaje
           </button>
+          <div class="success-message" id="success-message">
+            ¡Gracias por contactarnos! Te responderemos pronto.
+          </div>
+          <div class="error-alert" id="error-alert">
+            Hubo un error al enviar el formulario. Por favor, inténtalo de
+            nuevo.
+          </div>
         </form>
 
         <!-- Información de contacto -->
@@ -363,7 +362,8 @@ import contactImage from "../assets/images/FAQSection.png";
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            Visítanos en nuestras instalaciones. Estamos ubicados en una zona accesible de Lima.
+            Visítanos en nuestras instalaciones. Estamos ubicados en una zona
+            accesible de Lima.
           </p>
         </div>
 
@@ -388,7 +388,8 @@ import contactImage from "../assets/images/FAQSection.png";
         <!-- Additional Location Info -->
         <div class="mt-8 text-center">
           <p class="text-gray-600 mb-4">
-            <strong>Horarios de atención:</strong> Lunes a Viernes de 7:30 AM a 6:00 PM
+            <strong>Horarios de atención:</strong> Lunes a Viernes de 7:30 AM a 6:00
+            PM
           </p>
           <p class="text-gray-600">
             <strong>Zona:</strong> Lince, Lima - Fácil acceso en transporte público
