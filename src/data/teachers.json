@@ -27,7 +27,7 @@
     "badgeStyle": "badge-secondary",
     "image": "https://mighty.tools/mockmind-api/content/human/108.jpg",
     "shortDescription": "Especialista en desarrollo socioemocional y apoyo familiar.",
-    "fullDescription": "Con más de 12 años de experiencia en psicología infantil, Carlos se especializa en el desarrollo socioemocional de los niños y el apoyo integral a las familias.",
+    "fullDescription": "Con más de 12 años de experiencia en psicología infantil, Karina se especializa en el desarrollo socioemocional de los niños y el apoyo integral a las familias.",
     "education": [
       "Licenciatura en Psicología - Universidad Nacional Mayor de San Marcos",
       "Maestría en Psicología Infantil y Adolescente",
@@ -40,83 +40,83 @@
     ]
   },
   {
-    "id": "ana",
-    "name": "Ana García",
-    "position": "Educadora Principal",
-    "badge": "Educación",
-    "badgeStyle": "badge",
-    "image": "https://mighty.tools/mockmind-api/content/human/125.jpg",
-    "shortDescription": "Experta en metodologías activas y estimulación temprana.",
-    "fullDescription": "Ana cuenta con 10 años de experiencia en educación inicial, especializándose en metodologías activas que promueven el aprendizaje significativo y la estimulación temprana.",
-    "education": [
-      "Licenciatura en Educación Inicial - Universidad Cayetano Heredia",
-      "Especialización en Metodologías Activas",
-      "Certificación en Estimulación Temprana y Desarrollo Motor"
-    ],
-    "achievements": [
-      "Diseño de actividades pedagógicas innovadoras",
-      "Capacitadora en metodologías Montessori y Reggio Emilia",
-      "Coordinadora de proyectos de estimulación temprana"
-    ]
-  },
-  {
-    "id": "luis",
-    "name": "Valeria Torres",
-    "position": "Coordinador de Actividades",
-    "badge": "Coordinación",
-    "badgeStyle": "badge-secondary",
-    "image": "https://mighty.tools/mockmind-api/content/human/126.jpg",
-    "shortDescription": "Especializado en desarrollo psicomotor y actividades lúdicas.",
-    "fullDescription": "Luis tiene 8 años de experiencia en coordinación de actividades educativas, enfocándose en el desarrollo psicomotor y la implementación de actividades lúdicas que favorecen el aprendizaje integral.",
-    "education": [
-      "Licenciatura en Educación Física - Universidad Nacional de Educación",
-      "Especialización en Psicomotricidad Infantil",
-      "Certificación en Actividades Lúdicas y Recreativas"
-    ],
-    "achievements": [
-      "Desarrollo de programas de psicomotricidad innovadores",
-      "Organización de más de 100 eventos recreativos educativos",
-      "Entrenador certificado en deportes adaptados para niños"
-    ]
-  },
-  {
-    "id": "luisa",
-    "name": "Daniella Torres",
-    "position": "Coordinadora de Actividades",
-    "badge": "Coordinación",
+    "id": "cindy",
+    "name": "Cindy Ramírez",
+    "position": "Educadora - 2 años",
+    "badge": "2 Años",
     "badgeStyle": "badge-primary",
-    "image": "https://mighty.tools/mockmind-api/content/human/126.jpg",
-    "shortDescription": "Especializado en desarrollo psicomotor y actividades lúdicas.",
-    "fullDescription": "Luis tiene 8 años de experiencia en coordinación de actividades educativas, enfocándose en el desarrollo psicomotor y la implementación de actividades lúdicas que favorecen el aprendizaje integral.",
+    "image": "https://mighty.tools/mockmind-api/content/human/127.jpg",
+    "shortDescription": "Especialista en el cuidado y desarrollo de infantes, creando un ambiente seguro y estimulante.",
+    "fullDescription": "Miss Cindy tiene una vocación especial para trabajar con niños de 2 años. Su enfoque se centra en el desarrollo temprano, la estimulación sensorial y el establecimiento de rutinas que brindan seguridad y confianza a los niños en sus primeros pasos en el nido.",
     "education": [
-      "Licenciatura en Educación Física - Universidad Nacional de Educación",
-      "Especialización en Psicomotricidad Infantil",
-      "Certificación en Actividades Lúdicas y Recreativas"
+      "Técnico en Educación Inicial",
+      "Certificación en Estimulación Temprana",
+      "Cursos de Primeros Auxilios Pediátricos"
     ],
     "achievements": [
-      "Desarrollo de programas de psicomotricidad innovadores",
-      "Organización de más de 100 eventos recreativos educativos",
-      "Entrenador certificado en deportes adaptados para niños"
+      "Implementación de un programa de juego sensorial.",
+      "Creación de un ambiente de apego seguro para los más pequeños.",
+      "Reconocida por su paciencia y dedicación."
     ]
   },
   {
-    "id": "luz",
-    "name": "Luz Torres",
-    "position": "Coordinadora de Actividades",
-    "badge": "Coordinación",
+    "id": "cecilia",
+    "name": "Cecilia Gil",
+    "position": "Educadora - 3 años",
+    "badge": "3 Años",
     "badgeStyle": "badge-secondary",
-    "image": "https://mighty.tools/mockmind-api/content/human/126.jpg",
-    "shortDescription": "Especializado en desarrollo psicomotor y actividades lúdicas.",
-    "fullDescription": "Luz tiene 8 años de experiencia en coordinación de actividades educativas, enfocándose en el desarrollo psicomotor y la implementación de actividades lúdicas que favorecen el aprendizaje integral.",
+    "image": "https://mighty.tools/mockmind-api/content/human/128.jpg",
+    "shortDescription": "Fomenta la autonomía y la socialización en los niños a través del juego y actividades creativas.",
+    "fullDescription": "Con una energía contagiante, Miss Cecilia guía a los niños de 3 años en el descubrimiento de su independencia. Utiliza el juego como herramienta principal para el aprendizaje, promoviendo la colaboración, la comunicación y el desarrollo de habilidades sociales.",
     "education": [
-      "Licenciatura en Educación Física - Universidad Nacional de Educación",
-      "Especialización en Psicomotricidad Infantil",
-      "Certificación en Actividades Lúdicas y Recreativas"
+      "Licenciatura en Educación Inicial",
+      "Especialización en Psicomotricidad y Juego",
+      "Diplomado en Dificultades del Aprendizaje"
     ],
     "achievements": [
-      "Desarrollo de programas de psicomotricidad innovadores",
-      "Organización de más de 100 eventos recreativos educativos",
-      "Entrenador certificado en deportes adaptados para niños"
+      "Desarrollo del proyecto 'Pequeños Exploradores' para fomentar la curiosidad.",
+      "Organización de las primeras asambleas y proyectos grupales.",
+      "Éxito en la adaptación de niños al entorno escolar."
+    ]
+  },
+  {
+    "id": "kimi",
+    "name": "Kimi Calatayud",
+    "position": "Educadora - 4 años",
+    "badge": "4 Años",
+    "badgeStyle": "badge-primary",
+    "image": "https://mighty.tools/mockmind-api/content/human/129.jpg",
+    "shortDescription": "Promueve el pensamiento crítico y la lectoescritura emergente con proyectos innovadores.",
+    "fullDescription": "Miss Kimi es una apasionada por despertar la curiosidad intelectual en los niños de 4 años. A través de proyectos de investigación y actividades de pre-lectura y pre-escritura, prepara a los niños para los desafíos de la siguiente etapa educativa.",
+    "education": [
+      "Licenciatura en Educación",
+      "Especialización en Metodología por Proyectos",
+      "Certificación en Animación a la Lectura"
+    ],
+    "achievements": [
+      "Implementación de proyectos de investigación basados en los intereses de los niños.",
+      "Creación de la 'Biblioteca de Aula' con participación de las familias.",
+      "Resultados destacados en competencias de pre-lectoescritura."
+    ]
+  },
+  {
+    "id": "mary",
+    "name": "Mary Álvarez",
+    "position": "Educadora - 5 años",
+    "badge": "5 Años",
+    "badgeStyle": "badge-secondary",
+    "image": "https://mighty.tools/mockmind-api/content/human/130.jpg",
+    "shortDescription": "Prepara a los niños para la etapa escolar con enfoque en competencias y habilidades para la vida.",
+    "fullDescription": "Con amplia experiencia, Miss Mary acompaña a los niños de 5 años en su último año en el nido, consolidando sus aprendizajes y preparándolos para la primaria. Su programa se enfoca en el desarrollo de la lógica matemática, la lectoescritura y las habilidades socioemocionales.",
+    "education": [
+      "Maestría en Psicopedagogía",
+      "Licenciatura en Educación Primaria",
+      "Diplomado en Preparación para la Escolaridad"
+    ],
+    "achievements": [
+      "Diseño del programa 'Listos para Primaria' con alta tasa de éxito.",
+      "Coordinadora del proyecto de fin de año y ceremonia de graduación.",
+      "Publicaciones sobre la transición del nido al colegio."
     ]
   }
 ] 
