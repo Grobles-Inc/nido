@@ -19,12 +19,13 @@ const filteredPosts = category
 	? posts.filter((post) => post.data.category === category)
 	: posts;
 
-const ogImage = new URL("/og-image-blog.jpg", Astro.url);
+const ogImage = new URL("/og.png", Astro.url);
 ---
 
 <!doctype html>
 <html lang="es" data-theme="nido">
 	<head>
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<BaseHead
 			title={`Blog - ${SITE_TITLE}`}
 			description="Artículos educativos sobre el desarrollo infantil, actividades preescolares y consejos para padres."

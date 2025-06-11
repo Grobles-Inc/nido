@@ -9,13 +9,14 @@ import CTASection from "../components/CTASection.astro";
 const { title, description, heroImage } = Astro.props;
 const ogImage = heroImage
 	? new URL(heroImage, Astro.url)
-	: new URL("/og-image-blog.jpg", Astro.url);
+	: new URL("/og.png", Astro.url);
 ---
 
 <!doctype html>
 <html lang="es" data-theme="nido">
 	<head>
 		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<BaseHead title={title} description={description}>
 			<meta property="og:type" content="website" />
 			<meta property="og:title" content={title} />
