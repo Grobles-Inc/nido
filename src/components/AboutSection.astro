@@ -13,10 +13,13 @@ import aboutImage from "../assets/images/AboutSection.png";
           Comprometidos con el Crecimiento<br /> y la Felicidad de tu Hijo
         </h3>
 
-        <p class="text-gray-700 max-w-2xl mb-12">
-          En Perulinas, proporcionamos un ambiente seguro, acogedor y alegre
-          donde los niños prosperan. Nuestro equipo dedicado está apasionado por
-          inspirar el amor por el aprendizaje y la curiosidad en cada niño.
+        <p class="mb-8 leading-7">
+          <span class="font-bold">Nido Perulina</span> es una institución educativa
+          infantil que forma parte del grupo <span class="font-bold"
+            >Iberoamericano para el desarrollo de los niños</span
+          >, fundada por el Sr. Iván Tello Carbajal. Inspirado en el personaje
+          de la literatura infantil "Perulina", el nido busca brindar una educación
+          de excelencia a través de su programa pedagógico exclusivo "PRODIGIE".
         </p>
       </div>
 
@@ -65,7 +68,7 @@ import aboutImage from "../assets/images/AboutSection.png";
       <img
         src="https://i.ibb.co/9kGwtK8c/Dise-os-Perulina.webp"
         alt="Niños aprendiendo"
-        class="h-[350px] md:h-[450px] w-full md:w-[900px] object-cover"
+        class="h-[250px] md:h-[450px] w-full md:w-[900px] object-cover"
       />
     </div>
   </div>
@@ -77,7 +80,7 @@ import aboutImage from "../assets/images/AboutSection.png";
     let current = 0;
 
     const updateCounter = () => {
-      const increment = target / 50;
+      const increment = target / 150;
       current = Math.min(current + increment, target);
       element.innerText = Math.floor(current) + "+";
 
