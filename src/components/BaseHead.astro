@@ -1,19 +1,19 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-import 'aos/dist/aos.css';
-import { SITE_TITLE } from '../consts';
+import "../styles/global.css";
+import "aos/dist/aos.css";
+import { SITE_TITLE } from "../consts";
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -22,16 +22,28 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
+  rel="alternate"
+  type="application/rss+xml"
+  title={SITE_TITLE}
+  href={new URL("rss.xml", Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/src/assets/fonts/DarkerGrotesque-ExtraBold.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="preload" href="/src/assets/fonts/Neulis_Neue_Regular.otf" as="font" type="font/otf" crossorigin />
+<link
+  rel="preload"
+  href="/fonts/DarkerGrotesque-ExtraBold.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/Neulis_Neue_Regular.otf"
+  as="font"
+  type="font/otf"
+  crossorigin
+/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -57,20 +69,20 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 
 <!-- AOS Global Initialization -->
 <script>
-  import AOS from 'aos';
-  
+  import AOS from "aos";
+
   // Initialize AOS when DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     AOS.init({
       duration: 800,
       once: true,
       offset: 100,
-      easing: 'ease-in-out'
+      easing: "ease-in-out",
     });
   });
-  
+
   // Refresh AOS on page navigation (for SPAs)
-  document.addEventListener('astro:page-load', function() {
+  document.addEventListener("astro:page-load", function () {
     AOS.refresh();
   });
 </script>

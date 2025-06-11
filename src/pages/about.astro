@@ -1,15 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import aboutImage from "../assets/images/AboutSection.png";
-import coreValuesImage from "../assets/images/CoreValues.jpg";
 import AwardsSection from "../components/AwardsSection.astro";
 import BaseHead from "../components/BaseHead.astro";
+import CTASection from "../components/CTASection.astro";
 import Footer from "../components/Footer.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 import Header from "../components/Header.astro";
 import TeachersSection from "../components/TeachersSection.astro";
-import CTASection from "../components/CTASection.astro";
 ---
 
 <!doctype html>
@@ -57,7 +55,7 @@ import CTASection from "../components/CTASection.astro";
 				<div data-aos="fade-up">
 					<h3 class="text-4xl md:text-6xl font-bold mb-8">¿Quiénes somos?</h3>
 
-					<p class="mb-8">
+					<p class="mb-8 leading-7">
 						<span class="font-bold">Nido Perulina</span> es una institución educativa
 						infantil que forma parte del grupo <span class="font-bold"
 							>Iberoamericano para el desarrollo de los niños</span
@@ -77,31 +75,31 @@ import CTASection from "../components/CTASection.astro";
 
 		<section class="bg-accent">
 			<div
-				class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
+				class="container mx-auto md:py-28 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
 			>
 				<div class="flex flex-col items-center">
-					<div class="text-8xl font-bold text-white counter" data-target="10">
+					<div class="text-6xl font-bold text-white counter" data-target="30">
 						0
 					</div>
 					<span class="text-base-content">Años de experiencia</span>
 				</div>
 				<div class="flex flex-col items-center">
-					<div class="text-8xl font-bold text-white counter" data-target="200">
+					<div class="text-6xl font-bold text-white counter" data-target="1500">
 						0
 					</div>
 					<span class="text-base-content">Familias felices</span>
 				</div>
 				<div class="flex flex-col items-center">
-					<div class="text-8xl font-bold text-white counter" data-target="95">
+					<div class="text-6xl font-bold text-white counter" data-target="3000">
 						0
 					</div>
-					<span class="text-base-content">Satisfacción de padres</span>
+					<span class="text-base-content">Padres satisfechos</span>
 				</div>
 				<div class="flex flex-col items-center">
-					<div class="text-8xl font-bold text-white counter" data-target="15">
+					<div class="text-6xl font-bold text-white counter" data-target="10">
 						0
 					</div>
-					<span class="text-base-content">Colaboradores</span>
+					<span class="text-base-content">Empresas colaboradoras</span>
 				</div>
 			</div>
 		</section>
@@ -320,7 +318,7 @@ import CTASection from "../components/CTASection.astro";
 					innerText: target,
 					duration: 2,
 					ease: "power2.out",
-					snap: { innerText: 1 },
+					snap: { innerText: 10 },
 					scrollTrigger: {
 						trigger: element,
 						start: "top 80%",
