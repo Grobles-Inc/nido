@@ -39,6 +39,10 @@ import CTASection from "../components/CTASection.astro";
 	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
 	<body class="bg-white">
+		<div id="preloader">
+  <div id="lottie-logo" style="width:220px;height:220px"></div>
+  
+		</div>
 		<Header />
 		<HeroSection />
 		<AboutSection />
@@ -50,3 +54,100 @@ import CTASection from "../components/CTASection.astro";
 		<GoogleTagManagerNoScript />
 	</body>
 </html>
+<style>
+	#preloader {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgb(7, 60, 109);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		z-index: 9999;
+		color: #fff;
+	}
+
+	#logo {
+		width: 100px;
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	#counter {
+		font-size: 2rem;
+	}
+
+	#main-content {
+		opacity: 0;
+		transform: translateY(50px);
+		transition: all 0.3s ease;
+	}
+</style>
+<script>
+	// preloader.js
+
+// Removed invalid import as "onNavigate" is not exported by "astro:transitions"
+import gsap from "gsap";
+import lottie from "lottie-web";
+import animation from "./../assets/animation/logo_animtion.json";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lottieLogoContainer = document.getElementById("lottie-logo");
+  if (lottieLogoContainer) {
+	lottie.loadAnimation({
+	  container: lottieLogoContainer,
+	  renderer: "svg",
+	  loop: true,
+	  autoplay: true,
+	  animationData: animation,
+	});
+  }
+
+  // ...tu código de preloader aquí...
+});
+
+const preloader = document.getElementById("preloader");
+const counter = document.getElementById("counter");
+const logo = document.getElementById("logo");
+
+function showPreloader() {
+  if (preloader) {
+    preloader.style.display = "flex";
+    gsap.set(preloader, { opacity: 1, y: 0, scale: 1 });
+    let count = 0;
+	if (counter) counter.textContent = "0%";
+    const interval = setInterval(() => {
+      count++;
+	  if (counter) counter.textContent = count + "%";
+      if (count >= 100) clearInterval(interval);
+    }, 10);
+    gsap.to(logo, { rotation: 360, repeat: -1, ease: "linear", duration: 2 });
+  }
+}
+
+function hidePreloader() {
+  if (preloader) {
+    gsap.to(preloader, {
+      scaleY: 2.5,      // Se extiende verticalmente
+	  scaleX: 2.5,      // Se extiende horizontalmente
+      opacity: 0,
+      duration: 0.8,
+      transformOrigin: "center center",
+      ease: "power2.in",
+      onComplete: () => {
+        preloader.style.display = "none";
+        gsap.set(preloader, { scaleY: 1, opacity: 1 }); // Reset para futuras cargas
+      }
+    });
+  }
+}
+// Mostrar preloader al navegar
+document.addEventListener("DOMContentLoaded", () => {
+  showPreloader();
+  // Ocultar preloader después de un pequeño delay (simula carga)
+  setTimeout(hidePreloader, 1200);
+});
+</script>
