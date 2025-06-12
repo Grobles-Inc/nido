@@ -5,41 +5,43 @@ import infrastructureImage from "../assets/images/HomeSection.png";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 import alumno from "../assets/images/alumno.png";
+import fondo from "../assets/images/infra_01.jpg";
+import fondo_dos from "../assets/images/infra_02.jpg";
+import fondo_tres from "../assets/images/infra_03.jpg";
 ---
 
 <head>
+  <meta charset="UTF-8" />
   <GoogleTagManager />
 </head>
 <Layout
   title="Nuestra Infraestructura"
-  heroImage="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  heroImage={fondo_tres}
   description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
 >
   <section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
-    <div class="container mx-auto grid md:grid-cols-2 items-center">
+    <div class="container mx-auto grid md:grid-cols-2 items-center gap-8 px-6 py-12">
       <div>
-        <h3 class="text-4xl md:text-6xl font-bold mb-8">
-          Instalaciones de Primera Clase
-        </h3>
+      <h3 class="text-4xl md:text-6xl font-bold mb-6">Instalaciones de Primera Clase</h3>
 
-        <p class="max-w-xl mb-8">
-          Nuestras instalaciones están equipadas con tecnología de punta y
-          espacios diseñados para fomentar el aprendizaje y la creatividad. Cada
-          área está pensada para ofrecer un entorno seguro y estimulante para
-          los niños.
-        </p>
-        <a href="/contact" class="btn btn-neutral btn-xl">Visítanos</a>
+      <p class="max-w-xl mb-6 mt-6">
+        Nuestras instalaciones están equipadas con tecnología de punta y
+        espacios diseñados para fomentar el aprendizaje y la creatividad. Cada
+        área está pensada para ofrecer un entorno seguro y estimulante para
+        los niños.
+      </p>
+      <a href="/contact" class="btn btn-neutral px-8 py-4 btn-xl mt-6">Visítanos</a>
       </div>
-      <div class="relative h-full pb-12">
-        <Image
-          src={infrastructureImage}
-          alt="Instalaciones modernas y seguras"
-          class="w-full h-full object-cover rounded-2xl"
-        />
+      <div class="relative h-full">
+      <Image
+        src={infrastructureImage}
+        alt="Instalaciones modernas y seguras"
+        class="w-full h-full object-cover rounded-2xl"
+      />
       </div>
     </div>
   </section>
-  <div class="body ">
+  <div class="body">
     <div class="wrapper">
       <section class="intro bg-image">
         <div class="logo">
@@ -47,35 +49,244 @@ import alumno from "../assets/images/alumno.png";
         </div>
       </section>
 
-      <section class="alumno character !text-white">
+      <section class="aulas character !text-white">
         <div class="block fondo_uno"></div>
-        <Image src={alumno} alt="alumno" class="character-image" />
-        <span class="huge-text">alumno</span>
-        <div class="caption  font-serif text-2xl">
-          En nuestra área deportiva, los niños y niñas descubren el placer de moverse mientras desarrollan habilidades motrices, coordinación, equilibrio y trabajo en equipo.
-        </div>
-        <div class="nickname"><span>lugar:</span>Patio de juegos</div>
-        <div class="quote">Cuerpo en movimiento, mente en desarrollo</div>
-      </section>
 
-      <section class="alumno_dos character !text-white">
-        <div class="block fondo_dos"></div>
-        <img src="/src/assets/images/gil.png" alt="" /><span class="huge-text"
-          >niños</span
-        >
-        <div class="caption font-serif text-2xl">
-          Nuestras aulas están diseñadas para inspirar y motivar a los estudiantes, con espacios luminosos, mobiliario ergonómico y recursos didácticos innovadores.
+        <div class="container-imagenes w-full h-full">
+          <span class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]" aria-hidden="true">aulas</span>
+          <div class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2">
+            <button class="prev-btn cursor-pointer">Anterior</button>
+            <button class="next-btn text-black cursor-pointer">Siguiente</button>
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo}
+              alt="Alumno en aula"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo_dos}
+              alt="Alumno en aula"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
         </div>
-        <div class="nickname"><span>lugar:</span>Aulas</div>
-        <div class="quote">
-          Aprendiendo y creciendo juntos
+        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+          Nuestras aulas están diseñadas para el aprendizaje activo: rincones de
+          lectura, espacios de experimentación y ambientes que inspiran
+          curiosidad y descubrimiento.
         </div>
-      </section>
+        <div class="nickname text-lg md:text-xl lg:text-2xl"><span>lugar:</span>Ambientes pedagógicos</div>
+        <div class="quote text-lg md:text-xl lg:text-2xl">Espacios que invitan a explorar</div>
+            </section>
+
+            <section class="patio character !text-white">
+        <div class="block fondo_uno"></div>
+
+        <div class="container-imagenes w-full h-full">
+          <span class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]" aria-hidden="true">patio</span>
+          <div class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2">
+            <button class="prev-btn cursor-pointer">Anterior</button>
+            <button class="next-btn text-black cursor-pointer">Siguiente</button>
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo}
+              alt="Patio central"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo_dos}
+              alt="Niños jugando en el patio"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+        </div>
+        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+          Un patio amplio, seguro y organizado por zonas, que permite juegos
+          libres, actividades físicas y momentos de exploración al aire libre.
+        </div>
+        <div class="nickname text-lg md:text-xl lg:text-2xl"><span>lugar:</span>Patio central del nido</div>
+        <div class="quote text-lg md:text-xl lg:text-2xl">Moverse también es aprender</div>
+            </section>
+
+            <section class="talleres character !text-white">
+        <div class="block fondo_uno"></div>
+
+        <div class="container-imagenes w-full h-full">
+          <span class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]" aria-hidden="true">talleres</span>
+          <div class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2">
+            <button class="prev-btn cursor-pointer">Anterior</button>
+            <button class="next-btn text-black cursor-pointer">Siguiente</button>
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo}
+              alt="Taller artístico"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo_dos}
+              alt="Niños en taller creativo"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+        </div>
+        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+          Contamos con ambientes preparados para talleres artísticos, musicales
+          y científicos que complementan la jornada escolar con experiencias
+          enriquecedoras.
+        </div>
+        <div class="nickname text-lg md:text-xl lg:text-2xl">
+          <span>lugar:</span>Salas de expresión y creatividad
+        </div>
+        <div class="quote text-lg md:text-xl lg:text-2xl">Explorar más allá del aula</div>
+            </section>
+
+            <section class="teatro character !text-white">
+        <div class="block fondo_uno"></div>
+
+        <div class="container-imagenes w-full h-full">
+          <span class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]" aria-hidden="true">teatro</span>
+          <div class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2">
+            <button class="prev-btn cursor-pointer">Anterior</button>
+            <button class="next-btn text-black cursor-pointer">Siguiente</button>
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo}
+              alt="Escenario de teatro"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo_dos}
+              alt="Niños actuando en teatro"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+        </div>
+        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+          Un espacio donde los niños y niñas presentan lo aprendido a través de
+          obras y representaciones que fortalecen la expresión, el lenguaje y la
+          confianza.
+        </div>
+        <div class="nickname text-lg md:text-xl lg:text-2xl">
+          <span>lugar:</span>Mini escenario o sala de usos múltiples
+        </div>
+        <div class="quote text-lg md:text-xl lg:text-2xl">Aprender también se actúa</div>
+            </section>
+
+            <section class="entrevista character !text-white">
+        <div class="block fondo_uno"></div>
+
+        <div class="container-imagenes w-full h-full">
+          <span class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]" aria-hidden="true">entrevista</span>
+          <div class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2">
+            <button class="prev-btn cursor-pointer">Anterior</button>
+            <button class="next-btn text-black cursor-pointer">Siguiente</button>
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo}
+              alt="Sala de orientación"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo_dos}
+              alt="Reunión en sala de orientación"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+        </div>
+        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+          Un ambiente acogedor y reservado, donde la directora o la psicóloga
+          reciben a las familias para atender sus inquietudes y acompañarlas en
+          el proceso educativo.
+        </div>
+        <div class="nickname text-lg md:text-xl lg:text-2xl"><span>lugar:</span>Sala de orientación</div>
+        <div class="quote text-lg md:text-xl lg:text-2xl">Escuchar es también educar</div>
+            </section>
+
+            <section class="familia character !text-white">
+        <div class="block fondo_uno"></div>
+
+        <div class="container-imagenes w-full h-full">
+          <span class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]" aria-hidden="true">familia</span>
+          <div class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2">
+            <button class="prev-btn cursor-pointer">Anterior</button>
+            <button class="next-btn text-black cursor-pointer">Siguiente</button>
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={alumno}
+              alt="Sala de familia"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo_dos}
+              alt="Reunión familiar"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+        </div>
+        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+          Un espacio especial para la formación de nanas, abuelitos y padres,
+          donde se fortalecen los vínculos con el hogar y se comparten
+          herramientas de crianza.
+        </div>
+        <div class="nickname text-lg md:text-xl lg:text-2xl"><span>lugar:</span>Sala de familia</div>
+        <div class="quote text-lg md:text-xl lg:text-2xl">Educar en red, crecer juntos</div>
+            </section>
+
+            <section class="material character !text-white">
+        <div class="block fondo_uno"></div>
+
+        <div class="container-imagenes w-full h-full">
+          <span class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]" aria-hidden="true">material</span>
+          <div class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2">
+            <button class="prev-btn cursor-pointer">Anterior</button>
+            <button class="next-btn text-black cursor-pointer">Siguiente</button>
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo}
+              alt="Material didáctico"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={fondo_dos}
+              alt="Niños usando material didáctico"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+        </div>
+        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+          Contamos con bibliotecas, estanterías y rincones llenos de material
+          didáctico diseñado para fomentar la curiosidad, la autonomía y el
+          juego significativo.
+        </div>
+        <div class="nickname text-lg md:text-xl lg:text-2xl"><span>lugar:</span>Rincones pedagógicos</div>
+        <div class="quote text-lg md:text-xl lg:text-2xl">Jugar es aprender con las manos</div>
+            </section>
     </div>
   </div>
-  <section class="bg-accent">
+  <section class="contador-aulas bg-accent">
     <div
-      class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
+      class=" container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
     >
       <div class="flex flex-col items-center">
         <div class="text-8xl font-bold text-black counter" data-target="5">
@@ -102,20 +313,11 @@ import alumno from "../assets/images/alumno.png";
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
+
+
   .body {
     overflow-x: hidden;
     overflow-y: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .body {
     min-height: 100vh;
     font-size: 16px;
     line-height: 1.3;
@@ -123,8 +325,8 @@ import alumno from "../assets/images/alumno.png";
   }
 
   .wrapper {
-    width: 300%;
-    height: 100%;
+    width: calc(100% * ${sections.length});
+    height: 100vh;
     display: flex;
     flex-wrap: nowrap;
   }
@@ -139,7 +341,7 @@ import alumno from "../assets/images/alumno.png";
   }
 
   .line {
-    background-color: red;
+    background-color: rgba(49, 110, 166, 255);
     height: 1rem;
     position: absolute;
     top: 50%;
@@ -175,53 +377,141 @@ import alumno from "../assets/images/alumno.png";
     z-index: -1;
     transform: translateX(-100%);
   }
-
-  .alumno::before,
-  .alumno .block {
-    background-image: url("../assets/images/fondo1.jpg");
+  .intro {
+    background-image: url("../assets/images/FONDO_CLARO.png");
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .alumno_dos::before,
-  .alumno_dos .block {
-    background-image: url("../assets/images/fondo2.jpg");
-    background-size: cover;
+
+  .wrapper > section {
+    flex: 0 0 100vw; /* Ocupa todo el ancho */
   }
 
-  .caption {
+  .container-imagenes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
-    bottom: 4rem;
-    left: 4rem;
+  }
+
+  .container-imagenes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+  .container-imagenes .imagen {
+   opacity: 0;
+  transition: opacity 0.6s;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block; /* Siempre block para permitir el fade */
+  z-index: -100;/* Ocultar inicialmente */
+  }
+  .container-imagenes .imagen.active {
+  opacity: 1;
+  z-index: -10;
+} 
+  .caption {
+    font-size: calc(1.2vw + 0.5vh);
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
     width: 30%;
     font-weight: 400;
-    color: #444;
+    color: rgb(7, 60, 109);
     transform: translate(100%, 100%);
+    font-family: "Neulis Neue";
+    background-color: rgba(207, 207, 207, 0.404);
+    border-radius: 1rem;
+    padding: 2rem;
   }
-
-  .character img {
-    position: relative;
-    z-index: 10;
-    height: 90vh;
-    width: auto;
-    transform: translateY(-100%);
+  @media (max-width: 768px) {
+    .caption {
+      left: -5%;
+      font-size: calc(1vw + 1vh);
+    }
+    .huge-text {
+      font-size: 20vw; /* Ajustar tamaño de fuente para pantallas más pequeñas */
+      top: 40%;
+      right: 0%;
+      transform: translateX(-4%);
+    }
+    .nickname {
+      top: 2rem;
+      right: 5%;
+      font-size: 2rem;
+      transform: translateY(-200%);
+    }
+    .quote {
+      bottom: 2%;
+      right: 20%;
+      font-size: 2rem;
+      width: 80%;
+      transform: translateY(200%);
+    }
   }
-
+  @media (max-width: 480px) {
+    .caption {
+      left: -15%;
+      top: 20%;
+      width: 800px;
+      font-size: calc(1vw + 2vh);
+    }
+    .huge-text {
+      font-size: 25vw; /* Ajustar tamaño de fuente para pantallas más pequeñas */
+      top: 60%;
+      right: 20%;
+      transform: translateX(-4%);
+    }
+    .nickname {
+      top: 10%;
+      right: 20%;
+      font-size: 1.5rem;
+      transform: translateY(-200%);
+    }
+    .quote {
+      bottom: 1%;
+      right: 10% !important;
+      width: 80vw;
+      
+      font-size: 1.5rem;
+      text-align: left;
+      transform: translateY(200%);
+    }
+  }
   .huge-text {
-    font-size: 25rem;
+    font-size: 15vw; /* Adjust font size relative to viewport width */
     width: 100%;
-    text-align: center;
-    color: #f52b2b;
+    color: rgb(243, 114, 88);
     position: absolute;
-    top: 20%;
-    left: 0;
-    transform: translateY(100%);
+    top: 40%;
+    transform: translateY(-50%);
+    right: 0%;
+    transform: translateX(-4%);
     font-weight: 700;
+    z-index: 0;
+    text-align: right; /* Ensures text alignment to the right */
   }
-
+.buttons {
+    position: absolute;
+    z-index: 100;
+  }
   .nickname {
     position: absolute;
     top: 4rem;
-    right: 4rem;
+    right: 5%;
     font-size: 3rem;
     text-align: right;
     transform: translateY(-200%);
@@ -230,13 +520,13 @@ import alumno from "../assets/images/alumno.png";
   .nickname span {
     display: block;
     font-size: 70%;
-    color: #fff;
+    color: rgb(252, 144, 122);
   }
 
   .quote {
     position: absolute;
-    bottom: 4rem;
-    right: 4rem;
+    bottom: 4%;
+    right: 5%;
     font-size: 3rem;
     width: 30%;
     text-align: right;
@@ -246,151 +536,203 @@ import alumno from "../assets/images/alumno.png";
   .quote::before,
   .quote::after {
     content: "";
-    color: #fff;
+    color: rgb(252, 144, 122);
+  }
+  .contador-aulas {
+    background-image: url("../assets/images/FONDO_CLARO.png");
+    background-size: cover;
   }
 </style>
 <script>
   import { gsap } from "gsap";
   import ScrollTrigger from "gsap/ScrollTrigger";
+
   gsap.registerPlugin(ScrollTrigger);
-  console.log("hola", gsap);
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = gsap.utils.toArray(".wrapper > section");
 
-    let scrollTween = gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".wrapper",
-        pin: true,
-        scrub: 0.1,
-        snap: {
-          snapTo: 1 / (sections.length - 1), // Mejor práctica para snap
-          duration: { min: 0.2, max: 0.5 }, // Duración del snap
-          ease: "power1.inOut", // Suavizado del snap
-        },
-        start: "top top",
-        end: () => {
-          const wrapper = document.querySelector(".wrapper");
-          return wrapper
-            ? `+=${wrapper.scrollWidth - window.innerWidth}`
-            : "+=0"; // Ajuste dinámico del final
-        },
+  const sections = document.querySelectorAll(".wrapper > section");
+  const wrapper = document.querySelector(".wrapper");
+
+  let scrollTween = gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".wrapper",
+      pin: true,
+      scrub: 0.5, // Suavizar el desplazamiento
+      snap: {
+        snapTo: 1 / (sections.length - 1), // Ajustar al siguiente section
+        duration: 1, // Duración del snap
+        ease: "power1.inOut", // Suavizado del snap
       },
-    });
-
-    gsap.to(".logo", {
-      fontSize: "2.5rem",
-      top: "4rem",
-      scrollTrigger: {
-        trigger: ".logo",
-        start: "top top",
-        end: "+=1500",
-        scrub: 0.5,
+      start: "top top",
+      end: () => {
+        const wrapper = document.querySelector(".wrapper");
+        return wrapper ? `+=${wrapper.scrollWidth - window.innerWidth}` : "+=0"; // Ajuste dinámico del final
       },
-    });
-
-    gsap.to(".line", {
-      height: "10rem",
-      scrollTrigger: {
-        trigger: ".line",
-        scrub: 0.5,
-        start: "center center",
-        end: "+=2000",
-      },
-    });
-
-    document.querySelectorAll(".character").forEach((el) => {
-      const caption = el.querySelector(".caption");
-      const quote = el.querySelector(".quote");
-      const nickname = el.querySelector(".nickname");
-      const block = el.querySelector(".block");
-      const img = el.querySelector("img");
-      const hugeText = el.querySelector(".huge-text");
-
-      if (caption) {
-        gsap.to(caption, {
-          x: 0,
-          y: 0,
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: caption,
-            start: "top bottom",
-            end: "+=1000",
-            scrub: 0.5,
-          },
-        });
-      }
-
-      if (quote) {
-        gsap.to(quote, {
-          y: 0,
-          ease: "none",
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: quote,
-            start: "top bottom",
-            end: "+=20%",
-            scrub: 0.5,
-          },
-        });
-      }
-
-      if (nickname) {
-        gsap.to(nickname, {
-          y: 0,
-          ease: "none",
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: nickname,
-            start: "top bottom",
-            end: "+=10%",
-            scrub: 0.5,
-          },
-        });
-      }
-
-      if (block) {
-        gsap.to(block, {
-          x: 0,
-          ease: "none",
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: block,
-            start: "top bottom",
-            end: () => `+=${window.innerWidth}`,
-            scrub: 0.5,
-          },
-        });
-      }
-
-      if (img) {
-        gsap.to(img, {
-          y: 0,
-          ease: "none",
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: img,
-            start: "top bottom",
-            end: "+=50%",
-            scrub: 0.5,
-          },
-        });
-      }
-
-      if (hugeText) {
-        gsap.to(hugeText, {
-          y: 0,
-          ease: "none",
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: hugeText,
-            start: "top bottom",
-            end: "+=100%",
-            scrub: 0.5,
-          },
-        });
-      }
-    });
+    },
   });
+
+  gsap.to(".logo", {
+    fontSize: "2.5rem",
+    top: "4rem",
+    scrollTrigger: {
+      trigger: ".logo",
+      start: "top top",
+      end: "+=1500",
+      scrub: 0.5,
+    },
+  });
+
+  gsap.to(".line", {
+    height: "10rem",
+    scrollTrigger: {
+      trigger: ".line",
+      scrub: 0.5,
+      start: "center center",
+      end: "+=2000",
+    },
+  });
+
+  document.querySelectorAll(".character").forEach((el) => {
+    const caption = el.querySelector(".caption");
+    const quote = el.querySelector(".quote");
+    const nickname = el.querySelector(".nickname");
+    const block = el.querySelector(".block");
+    const img = el.querySelector("img");
+    const hugeText = el.querySelector(".huge-text");
+
+    if (caption) {
+      gsap.to(caption, {
+        x: 0,
+        y: 0,
+        scrollTrigger: {
+          containerAnimation: scrollTween,
+          trigger: caption,
+          start: "top bottom",
+          end: "+=1000",
+          scrub: 0.5,
+        },
+      });
+    }
+
+    if (quote) {
+      gsap.to(quote, {
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          containerAnimation: scrollTween,
+          trigger: quote,
+          start: "top bottom",
+          end: "+=20%",
+          scrub: 0.5,
+        },
+      });
+    }
+
+    if (nickname) {
+      gsap.to(nickname, {
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          containerAnimation: scrollTween,
+          trigger: nickname,
+          start: "top bottom",
+          end: "+=10%",
+          scrub: 0.5,
+        },
+      });
+    }
+
+    if (block) {
+      gsap.to(block, {
+        x: 0,
+        ease: "none",
+        scrollTrigger: {
+          containerAnimation: scrollTween,
+          trigger: block,
+          start: "top bottom",
+          end: () => `+=${window.innerWidth}`,
+          scrub: 0.5,
+        },
+      });
+    }
+
+    if (img) {
+      gsap.to(img, {
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          containerAnimation: scrollTween,
+          trigger: img,
+          start: "top bottom",
+          end: "+=50%",
+          scrub: 0.5,
+        },
+      });
+    }
+
+    if (hugeText) {
+      gsap.to(hugeText, {
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          containerAnimation: scrollTween,
+          trigger: hugeText,
+          start: "top bottom",
+          end: "+=100%",
+          scrub: 0.5,
+        },
+      });
+    }
+  });
+
+  document.querySelectorAll(".container-imagenes").forEach((container) => {
+  const images = container.querySelectorAll(".imagen");
+  const prevBtn = container.querySelector(".prev-btn");
+  const nextBtn = container.querySelector(".next-btn");
+  let current = 0;
+
+  function showImage(index: number) {
+    images.forEach((img, i) => {
+      img.classList.toggle("active", i === index);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    });
+  }
+
+  showImage(current);
+});
+document.querySelectorAll('.counter').forEach((counter) => {
+  const target = parseInt(counter.getAttribute('data-target') ?? '0', 10) || 0;
+  let obj = { val: 0 };
+
+  gsap.to(obj, {
+    val: target,
+    duration: 0.5,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: counter,
+      start: "top 80%",
+      once: true,
+    },
+    onUpdate: () => {
+      counter.textContent = Math.floor(obj.val).toString();
+    },
+    onComplete: () => {
+      counter.textContent = target.toString();
+    }
+  });
+});
 </script>
