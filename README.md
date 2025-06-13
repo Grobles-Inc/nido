@@ -23,7 +23,7 @@ Sitio web informativo y moderno para el Nido Perulina, diseñado para brindar a 
 
 ## Capturas de pantalla
 
-![Portada1](https://i.ibb.co/67VM2pTh/project7.png)
+[![project7.png](https://i.postimg.cc/pTmfrgS1/project7.png)](https://postimg.cc/WFPFffTM)
 
 ## Información de contacto
 
