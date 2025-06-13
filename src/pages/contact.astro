@@ -2,11 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Layout from "../layouts/Page.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
-import { Image } from "astro:assets";
-import contactImage from "../assets/images/FAQSection.png";
 ---
 
 <!doctype html>
@@ -46,11 +43,7 @@ import contactImage from "../assets/images/FAQSection.png";
       }
     </style>
   </head>
- <Layout
-  title="Nuestra Infraestructura"
-  
-  description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
->
+
   <body class="bg-base-100">
     <Header />
     <!-- Banner Section -->
@@ -404,7 +397,7 @@ import contactImage from "../assets/images/FAQSection.png";
         </div>
       </section>
     </main>
-
+    <Footer />
     <GoogleTagManagerNoScript />
 
     <script>
