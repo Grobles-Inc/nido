@@ -8,7 +8,7 @@ import netlify from '@astrojs/netlify';
 // https://astro.build/config
 export default defineConfig({
   // TODO: change to the correct production url
-  site: 'https://nidoperulina.netlify.app',
+  site: 'https://nidoperulina.edu.pe',
   integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
