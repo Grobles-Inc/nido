@@ -1,42 +1,48 @@
 [
   {
-    "id": "maria",
-    "name": "María Rodríguez",
-    "position": "Directora Pedagógica",
+    "id": "gisella",
+    "name": "Dra. Gisela Tello",
+    "position": "Directora",
     "badge": "Directora",
     "badgeStyle": "badge-primary",
     "image": "https://mighty.tools/mockmind-api/content/human/124.jpg",
     "shortDescription": "15 años de experiencia en educación inicial. Especialista en desarrollo infantil temprano.",
-    "fullDescription": "Con más de 15 años de experiencia en educación inicial, María lidera nuestro equipo pedagógico con pasión y dedicación.",
+    "fullDescription": "Con más de 15 años de experiencia en educación inicial, Gisela lidera nuestro equipo pedagógico con pasión y dedicación.",
     "education": [
-      "Maestría en Educación Infantil - Universidad de Lima",
+      "Doctorado en Educación - Universidad de Lima",
       "Especialización en Desarrollo Infantil Temprano",
       "Certificación en Metodologías Activas"
     ],
     "achievements": [
       "Desarrollo e implementación del programa educativo Perulina",
       "Ponente en conferencias internacionales de educación",
+      "Publicaciones sobre metodologías innovadoras en educación inicial",
+      "Desarrollo e implementación del programa educativo Perulina",
+      "Ponente en conferencias internacionales de educación",
       "Publicaciones sobre metodologías innovadoras en educación inicial"
     ]
   },
   {
-    "id": "karina",
-    "name": "Karina Cornejo",
+    "id": "liliana",
+    "name": "Dra. Liliana Mendoza",
     "position": "Psicóloga Infantil",
     "badge": "Psicología",
     "badgeStyle": "badge-secondary",
     "image": "https://mighty.tools/mockmind-api/content/human/108.jpg",
     "shortDescription": "Especialista en desarrollo socioemocional y apoyo familiar.",
-    "fullDescription": "Con más de 12 años de experiencia en psicología infantil, Karina se especializa en el desarrollo socioemocional de los niños y el apoyo integral a las familias.",
+    "fullDescription": "Con más de 12 años de experiencia en psicología infantil, Liliana se especializa en el desarrollo socioemocional de los niños y el apoyo integral a las familias.",
     "education": [
-      "Licenciatura en Psicología - Universidad Nacional Mayor de San Marcos",
-      "Maestría en Psicología Infantil y Adolescente",
-      "Especialización en Terapia Familiar Sistémica"
+      "Doctorado en Educación - Universidad de Lima",
+      "Especialización en Desarrollo Infantil Temprano",
+      "Certificación en Metodologías Activas"
     ],
     "achievements": [
       "Implementación de programas de desarrollo socioemocional",
       "Talleres de escuela para padres con más de 500 familias atendidas",
-      "Investigaciones publicadas sobre desarrollo infantil temprano"
+      "Investigaciones publicadas sobre desarrollo infantil temprano",
+      "Desarrollo e implementación del programa educativo Perulina",
+      "Ponente en conferencias internacionales de educación",
+      "Publicaciones sobre metodologías innovadoras en educación inicial"
     ]
   },
   {
@@ -105,7 +111,7 @@
     "position": "Educadora - 5 años",
     "badge": "5 Años",
     "badgeStyle": "badge-secondary",
-    "image": "https://mighty.tools/mockmind-api/content/human/130.jpg",
+ "image": "https://mighty.tools/mockmind-api/content/human/108.jpg",
     "shortDescription": "Prepara a los niños para la etapa escolar con enfoque en competencias y habilidades para la vida.",
     "fullDescription": "Con amplia experiencia, Miss Mary acompaña a los niños de 5 años en su último año en el nido, consolidando sus aprendizajes y preparándolos para la primaria. Su programa se enfoca en el desarrollo de la lógica matemática, la lectoescritura y las habilidades socioemocionales.",
     "education": [
