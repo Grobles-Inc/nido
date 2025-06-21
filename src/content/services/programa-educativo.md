@@ -9,10 +9,15 @@ Inspirado en el modelo PRODIGIE, nuestro programa educativo se ajusta a las cara
 ## Lo que Incluye
 
 Nuestro programa incluye:
+
 - Metodologías activas: aprendizaje basado en proyectos, juego libre y dirigido, que fomentan la participación activa de los niños.
+
 - Enfoque afectivo: promovemos un entorno de respeto, confianza y cariño, donde cada niño se siente valorado, escuchado y acompañado en su proceso de aprendizaje.
+
 - Aulas Letradas: espacios dinámicos y estimulantes para despertar el gusto por la lectura, la expresión oral y escrita, y la compresión del lenguaje desde los primeros años.
+
 - CCC: Creatividad, Curiosidad y Conocimiento como pilares del aprendizaje, impulsando a los niños a explorar el mundo con entusiasmo, cuestionar su entorno y construir saberes significativos.
+
 - Estimulación temprana: abordamos todas las áreas desde el desarrollo infantil - cognitiva, emocional, motriz y social, con actividades diseñadas según la etapa evolutiva de cada niño.
 
 ## Beneficios

@@ -79,14 +79,14 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
     <main class="container mx-auto px-4 py-24 contact-main">
       <div class="max-w-3xl mx-auto contact-main-inner">
         <h1
-          class="text-3xl md:text-4xl lg:text-[50px] font-bold text-center mb-4 contact-form-title"
+          class="text-3xl md:text-4xl lg:text-[50px] font-bold text-center mb-4 contact-form-title text-primary"
           data-aos="fade-up"
           data-aos-delay="200"
         >
           Póngase en contacto con nosotros
         </h1>
         <p
-          class="text-center text-lg mb-12 contact-form-desc"
+          class="text-center text-lg mb-12 contact-form-desc text-secondary"
           data-aos="fade-up"
           data-aos-delay="300"
         >
@@ -104,7 +104,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
             <div class="md:col-span-2 contact-form-field-request">
               <label
                 for="request"
-                class="block text-sm font-medium text-gray-700 mb-2 contact-label-request"
+                class="block text-sm font-medium text-primary mb-2 contact-label-request"
                 >Tipo de consulta <span class="text-red-600">*</span></label
               >
               <select
@@ -128,7 +128,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
             <div class="contact-form-field-name">
               <label
                 for="name"
-                class="block text-sm font-medium text-gray-700 mb-2 contact-label-name"
+                class="block text-sm font-medium text-primary mb-2 contact-label-name"
                 >Nombre <span class="text-red-600">*</span></label
               >
               <input
@@ -149,7 +149,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
             <div class="contact-form-field-email">
               <label
                 for="email"
-                class="block text-sm font-medium text-gray-700 mb-2 contact-label-email"
+                class="block text-sm font-medium text-primary mb-2 contact-label-email"
                 >Correo electrónico <span class="text-red-600">*</span></label
               >
               <input
@@ -169,7 +169,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
             <div class="md:col-span-2 contact-form-field-phone">
               <label
                 for="phone"
-                class="block text-sm font-medium text-gray-700 mb-2 contact-label-phone"
+                class="block text-sm font-medium text-primary mb-2 contact-label-phone"
                 >Número de teléfono <span class="text-red-600">*</span></label
               >
               <input
@@ -190,7 +190,7 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
           <div class="contact-form-field-message">
             <label
               for="message"
-              class="block text-sm font-medium text-gray-700 mb-2 contact-label-message"
+              class="block text-sm font-medium text-primary mb-2 contact-label-message"
               >Mensaje <span class="text-red-600">*</span></label
             >
             <textarea
@@ -247,11 +247,11 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
             data-aos-delay="400"
           >
             <h2
-              class="text-3xl md:text-4xl lg:text-[50px] font-bold text-gray-800 mb-6"
+              class="text-3xl md:text-4xl lg:text-[50px] font-bold text-primary mb-6"
             >
               Información de Contacto
             </h2>
-            <p class="text-gray-600 mb-8 text-lg">
+            <p class="text-secondary mb-8 text-lg">
               Agenda un visita guiada ahora y descubre qué hace de Nido Perulina
               la mejor opción para el cuidado de tu pequeño.
             </p>
@@ -265,25 +265,26 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
                   <img src="https://img.icons8.com/?size=128&id=42839&format=png" alt="icono telefono" class="w-8 h-8">
                 </div>
                 <div>
-                  <h3 class="font-semibold text-gray-800 text-lg">
+                  <h3 class="font-semibold text-secondary text-lg">
                     Llamada telefónica
                   </h3>
-                  <p class="text-gray-600">+51 922 935 447</p>
+                  <p class="text-primary">+51 922 935 447</p>
                 </div>
               </div>
 
               <!-- Email -->
               <div class="flex items-center space-x-4">
                 <div
-                  class="w-12 h-12 bg-[#72caaf] rounded-full flex items-center justify-center flex-shrink-0"
+                  class="w-12 h-12 bg-[#72caaf] rounded-full flex items-center justify-center flex-shrink-0 cursor-pointer transition-transform"
+                  onclick="window.open('https://wa.me/51922935447', '_blank')"
                 >
                   <img src="https://img.icons8.com/?size=128&id=42961&format=png" alt="icono whatsapp" class="w-8 h-8">
                 </div>
                 <div>
-                  <h3 class="font-semibold text-gray-800 text-lg">
+                  <h3 class="font-semibold text-secondary text-lg">
                     Escribenos - WhatsApp
                   </h3>
-                  <p class="text-gray-600">+51 922 935 447</p>
+                  <p class="text-primary">+51 922 935 447</p>
                 </div>
               </div>
 
@@ -295,8 +296,8 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
                   <img src="https://img.icons8.com/?size=128&id=42814&format=png" alt="icono ubicación" class="w-8 h-8">
                 </div>
                 <div>
-                  <h3 class="font-semibold text-gray-800 text-lg">Ubicación</h3>
-                  <address class="text-gray-600 not-italic">
+                  <h3 class="font-semibold text-secondary text-lg">Ubicación</h3>
+                  <address class="text-primary not-italic">
                     Av. Agustín de la Rosa Toro 900, San Luis, Lima
                   </address>
                 </div>
@@ -310,14 +311,14 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
       <section class="mt-20 contact-map-section max-w-6xl mx-auto">
         <div class="text-center mb-12">
           <h2
-            class="text-3xl md:text-4xl lg:text-[50px] font-bold text-gray-800 mb-6"
+            class="text-3xl md:text-4xl lg:text-[50px] font-bold text-primary mb-6"
             data-aos="fade-up"
             data-aos-delay="200"
           >
             Encuéntranos
           </h2>
           <p
-            class="text-gray-600 text-lg max-w-2xl mx-auto"
+            class="text-primary text-lg max-w-2xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -346,12 +347,12 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
 
         <!-- Additional Location Info -->
         <div class="mt-8 text-center">
-          <p class="text-gray-600 mb-4">
-            <strong>Horarios de atención:</strong> Lunes a Viernes de 7:30 AM a 6:00
+          <p class="text-secondary mb-4">
+            <strong class="text-primary">Horarios de atención:</strong> Lunes a Viernes de 7:30 AM a 6:00
             PM
           </p>
-          <p class="text-gray-600">
-            <strong>Zona:</strong> San Luis, Lima - Fácil acceso en transporte.
+          <p class="text-secondary">
+            <strong class="text-primary">Zona:</strong> San Luis, Lima - Fácil acceso en transporte.
           </p>
         </div>
       </section>
