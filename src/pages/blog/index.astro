@@ -10,6 +10,7 @@ import { Image } from "astro:assets";
 export const prerender = false;
 import GoogleTagManager from "../../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../../components/GoogleTagManagerNoScript.astro";
+import Preloader from "../../components/preloader.astro";
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -39,6 +40,7 @@ const ogImage = new URL("/og.png", Astro.url);
 		<GoogleTagManager />
 	</head>
 	<body class="min-h-screen bg-base-100">
+		<Preloader />
 		<Header />
 		<main class="container mx-auto pt-12 md:pt-8 md:py-8 lg:py-12">
 			<div class="max-w-6xl mx-auto">

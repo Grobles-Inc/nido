@@ -1,0 +1,112 @@
+<div id="preloader">
+<div id="lottie-logo" style="width:220px;height:220px"></div>
+</div>
+<style>
+	#preloader {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgb(7, 60, 109);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		z-index: 9999;
+		color: #fff;
+	}
+
+	#logo {
+		width: 100px;
+		height: 100px;
+		margin-bottom: 20px;
+	}
+
+	#counter {
+		font-size: 2rem;
+	}
+
+	#main-content {
+		opacity: 0;
+		transform: translateY(50px);
+		transition: all 0.3s ease;
+	}
+</style>
+<script>
+	// preloader.js
+
+// Removed invalid import as "onNavigate" is not exported by "astro:transitions"
+import gsap from "gsap";
+import lottie from "lottie-web";
+import animation from "./../assets/animation/logo_animtion.json";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lottieLogoContainer = document.getElementById("lottie-logo");
+  if (lottieLogoContainer) {
+    lottie.loadAnimation({
+      container: lottieLogoContainer,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: animation,
+    });
+  }
+});
+
+const preloader = document.getElementById("preloader");
+
+function showPreloader() {
+  if (preloader) {
+    preloader.style.display = "flex";
+    gsap.set(preloader, { opacity: 0 });
+    gsap.to(preloader, {
+      scaleY: 1,
+      scaleX: 1,
+      opacity: 1,
+      duration: 0.5,
+      transformOrigin: "center center",
+      ease: "power2.out",
+    });
+  }
+}
+
+function hidePreloader() {
+  if (preloader) {
+    gsap.to(preloader, {
+      scaleY: 2.5,
+      scaleX: 2.5,
+      opacity: 0,
+      duration: 0.8,
+      transformOrigin: "center center",
+      ease: "power2.in",
+      onComplete: () => {
+        preloader.style.display = "none";
+        gsap.set(preloader, { scaleY: 1, opacity: 1 });
+        startPageAnimations(); // Inicia las animaciones de la página
+      },
+    });
+  }
+}
+
+function startPageAnimations() {
+  // Aquí puedes iniciar todas las animaciones de la página
+  gsap.to("#main-content", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+}
+
+// Mostrar preloader al iniciar
+showPreloader();
+
+// Esperar a que toda la página (incluyendo imágenes y videos) esté cargada
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    hidePreloader();
+  }, 1000);
+});
+
+</script>
