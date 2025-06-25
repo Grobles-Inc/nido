@@ -3,17 +3,43 @@
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
 import "aos/dist/aos.css";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, SITE_URL, SITE_AUTHOR, SITE_KEYWORDS } from "../consts";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  type?: "article" | "website";
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/og.png" } = Astro.props;
+const { title, description, image = "/og.png", type = "website" } = Astro.props;
+
+// Schema.org
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: SITE_TITLE,
+  description: description,
+  url: SITE_URL,
+  logo: new URL("/favicon.png", Astro.site),
+  sameAs: [
+    "https://www.facebook.com/NidoPerulina",
+    "https://www.instagram.com/nidoperulina",
+  ],
+  educationalCredentialAwarded: "Educación Infantil",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "PE",
+    addressLocality: "Lima",
+    addressRegion: "Lima",
+    postalCode: "15001",
+    streetAddress: "Av. Agustín de la Rosa Toro 908",
+  },
+  telephone: "+51 922 935 447",
+  email: "info@nidoperulina.com",
+};
 ---
 
 <!-- Global Metadata -->
@@ -28,6 +54,8 @@ const { title, description, image = "/og.png" } = Astro.props;
   href={new URL("rss.xml", Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
+<meta name="author" content={SITE_AUTHOR} />
+<meta name="keywords" content={SITE_KEYWORDS} />
 
 <!-- Font preloads -->
 <link
@@ -54,11 +82,12 @@ const { title, description, image = "/og.png" } = Astro.props;
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={type} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:site_name" content={SITE_TITLE} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -67,6 +96,9 @@ const { title, description, image = "/og.png" } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- Schema.org -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
 <!-- AOS Global Initialization -->
 <script>
   import AOS from "aos";
@@ -74,7 +106,7 @@ const { title, description, image = "/og.png" } = Astro.props;
   // Initialize AOS when DOM is loaded
   document.addEventListener("DOMContentLoaded", function () {
     AOS.init({
-      duration: 800,
+      duration: 500,
       once: true,
       offset: 100,
       easing: "ease-in-out",

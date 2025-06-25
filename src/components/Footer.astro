@@ -3,7 +3,7 @@ import logoPrincipal from "../assets/images/logoSecundario.png";
 const today = new Date();
 ---
 
-<footer class="bg-[#1a4162] text-white py-20">
+<footer class="bg-primary text-white py-20">
   <!-- Información de contacto -->
   <div class="container mx-auto max-w-7xl px-4">
     <div
@@ -13,129 +13,90 @@ const today = new Date();
       <div
         class="flex items-center gap-4"
         data-aos="fade-up"
-        data-aos-delay="100"
       >
         <div
-          class="w-12 h-12 rounded-full border-2 border-dashed border-purple-400 flex items-center justify-center"
+          class="w-12 h-12 rounded-full border-2 border-dashed border-[#f6d397] flex items-center justify-center"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-purple-400"
-          >
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-            ></path>
-          </svg>
+          <img src="https://img.icons8.com/?size=128&id=42839&format=png" alt="icono telefono" class="w-8 h-8">
         </div>
         <div>
-          <p class="text-gray-400 text-sm">Llámanos 24/7</p>
+          <p class="text-white text-sm">Llámanos 24/7</p>
           <p class="font-semibold">+51 922 935 447</p>
         </div>
       </div>
 
       <!-- Email -->
-      <div
-        class="flex items-center gap-4"
+      <a
+        href="https://wa.me/51922935447"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-4 cursor-pointer group relative"
         data-aos="fade-up"
-        data-aos-delay="200"
       >
         <div
-          class="w-12 h-12 rounded-full border-2 border-dashed border-yellow-400 flex items-center justify-center"
+          class="w-12 h-12 rounded-full border-2 border-dashed border-[#72caaf] flex items-center justify-center"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-yellow-400"
-          >
-            <path
-              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-            ></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
+          <img src="https://img.icons8.com/?size=128&id=42961&format=png" alt="icono whatsapp" class="w-8 h-8">
         </div>
         <div>
-          <p class="text-gray-400 text-sm">Escríbenos</p>
-          <p class="font-semibold">info@nidoperulina.com</p>
+          <p class="text-white text-sm">Escríbenos - WhatsApp</p>
+          <p class="font-semibold">+51 922 935 447</p>
         </div>
-      </div>
+        
+        <!-- Tooltip -->
+        <div class="absolute bottom-full left-1/3 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10">
+          ¡Escríbenos, estamos disponibles!
+          <!-- Flecha del tooltip -->
+          <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-black"></div>
+        </div>
+      </a>
 
       <!-- Ubicación -->
       <div
         class="flex items-center gap-4"
         data-aos="fade-up"
-        data-aos-delay="300"
       >
         <div
-          class="w-12 h-12 rounded-full border-2 border-dashed border-orange-400 flex items-center justify-center"
+          class="w-12 h-12 rounded-full border-2 border-dashed border-[#ed7899] flex items-center justify-center"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-orange-400"
-          >
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
+          <img src="https://img.icons8.com/?size=128&id=42814&format=png" alt="icono ubicación" class="w-8 h-8">
         </div>
         <div>
-          <p class="text-gray-400 text-sm">Ubicación</p>
-          <p class="font-semibold">Av. Agustín de la Rosa Toro 908, Lima</p>
+          <p class="text-white text-sm">Ubicación</p>
+          <p class="font-semibold">Av. Agustín de la Rosa Toro 900, San Luis, Lima</p>
         </div>
       </div>
     </div>
 
     <!-- Logo y horarios -->
     <div
-      class="grid md:grid-cols-4 gap-8 pb-12 border-b border-gray-500"
+      class="grid md:grid-cols-4 gap-8 pb-12 border-b border-white"
       data-aos="fade-up"
-      data-aos-delay="400"
     >
       <div class="md:col-span-1">
         <div class="flex items-center gap-2 mb-6">
           <img src={logoPrincipal.src} alt="Logo" class="h-10" />
         </div>
-        <p class="text-lg font-semibold mb-2">Horario de atención:</p>
-        <p class="text-gray-400">Lunes a Viernes: 7:00 AM - 6:00 PM</p>
-        <p class="text-gray-400">Sábado: 8:00 AM - 4:00 PM</p>
+        <p class="text-lg text-secondary font-semibold mb-2">Horario de atención:</p>
+        <p class="text-white">Lunes a Viernes: 7:00 AM - 6:00 PM</p>
+        <p class="text-white">Sábado: 8:00 AM - 4:00 PM</p>
       </div>
 
       <!-- Enlaces -->
       <div>
-        <h3 class="text-xl font-bold mb-4">Institución</h3>
+        <h3 class="text-xl font-bold mb-4 underline">Institución</h3>
         <ul class="space-y-2">
-          <li><a href="/" class="text-gray-400 hover:text-white">Inicio</a></li>
+          <li><a href="/" class="text-white hover:text-secondary">Inicio</a></li>
           <li>
-            <a href="/about" class="text-gray-400 hover:text-white">Nosotros</a>
+            <a href="/about" class="text-white hover:text-secondary">Nosotros</a>
           </li>
           <li>
-            <a href="/services" class="text-gray-400 hover:text-white"
+            <a href="/services" class="text-white hover:text-secondary"
               >Servicios</a
             >
           </li>
           <li>
-            <a href="/infrastructure" class="text-gray-400 hover:text-white"
+            <a href="/infrastructure" class="text-white hover:text-secondary"
               >Infraestructura</a
             >
           </li>
@@ -143,29 +104,29 @@ const today = new Date();
       </div>
 
       <div>
-        <h3 class="text-xl font-bold mb-4">Enlaces rápidos</h3>
+        <h3 class="text-xl font-bold mb-4 underline">Enlaces rápidos</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/contact" class="text-gray-400 hover:text-white"
+            <a href="/contact" class="text-white hover:text-secondary"
               >Contacto</a
             >
           </li>
           <li>
-            <a href="/blog" class="text-gray-400 hover:text-white">Blog</a>
+            <a href="/blog" class="text-white hover:text-secondary">Blog</a>
           </li>
-          <li><a href="/faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+          <li><a href="/faq" class="text-white hover:text-secondary">FAQ</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-xl font-bold mb-4">Utilidades</h3>
+        <h3 class="text-xl font-bold mb-4 underline">Utilidades</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/privacy" class="text-gray-400 hover:text-white"
+            <a href="/privacy" class="text-white hover:text-secondary"
               >Política de privacidad</a
             >
           </li>
-          <li><a href="/404" class="text-gray-400 hover:text-white">404</a></li>
+          <li><a href="/404" class="text-white hover:text-secondary">404</a></li>
         </ul>
       </div>
     </div>
@@ -174,13 +135,12 @@ const today = new Date();
     <div
       class="flex flex-col md:flex-row justify-between items-center pt-8"
       data-aos="fade-up"
-      data-aos-delay="500"
     >
       <div class="flex gap-4 mb-4 md:mb-0">
         <a
           href="https://www.facebook.com/NidoPerulina"
           target="_blank"
-          class="text-gray-400 hover:text-white"
+          class="text-white hover:text-secondary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +162,7 @@ const today = new Date();
         <a
           href="https://www.instagram.com/nidoperulina/"
           target="_blank"
-          class="text-gray-400 hover:text-white"
+          class="text-white hover:text-secondary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -221,16 +181,16 @@ const today = new Date();
           </svg>
         </a>
       </div>
-      <p class="text-gray-400 text-sm">
+      <p class="text-white text-sm">
         © Copyright {today.getFullYear()}. Todos los derechos reservados por
-        Nido Perulinas
+        Nido Perulina
       </p>
     </div>
   </div>
-  <div class="text-center text-lg mt-10 text-gray-400">
+  <div class="text-center text-lg mt-10 text-white">
     Desarrollado por <a
-      href="https://grobles.framer.website/"
-      class="text-white underline">Grobles Solutions</a
+      href="https://groblesolutions.netlify.app/"
+      class="text-secondary underline">Grobles Solutions.</a
     >
   </div>
 </footer>

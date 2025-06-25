@@ -8,20 +8,34 @@ Cada niño es único. Por eso, realizamos un seguimiento constante que nos permi
 
 ## Acciones clave
 
-- Evaluaciones iniciales y seguimiento bimestral
-- Equipo multidisciplinario: psicóloga, directora y especialistas
-- Planes de nivelación y reforzamiento individual
-- Derivación recomendada a especialistas externos si es necesario
+Contamos con un sistema de acompañamiento integral que permite identificar, atender y potenciar las necesidades individuales de cada niño:
+
+- Evaluaciones iniciales y seguimiento bimestral para conocer el punto de partida de cada niño y monitorear su evolución en las distintas áreas del desarrollo.
+
+- Equipo multidisciplinario conformado por psicóloga, directora y especialistas en pedagogía, que trabajan de forma articulada para brindar un acompañamiento integral.
+
+- Planes de nivelación y reforzamiento individual, adaptados a las necesidades específicas de cada niño para asegurar su progreso a su propio ritmo.
+
+- Derivación recomendada a especialistas externos, en caso de identificar necesidades particulares que requieran atención complementaria (fonoaudiología, terapia ocupacional, neurología, entre otros).
 
 ## Herramientas de apoyo
 
-- Informes de progreso personalizados
-- Reuniones con las padres
-- Estrategias de intervención emocional y pedagógica
+Brindamos a las familias y al equipo educativo herramientas concretas para garantizar una intervención oportuna y eficaz:
+
+- Informes de progreso personalizados, que muestran avances en lo académico, emocional y social, con recomendaciones prácticas.
+
+- Reuniones con los padres, donde se conversa sobre el desarrollo del niño, se resuelven dudas y se acuerdan estrategias conjuntas.
+
+- Estrategias de intervención emocional y pedagógica, aplicadas dentro y fuera del aula, para fomentar el bienestar y el aprendizaje significativo.
 
 ## Beneficios
-- Prevención de dificultades de aprendizaje
-- Acompañamiento en el desarrollo emocional
-- Avances significativos adaptados al ritmo del niño
+
+Estas acciones y herramientas permiten lograr un acompañamiento cercano y efectivo:
+
+- Prevención de dificultades de aprendizaje, mediante la detección temprana y el seguimiento constante.
+
+- Acompañamiento en el desarrollo emocional, fortaleciendo la autoestima, la autorregulación y las habilidades sociales.
+
+- Avances significativos adaptados al ritmo del niño, respetando su individualidad y celebrando cada logro en su proceso de crecimiento.
 
 

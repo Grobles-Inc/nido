@@ -49,6 +49,102 @@ import Preloader from "../components/preloader.astro";
 		<CTASection />
 		<Footer />
 
+		<!-- Botón Scroll to Top -->
+		<button 
+			id="scrollToTop" 
+			class="scroll-to-top-btn"
+			aria-label="Volver arriba"
+		>
+			<svg 
+				width="24" 
+				height="24" 
+				viewBox="0 0 24 24" 
+				fill="none" 
+				stroke="currentColor" 
+				stroke-width="2" 
+				stroke-linecap="round" 
+				stroke-linejoin="round"
+			>
+				<path d="m18 15-6-6-6 6"/>
+			</svg>
+		</button>
+
 		<GoogleTagManagerNoScript />
 	</body>
 </html>
+<style>
+	#main-content {
+		opacity: 0;
+		transform: translateY(50px);
+		transition: all 0.3s ease;
+	}
+
+	/* Estilos para el botón Scroll to Top */
+	.scroll-to-top-btn {
+		position: fixed;
+		bottom: 30px;
+		right: 30px;
+		width: 50px;
+		height: 50px;
+		background: #fc866b;
+		color: white;
+		border: none;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(20px);
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 12px rgba(252, 134, 107, 0.3);
+		z-index: 1000;
+	}
+
+	.scroll-to-top-btn.show {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	.scroll-to-top-btn:hover {
+		background: #073c6d;
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(7, 60, 109, 0.4);
+	}
+
+	@media (max-width: 768px) {
+		.scroll-to-top-btn {
+			bottom: 20px;
+			right: 20px;
+			width: 45px;
+			height: 45px;
+		}
+	}
+</style>
+<script>
+	// preloader.js
+
+// Removed invalid import as "onNavigate" is not exported by "astro:transitions"
+
+// Función para el scroll to top
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollToTopBtn = document.getElementById("scrollToTop");
+  
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn?.classList.add("show");
+    } else {
+      scrollToTopBtn?.classList.remove("show");
+    }
+  });
+
+  scrollToTopBtn?.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+</script>
