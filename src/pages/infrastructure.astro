@@ -9,6 +9,15 @@ import fondo from "../assets/images/infra_01.jpg";
 import fondo_dos from "../assets/images/infra_02.jpg";
 import fondo_tres from "../assets/images/infra_03.jpg";
 import Preloader from "../components/preloader.astro";
+import aulas from "../assets/imagesGallery/aulas.webp";
+import aulas_dos from "../assets/imagesGallery/aulas_dos.webp";
+import aulas_tres from "../assets/imagesGallery/aulas_tres.webp";
+import patio from "../assets/imagesGallery/patio.png";
+import patio_dos from "../assets/imagesGallery/patio_dos.png";
+import familia from "../assets/videos/Familia.mp4";
+import entrevista from "../assets/videos/Entrevista.mp4";
+import fondo_azul from "../assets/images/FONDO_AZUL.png";
+import materiales from "../assets/imagesGallery/materiales.webp";
 ---
 
 <head>
@@ -26,17 +35,17 @@ import Preloader from "../components/preloader.astro";
       class="container mx-auto grid md:grid-cols-2 items-center gap-8 px-6 py-12"
     >
       <div>
-        <h3 class="text-4xl md:text-6xl font-bold mb-6">
+        <h3 class="text-5xl md:text-7xl font-bold mb-6 text-[rgb(252,144,122)]">
           Instalaciones de Primera Clase
         </h3>
 
-        <p class="max-w-xl mb-6 mt-6">
+        <p class="max-w-xl mb-6 mt-6 text-[rgb(7,60,109)] text-lg md:text-xl">
           Nuestras instalaciones están equipadas con tecnología de punta y
           espacios diseñados para fomentar el aprendizaje y la creatividad. Cada
           área está pensada para ofrecer un entorno seguro y estimulante para
           los niños.
         </p>
-        <a href="/contact" class="btn btn-neutral px-8 py-4 btn-xl mt-6"
+        <a href="/contact" class="btn btn-neutral px-8 py-4 btn-xl mt-6 text-[rgb(7,60,109)] text-lg md:text-xl"
           >Visítanos</a
         >
       </div>
@@ -70,20 +79,34 @@ import Preloader from "../components/preloader.astro";
           <div
             class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
           >
-            <button class="prev-btn cursor-pointer">Anterior</button>
-            <button class="next-btn text-black cursor-pointer">Siguiente</button
-            >
+            <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
           <div class="imagen w-full h-full">
             <Image
-              src={fondo}
+              src={aulas}
               alt="Alumno en aula"
               class="h-screen w-screen object-cover"
             />
           </div>
           <div class="imagen w-full h-full">
             <Image
-              src={fondo_dos}
+              src={aulas_dos}
+              alt="Alumno en aula"
+              class="h-screen w-screen object-cover"
+            />
+          </div>
+          <div class="imagen w-full h-full">
+            <Image
+              src={aulas_tres}
               alt="Alumno en aula"
               class="h-screen w-screen object-cover"
             />
@@ -113,20 +136,27 @@ import Preloader from "../components/preloader.astro";
           <div
             class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
           >
-            <button class="prev-btn cursor-pointer">Anterior</button>
-            <button class="next-btn text-black cursor-pointer">Siguiente</button
-            >
+            <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
           <div class="imagen w-full h-full">
             <Image
-              src={fondo}
+              src={patio}
               alt="Patio central"
               class="h-screen w-screen object-cover"
             />
           </div>
           <div class="imagen w-full h-full">
             <Image
-              src={fondo_dos}
+              src={patio_dos}
               alt="Niños jugando en el patio"
               class="h-screen w-screen object-cover"
             />
@@ -144,91 +174,7 @@ import Preloader from "../components/preloader.astro";
         </div>
       </section>
 
-      <section class="talleres character !text-white">
-        <div class="block fondo_uno"></div>
-
-        <div class="container-imagenes w-full h-full">
-          <span
-            class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
-            aria-hidden="true">talleres</span
-          >
-          <div
-            class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
-          >
-            <button class="prev-btn cursor-pointer">Anterior</button>
-            <button class="next-btn text-black cursor-pointer">Siguiente</button
-            >
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={fondo}
-              alt="Taller artístico"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={fondo_dos}
-              alt="Niños en taller creativo"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-        </div>
-        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-          Contamos con ambientes preparados para talleres artísticos, musicales
-          y científicos que complementan la jornada escolar con experiencias
-          enriquecedoras.
-        </div>
-        <div class="nickname text-lg md:text-xl lg:text-2xl">
-          <span>lugar:</span>Salas de expresión y creatividad
-        </div>
-        <div class="quote text-lg md:text-xl lg:text-2xl">
-          Explorar más allá del aula
-        </div>
-      </section>
-
-      <section class="teatro character !text-white">
-        <div class="block fondo_uno"></div>
-
-        <div class="container-imagenes w-full h-full">
-          <span
-            class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
-            aria-hidden="true">teatro</span
-          >
-          <div
-            class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
-          >
-            <button class="prev-btn cursor-pointer">Anterior</button>
-            <button class="next-btn text-black cursor-pointer">Siguiente</button
-            >
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={fondo}
-              alt="Escenario de teatro"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={fondo_dos}
-              alt="Niños actuando en teatro"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-        </div>
-        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-          Un espacio donde los niños y niñas presentan lo aprendido a través de
-          obras y representaciones que fortalecen la expresión, el lenguaje y la
-          confianza.
-        </div>
-        <div class="nickname text-lg md:text-xl lg:text-2xl">
-          <span>lugar:</span>Mini escenario o sala de usos múltiples
-        </div>
-        <div class="quote text-lg md:text-xl lg:text-2xl">
-          Aprender también se actúa
-        </div>
-      </section>
+      
 
       <section class="entrevista character !text-white">
         <div class="block fondo_uno"></div>
@@ -241,24 +187,21 @@ import Preloader from "../components/preloader.astro";
           <div
             class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
           >
-            <button class="prev-btn cursor-pointer">Anterior</button>
-            <button class="next-btn text-black cursor-pointer">Siguiente</button
+            
+          </div>
+          <div class="imagen w-full h-full">
+            <video
+              src={entrevista}
+              class="object-cover"
+              autoplay
+              muted
+              style="width: auto; height: auto; max-width: 100%; max-height: 100%; margin: auto; display: block;"
             >
+              <track kind="captions" />
+            </video>
+            
           </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={fondo}
-              alt="Sala de orientación"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={fondo_dos}
-              alt="Reunión en sala de orientación"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
+          
         </div>
         <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
           Un ambiente acogedor y reservado, donde la directora o la psicóloga
@@ -288,20 +231,16 @@ import Preloader from "../components/preloader.astro";
             <button class="next-btn text-black cursor-pointer">Siguiente</button
             >
           </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={alumno}
-              alt="Sala de familia"
+            <div class="imagen w-full h-full">
+            <video
+              src={familia}
               class="h-screen w-screen object-cover"
-            />
+              muted
+              autoplay
+              loop
+            ></video>
           </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={fondo_dos}
-              alt="Reunión familiar"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
+          
         </div>
         <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
           Un espacio especial para la formación de nanas, abuelitos y padres,
@@ -327,13 +266,21 @@ import Preloader from "../components/preloader.astro";
           <div
             class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
           >
-            <button class="prev-btn cursor-pointer">Anterior</button>
-            <button class="next-btn text-black cursor-pointer">Siguiente</button
-            >
+              <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            
           </div>
           <div class="imagen w-full h-full">
             <Image
-              src={fondo}
+              src={materiales}
               alt="Material didáctico"
               class="h-screen w-screen object-cover"
             />
@@ -365,22 +312,22 @@ import Preloader from "../components/preloader.astro";
       class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
     >
       <div class="flex flex-col items-center">
-        <div class="text-8xl font-bold text-black counter" data-target="5">
-          0
-        </div>
-        <span class="text-base-content">Aulas modernas</span>
+      <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="5">
+        0
+      </div>
+      <span class="text-lg md:text-xl text-base-content font-bold text-[rgb(7,60,109)]  ">Aulas modernas</span>
       </div>
       <div class="flex flex-col items-center">
-        <div class="text-8xl font-bold text-black counter" data-target="3">
-          0
-        </div>
-        <span class="text-base-content">Áreas de juego</span>
+      <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="3">
+        0
+      </div>
+      <span class="text-lg md:text-xl text-base-content text-[rgb(7,60,109)]">Áreas de juego</span>
       </div>
       <div class="flex flex-col items-center">
-        <div class="text-8xl font-bold text-black counter" data-target="2">
-          0
-        </div>
-        <span class="text-base-content">Laboratorios de ciencia</span>
+      <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="2">
+        0
+      </div>
+      <span class="text-lg md:text-xl text-base-content text-[rgb(7,60,109)]">Laboratorios de ciencia</span>
       </div>
     </div>
   </section>
@@ -614,6 +561,10 @@ import Preloader from "../components/preloader.astro";
   }
   .contador-aulas {
     background-image: url("../assets/images/FONDO_CLARO.png");
+    background-size: cover;
+  }
+  .entrevista{
+    background-image: url("../assets/images/FONDO_AZUL.png");
     background-size: cover;
   }
 </style>
