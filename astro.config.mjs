@@ -7,7 +7,6 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: change to the correct production url
   site: 'https://nidoperulina.edu.pe',
   integrations: [mdx(), sitemap()],
   vite: {
@@ -24,7 +23,7 @@ export default defineConfig({
   },
   adapter: netlify(),
   image: {
-    domains: ["images.unsplash.com","i.ibb.co", "img.icons8.com", "mighty.tools"],
+    domains: ["images.unsplash.com","i.ibb.co", "img.icons8.com", "mighty.tools", "sistemas15.minedu.gob.pe", "123language.pe"],
     remotePatterns: [
       { 
         protocol: "https",
@@ -41,6 +40,14 @@ export default defineConfig({
       {
         protocol: "https",
         hostname: "i.bb.co",
+      },
+      {
+        protocol: "https",
+        hostname: "sistemas15.minedu.gob.pe",
+      },
+      {
+        protocol: "https",
+        hostname: "123language.pe",
       }
     ],
   }
