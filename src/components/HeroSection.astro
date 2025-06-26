@@ -19,48 +19,353 @@ import VideoInicio3 from "../assets/videos/video-inicio-3.mp4";
 
   <!-- Content -->
   <div
-    class="container mx-auto px-6 relative z-10 h-screen flex items-center justify-center"
+    class="container mx-auto px-4 sm:px-6 relative z-10 min-h-screen flex items-center justify-center mt-5"
   >
-    <div class="max-w-5xl mx-auto text-center pt-16">
-      <h1
-        class="title_hero text-[65px] md:text-[130px] font-bold leading-15 md:leading-30"
-      >
-        Educamos con el Trinomio Indisoluble
-      </h1>
+    <div class="max-w-7xl mx-auto w-full pt-20 sm:pt-24 lg:pt-16 pb-8">
+      <!-- Grid adaptativo: vertical en móvil, horizontal en desktop -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        
+        <!-- Primera columna: Texto y botones -->
+        <div class="flex flex-col justify-center space-y-6 lg:space-y-8 text-center lg:text-left">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+            Educamos con el Trinomio Indisoluble
+          </h1>
+          <p class="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto lg:mx-0">
+            Formamos niños felices, autónomos y seguros de sí mismos a través de una educación integral que combina amor, respeto y excelencia académica.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a
+              href="/about"
+              class="inline-block bg-secondary hover:bg-transparent border-2 border-secondary hover:text-secondary text-white font-bold py-3 px-6 rounded-full text-base transition-colors duration-300 text-center"
+            >
+              Más sobre nosotros
+            </a>
+            <a
+              href="/contact"
+              class="inline-block bg-transparent border-2 border-white hover:bg-white hover:text-gray-800 text-white font-bold py-3 px-6 rounded-full text-base transition-colors duration-300 text-center"
+            >
+              Contáctanos
+            </a>
+          </div>
+        </div>
+
+        <!-- Segunda columna: Formulario de inscripción -->
+        <div class="flex items-center justify-center mt-8 lg:mt-20">
+          <div class="w-full max-w-md">            
+            <form
+              id="form-inscripcion"
+              method="post"
+              action="#"
+              class="space-y-3 sm:space-y-4 bg-black/20 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/20"
+            >
+              <!-- Tipo de consulta -->
+              <h2 class="text-lg font-bold text-center mb-4 lg:mb-6">
+                Formulario de Consultas
+              </h2>
+              <div>
+                <label
+                  for="request"
+                  class="block text-sm font-medium text-white mb-2"
+                >
+                  Tipo de consulta <span class="text-red-400">*</span>
+                </label>
+                <select
+                  id="request"
+                  name="request"
+                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/90 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base appearance-none"
+                  required
+                >
+                  <option value="" disabled selected>Seleccione una opción</option>
+                  <option value="matricula">Proceso de matrícula</option>
+                  <option value="informacion">Información general</option>
+                  <option value="visita">Programar una visita</option>
+                </select>
+                <div id="request-error" class="error-message text-red-400 text-sm mt-1 hidden">
+                  Por favor seleccione un tipo de consulta
+                </div>
+              </div>
+
+              <!-- Nombre -->
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-white mb-2"
+                >
+                  Nombre <span class="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Nombre y apellido"
+                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base"
+                  required
+                  minlength="3"
+                />
+                <div id="name-error" class="error-message text-red-400 text-sm mt-1 hidden">
+                  Ingrese sus nombres y apellidos
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-white mb-2"
+                >
+                  Correo electrónico <span class="text-red-400">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="usuario@gmail.com"
+                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base"
+                  required
+                />
+                <div id="email-error" class="error-message text-red-400 text-sm mt-1 hidden">
+                  Ingrese un correo electrónico válido
+                </div>
+              </div>
+
+              <!-- Teléfono -->
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-white mb-2"
+                >
+                  Número de teléfono <span class="text-red-400">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="987654321"
+                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base"
+                  required
+                />
+                <div id="phone-error" class="error-message text-red-400 text-sm mt-1 hidden">
+                  Ingrese un número de teléfono válido
+                </div>
+              </div>
+
+              <!-- Mensaje -->
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-white mb-2"
+                >
+                  Mensaje <span class="text-red-400">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="3"
+                  placeholder="Escribe tu mensaje o información adicional sobre el niño(a)"
+                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base resize-none"
+                  minlength="5"
+                ></textarea>
+                <div id="message-error" class="error-message text-red-400 text-sm mt-1 hidden">
+                  Por favor ingrese un mensaje
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-inscripcion-btn"
+                class="w-full bg-secondary hover:bg-transparent border-2 border-secondary hover:text-secondary text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-full transition-colors duration-300 text-sm sm:text-base cursor-pointer"
+              >
+                Enviar
+              </button>
+
+              <div id="success-inscripcion-message" class="hidden bg-green-500/80 text-white p-3 rounded-lg text-center text-sm">
+                ¡Gracias por tu interés!
+              </div>
+              <div id="error-inscripcion-alert" class="hidden bg-red-500/80 text-white p-3 rounded-lg text-center text-sm">
+                Hubo un error.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<script>
-  import { gsap } from "gsap";
-  import SplitType from "split-type";
-  gsap.from(".title_hero", {
-    opacity: 0,
-    y: 60,
-    duration: 1.2,
-    ease: "power3.out",
-    delay: 0.3,
-  });
 
-  const split = new SplitType(".title_hero", { types: "words,chars" });
-  split.chars?.forEach((char, index) => {
-    let tl = gsap.timeline();
-    tl.from(char, {
-      y: gsap.utils.random(-150, 150),
-      x: gsap.utils.random(-150, 150),
-      rotate: gsap.utils.random(-360, 360),
-      scale: gsap.utils.random(0, 2),
-      opacity: 0,
-      duration: 2,
-      ease: "back.out",
-      delay: index * 0.01,
+<style>
+  .error-message {
+    display: none;
+  }
+  .input-error {
+    border-color: #ef4444 !important;
+    background-color: rgba(239, 68, 68, 0.1) !important;
+  }
+  .hidden {
+    display: none;
+  }
+  
+  /* Estilos específicos para el select */
+  select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+  
+  /* Estilos para las opciones del select */
+  select option {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 0.5rem;
+  }
+  
+  select option:hover {
+    background-color: #374151;
+  }
+  
+  select option:checked {
+    background-color: #4f46e5;
+  }
+  
+  /* Placeholder option */
+  select option[value=""] {
+    color: #9ca3af;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form-inscripcion") as HTMLFormElement;
+    const submitBtn = document.getElementById("submit-inscripcion-btn") as HTMLButtonElement;
+    const successMessage = document.getElementById("success-inscripcion-message") as HTMLDivElement;
+    const errorAlert = document.getElementById("error-inscripcion-alert") as HTMLDivElement;
+
+    if (!form || !submitBtn || !successMessage || !errorAlert) {
+      console.error("Required DOM elements not found");
+      return;
+    }
+
+    // Function to show error message and highlight input
+    const showError = (inputId: string, show: boolean): void => {
+      const input = document.getElementById(inputId) as HTMLInputElement | HTMLSelectElement;
+      const errorElement = document.getElementById(`${inputId}-error`) as HTMLDivElement;
+
+      if (!input || !errorElement) {
+        console.error(`Elements not found for id: ${inputId}`);
+        return;
+      }
+
+      if (show) {
+        input.classList.add("input-error");
+        errorElement.classList.remove("hidden");
+      } else {
+        input.classList.remove("input-error");
+        errorElement.classList.add("hidden");
+      }
+    };
+
+    // Validate individual fields
+    const validateField = (input: HTMLInputElement | HTMLSelectElement): boolean => {
+      if (input.required && !input.value) {
+        showError(input.id, true);
+        return false;
+      }
+
+      if (input instanceof HTMLInputElement) {
+        if (input.type === "email" && input.value) {
+          const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailPattern.test(input.value)) {
+            showError(input.id, true);
+            return false;
+          }
+        }
+
+        if (input.type === "tel" && input.value) {
+          const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/;
+          if (!phonePattern.test(input.value)) {
+            showError(input.id, true);
+            return false;
+          }
+        }
+      }
+
+      if (input instanceof HTMLSelectElement && !input.value) {
+        showError(input.id, true);
+        return false;
+      }
+
+      if ("minLength" in input && input.value.length < input.minLength) {
+        showError(input.id, true);
+        return false;
+      }
+
+      showError(input.id, false);
+      return true;
+    };
+
+    // Add input event listeners for real-time validation
+    const inputs = form.querySelectorAll<HTMLInputElement | HTMLSelectElement>("input, select");
+    inputs.forEach((input) => {
+      input.addEventListener("input", () => validateField(input));
+      input.addEventListener("blur", () => validateField(input));
     });
-    tl.from(
-      char,
-      {
-        color: `rgb(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)})`,
-        duration: 5,
-      },
-      "-=0.25",
-    );
+
+    form.addEventListener("submit", async (e: SubmitEvent) => {
+      e.preventDefault();
+
+      // Validate all fields
+      let isValid = true;
+      inputs.forEach((input) => {
+        if (!validateField(input)) {
+          isValid = false;
+        }
+      });
+
+      if (!isValid) {
+        return;
+      }
+
+      // Disable submit button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "Enviando...";
+
+      try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          // Show success message
+          form.reset();
+          successMessage.classList.remove("hidden");
+          errorAlert.classList.add("hidden");
+          setTimeout(() => {
+            successMessage.classList.add("hidden");
+          }, 5000);
+        } else {
+          throw new Error("Error en el envío");
+        }
+
+      } catch (error) {
+        console.error("Error:", error);
+        errorAlert.classList.remove("hidden");
+        successMessage.classList.add("hidden");
+        setTimeout(() => {
+          errorAlert.classList.add("hidden");
+        }, 5000);
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Solicitar Inscripción";
+      }
+    });
   });
 </script>
