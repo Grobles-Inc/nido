@@ -25,314 +25,310 @@ import materiales from "../assets/imagesGallery/materiales.webp";
   <GoogleTagManager />
 </head>
 <Preloader />
-<Layout
-  title="Nuestra Infraestructura"
-  heroImage={fondo_tres}
-  description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
->
-  <section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
-    <div
-      class="container mx-auto grid md:grid-cols-2 items-center gap-8 px-6 py-12"
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+    
+    <Layout
+      title="Nuestra Infraestructura"
+      heroImage={fondo_tres}
+      description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
     >
-      <div>
-        <h3 class="text-5xl md:text-7xl font-bold mb-6 text-[rgb(252,144,122)]">
-          Instalaciones de Primera Clase
-        </h3>
-
-        <p class="max-w-xl mb-6 mt-6 text-[rgb(7,60,109)] text-lg md:text-xl">
-          Nuestras instalaciones están equipadas con tecnología de punta y
-          espacios diseñados para fomentar el aprendizaje y la creatividad. Cada
-          área está pensada para ofrecer un entorno seguro y estimulante para
-          los niños.
-        </p>
-        <a href="/contact" class="btn btn-neutral px-8 py-4 btn-xl mt-6 text-[rgb(7,60,109)] text-lg md:text-xl"
-          >Visítanos</a
+      <section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
+        <div
+          class="container mx-auto grid md:grid-cols-2 items-center gap-8 px-6 py-12"
         >
-      </div>
-      <div class="relative h-full">
-        <Image
-          src={infrastructureImage}
-          alt="Instalaciones modernas y seguras"
-          class="w-full h-full object-cover rounded-2xl"
-        />
-      </div>
-    </div>
-  </section>
-  <div class="body">
-    <div class="wrapper">
-      <section class="intro bg-image">
-        <div class="logo">
-          <h1 class="text-[20vw] md:text-[10vw] lg:text-[10vw]">
-            Nuestros <br /> campos
-          </h1>
-        </div>
-      </section>
-
-      <section class="aulas character !text-white">
-        <div class="block fondo_uno"></div>
-
-        <div class="container-imagenes w-full h-full">
-          <span
-            class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
-            aria-hidden="true">aulas</span
-          >
-          <div
-            class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
-          >
-            <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={aulas}
-              alt="Alumno en aula"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={aulas_dos}
-              alt="Alumno en aula"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={aulas_tres}
-              alt="Alumno en aula"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-        </div>
-        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-          Nuestras aulas están diseñadas para el aprendizaje activo: rincones de
-          lectura, espacios de experimentación y ambientes que inspiran
-          curiosidad y descubrimiento.
-        </div>
-        <div class="nickname text-lg md:text-xl lg:text-2xl">
-          <span>lugar:</span>Ambientes pedagógicos
-        </div>
-        <div class="quote text-lg md:text-xl lg:text-2xl">
-          Espacios que invitan a explorar
-        </div>
-      </section>
-
-      <section class="patio character !text-white">
-        <div class="block fondo_uno"></div>
-
-        <div class="container-imagenes w-full h-full">
-          <span
-            class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
-            aria-hidden="true">patio</span
-          >
-          <div
-            class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
-          >
-            <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={patio}
-              alt="Patio central"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={patio_dos}
-              alt="Niños jugando en el patio"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-        </div>
-        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-          Un patio amplio, seguro y organizado por zonas, que permite juegos
-          libres, actividades físicas y momentos de exploración al aire libre.
-        </div>
-        <div class="nickname text-lg md:text-xl lg:text-2xl">
-          <span>lugar:</span>Patio central del nido
-        </div>
-        <div class="quote text-lg md:text-xl lg:text-2xl">
-          Moverse también es aprender
-        </div>
-      </section>
-
-      
-
-      <section class="entrevista character !text-white">
-        <div class="block fondo_uno"></div>
-
-        <div class="container-imagenes w-full h-full">
-          <span
-            class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
-            aria-hidden="true">entrevista</span
-          >
-          <div
-            class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
-          >
-            
-          </div>
-          <div class="imagen w-full h-full">
-            <video
-              src={entrevista}
-              class="object-cover"
-              autoplay
-              muted
-              style="width: auto; height: auto; max-width: 100%; max-height: 100%; margin: auto; display: block;"
-            >
-              <track kind="captions" />
-            </video>
-            
-          </div>
-          
-        </div>
-        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-          Un ambiente acogedor y reservado, donde la directora o la psicóloga
-          reciben a las familias para atender sus inquietudes y acompañarlas en
-          el proceso educativo.
-        </div>
-        <div class="nickname text-lg md:text-xl lg:text-2xl">
-          <span>lugar:</span>Sala de orientación
-        </div>
-        <div class="quote text-lg md:text-xl lg:text-2xl">
-          Escuchar es también educar
-        </div>
-      </section>
-
-      <section class="familia character !text-white">
-        <div class="block fondo_uno"></div>
-
-        <div class="container-imagenes w-full h-full">
-          <span
-            class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
-            aria-hidden="true">familia</span
-          >
-          <div
-            class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
-          >
-            <button class="prev-btn cursor-pointer">Anterior</button>
-            <button class="next-btn text-black cursor-pointer">Siguiente</button
+          <div>
+            <h3 class="text-5xl md:text-7xl font-bold mb-6 text-[rgb(252,144,122)]">
+              Instalaciones de Primera Clase
+            </h3>
+    
+            <p class="max-w-xl mb-6 mt-6 text-[rgb(7,60,109)] text-lg md:text-xl">
+              Nuestras instalaciones están equipadas con tecnología de punta y
+              espacios diseñados para fomentar el aprendizaje y la creatividad. Cada
+              área está pensada para ofrecer un entorno seguro y estimulante para
+              los niños.
+            </p>
+            <a href="/contact" class="btn btn-neutral px-8 py-4 btn-xl mt-6 text-[rgb(7,60,109)] text-lg md:text-xl"
+              >Visítanos</a
             >
           </div>
-            <div class="imagen w-full h-full">
-            <video
-              src={familia}
-              class="h-screen w-screen object-cover"
-              muted
-              autoplay
-              loop
-            ></video>
-          </div>
-          
-        </div>
-        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-          Un espacio especial para la formación de nanas, abuelitos y padres,
-          donde se fortalecen los vínculos con el hogar y se comparten
-          herramientas de crianza.
-        </div>
-        <div class="nickname text-lg md:text-xl lg:text-2xl">
-          <span>lugar:</span>Sala de familia
-        </div>
-        <div class="quote text-lg md:text-xl lg:text-2xl">
-          Educar en red, crecer juntos
-        </div>
-      </section>
-
-      <section class="material character !text-white">
-        <div class="block fondo_uno"></div>
-
-        <div class="container-imagenes w-full h-full">
-          <span
-            class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
-            aria-hidden="true">material</span
-          >
-          <div
-            class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
-          >
-              <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            
-          </div>
-          <div class="imagen w-full h-full">
+          <div class="relative h-full">
             <Image
-              src={materiales}
-              alt="Material didáctico"
-              class="h-screen w-screen object-cover"
-            />
-          </div>
-          <div class="imagen w-full h-full">
-            <Image
-              src={fondo_dos}
-              alt="Niños usando material didáctico"
-              class="h-screen w-screen object-cover"
+              src={infrastructureImage}
+              alt="Instalaciones modernas y seguras"
+              class="w-full h-full object-cover rounded-2xl"
             />
           </div>
         </div>
-        <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-          Contamos con bibliotecas, estanterías y rincones llenos de material
-          didáctico diseñado para fomentar la curiosidad, la autonomía y el
-          juego significativo.
+      </section>
+      <div class="body">
+        <div class="wrapper">
+          <section class="intro bg-image">
+            <div class="logo">
+              <h1 class="text-[20vw] md:text-[10vw] lg:text-[10vw]">
+                Nuestros <br /> campos
+              </h1>
+            </div>
+          </section>
+    
+          <section class="aulas character !text-white">
+            <div class="block fondo_uno"></div>
+    
+            <div class="container-imagenes w-full h-full">
+              <span
+                class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
+                aria-hidden="true">aulas</span
+              >
+              <div
+                class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
+              >
+                <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              <div class="imagen w-full h-full">
+                <Image
+                  src={aulas}
+                  alt="Alumno en aula"
+                  class="h-screen w-screen object-cover"
+                />
+              </div>
+              <div class="imagen w-full h-full">
+                <Image
+                  src={aulas_dos}
+                  alt="Alumno en aula"
+                  class="h-screen w-screen object-cover"
+                />
+              </div>
+              <div class="imagen w-full h-full">
+                <Image
+                  src={aulas_tres}
+                  alt="Alumno en aula"
+                  class="h-screen w-screen object-cover"
+                />
+              </div>
+            </div>
+            <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+              Nuestras aulas están diseñadas para el aprendizaje activo: rincones de
+              lectura, espacios de experimentación y ambientes que inspiran
+              curiosidad y descubrimiento.
+            </div>
+            <div class="nickname text-lg md:text-xl lg:text-2xl">
+              <span>lugar:</span>Ambientes pedagógicos
+            </div>
+            <div class="quote text-lg md:text-xl lg:text-2xl">
+              Espacios que invitan a explorar
+            </div>
+          </section>
+    
+          <section class="patio character !text-white">
+            <div class="block fondo_uno"></div>
+    
+            <div class="container-imagenes w-full h-full">
+              <span
+                class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
+                aria-hidden="true">patio</span
+              >
+              <div
+                class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
+              >
+                <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              <div class="imagen w-full h-full">
+                <Image
+                  src={patio}
+                  alt="Patio central"
+                  class="h-screen w-screen object-cover"
+                />
+              </div>
+              <div class="imagen w-full h-full">
+                <Image
+                  src={patio_dos}
+                  alt="Niños jugando en el patio"
+                  class="h-screen w-screen object-cover"
+                />
+              </div>
+            </div>
+            <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+              Un patio amplio, seguro y organizado por zonas, que permite juegos
+              libres, actividades físicas y momentos de exploración al aire libre.
+            </div>
+            <div class="nickname text-lg md:text-xl lg:text-2xl">
+              <span>lugar:</span>Patio central del nido
+            </div>
+            <div class="quote text-lg md:text-xl lg:text-2xl">
+              Moverse también es aprender
+            </div>
+          </section>
+    
+          <section class="entrevista character !text-white">
+            <div class="block fondo_uno"></div>
+    
+            <div class="container-imagenes w-full h-full">
+              <span
+                class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
+                aria-hidden="true">entrevista</span
+              >
+              <div
+                class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
+              >
+                
+              </div>
+              <div class="imagen w-full h-full">
+                <video
+                  src={entrevista}
+                  class="object-cover"
+                  autoplay
+                  muted
+                  style="width: auto; height: auto; max-width: 100%; max-height: 100%; margin: auto; display: block;"
+                >
+                  <track kind="captions" />
+                </video>
+                
+              </div>
+              
+            </div>
+            <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+              Un ambiente acogedor y reservado, donde la directora o la psicóloga
+              reciben a las familias para atender sus inquietudes y acompañarlas en
+              el proceso educativo.
+            </div>
+            <div class="nickname text-lg md:text-xl lg:text-2xl">
+              <span>lugar:</span>Sala de orientación
+            </div>
+            <div class="quote text-lg md:text-xl lg:text-2xl">
+              Escuchar es también educar
+            </div>
+          </section>
+    
+          <section class="familia character !text-white">
+            <div class="block fondo_uno"></div>
+    
+            <div class="container-imagenes w-full h-full">
+              <span
+                class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
+                aria-hidden="true">familia</span
+              >
+                <div class="imagen w-full h-full">
+                <video
+                  src={familia}
+                  class="h-screen w-screen object-cover"
+                  muted
+                  autoplay
+                  loop
+                ></video>
+              </div>
+              
+            </div>
+            <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+              Un espacio especial para la formación de nanas, abuelitos y padres,
+              donde se fortalecen los vínculos con el hogar y se comparten
+              herramientas de crianza.
+            </div>
+            <div class="nickname text-lg md:text-xl lg:text-2xl">
+              <span>lugar:</span>Sala de familia
+            </div>
+            <div class="quote text-lg md:text-xl lg:text-2xl">
+              Educar en red, crecer juntos
+            </div>
+          </section>
+    
+          <section class="material character !text-white">
+            <div class="block fondo_uno"></div>
+    
+            <div class="container-imagenes w-full ">
+              <span
+                class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
+                aria-hidden="true">material</span
+              >
+              <div
+                class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
+              >
+                  <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                
+              </div>
+              <div class="imagen w-full h-full">
+                <Image
+                  src={materiales}
+                  alt="Material didáctico"
+                  class="h-screen w-screen object-cover"
+                />
+              </div>
+              <div class="imagen w-full h-full">
+                <Image
+                  src={fondo_dos}
+                  alt="Niños usando material didáctico"
+                  class="h-screen w-screen object-cover"
+                />
+              </div>
+            </div>
+            <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
+              Contamos con bibliotecas, estanterías y rincones llenos de material
+              didáctico diseñado para fomentar la curiosidad, la autonomía y el
+              juego significativo.
+            </div>
+            <div class="nickname text-lg md:text-xl lg:text-2xl">
+              <span>lugar:</span>Rincones pedagógicos
+            </div>
+            <div class="quote text-lg md:text-xl lg:text-2xl">
+              Jugar es aprender con las manos
+            </div>
+          </section>
         </div>
-        <div class="nickname text-lg md:text-xl lg:text-2xl">
-          <span>lugar:</span>Rincones pedagógicos
-        </div>
-        <div class="quote text-lg md:text-xl lg:text-2xl">
-          Jugar es aprender con las manos
+      </div>
+      <section class="contador-aulas bg-accent">
+        <div
+          class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
+        >
+          <div class="flex flex-col items-center">
+          <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="5">
+            0
+          </div>
+          <span class="text-lg md:text-xl  font-bold text-[rgb(7,60,109)]  ">Aulas modernas</span>
+          </div>
+          <div class="flex flex-col items-center">
+          <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="3">
+            0
+          </div>
+          <span class="text-lg md:text-xl text-[rgb(7,60,109)]">Áreas de juego</span>
+          </div>
+          <div class="flex flex-col items-center">
+          <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="2">
+            0
+          </div>
+          <span class="text-lg md:text-xl text-[rgb(7,60,109)]">Laboratorios de ciencia</span>
+          </div>
         </div>
       </section>
-    </div>
+      <GoogleTagManagerNoScript />
+    </Layout>
   </div>
-  <section class="contador-aulas bg-accent">
-    <div
-      class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
-    >
-      <div class="flex flex-col items-center">
-      <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="5">
-        0
-      </div>
-      <span class="text-lg md:text-xl text-base-content font-bold text-[rgb(7,60,109)]  ">Aulas modernas</span>
-      </div>
-      <div class="flex flex-col items-center">
-      <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="3">
-        0
-      </div>
-      <span class="text-lg md:text-xl text-base-content text-[rgb(7,60,109)]">Áreas de juego</span>
-      </div>
-      <div class="flex flex-col items-center">
-      <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="2">
-        0
-      </div>
-      <span class="text-lg md:text-xl text-base-content text-[rgb(7,60,109)]">Laboratorios de ciencia</span>
-      </div>
-    </div>
-  </section>
-  <GoogleTagManagerNoScript />
-</Layout>
+</div>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
@@ -346,28 +342,8 @@ import materiales from "../assets/imagesGallery/materiales.webp";
   }
 
   .wrapper {
-    width: calc(100% * ${sections.length});
-    height: 100vh;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-
-  .logo {
-    font-size: 8rem;
-    position: fixed;
-    z-index: 10;
-    /* top: 15%;
-      left: 4rem; */
-    line-height: 0.9;
-  }
-
-  .line {
-    background-color: rgba(49, 110, 166, 255);
-    height: 1rem;
-    position: absolute;
-    top: 50%;
     width: 100%;
-    transform: translateY(-50%);
+    display: block;
   }
 
   section {
@@ -378,6 +354,26 @@ import materiales from "../assets/imagesGallery/materiales.webp";
     width: 100%;
     height: 100vh;
     overflow: hidden;
+  }
+
+  .wrapper > section {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 8rem;
+    position: fixed;
+    z-index: 10;
+    line-height: 0.9;
+  }
+
+  .line {
+    background-color: rgba(49, 110, 166, 255);
+    height: 1rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
   }
 
   .body section.character::before {
@@ -404,10 +400,6 @@ import materiales from "../assets/imagesGallery/materiales.webp";
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .wrapper > section {
-    flex: 0 0 100vw; /* Ocupa todo el ancho */
   }
 
   .container-imagenes img {
@@ -452,16 +444,38 @@ import materiales from "../assets/imagesGallery/materiales.webp";
     width: 30%;
     font-weight: 400;
     color: rgb(7, 60, 109);
-    transform: translate(100%, 100%);
+    
     font-family: "Neulis Neue";
     background-color: rgba(207, 207, 207, 0.404);
     border-radius: 1rem;
     padding: 2rem;
   }
   @media (max-width: 768px) {
+    .wrapper < section {
+      width: 100%;
+      display: block;
+    }
+    .container-imagenes{
+      height: 100vh; 
+      position: relative;
+    }
+    .container-imagenes video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .buttons{
+      position: absolute;
+      
+    }
+    .wrapper > section {
+      
+    } 
     .caption {
-      left: -5%;
-      font-size: calc(1vw + 1vh);
+      width: 40vw;
+      
+      bottom: 15%;
+      font-size: calc(1.5vw + 1vh);
     }
     .huge-text {
       font-size: 20vw; /* Ajustar tamaño de fuente para pantallas más pequeñas */
@@ -476,14 +490,15 @@ import materiales from "../assets/imagesGallery/materiales.webp";
       transform: translateY(-200%);
     }
     .quote {
-      bottom: 2%;
-      right: 20%;
+      bottom: 10% !important;
+      right: 10% !important;
       font-size: 2rem;
       width: 80%;
-      transform: translateY(200%);
+      
+
     }
   }
-  @media (max-width: 480px) {
+  /* @media (max-width: 480px) {
     .caption {
       left: -15%;
       top: 20%;
@@ -491,7 +506,7 @@ import materiales from "../assets/imagesGallery/materiales.webp";
       font-size: calc(1vw + 2vh);
     }
     .huge-text {
-      font-size: 25vw; /* Ajustar tamaño de fuente para pantallas más pequeñas */
+      font-size: 25vw; 
       top: 60%;
       right: 20%;
       transform: translateX(-4%);
@@ -511,7 +526,7 @@ import materiales from "../assets/imagesGallery/materiales.webp";
       text-align: left;
       transform: translateY(200%);
     }
-  }
+  } */
   .huge-text {
     font-size: 15vw; /* Adjust font size relative to viewport width */
     width: 100%;
@@ -551,7 +566,7 @@ import materiales from "../assets/imagesGallery/materiales.webp";
     font-size: 3rem;
     width: 30%;
     text-align: right;
-    transform: translateY(200%);
+   
   }
 
   .quote::before,
@@ -567,159 +582,153 @@ import materiales from "../assets/imagesGallery/materiales.webp";
     background-image: url("../assets/images/FONDO_AZUL.png");
     background-size: cover;
   }
+  
 </style>
 <script>
-  import { gsap } from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-  import Draggable from "gsap/Draggable";
+ // filepath: c:\Users\Christopher\Documents\Grobles\nido\src\pages\infrastructure.astro
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger, Draggable);
+gsap.registerPlugin(ScrollTrigger);
 
+const sections = document.querySelectorAll(".wrapper > section");
 
-  const sections = document.querySelectorAll(".wrapper > section");
-  const wrapper = document.querySelector(".wrapper");
-  
-
-  let scrollTween = gsap.timeline({
+// Create individual scroll triggers for each section
+sections.forEach((section) => {
+  gsap.timeline({
     scrollTrigger: {
-      trigger: ".wrapper",
+      trigger: section,
+      start: "top top",
+      end: "+=100%", // Pausa por el alto completo de la sección
       pin: true,
+      scrub: true,
+      anticipatePin: 1, // Mejora la transición entre pins
+    },
+  });
+
+  // Luego, animaciones sin volver a fijar el mismo elemento
+  gsap.to(section, {
+    scrollTrigger: {
+      trigger: section,
       scrub: 0.5,
       start: "top top",
-      end: () => {
-        const wrapper = document.querySelector(".wrapper");
-        return wrapper ? `+=${wrapper.scrollWidth - window.innerWidth}` : "+=0";
+      end: "+=1000",
+    },
+    opacity: 1,
+    duration: 1,
+  });
+});
+
+// Remove animations for caption and quote
+document.querySelectorAll(".character").forEach((el) => {
+  const nickname = el.querySelector(".nickname");
+  const block = el.querySelector(".block");
+  const hugeText = el.querySelector(".huge-text");
+
+  if (nickname) {
+    gsap.to(nickname, {
+      y: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: nickname,
+        start: "top center",
+        end: "bottom center",
+        scrub: 0.5,
       },
-    },
-  });
+    });
+  }
 
-  sections.forEach((_, i) => {
-    if (i !== 0) {
-      scrollTween.to(sections, {
-        xPercent: -100 * i,
-        ease: "power1.inOut",
-        duration: 5,
+  if (block) {
+    gsap.to(block, {
+      x: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: block,
+        start: "top center",
+        end: "bottom center",
+        scrub: 0.5,
+      },
+    });
+  }
+
+  if (hugeText) {
+    gsap.to(hugeText, {
+      y: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: hugeText,
+        start: "top center",
+        end: "bottom center",
+        scrub: 0.5,
+      },
+    });
+  }
+});
+
+  document.querySelectorAll(".container-imagenes").forEach((container) => {
+    const images = container.querySelectorAll(".imagen");
+    const prevBtn = container.querySelector(".prev-btn");
+    const nextBtn = container.querySelector(".next-btn");
+    let current = 0;
+
+    function showImage(index: number) {
+      images.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
       });
     }
 
-    // Pausa después de cada sección
-    scrollTween.to({}, { duration: 5 });
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        current = (current - 1 + images.length) % images.length;
+        showImage(current);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        current = (current + 1) % images.length;
+        showImage(current);
+      });
+    }
+
+    showImage(current);
   });
 
-  gsap.to(".logo", {
-    fontSize: "2.5rem",
-    top: "4rem",
-    scrollTrigger: {
-      trigger: ".logo",
+  document.querySelectorAll(".counter").forEach((counter) => {
+    const target =
+      parseInt(counter.getAttribute("data-target") ?? "0", 10) || 0;
+    let obj = { val: 0 };
+
+    gsap.to(obj, {
+      val: target,
+      duration: 0.5,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: counter,
+        start: "top 100%",
+        once: true,
+      },
+      onUpdate: () => {
+        counter.textContent = Math.floor(obj.val).toString();
+      },
+      onComplete: () => {
+        counter.textContent = target.toString();
+      },
+    });
+  });
+
+  // Add delay before scrolling to the next section
+  const delayedSections = document.querySelectorAll(".wrapper > section");
+  delayedSections.forEach((section) => {
+    ScrollTrigger.create({
+      trigger: section,
       start: "top top",
-      end: "+=1500",
-      scrub: 0.5,
-    },
+      end: "bottom top+=4000", // Adds a delay before moving to the next section
+      pin: true,
+      pinSpacing: false,
+      scrub: 1,
+    });
   });
-
-  gsap.to(".line", {
-    height: "10rem",
-    scrollTrigger: {
-      trigger: ".line",
-      scrub: 0.5,
-      start: "center center",
-      end: "+=2000",
-    },
-  });
-
-  document.querySelectorAll(".character").forEach((el) => {
-    const caption = el.querySelector(".caption");
-    const quote = el.querySelector(".quote");
-    const nickname = el.querySelector(".nickname");
-    const block = el.querySelector(".block");
-    const img = el.querySelector("img");
-    const hugeText = el.querySelector(".huge-text");
-
-    if (caption) {
-      gsap.to(caption, {
-        x: 0,
-        y: 0,
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: caption,
-          start: "top bottom",
-          end: "+=1000",
-          scrub: 0.5,
-        },
-      });
-    }
-
-    if (quote) {
-      gsap.to(quote, {
-        y: 0,
-        ease: "none",
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: quote,
-          start: "top bottom",
-          end: "+=20%",
-          scrub: 0.5,
-        },
-      });
-    }
-
-    if (nickname) {
-      gsap.to(nickname, {
-        y: 0,
-        ease: "none",
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: nickname,
-          start: "top bottom",
-          end: "+=10%",
-          scrub: 0.5,
-        },
-      });
-    }
-
-    if (block) {
-      gsap.to(block, {
-        x: 0,
-        ease: "none",
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: block,
-          start: "top bottom",
-          end: () => `+=${window.innerWidth}`,
-          scrub: 0.5,
-        },
-      });
-    }
-
-    if (img) {
-      gsap.to(img, {
-        y: 0,
-        ease: "none",
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: img,
-          start: "top bottom",
-          end: "+=50%",
-          scrub: 0.5,
-        },
-      });
-    }
-
-    if (hugeText) {
-      gsap.to(hugeText, {
-        y: 0,
-        ease: "none",
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: hugeText,
-          start: "top bottom",
-          end: "+=100%",
-          scrub: 0.5,
-        },
-      });
-    }
-  });
-
   document.querySelectorAll(".container-imagenes").forEach((container) => {
     const images = container.querySelectorAll(".imagen");
     const prevBtn = container.querySelector(".prev-btn");
@@ -770,4 +779,39 @@ import materiales from "../assets/imagesGallery/materiales.webp";
       },
     });
   });
+  document.querySelectorAll(".counter").forEach((counter) => {
+    const target =
+      parseInt(counter.getAttribute("data-target") ?? "0", 10) || 0;
+    let obj = { val: 0 };
+
+    gsap.to(obj, {
+      val: target,
+      duration: 0.5,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: counter,
+        start: "top 80%",
+        once: true,
+      },
+      onUpdate: () => {
+        counter.textContent = Math.floor(obj.val).toString();
+      },
+      onComplete: () => {
+        counter.textContent = target.toString();
+      },
+    });
+  });
+
+import ScrollSmoother from "gsap/ScrollSmoother";
+
+if (window.innerWidth > 768) {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.2, // velocidad de suavizado (mayor = más suave)
+    effects: true // habilita efectos parallax si usas data-speed en elementos
+  });
+}
 </script>

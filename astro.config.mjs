@@ -43,5 +43,9 @@ export default defineConfig({
         hostname: "i.bb.co",
       }
     ],
-  }
+  },
+  server: {
+    host: true, // Esto permite que el servidor escuche desde otras IPs (como la de tu celular)
+    port: 4321, // Puedes elegir el puerto que quieras
+  },
 });
