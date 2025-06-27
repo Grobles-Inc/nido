@@ -1,23 +1,14 @@
 ---
 import Layout from "../layouts/Page.astro";
 import { Image } from "astro:assets";
-import infrastructureImage from "../assets/images/HomeSection.png";
+
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
-import alumno from "../assets/images/alumno.png";
-import fondo from "../assets/images/infra_01.jpg";
-import fondo_dos from "../assets/images/infra_02.jpg";
 import fondo_tres from "../assets/images/infra_03.jpg";
 import Preloader from "../components/preloader.astro";
-import aulas from "../assets/imagesGallery/aulas.webp";
-import aulas_dos from "../assets/imagesGallery/aulas_dos.webp";
-import aulas_tres from "../assets/imagesGallery/aulas_tres.webp";
-import patio from "../assets/imagesGallery/patio.png";
-import patio_dos from "../assets/imagesGallery/patio_dos.png";
 import familia from "../assets/videos/Familia.mp4";
 import entrevista from "../assets/videos/Entrevista.mp4";
 import fondo_azul from "../assets/images/FONDO_AZUL.png";
-import materiales from "../assets/imagesGallery/materiales.webp";
 ---
 
 <head>
@@ -30,12 +21,12 @@ import materiales from "../assets/imagesGallery/materiales.webp";
     
     <Layout
       title="Nuestra Infraestructura"
-      heroImage={fondo_tres}
+      heroImage={"https://i.ibb.co/hjLJgR2/fondo2.jpg"}
       description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
     >
       <section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
         <div
-          class="container mx-auto grid md:grid-cols-2 items-center gap-8 px-6 py-12"
+          class="container border-2 mx-auto flex items-center justify-center items-center gap-8 px-6 py-12"
         >
           <div>
             <h3 class="text-5xl md:text-7xl font-bold mb-6 text-[rgb(252,144,122)]">
@@ -53,11 +44,11 @@ import materiales from "../assets/imagesGallery/materiales.webp";
             >
           </div>
           <div class="relative h-full">
-            <Image
+            <!-- <Image
               src={infrastructureImage}
               alt="Instalaciones modernas y seguras"
               class="w-full h-full object-cover rounded-2xl"
-            />
+            /> -->
           </div>
         </div>
       </section>
@@ -95,23 +86,26 @@ import materiales from "../assets/imagesGallery/materiales.webp";
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={aulas}
+                  src={new URL("https://i.ibb.co/XZBFL3JK/aulas.webp").toString()}
                   alt="Alumno en aula"
                   class="h-screen w-screen object-cover"
+                  inferSize
                 />
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={aulas_dos}
+                  src={new URL("https://i.ibb.co/39msk5P6/aulas-dos.webp").toString()}
                   alt="Alumno en aula"
                   class="h-screen w-screen object-cover"
+                  inferSize
                 />
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={aulas_tres}
+                  src={new URL("https://i.ibb.co/G4PgVP03/aulas-tres.webp").toString()}
                   alt="Alumno en aula"
                   class="h-screen w-screen object-cover"
+                  inferSize
                 />
               </div>
             </div>
@@ -152,16 +146,18 @@ import materiales from "../assets/imagesGallery/materiales.webp";
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={patio}
+                  src={new URL("https://i.ibb.co/cKjpFwPJ/patio.png").toString()}
                   alt="Patio central"
                   class="h-screen w-screen object-cover"
+                  inferSize
                 />
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={patio_dos}
+                  src={new URL("https://i.ibb.co/dqpQQ4S/patio-dos.png").toString()}
                   alt="Niños jugando en el patio"
                   class="h-screen w-screen object-cover"
+                  inferSize
                 />
               </div>
             </div>
@@ -274,16 +270,18 @@ import materiales from "../assets/imagesGallery/materiales.webp";
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={materiales}
+                  src={new URL("https://i.ibb.co/hF3GsRwM/IMG-9408.webp").toString()}
                   alt="Material didáctico"
                   class="h-screen w-screen object-cover"
+                  inferSize
                 />
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={fondo_dos}
+                  src={new URL("https://i.ibb.co/TD3C9JpM/IMG-9283.webp").toString()}
                   alt="Niños usando material didáctico"
                   class="h-screen w-screen object-cover"
+                  inferSize
                 />
               </div>
             </div>
