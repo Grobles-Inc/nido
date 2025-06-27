@@ -187,7 +187,7 @@ import adornocinco from "../assets/images/Adorno5.png";
               lectura, espacios de experimentación y ambientes que inspiran
               curiosidad y descubrimiento.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl">
+            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
               <span>lugar:</span>Ambientes pedagógicos
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
@@ -238,7 +238,7 @@ import adornocinco from "../assets/images/Adorno5.png";
               Un patio amplio, seguro y organizado por zonas, que permite juegos
               libres, actividades físicas y momentos de exploración al aire libre.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl">
+            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
               <span>lugar:</span>Patio central del nido
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
@@ -274,11 +274,10 @@ import adornocinco from "../assets/images/Adorno5.png";
               
             </div>
             <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-              Un ambiente acogedor y reservado, donde la directora o la psicóloga
-              reciben a las familias para atender sus inquietudes y acompañarlas en
+              Un ambiente acogedor y reservado, donde se reciben a las familias para acompañarlas en
               el proceso educativo.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl">
+            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
               <span>lugar:</span>Sala de orientación
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
@@ -310,7 +309,7 @@ import adornocinco from "../assets/images/Adorno5.png";
               donde se fortalecen los vínculos con el hogar y se comparten
               herramientas de crianza.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl">
+            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
               <span>lugar:</span>Sala de familia
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
@@ -363,7 +362,7 @@ import adornocinco from "../assets/images/Adorno5.png";
               didáctico diseñado para fomentar la curiosidad, la autonomía y el
               juego significativo.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl">
+            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
               <span>lugar:</span>Rincones pedagógicos
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
@@ -373,26 +372,59 @@ import adornocinco from "../assets/images/Adorno5.png";
         </div>
       </div>
       <section class="contador-aulas bg-accent">
+        <div class=" absolute z-1 grid grid-cols-2 md:grid-cols-3 gap-4 animate-container">
+              <Image
+              src={adornouno}
+              alt="Adorno 1"
+              class="h-auto max-w-full animate-image relative bottom-[-50px] right-[-50px]"
+
+              />
+                <Image
+                src={adornodos}
+                alt="Adorno 2"
+                class="h-auto max-w-full animate-image relative bottom-[-40px] right-[-60px]"
+                />
+                <Image
+                src={adornotres}
+                alt="Adorno 3"
+                class="h-auto max-w-full animate-image relative bottom-[-70px] right-[-30px]"
+                />  
+                <Image
+                src={adornocuatro}
+                alt="Adorno 4"
+                class="h-auto max-w-full animate-image relative bottom-[-20px] right-[-80px]"
+                />
+                <Image
+                src={adornocinco}
+                alt="Adorno 5"
+                class="h-auto max-w-full animate-image relative bottom-[-50px] right-[-40px]"
+                />
+                <Image
+                src={adornodos}
+                alt="Adorno 2"
+                class="h-auto max-w-full animate-image relative bottom-[-60px] right-[-20px]"
+                />
+        </div>
         <div
-          class="container mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
+          class="container relative z-10 mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
         >
           <div class="flex flex-col items-center">
-          <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="5">
+          <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="5">
             0
           </div>
-          <span class="text-lg md:text-xl  font-bold text-[rgb(7,60,109)]  ">Aulas modernas</span>
+          <span class="text-lg md:text-xl font-bold text-white">Aulas modernas</span>
           </div>
           <div class="flex flex-col items-center">
-          <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="3">
+          <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="3">
             0
           </div>
-          <span class="text-lg md:text-xl text-[rgb(7,60,109)]">Áreas de juego</span>
+          <span class="text-lg md:text-xl text-white">Áreas de juego</span>
           </div>
           <div class="flex flex-col items-center">
-          <div class="text-[12vw] md:text-[8vw] font-bold text-[rgb(7,60,109)] counter" data-target="2">
+          <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="2">
             0
           </div>
-          <span class="text-lg md:text-xl text-[rgb(7,60,109)]">Laboratorios de ciencia</span>
+          <span class="text-lg md:text-xl text-white">Laboratorios de ciencia</span>
           </div>
         </div>
       </section>
@@ -508,7 +540,7 @@ import adornocinco from "../assets/images/Adorno5.png";
     z-index: -10;
   }
   .caption {
-    font-size: calc(1.2vw + 0.5vh);
+    font-size: calc(1vw + 0.5vh);
     position: absolute;
     bottom: 10%;
     left: 5%;
@@ -561,12 +593,16 @@ import adornocinco from "../assets/images/Adorno5.png";
       transform: translateY(-200%);
     }
     .quote {
+      
       bottom: 10% !important;
       right: 10% !important;
       font-size: 2rem;
-      width: 80%;
-      
-
+      position: relative;
+      /* reeducir interrlineeado */
+      line-height: 1.2;
+      text-align: left !important; /* Ensure text alignment to the right */
+      width: auto; /* Adjust container width to fit content */
+      max-width: 30%; /* Limit maximum width for better alignment */
     }
   }
   /* @media (max-width: 480px) {
@@ -632,22 +668,22 @@ import adornocinco from "../assets/images/Adorno5.png";
 
   .quote {
     position: absolute;
-    bottom: 4%;
+    bottom: 15%;
     right: 5%;
     font-size: 3rem;
-    width: 30%;
+    width: 80% !important;
     text-align: right;
    
   }
-
-  .quote::before,
+ .quote::before,
   .quote::after {
     content: "";
     color: rgb(252, 144, 122);
   }
+
   .contador-aulas {
-    background-image: url("../assets/images/FONDO_CLARO.png");
-    background-size: cover;
+    background-color: rgb(7, 70, 129);
+    color: white !important;
   }
   .entrevista{
     background-image: url("../assets/images/FONDO_AZUL.png");
