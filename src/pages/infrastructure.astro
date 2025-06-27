@@ -9,6 +9,11 @@ import Preloader from "../components/preloader.astro";
 import familia from "../assets/videos/Familia.mp4";
 import entrevista from "../assets/videos/Entrevista.mp4";
 import fondo_azul from "../assets/images/FONDO_AZUL.png";
+import adornouno from "../assets/images/Adorno1.png";
+import adornodos from "../assets/images/Adorno2.png";
+import adornotres from "../assets/images/Adorno3.png";
+import adornocuatro from "../assets/images/Adorno4.png";
+import adornocinco from "../assets/images/Adorno5.png"; 
 ---
 
 <head>
@@ -26,9 +31,66 @@ import fondo_azul from "../assets/images/FONDO_AZUL.png";
     >
       <section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
         <div
-          class="container border-2 mx-auto flex items-center justify-center items-center gap-8 px-6 py-12"
+          class="container mx-auto  items-center gap-8 px-6 py-12"
         >
-          <div>
+        <div class=" absolute z-1 grid grid-cols-2 md:grid-cols-3 gap-4 animate-container">
+          <Image
+            src={adornouno}
+            alt="Adorno 1"
+            class="h-auto max-w-full animate-image"
+          />
+          <Image
+            src={adornodos}
+            alt="Adorno 2"
+            class="h-auto max-w-full animate-image"
+          />
+          <Image
+            src={adornotres}
+            alt="Adorno 3"
+            class="h-auto max-w-full animate-image"
+          />  
+          <Image
+            src={adornocuatro}
+            alt="Adorno 4"
+            class="h-auto max-w-full animate-image"
+          />
+          <Image
+            src={adornocinco}
+            alt="Adorno 5"
+            class="h-auto max-w-full animate-image"
+          />
+        </div>
+        <style>
+          .animate-container {
+            top: 0;
+            display: grid;
+            gap: 1rem;
+            animation: fadeIn 1s ease-in-out;
+          }
+
+          .animate-image {
+            animation: float 3s infinite ease-in-out;
+          }
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+          }
+        </style>
+          <div class=" relative z-10 flex flex-col items-center text-center">
             <h3 class="text-5xl md:text-7xl font-bold mb-6 text-[rgb(252,144,122)]">
               Instalaciones de Primera Clase
             </h3>
