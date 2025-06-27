@@ -9,7 +9,7 @@
 		width: 100%;
 		height: 100%;
 		background: rgb(7, 60, 109);
-		display: flex;
+		display: none;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
@@ -42,15 +42,36 @@ import lottie from "lottie-web";
 import animation from "./../assets/animation/logo_animtion.json";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const lottieLogoContainer = document.getElementById("lottie-logo");
-  if (lottieLogoContainer) {
-    lottie.loadAnimation({
-      container: lottieLogoContainer,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: animation,
+  // Verificar si el preloader ya se mostró en esta sesión
+  const preloaderShown = sessionStorage.getItem('preloader-shown');
+  
+  // Solo mostrar si no se ha mostrado antes en esta sesión
+  if (!preloaderShown) {
+    const lottieLogoContainer = document.getElementById("lottie-logo");
+    if (lottieLogoContainer) {
+      lottie.loadAnimation({
+        container: lottieLogoContainer,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: animation,
+      });
+    }
+
+    // Mostrar preloader al iniciar
+    showPreloader();
+
+    // Esperar a que toda la página (incluyendo imágenes y videos) esté cargada
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        hidePreloader();
+        // Marcar que el preloader ya se mostró en esta sesión
+        sessionStorage.setItem('preloader-shown', 'true');
+      }, 1000);
     });
+  } else {
+    // Si ya se mostró, simplemente iniciar las animaciones de la página
+    startPageAnimations();
   }
 });
 
@@ -98,15 +119,5 @@ function startPageAnimations() {
     ease: "power2.out",
   });
 }
-
-// Mostrar preloader al iniciar
-showPreloader();
-
-// Esperar a que toda la página (incluyendo imágenes y videos) esté cargada
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    hidePreloader();
-  }, 1000);
-});
 
 </script>
