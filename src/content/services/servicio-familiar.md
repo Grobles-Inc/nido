@@ -16,6 +16,29 @@ En nuestra institución valoramos el trabajo conjunto con las familias como part
 
 - Escuela de padres y abuelitos, un espacio formativo y participativo donde compartimos experiencias, conocimientos y herramientas para el acompañamiento familiar.
 
+### Entrevista de una de las madres
+
+Conoce la experiencia de una de nuestras mamás en la comunidad educativa.
+
+<div class="bg-black rounded-lg p-4 my-8">
+  <video class="w-full max-w-4xl mx-auto rounded-lg shadow-lg h-80 object-cover" controls poster="/images/video-thumbnail-entrevista.jpg">
+    <source src="/videos/Entrevista.mp4" type="video/mp4">
+    <p>Tu navegador no soporta videos HTML5. <a href="/videos/Entrevista.mp4">Descarga el video</a>.</p>
+  </video>
+</div>
+
+### Familia
+
+Un pilar fundamental en el desarrollo y aprendizaje de nuestros estudiantes.
+
+<div class="bg-black rounded-lg p-4 my-8">
+  <video class="w-full max-w-4xl mx-auto rounded-lg shadow-lg h-80 object-cover" controls poster="/images/video-thumbnail-familia.jpg">
+    <source src="/videos/Familia.mp4" type="video/mp4">
+    <p>Tu navegador no soporta videos HTML5. <a href="/videos/Familia.mp4">Descarga el video</a>.</p>
+  </video>
+</div>
+
+
 ## Beneficios
 
 Estos servicios están pensados para empoderar a las familias, promoviendo relaciones saludables y entornos de cuidado:

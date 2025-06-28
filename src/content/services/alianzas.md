@@ -16,7 +16,26 @@ Contamos con alianzas estratégicas que fortalecen nuestra propuesta educativa y
 
 - Red de colegios recomendados por UGEL, lo que respalda nuestra calidad educativa y facilita el tránsito escolar a instituciones aliadas.
 
-- Miembro de mancomunidades educativas locales, espacios de colaboración que impulsan proyectos conjuntos y fortalecen el vínculo con otras instituciones de la comunidad.
+- KIDSBOOK, aliado educativo que proporciona una plataforma útil para los integrantes del nido.
+
+- APLIJ, formamos parte de la Asociación Peruana de Literatura Infantil y Juvenil.
+
+### Algunos de nuestros aliados
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <div class="overflow-hidden text-center">
+    <img src="https://123language.pe/img/logobleu.png" alt="Talleres de arte y creatividad" class="w-80 h-40 rounded-xl object-cover mx-auto">
+    <p class="mt-2 text-3xl">123 Language</p>
+  </div>
+  <div class="overflow-hidden text-center">
+    <img src="/images/APLIJ.png" alt="Talleres de arte y creatividad" class="w-40 h-40 rounded-xl object-cover mx-auto">
+    <p class="mt-2 text-3xl">APLIJ</p>
+  </div>
+  <div class="overflow-hidden text-center">
+    <img src="/images/KIDSBOOK.webp" alt="Talleres de arte y creatividad" class="w-40 h-40 rounded-xl object-cover mx-auto">
+    <p class="mt-2 text-3xl">KIDSBOOK</p>
+  </div>
+</div>
 
 ## Proyectos destacados
 

@@ -16,7 +16,28 @@ Ofrecemos una variedad de talleres diseñados para potenciar las habilidades cre
 
 - Arte y diseño: actividades de dibujo, pintura, modelado y manualidades que estimulan la creatividad, la motricidad fina y la apreciación estética.
 
-- Talleres after school: propuestas lúdicas y formativas en horario extendido que complementan el desarrollo integral con dinámicas relajadas y enriquecedoras.
+### Algunos de Nuestros Talleres
+Pequeños Escultores
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/T9nm1QW/IMG-9583.webp" alt="Talleres de arte y creatividad" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/pBWMBpBB/IMG-9579.webp" alt="Talleres de arte y creatividad" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/PvPPSw7r/IMG-9571.webp" alt="Talleres de arte y creatividad" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/YTZBkPm1/IMG-9564.webp" alt="Talleres de arte y creatividad" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/39p8y0wt/IMG-9563.webp" alt="Talleres de arte y creatividad" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/j9zvfcFj/IMG-9589.webp" alt="Talleres de arte y creatividad" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+</div>
 
 ## Eventos anuales
 
@@ -27,6 +48,43 @@ A lo largo del año realizamos eventos que celebran el proceso y los logros de l
 - Feria de proyectos: espacio donde los estudiantes presentan sus aprendizajes a través de exposiciones interactivas, promoviendo el pensamiento crítico y la comunicación.
 
 - Muestra musical y teatral: eventos donde los niños se expresan sobre el escenario, demostrando sus avances en habilidades artísticas, sociales y emocionales.
+
+### Celebración por el día de la Madre
+
+Un día especial para honrar a mamá con actividades, sorpresas y el amor de nuestros pequeños artistas.
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/RG6NgWz7/1.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/xKvvJ2gm/2.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/0RfhZ56P/3.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/67SCNSKg/4.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/q3x2chzt/5.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/TMp1nrnn/6.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/3mbLWPf5/7.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/rNZ3G9q/10.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/Zpv1f02r/8.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+  <div class="overflow-hidden">
+    <img src="https://i.ibb.co/ZpTn1r4F/9.jpg" alt="Día de la madre perulina" class="w-full h-[450px] rounded-xl object-cover">
+  </div>
+</div>
 
 ## Beneficios
 
