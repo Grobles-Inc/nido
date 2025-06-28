@@ -27,7 +27,11 @@ import adornocinco from "../assets/images/Adorno5.png";
       heroImage={"https://i.ibb.co/hjLJgR2/fondo2.jpg"}
       description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
     >
-      <section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
+      
+      <div class="body">
+        <div class="wrapper">
+          <section class="intro bg-image">
+            <section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
         <div
           class="container mx-auto  items-center gap-8 px-6 py-12"
         >
@@ -36,50 +40,46 @@ import adornocinco from "../assets/images/Adorno5.png";
               src={adornouno}
               alt="Adorno 1"
               class="h-auto max-w-full animate-image"
-              style={`transform: translate(${Math.random() * 100}px, ${Math.random() * 100}px);`}
               />
               <Image
               src={adornodos}
               alt="Adorno 2"
               class="h-auto max-w-full animate-image"
-              style={`transform: translate(${Math.random() * 100}px, ${Math.random() * 100}px);`}
-              />
+               />
               <Image
               src={adornotres}
               alt="Adorno 3"
-              class="h-auto max-w-full animate-image"
-              style={`transform: translate(${Math.random() * 100}px, ${Math.random() * 100}px);`}
+              class="h-auto max-w-full animate-image"         
               />  
               <Image
               src={adornocuatro}
               alt="Adorno 4"
               class="h-auto max-w-full animate-image"
-              style={`transform: translate(${Math.random() * 100}px, ${Math.random() * 100}px);`}
-              />
+             />
               <Image
               src={adornocinco}
               alt="Adorno 5"
               class="h-auto max-w-full animate-image"
-              style={`transform: translate(${Math.random() * 100}px, ${Math.random() * 100}px);`}
-              />
+             />
                <Image
               src={adornodos}
               alt="Adorno 2"
               class="h-auto max-w-full animate-image"
-              style={`transform: translate(${Math.random() * 100}px, ${Math.random() * 100}px);`}
               />
         </div>
         <style>
           .animate-container {
-            top: 0;
+            top: 50%;
+            transform: translateY(-50%);
             display: grid;
             gap: 1rem;
             animation: fadeIn 1s ease-in-out;
           }
 
-          .animate-image {
+            .animate-image {
             animation: float 3s infinite ease-in-out;
-          }
+            animation-delay: calc(var(--index, 0) * 0.2s);
+            }
 
           @keyframes fadeIn {
             from {
@@ -104,12 +104,12 @@ import adornocinco from "../assets/images/Adorno5.png";
               Instalaciones de Primera Clase
             </h3>
     
-            <p class="max-w-xl mb-6 mt-6 text-[rgb(7,60,109)] text-lg md:text-xl">
+            <div class="max-w-[60vw] mb-6 mt-6 text-[rgb(7,60,109)] md:text-[30px] text-[20px] font-[DarkerGrotesque]">
               Nuestras instalaciones están equipadas con tecnología de punta y
               espacios diseñados para fomentar el aprendizaje y la creatividad. Cada
               área está pensada para ofrecer un entorno seguro y estimulante para
               los niños.
-            </p>
+            </div>
             <a href="/contact" class="btn btn-neutral px-8 py-4 btn-xl mt-6 text-[rgb(7,60,109)] text-lg md:text-xl"
               >Visítanos</a
             >
@@ -123,14 +123,6 @@ import adornocinco from "../assets/images/Adorno5.png";
           </div>
         </div>
       </section>
-      <div class="body">
-        <div class="wrapper">
-          <section class="intro bg-image">
-            <div class="logo">
-              <h1 class="text-[20vw] md:text-[10vw] lg:text-[10vw]">
-                Nuestros <br /> campos
-              </h1>
-            </div>
           </section>
     
           <section class="aulas character !text-white">
@@ -186,7 +178,12 @@ import adornocinco from "../assets/images/Adorno5.png";
               curiosidad y descubrimiento.
             </div>
             <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
-              <span>lugar:</span>Ambientes pedagógicos
+                <span>lugar:</span>
+                <div 
+                class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
+                >
+                Ambientes pedagógicos
+                </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Espacios que invitan a explorar
@@ -237,7 +234,12 @@ import adornocinco from "../assets/images/Adorno5.png";
               libres, actividades físicas y momentos de exploración al aire libre.
             </div>
             <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
-              <span>lugar:</span>Patio central del nido
+              <span>lugar:</span>
+              <div 
+                class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
+                >
+              Patio central del nido
+            </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Moverse también es aprender
@@ -276,7 +278,11 @@ import adornocinco from "../assets/images/Adorno5.png";
               el proceso educativo.
             </div>
             <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
-              <span>lugar:</span>Sala de orientación
+              <span>lugar:</span>
+              <div 
+                class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
+                >Sala de orientación
+                </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Escuchar es también educar
@@ -308,7 +314,11 @@ import adornocinco from "../assets/images/Adorno5.png";
               herramientas de crianza.
             </div>
             <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
-              <span>lugar:</span>Sala de familia
+              <span>lugar:</span>
+              <div 
+                class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
+                >Sala de familia
+                </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Educar en red, crecer juntos
@@ -361,7 +371,11 @@ import adornocinco from "../assets/images/Adorno5.png";
               juego significativo.
             </div>
             <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
-              <span>lugar:</span>Rincones pedagógicos
+              <span>lugar:</span>
+              <div 
+                class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
+                >Rincones pedagógicos
+                </div>  
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Jugar es aprender con las manos
@@ -372,7 +386,7 @@ import adornocinco from "../assets/images/Adorno5.png";
       <section class="contador-aulas bg-accent">
         <div class=" absolute z-1 grid grid-cols-2 md:grid-cols-3 gap-4 animate-container">
               <Image
-              src={adornouno}
+              src={adornocuatro}
               alt="Adorno 1"
               class="h-auto max-w-full animate-image relative bottom-[-50px] right-[-50px]"
 
@@ -388,7 +402,7 @@ import adornocinco from "../assets/images/Adorno5.png";
                 class="h-auto max-w-full animate-image relative bottom-[-70px] right-[-30px]"
                 />  
                 <Image
-                src={adornocuatro}
+                src={adornouno}
                 alt="Adorno 4"
                 class="h-auto max-w-full animate-image relative bottom-[-20px] right-[-80px]"
                 />
@@ -410,19 +424,19 @@ import adornocinco from "../assets/images/Adorno5.png";
           <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="5">
             0
           </div>
-          <span class="text-lg md:text-xl font-bold text-white">Aulas modernas</span>
+          <span class="text-2xl font-bold text-white">Aulas modernas</span>
           </div>
           <div class="flex flex-col items-center">
           <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="3">
             0
           </div>
-          <span class="text-lg md:text-xl text-white">Áreas de juego</span>
+          <span class="text-2xl font-bold text-white">Áreas de juego</span>
           </div>
           <div class="flex flex-col items-center">
           <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="2">
             0
           </div>
-          <span class="text-lg md:text-xl text-white">Laboratorios de ciencia</span>
+          <span class="text-2xl font-bold text-white">Laboratorios de ciencia</span>
           </div>
         </div>
       </section>
@@ -538,7 +552,7 @@ import adornocinco from "../assets/images/Adorno5.png";
     z-index: -10;
   }
   .caption {
-    font-size: calc(1vw + 0.5vh);
+    font-size: calc(1vw + 2.5vh);
     position: absolute;
     bottom: 10%;
     left: 5%;
@@ -546,7 +560,7 @@ import adornocinco from "../assets/images/Adorno5.png";
     font-weight: 400;
     color: rgb(7, 60, 109);
     
-    font-family: "Neulis Neue";
+    font-family: "Bebas Neue", cursive;
     background-color: rgba(207, 207, 207, 0.404);
     border-radius: 1rem;
     padding: 2rem;
@@ -603,35 +617,6 @@ import adornocinco from "../assets/images/Adorno5.png";
       max-width: 30%; /* Limit maximum width for better alignment */
     }
   }
-  /* @media (max-width: 480px) {
-    .caption {
-      left: -15%;
-      top: 20%;
-      width: 800px;
-      font-size: calc(1vw + 2vh);
-    }
-    .huge-text {
-      font-size: 25vw; 
-      top: 60%;
-      right: 20%;
-      transform: translateX(-4%);
-    }
-    .nickname {
-      top: 10%;
-      right: 20%;
-      font-size: 1.5rem;
-      transform: translateY(-200%);
-    }
-    .quote {
-      bottom: 1%;
-      right: 10% !important;
-      width: 80vw;
-
-      font-size: 1.5rem;
-      text-align: left;
-      transform: translateY(200%);
-    }
-  } */
   .huge-text {
     font-size: 15vw; /* Adjust font size relative to viewport width */
     width: 100%;
@@ -639,7 +624,7 @@ import adornocinco from "../assets/images/Adorno5.png";
     position: absolute;
     top: 40%;
     transform: translateY(-50%);
-    right: 0%;
+    right: 2%;
     transform: translateX(-4%);
     font-weight: 700;
     z-index: 0;
@@ -650,6 +635,8 @@ import adornocinco from "../assets/images/Adorno5.png";
     z-index: 100;
   }
   .nickname {
+    /* fondo con blur y opacity 0.5 */
+   
     position: absolute;
     top: 4rem;
     right: 5%;
@@ -671,6 +658,7 @@ import adornocinco from "../assets/images/Adorno5.png";
     font-size: 3rem;
     width: 80% !important;
     text-align: right;
+    color: rgb(7, 60, 109);
    
   }
  .quote::before,
@@ -684,7 +672,7 @@ import adornocinco from "../assets/images/Adorno5.png";
     color: white !important;
   }
   .entrevista{
-    background-image: url("../assets/images/FONDO_AZUL.png");
+    background-image: url("../assets/images/FONDO_CLARO.png");
     background-size: cover;
   }
   
