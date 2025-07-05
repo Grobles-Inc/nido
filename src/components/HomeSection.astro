@@ -201,138 +201,20 @@ interface Props {
       </h3>
 
       <h2
-        class="text-4xl md:text-5xl text-primary text-center font-bold mb-16"
+        class="text-4xl md:text-5xl text-primary text-center font-bold mb-6"
       >
         Testimonios de Padres
       </h2>
+      <p class="text-center text-secondary text-lg">
+        Comentarios de nuestros padres, felices por haber elegido Nido Perulina:
+      </p>
     </div>
-
-    <div class="carousel w-full mb-10" data-aos="fade-up">
-      <!-- Slide 1 -->
-      <div
-        id="slide1"
-        class="carousel-item relative w-full"
-        data-aos="fade-up"
-      >
-        <div
-          class="flex flex-col md:flex-row gap-6 justify-center items-stretch max-w-[1200px] mx-auto"
-        >
-          <div class="max-w-xl w-full bg-white rounded-3xl p-8">
-            <div class="flex items-start gap-4 mb-6">
-              <div
-                class="w-16 h-16 rounded-full overflow-hidden bg-lavender-100 flex items-center justify-center"
-              >
-                <img
-                  src="https://mighty.tools/mockmind-api/content/human/80.jpg"
-                  alt="avatar"
-                />
-              </div>
-              <div>
-                <h4 class="text-primary text-2xl font-bold">Juan Pérez</h4>
-                <p class="text-gray-600">Padre de Familia</p>
-              </div>
-            </div>
-            <p class="text-gray-600 text-lg italic">
-              "Nido Perulina se ha convertido en un segundo hogar para nuestro
-              hijo. El personal es increíblemente cariñoso y sabemos que nuestro
-              pequeño está en buenas manos todos los días. ¡Hemos visto tanto
-              crecimiento desde que comenzamos aquí!"
-            </p>
-          </div>
-
-          <div class="max-w-xl w-full bg-white rounded-3xl p-8">
-            <div class="flex items-start gap-4 mb-6">
-              <div
-                class="w-16 h-16 rounded-full overflow-hidden bg-peach-100 flex items-center justify-center"
-              >
-                <img
-                  src="https://mighty.tools/mockmind-api/content/human/125.jpg"
-                  alt="avatar"
-                />
-              </div>
-              <div>
-                <h4 class="text-primary text-2xl font-bold">María García</h4>
-                <p class="text-gray-600">Madre de Familia</p>
-              </div>
-            </div>
-            <p class="text-gray-600 text-lg italic">
-              "Los maestros y el personal de Nido Perulina van más allá de sus
-              responsabilidades. Mi hijo llega a casa feliz, emocionado y lleno
-              de historias sobre su día. ¡Estoy agradecida por el ambiente
-              enriquecedor que brindan!"
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div
-        id="slide2"
-        class="carousel-item relative w-full"
-        data-aos="fade-up"
-      >
-        <div
-          class="flex flex-col md:flex-row gap-6 justify-center items-stretch max-w-[1200px] mx-auto"
-        >
-          <div class="max-w-xl w-full bg-white rounded-3xl p-8">
-            <div class="flex items-start gap-4 mb-6">
-              <div
-                class="w-16 h-16 rounded-full overflow-hidden bg-sky-100 flex items-center justify-center"
-              >
-                <img
-                  src="https://mighty.tools/mockmind-api/content/human/104.jpg"
-                  alt="avatar"
-                />
-              </div>
-              <div>
-                <h4 class="text-primary text-2xl font-bold">
-                  Carlos Rodríguez
-                </h4>
-                <p class="text-gray-600">Padre de Familia</p>
-              </div>
-            </div>
-            <p class="text-gray-600 text-lg italic">
-              "La dedicación del equipo de Nido Perulina es excepcional. Han
-              creado un ambiente donde nuestro hijo no solo aprende, sino que
-              también se divierte y desarrolla habilidades sociales importantes.
-              Estamos muy contentos con nuestra elección."
-            </p>
-          </div>
-
-          <div class="max-w-xl w-full bg-white rounded-3xl p-8">
-            <div class="flex items-start gap-4 mb-6">
-              <div
-                class="w-16 h-16 rounded-full overflow-hidden bg-lavender-100 flex items-center justify-center"
-              >
-                <img
-                  src="https://mighty.tools/mockmind-api/content/human/125.jpg"
-                  alt="avatar"
-                />
-              </div>
-              <div>
-                <h4 class="text-primary text-2xl font-bold">Ana Martínez</h4>
-                <p class="text-gray-600">Madre de Familia</p>
-              </div>
-            </div>
-            <p class="text-gray-600 text-lg italic">
-              "Elegir Nido Perulina fue la mejor decisión para nuestra familia.
-              El programa educativo es excepcional y el cariño con el que tratan
-              a los niños es incomparable. Mi hija ha florecido aquí de maneras
-              que nunca imaginé."
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation buttons below -->
-    <div class="flex justify-center gap-4 mt-8">
-      <button class="btn btn-circle carousel-prev" data-target="#slide1"
-        >❮</button
-      >
-      <button class="btn btn-circle carousel-next" data-target="#slide2"
-        >❯</button
-      >
+    <div class="bg-black rounded-lg p-4 my-8 max-w-2xl mx-auto">
+      <video class="w-full max-w-2xl mx-auto rounded-lg shadow-lg h-96 object-contain" controls>
+        <source src="/videos/Entrevista.mp4" type="video/mp4">
+        <p>Tu navegador no soporta el elemento de video.</p>
+        <a href="/videos/Entrevista.mp4">Descargar video</a>
+      </video>
     </div>
   </div>
 </section>

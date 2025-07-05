@@ -21,7 +21,7 @@ En nuestra institución valoramos el trabajo conjunto con las familias como part
 Conoce la experiencia de una de nuestras mamás en la comunidad educativa.
 
 <div class="bg-black rounded-lg p-4 my-8">
-  <video class="w-full max-w-4xl mx-auto rounded-lg shadow-lg h-80 object-cover" controls poster="/images/video-thumbnail-entrevista.jpg">
+  <video class="w-full max-w-2xl mx-auto rounded-lg shadow-lg h-96 object-contain" controls poster="/images/video-thumbnail-entrevista.jpg">
     <source src="/videos/Entrevista.mp4" type="video/mp4">
     <p>Tu navegador no soporta videos HTML5. <a href="/videos/Entrevista.mp4">Descarga el video</a>.</p>
   </video>
