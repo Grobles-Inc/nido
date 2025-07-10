@@ -1,18 +1,16 @@
 ---
-import Layout from "../layouts/Page.astro";
 import { Image } from "astro:assets";
+import Layout from "../layouts/Page.astro";
 
-import GoogleTagManager from "../components/GoogleTagManager.astro";
-import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
-import fondo_tres from "../assets/images/infra_03.jpg";
-import familia from "../assets/videos/Familia.mp4";
-import entrevista from "../assets/videos/Entrevista.mp4";
-import fondo_azul from "../assets/images/FONDO_AZUL.png";
 import adornouno from "../assets/images/Adorno1.png";
 import adornodos from "../assets/images/Adorno2.png";
 import adornotres from "../assets/images/Adorno3.png";
 import adornocuatro from "../assets/images/Adorno4.png";
-import adornocinco from "../assets/images/Adorno5.png"; 
+import adornocinco from "../assets/images/Adorno5.png";
+import entrevista from "../assets/videos/Entrevista.mp4";
+import familia from "../assets/videos/Familia.mp4";
+import GoogleTagManager from "../components/GoogleTagManager.astro";
+import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 ---
 
 <head>
@@ -21,113 +19,120 @@ import adornocinco from "../assets/images/Adorno5.png";
 </head>
 <div id="smooth-wrapper">
   <div id="smooth-content">
-    
     <Layout
       title="Nuestra Infraestructura"
       heroImage={"https://i.ibb.co/hjLJgR2/fondo2.jpg"}
       description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
     >
-      
       <div class="body">
         <div class="wrapper">
           <section class="intro bg-image">
             <section class="md:py-16 md:px-16 px-6 bg-white mx-auto">
-        <div
-          class="container mx-auto  items-center gap-8 px-6 py-12"
-        >
-        <div class=" absolute z-1 grid grid-cols-2 md:grid-cols-3 gap-4 animate-container">
-              <Image
-              src={adornouno}
-              alt="Adorno 1"
-              class="h-auto max-w-full animate-image"
-              />
-              <Image
-              src={adornodos}
-              alt="Adorno 2"
-              class="h-auto max-w-full animate-image"
-               />
-              <Image
-              src={adornotres}
-              alt="Adorno 3"
-              class="h-auto max-w-full animate-image"         
-              />  
-              <Image
-              src={adornocuatro}
-              alt="Adorno 4"
-              class="h-auto max-w-full animate-image"
-             />
-              <Image
-              src={adornocinco}
-              alt="Adorno 5"
-              class="h-auto max-w-full animate-image"
-             />
-               <Image
-              src={adornodos}
-              alt="Adorno 2"
-              class="h-auto max-w-full animate-image"
-              />
-        </div>
-        <style>
-          .animate-container {
-            top: 50%;
-            transform: translateY(-50%);
-            display: grid;
-            gap: 1rem;
-            animation: fadeIn 1s ease-in-out;
-          }
+              <div class="container mx-auto items-center gap-8 px-6 py-12">
+                <div
+                  class="absolute z-1 grid grid-cols-2 md:grid-cols-3 gap-4 animate-container"
+                >
+                  <Image
+                    src={adornouno}
+                    alt="Adorno 1"
+                    class="h-auto max-w-full animate-image"
+                  />
+                  <Image
+                    src={adornodos}
+                    alt="Adorno 2"
+                    class="h-auto max-w-full animate-image"
+                  />
+                  <Image
+                    src={adornotres}
+                    alt="Adorno 3"
+                    class="h-auto max-w-full animate-image"
+                  />
+                  <Image
+                    src={adornocuatro}
+                    alt="Adorno 4"
+                    class="h-auto max-w-full animate-image"
+                  />
+                  <Image
+                    src={adornocinco}
+                    alt="Adorno 5"
+                    class="h-auto max-w-full animate-image"
+                  />
+                  <Image
+                    src={adornodos}
+                    alt="Adorno 2"
+                    class="h-auto max-w-full animate-image"
+                  />
+                </div>
+                <style>
+                  .animate-container {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: grid;
+                    gap: 1rem;
+                    animation: fadeIn 1s ease-in-out;
+                  }
 
-            .animate-image {
-            animation: float 3s infinite ease-in-out;
-            animation-delay: calc(var(--index, 0) * 0.2s);
-            }
+                  .animate-image {
+                    animation: float 3s infinite ease-in-out;
+                    animation-delay: calc(var(--index, 0) * 0.2s);
+                  }
 
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
+                  @keyframes fadeIn {
+                    from {
+                      opacity: 0;
+                    }
+                    to {
+                      opacity: 1;
+                    }
+                  }
 
-          @keyframes float {
-            0%, 100% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-10px);
-            }
-          }
-        </style>
-          <div class=" relative z-10 flex flex-col items-center text-center">
-            <h3 class="text-5xl md:text-7xl font-bold mb-6 text-[rgb(252,144,122)]">
-              Instalaciones de Primera Clase
-            </h3>
-    
-            <div class="max-w-[60vw] mb-6 mt-6 text-[rgb(7,60,109)] md:text-[30px] text-[20px] font-[DarkerGrotesque]">
-              Nuestras instalaciones están equipadas con tecnología de punta y
-              espacios diseñados para fomentar el aprendizaje y la creatividad. Cada
-              área está pensada para ofrecer un entorno seguro y estimulante para
-              los niños.
-            </div>
-            <a href="/contact" class="btn btn-neutral px-8 py-4 btn-xl mt-6 text-[rgb(7,60,109)] text-lg md:text-xl"
-              >Visítanos</a
-            >
-          </div>
-          <div class="relative h-full">
-            <!-- <Image
+                  @keyframes float {
+                    0%,
+                    100% {
+                      transform: translateY(0);
+                    }
+                    50% {
+                      transform: translateY(-10px);
+                    }
+                  }
+                </style>
+                <div
+                  class="relative z-10 flex flex-col items-center text-center"
+                >
+                  <h3
+                    class="text-5xl md:text-7xl font-bold mb-6 text-[rgb(252,144,122)]"
+                  >
+                    Instalaciones de Primera Clase
+                  </h3>
+
+                  <div
+                    class="max-w-[60vw] mb-6 mt-6 text-[rgb(7,60,109)] md:text-[30px] text-[20px] font-[DarkerGrotesque]"
+                  >
+                    Nuestras instalaciones están equipadas con tecnología de
+                    punta y espacios diseñados para fomentar el aprendizaje y la
+                    creatividad. Cada área está pensada para ofrecer un entorno
+                    seguro y estimulante para los niños.
+                  </div>
+                  <a
+                    href="/contact"
+                    class="btn btn-neutral px-8 py-4 btn-xl mt-6 text-[rgb(7,60,109)] text-lg md:text-xl"
+                    >Visítanos</a
+                  >
+                </div>
+                <div class="relative h-full">
+                  <!-- <Image
               src={infrastructureImage}
               alt="Instalaciones modernas y seguras"
               class="w-full h-full object-cover rounded-2xl"
             /> -->
-          </div>
-        </div>
-      </section>
+                </div>
+              </div>
+            </section>
           </section>
-    
+
           <section class="aulas character !text-white">
             <div class="block fondo_uno"></div>
-    
+
             <div class="container-imagenes w-full h-full">
               <span
                 class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
@@ -136,20 +141,46 @@ import adornocinco from "../assets/images/Adorno5.png";
               <div
                 class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
               >
-                <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                <button
+                  class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="rgb(252, 144, 122)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"></path>
                   </svg>
                 </button>
-                <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                <button
+                  class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="rgb(252, 144, 122)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"></path>
                   </svg>
                 </button>
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={new URL("https://i.ibb.co/XZBFL3JK/aulas.webp").toString()}
+                  src={new URL(
+                    "https://i.ibb.co/XZBFL3JK/aulas.webp",
+                  ).toString()}
                   alt="Alumno en aula"
                   class="h-screen w-screen object-cover"
                   inferSize
@@ -157,7 +188,9 @@ import adornocinco from "../assets/images/Adorno5.png";
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={new URL("https://i.ibb.co/39msk5P6/aulas-dos.webp").toString()}
+                  src={new URL(
+                    "https://i.ibb.co/39msk5P6/aulas-dos.webp",
+                  ).toString()}
                   alt="Alumno en aula"
                   class="h-screen w-screen object-cover"
                   inferSize
@@ -165,7 +198,9 @@ import adornocinco from "../assets/images/Adorno5.png";
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={new URL("https://i.ibb.co/G4PgVP03/aulas-tres.webp").toString()}
+                  src={new URL(
+                    "https://i.ibb.co/G4PgVP03/aulas-tres.webp",
+                  ).toString()}
                   alt="Alumno en aula"
                   class="h-screen w-screen object-cover"
                   inferSize
@@ -173,26 +208,29 @@ import adornocinco from "../assets/images/Adorno5.png";
               </div>
             </div>
             <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-              Nuestras aulas están diseñadas para el aprendizaje activo: rincones de
-              lectura, espacios de experimentación y ambientes que inspiran
-              curiosidad y descubrimiento.
+              Nuestras aulas están diseñadas para el aprendizaje activo:
+              rincones de lectura, espacios de experimentación y ambientes que
+              inspiran curiosidad y descubrimiento.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
-                <span>lugar:</span>
-                <div 
+            <div
+              class="nickname text-lg md:text-xl lg:text-2xl"
+              style="color: rgb(7, 60, 109);"
+            >
+              <span>lugar:</span>
+              <div
                 class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
-                >
+              >
                 Ambientes pedagógicos
-                </div>
+              </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Espacios que invitan a explorar
             </div>
           </section>
-    
+
           <section class="patio character !text-white">
             <div class="block fondo_uno"></div>
-    
+
             <div class="container-imagenes w-full h-full">
               <span
                 class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
@@ -201,20 +239,46 @@ import adornocinco from "../assets/images/Adorno5.png";
               <div
                 class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
               >
-                <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                <button
+                  class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="rgb(252, 144, 122)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"></path>
                   </svg>
                 </button>
-                <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                <button
+                  class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="rgb(252, 144, 122)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"></path>
                   </svg>
                 </button>
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={new URL("https://i.ibb.co/cKjpFwPJ/patio.png").toString()}
+                  src={new URL(
+                    "https://i.ibb.co/cKjpFwPJ/patio.png",
+                  ).toString()}
                   alt="Patio central"
                   class="h-screen w-screen object-cover"
                   inferSize
@@ -222,7 +286,9 @@ import adornocinco from "../assets/images/Adorno5.png";
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={new URL("https://i.ibb.co/dqpQQ4S/patio-dos.png").toString()}
+                  src={new URL(
+                    "https://i.ibb.co/dqpQQ4S/patio-dos.png",
+                  ).toString()}
                   alt="Niños jugando en el patio"
                   class="h-screen w-screen object-cover"
                   inferSize
@@ -231,24 +297,28 @@ import adornocinco from "../assets/images/Adorno5.png";
             </div>
             <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
               Un patio amplio, seguro y organizado por zonas, que permite juegos
-              libres, actividades físicas y momentos de exploración al aire libre.
+              libres, actividades físicas y momentos de exploración al aire
+              libre.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
+            <div
+              class="nickname text-lg md:text-xl lg:text-2xl"
+              style="color: rgb(7, 60, 109);"
+            >
               <span>lugar:</span>
-              <div 
+              <div
                 class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
-                >
-              Patio central del nido
-            </div>
+              >
+                Patio central del nido
+              </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Moverse también es aprender
             </div>
           </section>
-    
+
           <section class="entrevista character !text-white">
             <div class="block fondo_uno"></div>
-    
+
             <div class="container-imagenes w-full h-full">
               <span
                 class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
@@ -257,7 +327,6 @@ import adornocinco from "../assets/images/Adorno5.png";
               <div
                 class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
               >
-                
               </div>
               <div class="imagen w-full h-full">
                 <video
@@ -269,66 +338,70 @@ import adornocinco from "../assets/images/Adorno5.png";
                 >
                   <track kind="captions" />
                 </video>
-                
               </div>
-              
             </div>
             <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-              Un ambiente acogedor y reservado, donde se reciben a las familias para acompañarlas en
-              el proceso educativo.
+              Un ambiente acogedor y reservado, donde se reciben a las familias
+              para acompañarlas en el proceso educativo.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
+            <div
+              class="nickname text-lg md:text-xl lg:text-2xl"
+              style="color: rgb(7, 60, 109);"
+            >
               <span>lugar:</span>
-              <div 
+              <div
                 class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
-                >Sala de orientación
-                </div>
+              >
+                Sala de orientación
+              </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Escuchar es también educar
             </div>
           </section>
-    
+
           <section class="familia character !text-white">
             <div class="block fondo_uno"></div>
-    
+
             <div class="container-imagenes w-full h-full">
               <span
                 class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
                 aria-hidden="true">familia</span
               >
-                <div class="imagen w-full h-full">
+              <div class="imagen w-full h-full">
                 <video
                   src={familia}
                   class="h-screen w-screen object-cover"
                   muted
                   autoplay
-                  loop
-                ></video>
+                  loop></video>
               </div>
-              
             </div>
             <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-              Un espacio especial para la formación de nanas, abuelitos y padres,
-              donde se fortalecen los vínculos con el hogar y se comparten
-              herramientas de crianza.
+              Un espacio especial para la formación de nanas, abuelitos y
+              padres, donde se fortalecen los vínculos con el hogar y se
+              comparten herramientas de crianza.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
+            <div
+              class="nickname text-lg md:text-xl lg:text-2xl"
+              style="color: rgb(7, 60, 109);"
+            >
               <span>lugar:</span>
-              <div 
+              <div
                 class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
-                >Sala de familia
-                </div>
+              >
+                Sala de familia
+              </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Educar en red, crecer juntos
             </div>
           </section>
-    
+
           <section class="material character !text-white">
             <div class="block fondo_uno"></div>
-    
-            <div class="container-imagenes w-full ">
+
+            <div class="container-imagenes w-full">
               <span
                 class="huge-text select-none relative z-20 text-[10vw] md:text-[8vw] lg:text-[6vw]"
                 aria-hidden="true">material</span
@@ -336,21 +409,46 @@ import adornocinco from "../assets/images/Adorno5.png";
               <div
                 class="buttons absolute z-50 bottom-4 left-[50%] -translate-x-1/2 flex gap-2"
               >
-                  <button class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <button class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="rgb(252, 144, 122)">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                
+                <button
+                  class="prev-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="rgb(252, 144, 122)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </button>
+                <button
+                  class="next-btn cursor-pointer transition-transform transform hover:scale-125 duration-300 bg-white bg-opacity-50 backdrop-blur-md px-4 py-2 rounded-lg ml-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="rgb(252, 144, 122)"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={new URL("https://i.ibb.co/hF3GsRwM/IMG-9408.webp").toString()}
+                  src={new URL(
+                    "https://i.ibb.co/hF3GsRwM/IMG-9408.webp",
+                  ).toString()}
                   alt="Material didáctico"
                   class="h-screen w-screen object-cover"
                   inferSize
@@ -358,7 +456,9 @@ import adornocinco from "../assets/images/Adorno5.png";
               </div>
               <div class="imagen w-full h-full">
                 <Image
-                  src={new URL("https://i.ibb.co/TD3C9JpM/IMG-9283.webp").toString()}
+                  src={new URL(
+                    "https://i.ibb.co/TD3C9JpM/IMG-9283.webp",
+                  ).toString()}
                   alt="Niños usando material didáctico"
                   class="h-screen w-screen object-cover"
                   inferSize
@@ -366,16 +466,20 @@ import adornocinco from "../assets/images/Adorno5.png";
               </div>
             </div>
             <div class="caption font-serif text-2xl md:text-3xl lg:text-4xl">
-              Contamos con bibliotecas, estanterías y rincones llenos de material
-              didáctico diseñado para fomentar la curiosidad, la autonomía y el
-              juego significativo.
+              Contamos con bibliotecas, estanterías y rincones llenos de
+              material didáctico diseñado para fomentar la curiosidad, la
+              autonomía y el juego significativo.
             </div>
-            <div class="nickname text-lg md:text-xl lg:text-2xl" style="color: rgb(7, 60, 109);">
+            <div
+              class="nickname text-lg md:text-xl lg:text-2xl"
+              style="color: rgb(7, 60, 109);"
+            >
               <span>lugar:</span>
-              <div 
+              <div
                 class="bg-[rgba(255,255,255,0.5)] 50 backdrop-blur-md rounded-lg p-3 px-5"
-                >Rincones pedagógicos
-                </div>  
+              >
+                Rincones pedagógicos
+              </div>
             </div>
             <div class="quote text-lg md:text-xl lg:text-2xl">
               Jugar es aprender con las manos
@@ -384,59 +488,71 @@ import adornocinco from "../assets/images/Adorno5.png";
         </div>
       </div>
       <section class="contador-aulas bg-accent">
-        <div class=" absolute z-1 grid grid-cols-2 md:grid-cols-3 gap-4 animate-container">
-              <Image
-              src={adornocuatro}
-              alt="Adorno 1"
-              class="h-auto max-w-full animate-image relative bottom-[-50px] right-[-50px]"
-
-              />
-                <Image
-                src={adornodos}
-                alt="Adorno 2"
-                class="h-auto max-w-full animate-image relative bottom-[-40px] right-[-60px]"
-                />
-                <Image
-                src={adornotres}
-                alt="Adorno 3"
-                class="h-auto max-w-full animate-image relative bottom-[-70px] right-[-30px]"
-                />  
-                <Image
-                src={adornouno}
-                alt="Adorno 4"
-                class="h-auto max-w-full animate-image relative bottom-[-20px] right-[-80px]"
-                />
-                <Image
-                src={adornocinco}
-                alt="Adorno 5"
-                class="h-auto max-w-full animate-image relative bottom-[-50px] right-[-40px]"
-                />
-                <Image
-                src={adornodos}
-                alt="Adorno 2"
-                class="h-auto max-w-full animate-image relative bottom-[-60px] right-[-20px]"
-                />
+        <div
+          class="absolute z-1 grid grid-cols-2 md:grid-cols-3 gap-4 animate-container"
+        >
+          <Image
+            src={adornocuatro}
+            alt="Adorno 1"
+            class="h-auto max-w-full animate-image relative bottom-[-50px] right-[-50px]"
+          />
+          <Image
+            src={adornodos}
+            alt="Adorno 2"
+            class="h-auto max-w-full animate-image relative bottom-[-40px] right-[-60px]"
+          />
+          <Image
+            src={adornotres}
+            alt="Adorno 3"
+            class="h-auto max-w-full animate-image relative bottom-[-70px] right-[-30px]"
+          />
+          <Image
+            src={adornouno}
+            alt="Adorno 4"
+            class="h-auto max-w-full animate-image relative bottom-[-20px] right-[-80px]"
+          />
+          <Image
+            src={adornocinco}
+            alt="Adorno 5"
+            class="h-auto max-w-full animate-image relative bottom-[-50px] right-[-40px]"
+          />
+          <Image
+            src={adornodos}
+            alt="Adorno 2"
+            class="h-auto max-w-full animate-image relative bottom-[-60px] right-[-20px]"
+          />
         </div>
         <div
           class="container relative z-10 mx-auto md:py-36 py-16 flex flex-wrap flex-col md:flex-row justify-center md:gap-36 gap-16 text-center"
         >
           <div class="flex flex-col items-center">
-          <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="5">
-            0
-          </div>
-          <span class="text-2xl font-bold text-white">Aulas modernas</span>
-          </div>
-          <div class="flex flex-col items-center">
-          <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="3">
-            0
-          </div>
-          <span class="text-2xl font-bold text-white">Áreas de juego</span>
+            <div
+              class="text-[12vw] md:text-[8vw] font-bold text-white counter"
+              data-target="5"
+            >
+              0
+            </div>
+            <span class="text-2xl font-bold text-white">Aulas modernas</span>
           </div>
           <div class="flex flex-col items-center">
-          <div class="text-[12vw] md:text-[8vw] font-bold text-white counter" data-target="2">
-            0
+            <div
+              class="text-[12vw] md:text-[8vw] font-bold text-white counter"
+              data-target="3"
+            >
+              0
+            </div>
+            <span class="text-2xl font-bold text-white">Áreas de juego</span>
           </div>
-          <span class="text-2xl font-bold text-white">Laboratorios de ciencia</span>
+          <div class="flex flex-col items-center">
+            <div
+              class="text-[12vw] md:text-[8vw] font-bold text-white counter"
+              data-target="2"
+            >
+              0
+            </div>
+            <span class="text-2xl font-bold text-white"
+              >Laboratorios de ciencia</span
+            >
           </div>
         </div>
       </section>
@@ -559,7 +675,7 @@ import adornocinco from "../assets/images/Adorno5.png";
     width: 30%;
     font-weight: 400;
     color: rgb(7, 60, 109);
-    
+
     font-family: "Bebas Neue", cursive;
     background-color: rgba(207, 207, 207, 0.404);
     border-radius: 1rem;
@@ -570,25 +686,23 @@ import adornocinco from "../assets/images/Adorno5.png";
       width: 100%;
       display: block;
     }
-    .container-imagenes{
-      height: 100vh; 
+    .container-imagenes {
+      height: 100vh;
       position: relative;
     }
-    .container-imagenes video{
+    .container-imagenes video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .buttons{
+    .buttons {
       position: absolute;
-      
     }
     .wrapper > section {
-      
-    } 
+    }
     .caption {
       width: 40vw;
-      
+
       bottom: 15%;
       font-size: calc(1.5vw + 1vh);
     }
@@ -605,7 +719,6 @@ import adornocinco from "../assets/images/Adorno5.png";
       transform: translateY(-200%);
     }
     .quote {
-      
       bottom: 10% !important;
       right: 10% !important;
       font-size: 2rem;
@@ -636,7 +749,7 @@ import adornocinco from "../assets/images/Adorno5.png";
   }
   .nickname {
     /* fondo con blur y opacity 0.5 */
-   
+
     position: absolute;
     top: 4rem;
     right: 5%;
@@ -659,9 +772,8 @@ import adornocinco from "../assets/images/Adorno5.png";
     width: 80% !important;
     text-align: right;
     color: rgb(7, 60, 109);
-   
   }
- .quote::before,
+  .quote::before,
   .quote::after {
     content: "";
     color: rgb(252, 144, 122);
@@ -671,92 +783,92 @@ import adornocinco from "../assets/images/Adorno5.png";
     background-color: rgb(7, 70, 129);
     color: white !important;
   }
-  .entrevista{
+  .entrevista {
     background-image: url("../assets/images/FONDO_CLARO.png");
     background-size: cover;
   }
-  
 </style>
+
 <script>
- // filepath: c:\Users\Christopher\Documents\Grobles\nido\src\pages\infrastructure.astro
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+  // filepath: c:\Users\Christopher\Documents\Grobles\nido\src\pages\infrastructure.astro
+  import { gsap } from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
-const sections = document.querySelectorAll(".wrapper > section");
+  const sections = document.querySelectorAll(".wrapper > section");
 
-// Create individual scroll triggers for each section
-sections.forEach((section) => {
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: "+=100%", // Pausa por el alto completo de la sección
-      pin: true,
-      scrub: true,
-      anticipatePin: 1, // Mejora la transición entre pins
-    },
+  // Create individual scroll triggers for each section
+  sections.forEach((section) => {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: "+=100%", // Pausa por el alto completo de la sección
+        pin: true,
+        scrub: true,
+        anticipatePin: 1, // Mejora la transición entre pins
+      },
+    });
+
+    // Luego, animaciones sin volver a fijar el mismo elemento
+    gsap.to(section, {
+      scrollTrigger: {
+        trigger: section,
+        scrub: 0.5,
+        start: "top top",
+        end: "+=1000",
+      },
+      opacity: 1,
+      duration: 1,
+    });
   });
 
-  // Luego, animaciones sin volver a fijar el mismo elemento
-  gsap.to(section, {
-    scrollTrigger: {
-      trigger: section,
-      scrub: 0.5,
-      start: "top top",
-      end: "+=1000",
-    },
-    opacity: 1,
-    duration: 1,
+  // Remove animations for caption and quote
+  document.querySelectorAll(".character").forEach((el) => {
+    const nickname = el.querySelector(".nickname");
+    const block = el.querySelector(".block");
+    const hugeText = el.querySelector(".huge-text");
+
+    if (nickname) {
+      gsap.to(nickname, {
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: nickname,
+          start: "top center",
+          end: "bottom center",
+          scrub: 0.5,
+        },
+      });
+    }
+
+    if (block) {
+      gsap.to(block, {
+        x: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: block,
+          start: "top center",
+          end: "bottom center",
+          scrub: 0.5,
+        },
+      });
+    }
+
+    if (hugeText) {
+      gsap.to(hugeText, {
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: hugeText,
+          start: "top center",
+          end: "bottom center",
+          scrub: 0.5,
+        },
+      });
+    }
   });
-});
-
-// Remove animations for caption and quote
-document.querySelectorAll(".character").forEach((el) => {
-  const nickname = el.querySelector(".nickname");
-  const block = el.querySelector(".block");
-  const hugeText = el.querySelector(".huge-text");
-
-  if (nickname) {
-    gsap.to(nickname, {
-      y: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: nickname,
-        start: "top center",
-        end: "bottom center",
-        scrub: 0.5,
-      },
-    });
-  }
-
-  if (block) {
-    gsap.to(block, {
-      x: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: block,
-        start: "top center",
-        end: "bottom center",
-        scrub: 0.5,
-      },
-    });
-  }
-
-  if (hugeText) {
-    gsap.to(hugeText, {
-      y: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: hugeText,
-        start: "top center",
-        end: "bottom center",
-        scrub: 0.5,
-      },
-    });
-  }
-});
 
   document.querySelectorAll(".container-imagenes").forEach((container) => {
     const images = container.querySelectorAll(".imagen");
@@ -895,16 +1007,16 @@ document.querySelectorAll(".character").forEach((el) => {
     });
   });
 
-import ScrollSmoother from "gsap/ScrollSmoother";
+  import ScrollSmoother from "gsap/ScrollSmoother";
 
-if (window.innerWidth > 768) {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  if (window.innerWidth > 768) {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1.2, // velocidad de suavizado (mayor = más suave)
-    effects: true // habilita efectos parallax si usas data-speed en elementos
-  });
-}
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.2, // velocidad de suavizado (mayor = más suave)
+      effects: true, // habilita efectos parallax si usas data-speed en elementos
+    });
+  }
 </script>
