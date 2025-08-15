@@ -2,7 +2,7 @@
 title: 'Aprendizaje a Través del Juego en Preescolar'
 description: 'Descubre cómo el juego es fundamental para el desarrollo y aprendizaje de los niños en edad preescolar'
 pubDate: 'Mayo 22 2025'
-heroImage: 'https://images.unsplash.com/photo-1524503033411-c9566986fc8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+heroImage: 'https://scontent.fayp1-1.fna.fbcdn.net/v/t39.30808-6/486265221_1232524992208090_9083455475073296526_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=59afRT4BkukQ7kNvwHkBJx0&_nc_oc=Adlcg0fhmu4TDyZOBP6Z7EfWoucUFy6KvQRBQI0GJD4yeGf35yAO_gzC7fHs63UyTN-gzAYMSPzzNBTREdRzxd7S&_nc_zt=23&_nc_ht=scontent.fayp1-1.fna&_nc_gid=2-2fNV14KNyqYLxxkiBu9A&oh=00_AfWF29psuufvRZPI_XI6TD2OJuYKsaPJPOiQaJWPib5y0g&oe=68A4F457'
 category: 'novedades'
 ---
 

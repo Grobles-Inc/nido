@@ -2,7 +2,7 @@
 title: 'Desarrollando Habilidades Sociales en el Preescolar'
 description: 'Cómo ayudar a tu hijo a desarrollar habilidades sociales fundamentales durante sus primeros años'
 pubDate: 'Mayo 22 2025'
-heroImage: 'https://images.unsplash.com/photo-1502781252888-9143ba7f074e?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+heroImage: 'https://scontent.fayp1-1.fna.fbcdn.net/v/t51.75761-15/476515572_18066215845848530_5942471237751646737_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=A9hocjEP3Z0Q7kNvwEaNtz_&_nc_oc=AdmzKPrZhY_S-iRhtWRJC58yEpUQ2IFZgWUfT8UYj4tklunxwAMK4P2X6po6U9BPodREZtMnSWkghXKa0PJQMH1v&_nc_zt=23&_nc_ht=scontent.fayp1-1.fna&_nc_gid=mrh8Ao2UUXPNvOFZ06w1Uw&oh=00_AfXOfcBSgbxNdhYWU4qRKB5onnkJcF38_ru036jTviFs9Q&oe=68A511A7'
 category: 'Desarrollo Social'
 ---
 

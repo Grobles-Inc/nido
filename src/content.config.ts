@@ -24,7 +24,7 @@ const services = defineCollection({
 
 export const BLOG_CATEGORIES = [
   'actividades',
-  'consejos pedagógicos',
+  'consejos',
   'novedades'
 ] as const;
 
