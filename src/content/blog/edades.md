@@ -75,7 +75,7 @@ A los 4 años nos encontramos en una **etapa clave** para el lenguaje, la creati
 
 ## 5 años – Listos para el gran salto ✨
 
-Una edad retadora, pero en el **#NidoPeruina** asumimos con alegría y compromiso esta fase, pues es vital una enseñanza sólida para el siguiente paso: **la primaria**.
+Una edad retadora, pero en el **#NidoPerulina** asumimos con alegría y compromiso esta fase, pues es vital una enseñanza sólida para el siguiente paso: **la primaria**.
 
 **Lo que ocurre en esta etapa:**
 1. Preparación académica básica (lectoescritura, numeración).
