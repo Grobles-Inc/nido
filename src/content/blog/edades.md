@@ -7,9 +7,9 @@ category: 'consejos'
 
 ---
 
-# Etapas de Desarrollo en el Nido Peruina
+# Etapas de Desarrollo en el Nido Perulina
 
-En **Nido Peruina** acompañamos cada etapa de desarrollo de los niños con estrategias de aprendizaje, juego y socialización adaptadas a su edad.  
+En **Nido Perulina** acompañamos cada etapa de desarrollo de los niños con estrategias de aprendizaje, juego y socialización adaptadas a su edad.  
 Cada año es un mundo nuevo lleno de retos y descubrimientos.
 
 ---
