@@ -2,15 +2,13 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import GoogleTagManager from "../components/GoogleTagManager.astro";
-import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 ---
 
 <!doctype html>
 <html lang="es" data-theme="nido">
   <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <GoogleTagManager />
+
     <BaseHead
       title="Contáctanos"
       description="¡Nos encantaría saber de ti! Ya sea que tengas preguntas, desee programar una visita o simplemente quieras decir hola, estamos aquí para ayudarte."
@@ -373,8 +371,12 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
       </section>
     </main>
     <Footer />
-    <GoogleTagManagerNoScript />
-
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js-na1.hs-scripts.com/50255506.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById(
@@ -531,11 +533,5 @@ import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.ast
         });
       });
     </script>
-    <script
-      type="text/javascript"
-      id="hs-script-loader"
-      async
-      defer
-      src="//js-na1.hs-scripts.com/50255506.js"></script>
   </body>
 </html>

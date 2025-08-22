@@ -1,8 +1,8 @@
 ---
 title: 'Fases que pasan tus hijos entre sus edades'
 description: 'Tus niños atraviesan distintas etapas de desarrollo, cada una con retos y aprendizajes únicos. Descubre cómo acompañarlos en cada fase.'
-pubDate: 'May 12 2025'
-heroImage: 'https://scontent.fayp1-1.fna.fbcdn.net/v/t39.30808-6/490203232_1248733667253889_1195585714185420487_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Lb6BAAOyRQAQ7kNvwFULpfD&_nc_oc=AdlqOhpHdXw13y_Uu4UlikwaWFGICL3W0Wl3zWtVQ71pIS7bXphwgSwI0NQLIrLzlC75S3abe6aq_5avRl6bsDP-&_nc_zt=23&_nc_ht=scontent.fayp1-1.fna&_nc_gid=9mrA7QXyjcRguDEYhbnq1A&oh=00_AfWLmBz9DkU-aEtn2OoZhvULov1MQE0T3pn45yX8MDI0GA&oe=68A4EB79'
+pubDate: 'Aug 12 2025'
+heroImage: 'https://images.pexels.com/photos/1275235/pexels-photo-1275235.jpeg'
 category: 'consejos'
 
 ---

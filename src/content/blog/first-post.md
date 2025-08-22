@@ -1,8 +1,8 @@
 ---
 title: 'Estableciendo Rutinas Efectivas para Niños de Preescolar'
 description: 'Guía práctica para crear rutinas que ayuden a tu hijo a tener éxito en el preescolar'
-pubDate: 'Mayo 22 2025'
-heroImage: 'https://scontent.fayp1-1.fna.fbcdn.net/v/t51.75761-15/488156696_18071212057848530_3556981661406938852_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BvqROkCqlwYQ7kNvwFRLUrE&_nc_oc=AdlRPqE1NFobqWkeebTQBY1BOGGHkGhn1dojsvzljZC-l0ICtuvrCpwnh7F0iIRhdZR4_wn6XH1Bf8eSFaEWnlnF&_nc_zt=23&_nc_ht=scontent.fayp1-1.fna&_nc_gid=sDgZD1NCp5GGo54lSM54ag&oh=00_AfUtOG1j4H899DB3d1QDrv9W7lZFftSQFwOZI3PNuVnECg&oe=68A516CE'
+pubDate: 'Apr 02 2025'
+heroImage: 'https://images.pexels.com/photos/296301/pexels-photo-296301.jpeg'
 category: 'actividades'
 
 ---

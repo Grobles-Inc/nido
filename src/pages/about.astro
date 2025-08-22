@@ -4,8 +4,7 @@ import AwardsSection from "../components/AwardsSection.astro";
 import BaseHead from "../components/BaseHead.astro";
 import CTASection from "../components/CTASection.astro";
 import Footer from "../components/Footer.astro";
-import GoogleTagManager from "../components/GoogleTagManager.astro";
-import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
+
 import Header from "../components/Header.astro";
 import TeachersSection from "../components/TeachersSection.astro";
 ---
@@ -19,7 +18,6 @@ import TeachersSection from "../components/TeachersSection.astro";
 			title="Sobre Nosotros"
 			description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
 		/>
-		<GoogleTagManager />
 	</head>
 	<body class="bg-white">
 		<Header />
@@ -312,13 +310,6 @@ import TeachersSection from "../components/TeachersSection.astro";
 		<!-- CTA Section -->
 		<CTASection />
 		<Footer />
-		<GoogleTagManagerNoScript />
-		<script
-			type="text/javascript"
-			id="hs-script-loader"
-			async
-			defer
-			src="//js-na1.hs-scripts.com/50255506.js"></script>
 	</body><script>
 		import { gsap } from "gsap";
 		import { ScrollTrigger } from "gsap/ScrollTrigger";

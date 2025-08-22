@@ -8,8 +8,6 @@ import BlogCard from "../../components/BlogCard.astro";
 import { BLOG_CATEGORIES } from "../../content.config";
 import { Image } from "astro:assets";
 export const prerender = false;
-import GoogleTagManager from "../../components/GoogleTagManager.astro";
-import GoogleTagManagerNoScript from "../../components/GoogleTagManagerNoScript.astro";
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -36,7 +34,6 @@ const ogImage = new URL("/og.png", Astro.url);
 			<meta name="twitter:card" content="summary_large_image" />
 			<link rel="canonical" href={Astro.url} />
 		</BaseHead>
-		<GoogleTagManager />
 	</head>
 	<body class="min-h-screen bg-base-100">
 		<Header />
@@ -166,6 +163,5 @@ const ogImage = new URL("/og.png", Astro.url);
 			</div>
 		</main>
 		<Footer />
-		<GoogleTagManagerNoScript />
 	</body>
 </html>
