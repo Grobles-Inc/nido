@@ -10,7 +10,6 @@ import HomeSection from "../components/HomeSection.astro";
 import GoogleTagManagerNoScript from "../components/GoogleTagManagerNoScript.astro";
 import GoogleTagManager from "../components/GoogleTagManager.astro";
 import CTASection from "../components/CTASection.astro";
-import Preloader from "../components/preloader.astro";
 ---
 
 <!doctype html>
@@ -40,7 +39,6 @@ import Preloader from "../components/preloader.astro";
 	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
 	<body class="bg-white">
-		<Preloader />
 		<Header />
 		<HeroSection />
 		<AboutSection />
@@ -49,6 +47,11 @@ import Preloader from "../components/preloader.astro";
 		<CTASection />
 		<Footer />
 		<GoogleTagManagerNoScript />
-		 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/50255506.js"></script>
+		<script
+			type="text/javascript"
+			id="hs-script-loader"
+			async
+			defer
+			src="//js-na1.hs-scripts.com/50255506.js"></script>
 	</body>
 </html>

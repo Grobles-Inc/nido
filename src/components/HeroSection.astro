@@ -1,250 +1,178 @@
 ---
-// import VideoInicio from "../assets/videos/video-inicio.mp4";
-import VideoInicio2 from "../assets/videos/video-inicio-2.mp4";
-import VideoInicio3 from "../assets/videos/video-inicio-3.webm";
+
 ---
 
 <section class="relative min-h-screen bg-gray-800 text-white">
   <!-- Background Image con overlay -->
   <div class="absolute inset-0 z-0">
-    <video
-      src={VideoInicio3}
-      autoplay
-      muted
-      loop
-      class="w-full h-full object-cover"
-      playsinline></video>
-    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <img
+      src="https://scontent.fayp1-1.fna.fbcdn.net/v/t39.30808-6/536284817_1363269709133617_617958273362021370_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=oLJX3NrJUykQ7kNvwH6VAxc&_nc_oc=AdltvWSATLmcgdKBBEP2UYgSTFG79Q8yjtjsWCypXrQZKzvZvQljGvdM4g18gjEmoC0p1LRlto8-Cx16E0rlxVhy&_nc_zt=23&_nc_ht=scontent.fayp1-1.fna&_nc_gid=TwZXTOf9_Go_U_erDIBLdA&oh=00_AfUBlsTsaeRrbNkViYI4fDwSSxA9ysZe-sue5UrjTrzTxQ&oe=68AE5D4C"
+      class="w-full h-full object-cover object-bottom"
+    />
   </div>
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+</section>
 
-  <!-- Content -->
-  <div
-    class="container mx-auto px-4 sm:px-6 relative z-10 min-h-screen flex items-center justify-center mt-5"
-  >
-    <div class="max-w-7xl mx-auto w-full pt-20 sm:pt-24 lg:pt-16 pb-8">
-      <!-- Grid adaptativo: vertical en móvil, horizontal en desktop -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-        
-        <!-- Primera columna: Texto y botones -->
-        <div class="flex flex-col justify-center space-y-6 lg:space-y-8 text-center lg:text-left">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-            Educamos con el Trinomio Indisoluble
-          </h1>
-          <p class="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto lg:mx-0">
-            Formamos niños felices, autónomos y seguros de sí mismos a través de una educación integral que combina amor, respeto y excelencia académica.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a
-              href="/about"
-              class="inline-block bg-secondary hover:bg-transparent border-2 border-secondary hover:text-secondary text-white font-bold py-3 px-6 rounded-full text-base transition-colors duration-300 text-center"
+<div
+  class="max-w-7xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-full lg:pt-16 pb-8"
+>
+  <!-- Grid adaptativo: vertical en móvil, horizontal en desktop -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <div></div>
+    <!-- Segunda columna: Formulario de inscripción -->
+    <div class="flex items-center justify-center mt-8 lg:mt-20">
+      <div class="w-full max-w-md">
+        <form
+          id="form-inscripcion"
+          method="post"
+          action="#"
+          class="space-y-3 sm:space-y-4 bg-black/20 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/20 shadow-lg"
+        >
+          <!-- Tipo de consulta -->
+          <h2 class="font-bold text-white text-center text-2xl">
+            Formulario de Consultas
+          </h2>
+
+          <!-- Nombre -->
+          <div>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nombres"
+              class="input input-bordered w-full"
+              required
+              minlength="3"
+            />
+            <div
+              id="name-error"
+              class="error-message text-red-400 text-sm mt-1 hidden"
             >
-              Más sobre nosotros
-            </a>
-            <a
-              href="https://wa.me/51922935447"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-block bg-transparent border-2 border-white hover:bg-white hover:text-gray-800 text-white font-bold py-3 px-6 rounded-full text-base transition-colors duration-300 text-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-              </svg>
-              WhatsApp
-            </a>
+              Ingrese sus nombres y apellidos
+            </div>
           </div>
-        </div>
 
-        <!-- Segunda columna: Formulario de inscripción -->
-        <div class="flex items-center justify-center mt-8 lg:mt-20">
-          <div class="w-full max-w-md">            
-            <form
-              id="form-inscripcion"
-              method="post"
-              action="#"
-              class="space-y-3 sm:space-y-4 bg-black/20 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/20"
+          <!-- Email -->
+          <div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Correo electrónico"
+              class="input input-bordered w-full"
+              required
+            />
+            <div
+              id="email-error"
+              class="error-message text-red-400 text-sm mt-1 hidden"
             >
-              <!-- Tipo de consulta -->
-              <h2 class="text-lg font-bold text-center mb-4 lg:mb-6">
-                Formulario de Consultas
-              </h2>
-              <div>
-                <label
-                  for="request"
-                  class="block text-sm font-medium text-white mb-2"
-                >
-                  Tipo de consulta <span class="text-red-400">*</span>
-                </label>
-                <select
-                  id="request"
-                  name="request"
-                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800/90 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base appearance-none"
-                  required
-                >
-                  <option value="" disabled selected>Seleccione una opción</option>
-                  <option value="matricula">Proceso de matrícula</option>
-                  <option value="informacion">Información general</option>
-                  <option value="visita">Programar una visita</option>
-                </select>
-                <div id="request-error" class="error-message text-red-400 text-sm mt-1 hidden">
-                  Por favor seleccione un tipo de consulta
-                </div>
-              </div>
-
-              <!-- Nombre -->
-              <div>
-                <label
-                  for="name"
-                  class="block text-sm font-medium text-white mb-2"
-                >
-                  Nombre <span class="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Nombre y apellido"
-                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base"
-                  required
-                  minlength="3"
-                />
-                <div id="name-error" class="error-message text-red-400 text-sm mt-1 hidden">
-                  Ingrese sus nombres y apellidos
-                </div>
-              </div>
-
-              <!-- Email -->
-              <div>
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-white mb-2"
-                >
-                  Correo electrónico <span class="text-red-400">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="usuario@gmail.com"
-                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base"
-                  required
-                />
-                <div id="email-error" class="error-message text-red-400 text-sm mt-1 hidden">
-                  Ingrese un correo electrónico válido
-                </div>
-              </div>
-
-              <!-- Teléfono -->
-              <div>
-                <label
-                  for="phone"
-                  class="block text-sm font-medium text-white mb-2"
-                >
-                  Número de teléfono <span class="text-red-400">*</span>
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="987654321"
-                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base"
-                  required
-                />
-                <div id="phone-error" class="error-message text-red-400 text-sm mt-1 hidden">
-                  Ingrese un número de teléfono válido
-                </div>
-              </div>
-
-              <!-- Mensaje -->
-              <div>
-                <label
-                  for="message"
-                  class="block text-sm font-medium text-white mb-2"
-                >
-                  Mensaje <span class="text-red-400">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="3"
-                  placeholder="Escribe tu mensaje o información adicional sobre el niño(a)"
-                  class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-sm sm:text-base resize-none"
-                  minlength="5"
-                ></textarea>
-                <div id="message-error" class="error-message text-red-400 text-sm mt-1 hidden">
-                  Por favor ingrese un mensaje
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                id="submit-inscripcion-btn"
-                class="w-full bg-secondary hover:bg-transparent border-2 border-secondary hover:text-secondary text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-full transition-colors duration-300 text-sm sm:text-base cursor-pointer"
-              >
-                Enviar
-              </button>
-
-              <div id="success-inscripcion-message" class="hidden bg-green-500/80 text-white p-3 rounded-lg text-center text-sm">
-                ¡Enviado correctamente!
-              </div>
-              <div id="error-inscripcion-alert" class="hidden bg-red-500/80 text-white p-3 rounded-lg text-center text-sm">
-                ¡Hubo un error!
-              </div>
-            </form>
+              Ingrese un correo electrónico válido
+            </div>
           </div>
-        </div>
+
+          <!-- Teléfono -->
+          <div>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Número de teléfono"
+              class="input input-bordered w-full"
+              required
+            />
+            <div
+              id="phone-error"
+              class="error-message text-red-400 text-sm mt-1 hidden"
+            >
+              Ingrese un número de teléfono válido
+            </div>
+          </div>
+          <div>
+            <label
+              for="request"
+              class="block text-sm font-medium text-white mb-2"
+            >
+              Tipo de consulta <span class="text-red-400">*</span>
+            </label>
+            <select
+              id="request"
+              name="request"
+              class="select select-bordered w-full"
+              required
+            >
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="matricula">Proceso de matrícula</option>
+              <option value="informacion">Información general</option>
+              <option value="visita">Programar una visita</option>
+            </select>
+            <div
+              id="request-error"
+              class="error-message text-red-400 text-sm mt-1 hidden"
+            >
+              Por favor seleccione un tipo de consulta
+            </div>
+          </div>
+          <!-- Mensaje -->
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-white mb-2"
+            >
+              Mensaje <span class="text-red-400">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              placeholder="Escribe tu mensaje o información adicional sobre el niño(a)"
+              class="textarea textarea-bordered w-full"
+              minlength="5"></textarea>
+            <div
+              id="message-error"
+              class="error-message text-red-400 text-sm mt-1 hidden"
+            >
+              Por favor ingrese un mensaje
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="submit-inscripcion-btn"
+            class="w-full bg-secondary hover:bg-transparent border-2 border-secondary hover:text-secondary text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-full transition-colors duration-300 text-sm sm:text-base cursor-pointer"
+          >
+            Enviar
+          </button>
+
+          <div
+            id="success-inscripcion-message"
+            class="hidden bg-green-500/80 text-white p-3 rounded-lg text-center text-sm"
+          >
+            ¡Enviado correctamente!
+          </div>
+          <div
+            id="error-inscripcion-alert"
+            class="hidden bg-red-500/80 text-white p-3 rounded-lg text-center text-sm"
+          >
+            ¡Hubo un error!
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</section>
-
-<style>
-  .error-message {
-    display: none;
-  }
-  .input-error {
-    border-color: #ef4444 !important;
-    background-color: rgba(239, 68, 68, 0.1) !important;
-  }
-  .hidden {
-    display: none;
-  }
-  
-  /* Estilos específicos para el select */
-  select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 0.5rem center;
-    background-repeat: no-repeat;
-    background-size: 1.5em 1.5em;
-    padding-right: 2.5rem;
-  }
-  
-  /* Estilos para las opciones del select */
-  select option {
-    background-color: #1f2937;
-    color: #ffffff;
-    padding: 0.5rem;
-  }
-  
-  select option:hover {
-    background-color: #374151;
-  }
-  
-  select option:checked {
-    background-color: #4f46e5;
-  }
-  
-  /* Placeholder option */
-  select option[value=""] {
-    color: #9ca3af;
-  }
-</style>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form-inscripcion") as HTMLFormElement;
-    const submitBtn = document.getElementById("submit-inscripcion-btn") as HTMLButtonElement;
-    const successMessage = document.getElementById("success-inscripcion-message") as HTMLDivElement;
-    const errorAlert = document.getElementById("error-inscripcion-alert") as HTMLDivElement;
+    const submitBtn = document.getElementById(
+      "submit-inscripcion-btn",
+    ) as HTMLButtonElement;
+    const successMessage = document.getElementById(
+      "success-inscripcion-message",
+    ) as HTMLDivElement;
+    const errorAlert = document.getElementById(
+      "error-inscripcion-alert",
+    ) as HTMLDivElement;
 
     if (!form || !submitBtn || !successMessage || !errorAlert) {
       console.error("Required DOM elements not found");
@@ -253,8 +181,12 @@ import VideoInicio3 from "../assets/videos/video-inicio-3.webm";
 
     // Function to show error message and highlight input
     const showError = (inputId: string, show: boolean): void => {
-      const input = document.getElementById(inputId) as HTMLInputElement | HTMLSelectElement;
-      const errorElement = document.getElementById(`${inputId}-error`) as HTMLDivElement;
+      const input = document.getElementById(inputId) as
+        | HTMLInputElement
+        | HTMLSelectElement;
+      const errorElement = document.getElementById(
+        `${inputId}-error`,
+      ) as HTMLDivElement;
 
       if (!input || !errorElement) {
         console.error(`Elements not found for id: ${inputId}`);
@@ -271,7 +203,9 @@ import VideoInicio3 from "../assets/videos/video-inicio-3.webm";
     };
 
     // Validate individual fields
-    const validateField = (input: HTMLInputElement | HTMLSelectElement): boolean => {
+    const validateField = (
+      input: HTMLInputElement | HTMLSelectElement,
+    ): boolean => {
       if (input.required && !input.value) {
         showError(input.id, true);
         return false;
@@ -279,7 +213,8 @@ import VideoInicio3 from "../assets/videos/video-inicio-3.webm";
 
       if (input instanceof HTMLInputElement) {
         if (input.type === "email" && input.value) {
-          const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          const emailPattern =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
           if (!emailPattern.test(input.value)) {
             showError(input.id, true);
             return false;
@@ -287,7 +222,8 @@ import VideoInicio3 from "../assets/videos/video-inicio-3.webm";
         }
 
         if (input.type === "tel" && input.value) {
-          const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/;
+          const phonePattern =
+            /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/;
           if (!phonePattern.test(input.value)) {
             showError(input.id, true);
             return false;
@@ -310,7 +246,9 @@ import VideoInicio3 from "../assets/videos/video-inicio-3.webm";
     };
 
     // Add input event listeners for real-time validation
-    const inputs = form.querySelectorAll<HTMLInputElement | HTMLSelectElement>("input, select");
+    const inputs = form.querySelectorAll<HTMLInputElement | HTMLSelectElement>(
+      "input, select",
+    );
     inputs.forEach((input) => {
       input.addEventListener("input", () => validateField(input));
       input.addEventListener("blur", () => validateField(input));
@@ -358,7 +296,6 @@ import VideoInicio3 from "../assets/videos/video-inicio-3.webm";
         } else {
           throw new Error("Error en el envío");
         }
-
       } catch (error) {
         console.error("Error:", error);
         errorAlert.classList.remove("hidden");
