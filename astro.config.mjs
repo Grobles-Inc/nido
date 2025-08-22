@@ -23,7 +23,7 @@ export default defineConfig({
   },
   adapter: netlify(),
   image: {
-    domains: ["images.unsplash.com","i.ibb.co", "img.icons8.com", "mighty.tools", "sistemas15.minedu.gob.pe", "123language.pe"],
+    domains: ["images.unsplash.com","i.ibb.co", "img.icons8.com", "mighty.tools", "sistemas15.minedu.gob.pe", "123language.pe", "images.pexels.com"],
     remotePatterns: [
       { 
         protocol: "https",
@@ -48,6 +48,10 @@ export default defineConfig({
       {
         protocol: "https",
         hostname: "123language.pe",
+      },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
       }
     ],
   },
