@@ -157,6 +157,7 @@ import Footer from "../components/Footer.astro";
                 placeholder="usuario@gmail.com"
                 class="w-full input input-bordered contact-input-email"
                 required
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                 aria-required="true"
               />
               <div id="email-error" class="error-message">
@@ -177,6 +178,7 @@ import Footer from "../components/Footer.astro";
                 placeholder="987654321"
                 class="w-full input input-bordered contact-input-phone"
                 required
+                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$"
                 aria-required="true"
               />
               <div id="phone-error" class="error-message">
@@ -371,12 +373,7 @@ import Footer from "../components/Footer.astro";
       </section>
     </main>
     <Footer />
-    <script
-      type="text/javascript"
-      id="hs-script-loader"
-      async
-      defer
-      src="//js-na1.hs-scripts.com/50255506.js"></script>
+    <script is:inline src="../scripts/hubspot-loader.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById(

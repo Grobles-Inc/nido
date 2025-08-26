@@ -288,17 +288,40 @@ import Layout from "../layouts/Page.astro";
             <div class="badge badge-outline">Sala de familia</div>
             <div class="badge badge-outline">Educar en red, crecer juntos</div>
           </div>
-          <div class="mt-4">
-            <blockquote
-              class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/reel/DK7Veucg-vk/?utm_source=ig_web_copy_link"
-              data-instgrm-version="14"
+          <div class="mt-4" id="instagram-embed-container">
+            <div
+              id="instagram-placeholder"
+              class="cursor-pointer bg-gray-200 rounded-lg flex items-center justify-center h-96"
             >
-            </blockquote>
-            <script async src="//www.instagram.com/embed.js"></script>
+              <div class="text-center">
+                <p class="font-semibold">Ver publicación de Instagram</p>
+                <p class="text-sm text-gray-600">Click para cargar</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </Layout>
   </div>
 </div>
+<script>
+  const container = document.getElementById("instagram-embed-container");
+  const placeholder = document.getElementById("instagram-placeholder");
+
+  function loadInstagramEmbed() {
+    container!.innerHTML = `
+      <blockquote
+        class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DK7Veucg-vk/?utm_source=ig_web_copy_link"
+        data-instgrm-version="14"
+      ></blockquote>
+    `;
+    const script = document.createElement("script");
+    script.src = "//www.instagram.com/embed.js";
+    script.async = true;
+    container!.appendChild(script);
+    placeholder!.removeEventListener("click", loadInstagramEmbed);
+  }
+
+  placeholder!.addEventListener("click", loadInstagramEmbed);
+</script>
