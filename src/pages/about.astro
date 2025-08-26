@@ -271,9 +271,11 @@ import Page from "../layouts/Page.astro";
 <script>
 	import { gsap } from "gsap";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 	gsap.registerPlugin(ScrollTrigger);
 
-	function animateCounter(element: HTMLElement) {
+	// Counter animation function
+	const animateCounter = (element: HTMLElement) => {
 		const target = parseInt(element.getAttribute("data-target") || "0");
 
 		gsap.fromTo(
@@ -293,7 +295,7 @@ import Page from "../layouts/Page.astro";
 				},
 			},
 		);
-	}
+	};
 
 	// Animate all counters when they come into view
 	document.querySelectorAll(".counter").forEach((counter) => {
