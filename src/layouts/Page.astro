@@ -42,7 +42,8 @@ const ogImage = heroImage
 							class="w-full h-full object-cover"
 							width={1024}
 							height={768}
-							loading="lazy"
+							loading="eager"
+							fetchpriority="high"
 						/>
 						<div class="absolute z-10 top-1/2 left-1/2 space-y-4 -translate-x-1/2 -translate-y-1/2 text-center w-full md:w-1/2 px-4">
 							<h1
@@ -72,11 +73,25 @@ const ogImage = heroImage
 			<CTASection />
 		</main>
 		<Footer />
-		<script
-			type="text/javascript"
-			id="hs-script-loader"
-			async
-			defer
-			src="//js-na1.hs-scripts.com/50255506.js"></script>
+		<script>
+			// Load HubSpot after user interaction to reduce TBT
+			function loadHubSpot() {
+				const script = document.createElement("script");
+				script.type = "text/javascript";
+				script.id = "hs-script-loader";
+				script.async = true;
+				script.defer = true;
+				script.src = "//js-na1.hs-scripts.com/50255506.js";
+				document.head.appendChild(script);
+			}
+
+			// Load on first interaction
+			["scroll", "mousemove", "touchstart"].forEach((event) => {
+				window.addEventListener(event, loadHubSpot, { once: true });
+			});
+
+			// Fallback: load after 3 seconds
+			setTimeout(loadHubSpot, 3000);
+		</script>
 	</body>
 </html>

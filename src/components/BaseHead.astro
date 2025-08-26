@@ -77,6 +77,11 @@ const structuredData = {
   crossorigin
 />
 
+<!-- Resource hints -->
+<link rel="dns-prefetch" href="//js-na1.hs-scripts.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
@@ -103,22 +108,33 @@ const structuredData = {
 <!-- Schema.org -->
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-<!-- AOS Global Initialization -->
+<!-- AOS Lazy Loading -->
 <script>
-  import AOS from "aos";
+  // Lazy load AOS to reduce initial bundle size
+  let aosLoaded = false;
 
-  // Initialize AOS when DOM is loaded
-  document.addEventListener("DOMContentLoaded", function () {
-    AOS.init({
-      duration: 500,
-      once: true,
-      offset: 100,
-      easing: "ease-in-out",
+  function loadAOS() {
+    if (aosLoaded) return;
+    aosLoaded = true;
+
+    import("aos").then((AOS) => {
+      AOS.default.init({
+        duration: 500,
+        once: true,
+        offset: 100,
+        easing: "ease-in-out",
+      });
     });
-  });
+  }
+
+  // Load AOS on first scroll or after 2 seconds
+  window.addEventListener("scroll", loadAOS, { once: true });
+  setTimeout(loadAOS, 2000);
 
   // Refresh AOS on page navigation (for SPAs)
   document.addEventListener("astro:page-load", function () {
-    AOS.refresh();
+    if (aosLoaded && window.AOS) {
+      window.AOS.refresh();
+    }
   });
 </script>
