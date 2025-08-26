@@ -1,534 +1,478 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<!doctype html>
-<html lang="es" data-theme="nido">
-  <head>
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+<Page
+  title="Contáctanos"
+  description="¡Nos encantaría saber de ti! Ya sea que tengas preguntas, desee programar una visita o simplemente quieras decir hola, estamos aquí para ayudarte."
+  heroImage="https://i.ibb.co/TD3C9JpM/IMG-9283.webp"
+>
+  <style>
+    .error-message {
+      color: #dc2626;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+    .input-error {
+      border-color: #dc2626 !important;
+    }
+    .success-message {
+      display: none;
+      background-color: #34d399;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .error-alert {
+      display: none;
+      background-color: #f87171;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 
-    <BaseHead
-      title="Contáctanos"
-      description="¡Nos encantaría saber de ti! Ya sea que tengas preguntas, desee programar una visita o simplemente quieras decir hola, estamos aquí para ayudarte."
-    />
-    <style>
-      .error-message {
-        color: #dc2626;
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
-        display: none;
-      }
-      .input-error {
-        border-color: #dc2626 !important;
-      }
-      .success-message {
-        display: none;
-        background-color: #34d399;
-        color: white;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-      }
-      .error-alert {
-        display: none;
-        background-color: #f87171;
-        color: white;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-      }
-    </style>
-  </head>
-
-  <body class="bg-base-100">
-    <Header />
-    <!-- Banner Section -->
-    <section
-      class="relative h-[70vh] flex items-center justify-center overflow-hidden contact-banner-section"
-    >
-      <!-- Fondo con overlay -->
-      <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat contact-banner-bg"
-        style="background-image: url('https://i.ibb.co/TD3C9JpM/IMG-9283.webp');"
+  <main class="container mx-auto px-4 py-24 contact-main">
+    <div class="max-w-3xl mx-auto contact-main-inner">
+      <h1
+        class="text-3xl md:text-4xl lg:text-[50px] font-bold text-center mb-4 contact-form-title text-primary"
+        data-aos="fade-up"
+        data-aos-delay="200"
       >
-        <div class="absolute inset-0 bg-black/50 contact-banner-overlay"></div>
-      </div>
+        Póngase en contacto con nosotros
+      </h1>
+      <p
+        class="text-center text-xl mb-12 contact-form-desc"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        ¿Tiene alguna pregunta o necesita más información? Estamos aquí para
+        ayudarlo!
+      </p>
 
-      <!-- Contenido del banner -->
-      <div
-        class="relative z-10 text-center px-4 contact-banner-content"
+      <form
+        id="form-contacto"
+        class="space-y-6 md:p-12 p-6 rounded-3xl contact-form"
         data-aos="zoom-in"
-        data-aos-delay="100"
+        data-aos-delay="200"
       >
-        <h1
-          class="text-6xl md:text-[86px] font-bold text-white mb-6 contact-banner-title"
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 contact-form-row">
+          <div class="md:col-span-2 contact-form-field-request">
+            <label
+              for="request"
+              class="block text-sm font-medium text-primary mb-2 contact-label-request"
+              >Tipo de consulta <span class="text-red-600">*</span></label
+            >
+            <select
+              id="request"
+              name="request"
+              class="w-full select select-bordered contact-select-request"
+              required
+              aria-required="true"
+            >
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="informacion">Información general</option>
+              <option value="matricula">Proceso de matrícula</option>
+              <option value="visita">Programar una visita</option>
+            </select>
+            <div id="request-error" class="error-message">
+              Por favor seleccione un tipo de consulta
+            </div>
+          </div>
+
+          <div class="contact-form-field-name">
+            <label
+              for="name"
+              class="block text-sm font-medium text-primary mb-2 contact-label-name"
+              >Nombre <span class="text-red-600">*</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nombre y apellido"
+              class="w-full input input-bordered contact-input-name"
+              required
+              minlength="3"
+              aria-required="true"
+            />
+            <div id="name-error" class="error-message">
+              Ingrese sus nombres y apellidos
+            </div>
+          </div>
+
+          <div class="contact-form-field-email">
+            <label
+              for="email"
+              class="block text-sm font-medium text-primary mb-2 contact-label-email"
+              >Correo electrónico <span class="text-red-600">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="usuario@gmail.com"
+              class="w-full input input-bordered contact-input-email"
+              required
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              aria-required="true"
+            />
+            <div id="email-error" class="error-message">
+              Ingrese un correo electrónico válido
+            </div>
+          </div>
+
+          <div class="md:col-span-2 contact-form-field-phone">
+            <label
+              for="phone"
+              class="block text-sm font-medium text-primary mb-2 contact-label-phone"
+              >Número de teléfono <span class="text-red-600">*</span></label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="987654321"
+              class="w-full input input-bordered contact-input-phone"
+              required
+              pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$"
+              aria-required="true"
+            />
+            <div id="phone-error" class="error-message">
+              Ingrese un número de teléfono válido
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-field-message">
+          <label
+            for="message"
+            class="block text-sm font-medium text-primary mb-2 contact-label-message"
+            >Mensaje <span class="text-red-600">*</span></label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Escribe tu mensaje"
+            class="w-full textarea textarea-bordered contact-input-message"
+            minlength="5"></textarea>
+          <div id="message-error" class="error-message">
+            Por favor ingrese un mensaje
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          id="submit-btn"
+          class="btn btn-accent text-white btn-lg cursor-pointer contact-submit-btn block mx-auto"
         >
-          Contáctanos
-        </h1>
-        <p class="text-lg text-white/90 max-w-2xl mx-auto contact-banner-desc">
-          ¡Nos encantaría saber de ti! Ya sea que tengas preguntas, desee
-          programar una visita o simplemente quieras decir hola, estamos aquí
-          para ayudarte.
-        </p>
+          Enviar mensaje
+        </button>
+        <div class="success-message" id="success-message">
+          ¡Gracias por contactarnos! Te responderemos pronto.
+        </div>
+        <div class="error-alert" id="error-alert">
+          Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.
+        </div>
+      </form>
+
+      <!-- Información de contacto -->
+    </div>
+    <div class="mt-20 contact-info-section max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Imagen -->
+        <div class="order-2 lg:order-1" data-aos="zoom-in" data-aos-delay="300">
+          <div class="relative">
+            <img
+              src="https://i.ibb.co/zh42g41F/6.webp"
+              alt="Niña mostrando su trabajo"
+              class="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Información de contacto -->
+        <div class="order-1 lg:order-2" data-aos="fade-up" data-aos-delay="400">
+          <h2
+            class="text-3xl md:text-4xl lg:text-[50px] font-bold text-primary mb-6"
+          >
+            Información de Contacto
+          </h2>
+          <p class="text-secondary mb-8 text-xl">
+            Agenda un visita guiada ahora y descubre qué hace de Nido Perulina
+            la mejor opción para el cuidado de tu pequeño.
+          </p>
+
+          <div class="space-y-6">
+            <!-- Teléfono -->
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-12 h-12 bg-[#f6d397] rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <img
+                  src="https://img.icons8.com/?size=128&id=42839&format=png"
+                  alt="icono telefono"
+                  class="w-8 h-8"
+                />
+              </div>
+              <div>
+                <h3 class="font-semibold text-secondary text-xl">
+                  Llamada telefónica
+                </h3>
+                <p class="text-primary">+51 922 935 447</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-12 h-12 bg-[#72caaf] rounded-full flex items-center justify-center flex-shrink-0 cursor-pointer transition-transform"
+                onclick="window.open('https://wa.me/51922935447', '_blank')"
+              >
+                <img
+                  src="https://img.icons8.com/?size=128&id=42961&format=png"
+                  alt="icono whatsapp"
+                  class="w-8 h-8"
+                />
+              </div>
+              <div>
+                <h3 class="font-semibold text-secondary text-xl">
+                  Escribenos - WhatsApp
+                </h3>
+                <p class="text-primary">+51 922 935 447</p>
+              </div>
+            </div>
+
+            <!-- Ubicación -->
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-12 h-12 bg-[#ed7899] rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <img
+                  src="https://img.icons8.com/?size=128&id=42814&format=png"
+                  alt="icono ubicación"
+                  class="w-8 h-8"
+                />
+              </div>
+              <div>
+                <h3 class="font-semibold text-secondary text-xl">Ubicación</h3>
+                <address class="text-primary not-italic">
+                  Av. Agustín de la Rosa Toro 900, San Luis, Lima
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-    <main class="container mx-auto px-4 py-24 contact-main">
-      <div class="max-w-3xl mx-auto contact-main-inner">
-        <h1
-          class="text-3xl md:text-4xl lg:text-[50px] font-bold text-center mb-4 contact-form-title text-primary"
+    </div>
+
+    <!-- Google Maps Section -->
+    <section class="mt-20 contact-map-section max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2
+          class="text-3xl md:text-4xl lg:text-[50px] font-bold text-primary mb-6"
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Póngase en contacto con nosotros
-        </h1>
+          Encuéntranos
+        </h2>
         <p
-          class="text-center text-xl mb-12 contact-form-desc text-secondary"
+          class="text-primary text-xl max-w-2xl mx-auto"
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          ¿Tiene alguna pregunta o necesita más información? Estamos aquí para
-          ayudarlo!
+          Visítanos en nuestras instalaciones. Estamos ubicados en una zona
+          accesible de Lima.
         </p>
-
-        <form
-          id="form-contacto"
-          class="space-y-6 bg-neutral md:p-12 p-6 rounded-3xl contact-form"
-          data-aos="zoom-in"
-          data-aos-delay="200"
-        >
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 contact-form-row">
-            <div class="md:col-span-2 contact-form-field-request">
-              <label
-                for="request"
-                class="block text-sm font-medium text-primary mb-2 contact-label-request"
-                >Tipo de consulta <span class="text-red-600">*</span></label
-              >
-              <select
-                id="request"
-                name="request"
-                class="w-full select select-bordered contact-select-request"
-                required
-                aria-required="true"
-              >
-                <option value="" disabled selected>Seleccione una opción</option
-                >
-                <option value="informacion">Información general</option>
-                <option value="matricula">Proceso de matrícula</option>
-                <option value="visita">Programar una visita</option>
-              </select>
-              <div id="request-error" class="error-message">
-                Por favor seleccione un tipo de consulta
-              </div>
-            </div>
-
-            <div class="contact-form-field-name">
-              <label
-                for="name"
-                class="block text-sm font-medium text-primary mb-2 contact-label-name"
-                >Nombre <span class="text-red-600">*</span></label
-              >
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Nombre y apellido"
-                class="w-full input input-bordered contact-input-name"
-                required
-                minlength="3"
-                aria-required="true"
-              />
-              <div id="name-error" class="error-message">
-                Ingrese sus nombres y apellidos
-              </div>
-            </div>
-
-            <div class="contact-form-field-email">
-              <label
-                for="email"
-                class="block text-sm font-medium text-primary mb-2 contact-label-email"
-                >Correo electrónico <span class="text-red-600">*</span></label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="usuario@gmail.com"
-                class="w-full input input-bordered contact-input-email"
-                required
-                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                aria-required="true"
-              />
-              <div id="email-error" class="error-message">
-                Ingrese un correo electrónico válido
-              </div>
-            </div>
-
-            <div class="md:col-span-2 contact-form-field-phone">
-              <label
-                for="phone"
-                class="block text-sm font-medium text-primary mb-2 contact-label-phone"
-                >Número de teléfono <span class="text-red-600">*</span></label
-              >
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="987654321"
-                class="w-full input input-bordered contact-input-phone"
-                required
-                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$"
-                aria-required="true"
-              />
-              <div id="phone-error" class="error-message">
-                Ingrese un número de teléfono válido
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-form-field-message">
-            <label
-              for="message"
-              class="block text-sm font-medium text-primary mb-2 contact-label-message"
-              >Mensaje <span class="text-red-600">*</span></label
-            >
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Escribe tu mensaje"
-              class="w-full textarea textarea-bordered contact-input-message"
-              minlength="5"></textarea>
-            <div id="message-error" class="error-message">
-              Por favor ingrese un mensaje
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            id="submit-btn"
-            class="btn btn-accent text-white btn-lg cursor-pointer contact-submit-btn block mx-auto"
-          >
-            Enviar mensaje
-          </button>
-          <div class="success-message" id="success-message">
-            ¡Gracias por contactarnos! Te responderemos pronto.
-          </div>
-          <div class="error-alert" id="error-alert">
-            Hubo un error al enviar el formulario. Por favor, inténtalo de
-            nuevo.
-          </div>
-        </form>
-
-        <!-- Información de contacto -->
-      </div>
-      <div class="mt-20 contact-info-section max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- Imagen -->
-          <div
-            class="order-2 lg:order-1"
-            data-aos="zoom-in"
-            data-aos-delay="300"
-          >
-            <div class="relative">
-              <img
-                src="https://i.ibb.co/zh42g41F/6.webp"
-                alt="Niña mostrando su trabajo"
-                class="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-
-          <!-- Información de contacto -->
-          <div
-            class="order-1 lg:order-2"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <h2
-              class="text-3xl md:text-4xl lg:text-[50px] font-bold text-primary mb-6"
-            >
-              Información de Contacto
-            </h2>
-            <p class="text-secondary mb-8 text-xl">
-              Agenda un visita guiada ahora y descubre qué hace de Nido Perulina
-              la mejor opción para el cuidado de tu pequeño.
-            </p>
-
-            <div class="space-y-6">
-              <!-- Teléfono -->
-              <div class="flex items-center space-x-4">
-                <div
-                  class="w-12 h-12 bg-[#f6d397] rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <img
-                    src="https://img.icons8.com/?size=128&id=42839&format=png"
-                    alt="icono telefono"
-                    class="w-8 h-8"
-                  />
-                </div>
-                <div>
-                  <h3 class="font-semibold text-secondary text-xl">
-                    Llamada telefónica
-                  </h3>
-                  <p class="text-primary">+51 922 935 447</p>
-                </div>
-              </div>
-
-              <!-- Email -->
-              <div class="flex items-center space-x-4">
-                <div
-                  class="w-12 h-12 bg-[#72caaf] rounded-full flex items-center justify-center flex-shrink-0 cursor-pointer transition-transform"
-                  onclick="window.open('https://wa.me/51922935447', '_blank')"
-                >
-                  <img
-                    src="https://img.icons8.com/?size=128&id=42961&format=png"
-                    alt="icono whatsapp"
-                    class="w-8 h-8"
-                  />
-                </div>
-                <div>
-                  <h3 class="font-semibold text-secondary text-xl">
-                    Escribenos - WhatsApp
-                  </h3>
-                  <p class="text-primary">+51 922 935 447</p>
-                </div>
-              </div>
-
-              <!-- Ubicación -->
-              <div class="flex items-center space-x-4">
-                <div
-                  class="w-12 h-12 bg-[#ed7899] rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <img
-                    src="https://img.icons8.com/?size=128&id=42814&format=png"
-                    alt="icono ubicación"
-                    class="w-8 h-8"
-                  />
-                </div>
-                <div>
-                  <h3 class="font-semibold text-secondary text-xl">
-                    Ubicación
-                  </h3>
-                  <address class="text-primary not-italic">
-                    Av. Agustín de la Rosa Toro 900, San Luis, Lima
-                  </address>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- Google Maps Section -->
-      <section class="mt-20 contact-map-section max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <h2
-            class="text-3xl md:text-4xl lg:text-[50px] font-bold text-primary mb-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Encuéntranos
-          </h2>
-          <p
-            class="text-primary text-xl max-w-2xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            Visítanos en nuestras instalaciones. Estamos ubicados en una zona
-            accesible de Lima.
-          </p>
-        </div>
+      <div
+        class="rounded-3xl overflow-hidden shadow-lg"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.9747734!2d-77.0347!3d-12.0642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee79691%3A0x14206cb9cc452e4a!2sAv.%20Agust%C3%ADn%20de%20la%20Rosa%20Toro%20908%2C%20Lince%2015046%2C%20Peru!5e0!3m2!1sen!2sus!4v1709830472889!5m2!1sen!2sus"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de Nido Perulina"
+          aria-label="Mapa interactivo que muestra la ubicación de Nido Perulina en Av. Agustín de la Rosa Toro 908, Lince, Lima, Perú. Puede usar este mapa para obtener direcciones y navegar hasta nuestras instalaciones."
+        ></iframe>
+      </div>
 
-        <div
-          class="rounded-3xl overflow-hidden shadow-lg"
-          data-aos="zoom-in"
-          data-aos-delay="400"
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.9747734!2d-77.0347!3d-12.0642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee79691%3A0x14206cb9cc452e4a!2sAv.%20Agust%C3%ADn%20de%20la%20Rosa%20Toro%20908%2C%20Lince%2015046%2C%20Peru!5e0!3m2!1sen!2sus!4v1709830472889!5m2!1sen!2sus"
-            width="100%"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación de Nido Perulina"
-            aria-label="Mapa interactivo que muestra la ubicación de Nido Perulina en Av. Agustín de la Rosa Toro 908, Lince, Lima, Perú. Puede usar este mapa para obtener direcciones y navegar hasta nuestras instalaciones."
-          ></iframe>
-        </div>
+      <!-- Additional Location Info -->
+      <div class="mt-8 text-center">
+        <p class="text-secondary mb-4 text-xl">
+          <strong class="text-primary">Horarios de atención:</strong> Lunes a Viernes
+          de 7:30 AM a 6:00 PM
+        </p>
+        <p class="text-secondary text-xl">
+          <strong class="text-primary">Zona:</strong> San Luis, Lima - Fácil acceso
+          en transporte.
+        </p>
+      </div>
+    </section>
+  </main>
+</Page>
 
-        <!-- Additional Location Info -->
-        <div class="mt-8 text-center">
-          <p class="text-secondary mb-4 text-xl">
-            <strong class="text-primary">Horarios de atención:</strong> Lunes a Viernes
-            de 7:30 AM a 6:00 PM
-          </p>
-          <p class="text-secondary text-xl">
-            <strong class="text-primary">Zona:</strong> San Luis, Lima - Fácil acceso
-            en transporte.
-          </p>
-        </div>
-      </section>
-    </main>
-    <Footer />
-    <script is:inline src="../scripts/hubspot-loader.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById(
-          "form-contacto",
-        ) as HTMLFormElement;
-        const submitBtn = document.getElementById(
-          "submit-btn",
-        ) as HTMLButtonElement;
-        const successMessage = document.getElementById(
-          "success-message",
-        ) as HTMLDivElement;
-        const errorAlert = document.getElementById(
-          "error-alert",
-        ) as HTMLDivElement;
+<script is:inline src="../scripts/hubspot-loader.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form-contacto") as HTMLFormElement;
+    const submitBtn = document.getElementById(
+      "submit-btn",
+    ) as HTMLButtonElement;
+    const successMessage = document.getElementById(
+      "success-message",
+    ) as HTMLDivElement;
+    const errorAlert = document.getElementById("error-alert") as HTMLDivElement;
 
-        if (!form || !submitBtn || !successMessage || !errorAlert) {
-          console.error("Required DOM elements not found");
-          return;
+    if (!form || !submitBtn || !successMessage || !errorAlert) {
+      console.error("Required DOM elements not found");
+      return;
+    }
+
+    // Function to show error message and highlight input
+    const showError = (inputId: string, show: boolean): void => {
+      const input = document.getElementById(inputId) as
+        | HTMLInputElement
+        | HTMLSelectElement
+        | HTMLTextAreaElement;
+      const errorElement = document.getElementById(
+        `${inputId}-error`,
+      ) as HTMLDivElement;
+
+      if (!input || !errorElement) {
+        console.error(`Elements not found for id: ${inputId}`);
+        return;
+      }
+
+      if (show) {
+        input.classList.add("input-error");
+        errorElement.style.display = "block";
+      } else {
+        input.classList.remove("input-error");
+        errorElement.style.display = "none";
+      }
+    };
+
+    // Validate individual fields
+    const validateField = (
+      input: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
+    ): boolean => {
+      if (input.required && !input.value) {
+        showError(input.id, true);
+        return false;
+      }
+
+      if (input instanceof HTMLInputElement) {
+        if (input.type === "email" && input.value) {
+          const emailPattern =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailPattern.test(input.value)) {
+            showError(input.id, true);
+            return false;
+          }
         }
 
-        // Function to show error message and highlight input
-        const showError = (inputId: string, show: boolean): void => {
-          const input = document.getElementById(inputId) as
-            | HTMLInputElement
-            | HTMLSelectElement
-            | HTMLTextAreaElement;
-          const errorElement = document.getElementById(
-            `${inputId}-error`,
-          ) as HTMLDivElement;
-
-          if (!input || !errorElement) {
-            console.error(`Elements not found for id: ${inputId}`);
-            return;
-          }
-
-          if (show) {
-            input.classList.add("input-error");
-            errorElement.style.display = "block";
-          } else {
-            input.classList.remove("input-error");
-            errorElement.style.display = "none";
-          }
-        };
-
-        // Validate individual fields
-        const validateField = (
-          input: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
-        ): boolean => {
-          if (input.required && !input.value) {
+        if (input.type === "tel" && input.value) {
+          const phonePattern =
+            /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/;
+          if (!phonePattern.test(input.value)) {
             showError(input.id, true);
             return false;
           }
+        }
+      }
 
-          if (input instanceof HTMLInputElement) {
-            if (input.type === "email" && input.value) {
-              const emailPattern =
-                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-              if (!emailPattern.test(input.value)) {
-                showError(input.id, true);
-                return false;
-              }
-            }
+      if (input instanceof HTMLSelectElement) {
+        if (!input.value) {
+          showError(input.id, true);
+          return false;
+        }
+        return true;
+      }
 
-            if (input.type === "tel" && input.value) {
-              const phonePattern =
-                /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/;
-              if (!phonePattern.test(input.value)) {
-                showError(input.id, true);
-                return false;
-              }
-            }
-          }
+      if ("minLength" in input && input.value.length < input.minLength) {
+        showError(input.id, true);
+        return false;
+      }
 
-          if (input instanceof HTMLSelectElement) {
-            if (!input.value) {
-              showError(input.id, true);
-              return false;
-            }
-            return true;
-          }
+      showError(input.id, false);
+      return true;
+    };
 
-          if ("minLength" in input && input.value.length < input.minLength) {
-            showError(input.id, true);
-            return false;
-          }
+    // Add input event listeners for real-time validation
+    const inputs = form.querySelectorAll<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >("input, select, textarea");
+    inputs.forEach((input) => {
+      input.addEventListener("input", () => validateField(input));
+      input.addEventListener("blur", () => validateField(input));
+    });
 
-          showError(input.id, false);
-          return true;
-        };
+    form.addEventListener("submit", async (e: SubmitEvent) => {
+      e.preventDefault();
 
-        // Add input event listeners for real-time validation
-        const inputs = form.querySelectorAll<
-          HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-        >("input, select, textarea");
-        inputs.forEach((input) => {
-          input.addEventListener("input", () => validateField(input));
-          input.addEventListener("blur", () => validateField(input));
-        });
-
-        form.addEventListener("submit", async (e: SubmitEvent) => {
-          e.preventDefault();
-
-          // Validate all fields
-          let isValid = true;
-          inputs.forEach((input) => {
-            if (!validateField(input)) {
-              isValid = false;
-            }
-          });
-
-          if (!isValid) {
-            return;
-          }
-
-          // Disable submit button and show loading state
-          submitBtn.disabled = true;
-          submitBtn.innerHTML = "Enviando...";
-
-          try {
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            const response = await fetch("/api/contact", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(data),
-            });
-
-            if (response.ok) {
-              // Show success message
-              form.reset();
-              successMessage.style.display = "block";
-              errorAlert.style.display = "none";
-              setTimeout(() => {
-                successMessage.style.display = "none";
-              }, 5000);
-            } else {
-              throw new Error("Error en el envío");
-            }
-          } catch (error) {
-            console.error("Error:", error);
-            errorAlert.style.display = "block";
-            successMessage.style.display = "none";
-            setTimeout(() => {
-              errorAlert.style.display = "none";
-            }, 5000);
-          } finally {
-            // Re-enable submit button
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = "Enviar mensaje";
-          }
-        });
+      // Validate all fields
+      let isValid = true;
+      inputs.forEach((input) => {
+        if (!validateField(input)) {
+          isValid = false;
+        }
       });
-    </script>
-  </body>
-</html>
+
+      if (!isValid) {
+        return;
+      }
+
+      // Disable submit button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "Enviando...";
+
+      try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          // Show success message
+          form.reset();
+          successMessage.style.display = "block";
+          errorAlert.style.display = "none";
+          setTimeout(() => {
+            successMessage.style.display = "none";
+          }, 5000);
+        } else {
+          throw new Error("Error en el envío");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        errorAlert.style.display = "block";
+        successMessage.style.display = "none";
+        setTimeout(() => {
+          errorAlert.style.display = "none";
+        }, 5000);
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Enviar mensaje";
+      }
+    });
+  });
+</script>

@@ -1,12 +1,10 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { SITE_TITLE } from "../../consts";
 import { getCollection } from "astro:content";
 import BlogCard from "../../components/BlogCard.astro";
 import { BLOG_CATEGORIES } from "../../content.config";
 import { Image } from "astro:assets";
+import Page from "../../layouts/Page.astro";
 export const prerender = false;
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -16,152 +14,98 @@ const category = Astro.url.searchParams.get("category");
 const filteredPosts = category
 	? posts.filter((post) => post.data.category === category)
 	: posts;
-
-const ogImage = new URL("/og.png", Astro.url);
 ---
 
-<!doctype html>
-<html lang="es" data-theme="nido">
-	<head>
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<BaseHead
-			title={`Blog - ${SITE_TITLE}`}
-			description="Artículos educativos sobre el desarrollo infantil, actividades preescolares y consejos para padres."
-		>
-			<meta property="og:type" content="website" />
-			<meta property="og:url" content={Astro.url} />
-			<meta property="og:image" content={ogImage} />
-			<meta name="twitter:card" content="summary_large_image" />
-			<link rel="canonical" href={Astro.url} />
-		</BaseHead>
-	</head>
-	<body class="min-h-screen bg-base-100">
-		<Header />
-		<main class="container mx-auto pt-12 md:pt-8 md:py-8 lg:py-12">
-			<div class="max-w-6xl mx-auto">
-				<header class="text-center mb-12 px-4" role="banner">
-					<div class="flex items-center justify-center gap-2 mb-4 pt-24">
-						<h1 class="text-4xl lg:text-8xl font-bold text-primary">
-							Nuestro Blog
-						</h1>
-						<span
-							class="text-3xl hidden lg:block"
-							role="img"
-							aria-label="Decoración brillante">✨</span
-						>
-					</div>
-					<p class="text-base-content/80 max-w-2xl mx-auto">
-						Variedad de temas diseñados para apoyar el crecimiento de tu hijo,
-						actividades de aprendizaje divertidas, consejos de salud y más.
-					</p>
-				</header>
+<Page
+	title={`Blog - ${SITE_TITLE}`}
+	description="Artículos educativos sobre el desarrollo infantil, actividades preescolares y consejos para padres."
+>
+	<main class="container mx-auto pt-12 md:pt-8 md:py-8 lg:py-12">
+		<div class="max-w-6xl mx-auto">
+			<header class="text-center mb-12 px-4" role="banner">
+				<div class="flex items-center justify-center gap-2 mb-4 pt-24">
+					<h1 class="text-4xl lg:text-8xl font-bold text-primary">
+						Nuestro Blog
+					</h1>
+					<span
+						class="text-3xl hidden lg:block"
+						role="img"
+						aria-label="Decoración brillante">✨</span
+					>
+				</div>
+				<p class="text-base-content/80 max-w-2xl mx-auto">
+					Variedad de temas diseñados para apoyar el crecimiento de tu hijo,
+					actividades de aprendizaje divertidas, consejos de salud y más.
+				</p>
+			</header>
 
-				<nav
-					class="flex flex-col md:justify-center md:flex-row gap-6 mb-8 pb-2 px-4"
-					aria-label="Filtrar por categoría"
-				>
-					<div class="flex flex-wrap gap-2 md:min-w-max">
-						<a
-							href="/blog"
-							class={`btn btn-lg ${!category ? "btn-primary" : "btn-outline"} rounded-full`}
-							aria-current={!category ? "page" : undefined}
-						>
-							Todos
-						</a>
-						{
-							BLOG_CATEGORIES.map((cat: string) => (
-								<a
-									href={`/blog?category=${encodeURIComponent(cat)}`}
-									class={`btn btn-lg ${category === cat ? "btn-primary" : "btn-outline"} rounded-full ${cat}`}
-									aria-current={category === cat ? "page" : undefined}
-								>
-									{cat.charAt(0).toUpperCase() + cat.slice(1)}
-								</a>
-							))
-						}
-					</div>
-					<div class="flex items-center gap-2 justify-center">
-						<input
-							type="text"
-							placeholder="Buscar"
-							class="input input-lg rounded-full"
-						/>
-						<button class="btn btn-lg btn-secondary btn-circle">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="2.5"
-								stroke="currentColor"
-								class="size-[1.2em]"
-								><path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-								></path></svg
-							>
-						</button>
-					</div>
-				</nav>
-
-				<section
-					class="grid grid-cols-1 md:grid-cols-2 px-4 lg:grid-cols-3 gap-6"
-					aria-label="Lista de artículos del blog"
-				>
+			<nav
+				class="flex flex-col md:justify-center md:flex-row gap-6 mb-8 pb-2 px-4"
+				aria-label="Filtrar por categoría"
+			>
+				<div class="flex flex-wrap gap-2 md:min-w-max">
+					<a
+						href="/blog"
+						class={`btn btn-lg ${!category ? "btn-primary" : "btn-outline"} rounded-full`}
+						aria-current={!category ? "page" : undefined}
+					>
+						Todos
+					</a>
 					{
-						filteredPosts.map((post, index) => (
-							<article>
-								<BlogCard
-									key={index}
-									title={post.data.title}
-									category={post.data.category}
-									date={post.data.pubDate}
-									href={`/blog/${post.id}/`}
-									image={post.data.heroImage || ""}
-								/>
-							</article>
+						BLOG_CATEGORIES.map((cat: string) => (
+							<a
+								href={`/blog?category=${encodeURIComponent(cat)}`}
+								class={`btn btn-lg ${category === cat ? "btn-primary" : "btn-outline"} rounded-full ${cat}`}
+								aria-current={category === cat ? "page" : undefined}
+							>
+								{cat.charAt(0).toUpperCase() + cat.slice(1)}
+							</a>
 						))
 					}
-				</section>
-
-				<section
-					class="mt-20 bg-primary text-primary-content md:rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden md:px-4"
-					aria-label="Sección de contacto"
-				>
-					<Image
-						width={100}
-						height={100}
-						src="/addons/u.png"
-						alt="Decoración estrella"
-						class="absolute top-4 md:left-4 -left-4"
+				</div>
+				<div class="flex items-center gap-2 justify-center">
+					<input
+						type="text"
+						placeholder="Buscar"
+						class="input input-lg rounded-full"
 					/>
+					<button class="btn btn-lg btn-secondary btn-circle">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="2.5"
+							stroke="currentColor"
+							class="size-[1.2em]"
+							><path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+							></path></svg
+						>
+					</button>
+				</div>
+			</nav>
 
-					<Image
-						width={100}
-						height={100}
-						src="/addons/e.png"
-						alt="Decoración estrella"
-						class="absolute bottom-4 right-4"
-					/>
-
-					<h2 class="text-3xl lg:text-4xl font-bold mb-4">
-						Dale a tu Hijo el Mejor Comienzo
-					</h2>
-					<p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-						Con educadores experimentados, un ambiente seguro y estimulante, y
-						un enfoque en el desarrollo individual.
-					</p>
-					<a
-						href="/contact"
-						class="btn btn-secondary btn-lg"
-						role="button"
-						aria-label="Contactar con nosotros"
-					>
-						Contáctanos
-					</a>
-				</section>
-			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
+			<section
+				class="grid grid-cols-1 md:grid-cols-2 px-4 lg:grid-cols-3 gap-6"
+				aria-label="Lista de artículos del blog"
+			>
+				{
+					filteredPosts.map((post, index) => (
+						<article>
+							<BlogCard
+								key={index}
+								title={post.data.title}
+								category={post.data.category}
+								date={post.data.pubDate}
+								href={`/blog/${post.id}/`}
+								image={post.data.heroImage || ""}
+							/>
+						</article>
+					))
+				}
+			</section>
+		</div>
+	</main>
+</Page>

@@ -1,12 +1,17 @@
 ---
-
+import { Image } from "astro:assets";
+import heroImage from "../../public/images/hero.jpg";
 ---
 
 <section class="relative min-h-screen bg-gray-800 text-white">
   <!-- Background Image con overlay -->
   <div class="absolute inset-0 z-0">
-    <img
-      src="https://scontent.fayp1-1.fna.fbcdn.net/v/t39.30808-6/536284817_1363269709133617_617958273362021370_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=oLJX3NrJUykQ7kNvwH6VAxc&_nc_oc=AdltvWSATLmcgdKBBEP2UYgSTFG79Q8yjtjsWCypXrQZKzvZvQljGvdM4g18gjEmoC0p1LRlto8-Cx16E0rlxVhy&_nc_zt=23&_nc_ht=scontent.fayp1-1.fna&_nc_gid=TwZXTOf9_Go_U_erDIBLdA&oh=00_AfUBlsTsaeRrbNkViYI4fDwSSxA9ysZe-sue5UrjTrzTxQ&oe=68AE5D4C"
+    <Image
+      src={heroImage}
+      alt="Background image of a classroom with children"
+      quality="mid"
+      loading="eager"
+      decoding="async"
       class="w-full h-full object-cover object-bottom"
     />
   </div>

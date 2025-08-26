@@ -1,17 +1,15 @@
 ---
-import Layout from "../layouts/Page.astro";
+import CTASection from "../components/CTASection.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<head>
-  <meta charset="UTF-8" />
-</head>
-<div id="smooth-wrapper">
-  <div id="smooth-content">
-    <Layout
-      title="Nuestra Infraestructura"
-      heroImage={"https://i.ibb.co/hjLJgR2/fondo2.jpg"}
-      description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
-    >
+<Page
+  title="Nuestra Infraestructura"
+  description="Descubre nuestras instalaciones diseñadas para el aprendizaje y el crecimiento."
+  heroImage="https://i.ibb.co/hjLJgR2/fondo2.jpg"
+>
+  <div id="smooth-wrapper" class="py-10">
+    <div id="smooth-content">
       <div class="tabs tabs-lift max-w-5xl mx-auto lg:tabs-xl tabs-md">
         <label class="tab">
           <input
@@ -301,9 +299,10 @@ import Layout from "../layouts/Page.astro";
           </div>
         </div>
       </div>
-    </Layout>
+    </div>
   </div>
-</div>
+  <CTASection />
+</Page>
 <script>
   const container = document.getElementById("instagram-embed-container");
   const placeholder = document.getElementById("instagram-placeholder");

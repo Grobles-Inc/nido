@@ -1,51 +1,14 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import CTASection from "../components/CTASection.astro";
+import Page from "../layouts/Page.astro";
 ---
 
-<!doctype html>
-<html lang="es" data-theme="nido">
-  <head>
-    <meta charset="UTF-8" />
-    <BaseHead
-      title="Nuestros Servicios"
-      description="Descubre nuestros servicios diseñados para el aprendizaje y el crecimiento."
-    />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-  </head>
-  <body class="bg-white">
-    <Header />
-    <!-- Banner Section -->
-    <section
-      class="relative h-[70vh] flex items-center justify-center overflow-hidden"
-    >
-      <!-- Fondo con overlay -->
-      <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('https://i.ibb.co/nMmntRSb/IMG-9519.webp');"
-      >
-        <div class="absolute inset-0 bg-black/50"></div>
-      </div>
-
-      <!-- Contenido del banner -->
-      <div
-        class="relative z-10 text-center px-4"
-        data-aos="zoom-in"
-        data-aos-delay="100"
-      >
-        <h1 class="text-6xl md:text-[86px] font-bold text-white mb-6">
-          Nuestros Servicios
-        </h1>
-        <p class="text-lg text-white/90 max-w-2xl mx-auto">
-          Dele a su hijo la oportunidad de aprender, crecer y prosperar en un
-          entorno seguro, enriquecedor y amoroso.
-        </p>
-      </div>
-    </section>
-
-    <section>
+<Page
+  title="Nuestros Servicios"
+  description="Descubre nuestros servicios diseñados para el aprendizaje y el crecimiento."
+  heroImage="https://i.ibb.co/nMmntRSb/IMG-9519.webp"
+>
+  <section>
       <div class="py-16 px-4 max-w-7xl mx-auto">
         <div class="container mx-auto text-center">
           <div class="relative" data-aos="fade-up" data-aos-delay="100">
@@ -238,10 +201,9 @@ import CTASection from "../components/CTASection.astro";
       </div>
     </section>
     <CTASection />
-    <Footer />
-    <script is:inline src="../scripts/hubspot-loader.js"></script>
-  </body>
-</html>
+</Page>
+
+<script is:inline src="../scripts/hubspot-loader.js"></script>
 
 <style>
   .text-navy-blue {

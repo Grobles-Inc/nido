@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import LogoAPLIJ from "../assets/images/APLIJ.png";
 import LogoKidsbook from "../assets/images/KIDSBOOK.webp";
+import Logo123Language from "../assets/images/123language.png";
+import LogoMinedu from "../assets/images/minedu.gif";
 ---
 
 <section class="bg-base-100 py-24">
@@ -26,11 +28,13 @@ import LogoKidsbook from "../assets/images/KIDSBOOK.webp";
       >
         <figure class="px-6 pt-6">
           <Image
-            src="https://123language.pe/img/logobleu.png"
-            alt="Premio a la Excelencia Educativa"
+            src={Logo123Language}
+            alt="123 Language Logo"
             width={150}
             height={150}
             class="rounded-xl"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
         <div class="card-body items-center text-center space-y-4">
@@ -50,11 +54,13 @@ import LogoKidsbook from "../assets/images/KIDSBOOK.webp";
         data-aos-delay="300"
       >
         <figure class="px-6 pt-6">
-          <img
-            src="https://sistemas15.minedu.gob.pe/minedu.gif"
-            alt="Premio a la Innovación"
+          <Image
+            src={LogoMinedu}
+            alt="Minedu Logo"
             width={250}
             height={150}
+            loading="lazy"
+            decoding="async"
           />
         </figure>
         <div class="card-body items-center text-center space-y-4">
@@ -75,10 +81,12 @@ import LogoKidsbook from "../assets/images/KIDSBOOK.webp";
         <figure class="px-6 pt-6">
           <Image
             src={LogoKidsbook}
-            alt="Premio a la Innovación"
+            alt="Kidsbook Logo"
             width={80}
             height={80}
             class="rounded-full"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
         <div class="card-body items-center text-center space-y-4">
@@ -100,10 +108,12 @@ import LogoKidsbook from "../assets/images/KIDSBOOK.webp";
         <figure class="px-6 pt-6">
           <Image
             src={LogoAPLIJ}
-            alt="Premio a la Innovación"
+            alt="APLIJ Logo"
             width={80}
             height={80}
             class="rounded-full"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
         <div class="card-body items-center text-center space-y-4">

@@ -37,6 +37,8 @@ const { teacher, showModal = false, bgColor = "bg-yellow-100" } = Astro.props;
 						class="mask mask-circle w-40 h-40 object-cover object-top"
 						width={160}
 						height={160}
+						loading="lazy"
+						decoding="async"
 					/>
 					<h3 class="font-bold text-3xl text-primary">{teacher.name}</h3>
 					<div class="text-lg text-blue-600 font-medium">
@@ -81,6 +83,8 @@ const { teacher, showModal = false, bgColor = "bg-yellow-100" } = Astro.props;
 						class="rounded-full md:rounded-2xl w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-cover object-top"
 						width={160}
 						height={160}
+						loading="lazy"
+						decoding="async"
 					/>
 				</div>
 			</div>
