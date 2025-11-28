@@ -34,110 +34,105 @@ import heroImage from "../../public/images/hero.png";
           action="#"
           class="space-y-3 sm:space-y-4 bg-black/20 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/20 shadow-lg"
         >
-          <!-- Tipo de consulta -->
           <h2 class="font-bold text-white text-center text-2xl">
-            Formulario de Consultas
+            Agenda tu cita
           </h2>
 
-          <!-- Nombre -->
+          <!-- Nombres -->
           <div>
+            <label
+              for="nombres"
+              class="block text-sm font-medium text-white mb-2"
+            >
+              Tus Nombres <span class="text-red-400">*</span>
+            </label>
             <input
               type="text"
-              id="name"
-              name="name"
+              id="nombres"
+              name="nombres"
               placeholder="Nombres"
               class="input input-bordered w-full"
               required
               minlength="3"
             />
             <div
-              id="name-error"
+              id="nombres-error"
               class="error-message text-red-400 text-sm mt-1 hidden"
             >
-              Ingrese sus nombres y apellidos
+              Ingrese sus nombres
             </div>
           </div>
 
-          <!-- Email -->
+          <!-- Niño -->
           <div>
+            <label
+              for="niño"
+              class="block text-sm font-medium text-white mb-2"
+            >
+              Nombre del Niño/a <span class="text-red-400">*</span>
+            </label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Correo electrónico"
+              type="text"
+              id="niño"
+              name="niño"
+              placeholder="Nombre del Niño/a"
+              class="input input-bordered w-full"
+              required
+              minlength="2"
+            />
+            <div
+              id="niño-error"
+              class="error-message text-red-400 text-sm mt-1 hidden"
+            >
+              Ingrese el nombre del niño
+            </div>
+          </div>
+
+          <!-- Día -->
+          <div>
+            <label
+              for="dia"
+              class="block text-sm font-medium text-white mb-2"
+            >
+              Día <span class="text-red-400">*</span>
+            </label>
+            <input
+              type="date"
+              id="dia"
+              name="dia"
+              placeholder="Día"
               class="input input-bordered w-full"
               required
             />
             <div
-              id="email-error"
+              id="dia-error"
               class="error-message text-red-400 text-sm mt-1 hidden"
             >
-              Ingrese un correo electrónico válido
+              Seleccione un día
             </div>
           </div>
 
-          <!-- Teléfono -->
+          <!-- Hora -->
           <div>
+            <label
+              for="hora"
+              class="block text-sm font-medium text-white mb-2"
+            >
+              Hora <span class="text-red-400">*</span>
+            </label>
             <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Número de teléfono"
+              type="time"
+              id="hora"
+              name="hora"
+              placeholder="Hora"
               class="input input-bordered w-full"
               required
             />
             <div
-              id="phone-error"
+              id="hora-error"
               class="error-message text-red-400 text-sm mt-1 hidden"
             >
-              Ingrese un número de teléfono válido
-            </div>
-          </div>
-          <div>
-            <label
-              for="request"
-              class="block text-sm font-medium text-white mb-2"
-            >
-              Tipo de consulta <span class="text-red-400">*</span>
-            </label>
-            <select
-              id="request"
-              name="request"
-              class="select select-bordered w-full"
-              required
-            >
-              <option value="" disabled selected>Seleccione una opción</option>
-              <option value="matricula">Proceso de matrícula</option>
-              <option value="informacion">Información general</option>
-              <option value="visita">Programar una visita</option>
-            </select>
-            <div
-              id="request-error"
-              class="error-message text-red-400 text-sm mt-1 hidden"
-            >
-              Por favor seleccione un tipo de consulta
-            </div>
-          </div>
-          <!-- Mensaje -->
-          <div>
-            <label
-              for="message"
-              class="block text-sm font-medium text-white mb-2"
-            >
-              Mensaje <span class="text-red-400">*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="3"
-              placeholder="Escribe tu mensaje o información adicional sobre el niño(a)"
-              class="textarea textarea-bordered w-full"
-              minlength="5"></textarea>
-            <div
-              id="message-error"
-              class="error-message text-red-400 text-sm mt-1 hidden"
-            >
-              Por favor ingrese un mensaje
+              Seleccione una hora
             </div>
           </div>
 
@@ -148,19 +143,6 @@ import heroImage from "../../public/images/hero.png";
           >
             Enviar
           </button>
-
-          <div
-            id="success-inscripcion-message"
-            class="hidden bg-green-500/80 text-white p-3 rounded-lg text-center text-sm"
-          >
-            ¡Enviado correctamente!
-          </div>
-          <div
-            id="error-inscripcion-alert"
-            class="hidden bg-red-500/80 text-white p-3 rounded-lg text-center text-sm"
-          >
-            ¡Hubo un error!
-          </div>
         </form>
       </div>
     </div>
@@ -173,29 +155,19 @@ import heroImage from "../../public/images/hero.png";
     const submitBtn = document.getElementById(
       "submit-inscripcion-btn",
     ) as HTMLButtonElement;
-    const successMessage = document.getElementById(
-      "success-inscripcion-message",
-    ) as HTMLDivElement;
-    const errorAlert = document.getElementById(
-      "error-inscripcion-alert",
-    ) as HTMLDivElement;
 
-    if (!form || !submitBtn || !successMessage || !errorAlert) {
+    if (!form || !submitBtn) {
       console.error("Required DOM elements not found");
       return;
     }
 
-    // Function to show error message and highlight input
     const showError = (inputId: string, show: boolean): void => {
-      const input = document.getElementById(inputId) as
-        | HTMLInputElement
-        | HTMLSelectElement;
+      const input = document.getElementById(inputId) as HTMLInputElement;
       const errorElement = document.getElementById(
         `${inputId}-error`,
       ) as HTMLDivElement;
 
       if (!input || !errorElement) {
-        console.error(`Elements not found for id: ${inputId}`);
         return;
       }
 
@@ -208,36 +180,8 @@ import heroImage from "../../public/images/hero.png";
       }
     };
 
-    // Validate individual fields
-    const validateField = (
-      input: HTMLInputElement | HTMLSelectElement,
-    ): boolean => {
+    const validateField = (input: HTMLInputElement): boolean => {
       if (input.required && !input.value) {
-        showError(input.id, true);
-        return false;
-      }
-
-      if (input instanceof HTMLInputElement) {
-        if (input.type === "email" && input.value) {
-          const emailPattern =
-            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-          if (!emailPattern.test(input.value)) {
-            showError(input.id, true);
-            return false;
-          }
-        }
-
-        if (input.type === "tel" && input.value) {
-          const phonePattern =
-            /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/;
-          if (!phonePattern.test(input.value)) {
-            showError(input.id, true);
-            return false;
-          }
-        }
-      }
-
-      if (input instanceof HTMLSelectElement && !input.value) {
         showError(input.id, true);
         return false;
       }
@@ -251,19 +195,15 @@ import heroImage from "../../public/images/hero.png";
       return true;
     };
 
-    // Add input event listeners for real-time validation
-    const inputs = form.querySelectorAll<HTMLInputElement | HTMLSelectElement>(
-      "input, select",
-    );
+    const inputs = form.querySelectorAll<HTMLInputElement>("input");
     inputs.forEach((input) => {
       input.addEventListener("input", () => validateField(input));
       input.addEventListener("blur", () => validateField(input));
     });
 
-    form.addEventListener("submit", async (e: SubmitEvent) => {
+    form.addEventListener("submit", (e: SubmitEvent) => {
       e.preventDefault();
 
-      // Validate all fields
       let isValid = true;
       inputs.forEach((input) => {
         if (!validateField(input)) {
@@ -275,45 +215,41 @@ import heroImage from "../../public/images/hero.png";
         return;
       }
 
-      // Disable submit button and show loading state
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = "Enviando...";
+      const formData = new FormData(form);
+      const nombres = formData.get("nombres") as string;
+      const niño = formData.get("niño") as string;
+      const dia = formData.get("dia") as string;
+      const hora = formData.get("hora") as string;
 
-      try {
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+      // Format date as dd/mm/yyyy
+      const dateObj = new Date(dia);
+      const day = String(dateObj.getDate()).padStart(2, "0");
+      const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+      const year = dateObj.getFullYear();
+      const formattedDate = `${day}/${month}/${year}`;
 
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
+      // Format time
+      const [hours, minutes] = hora.split(":");
+      const formattedTime = `${hours}:${minutes}`;
 
-        if (response.ok) {
-          // Show success message
-          form.reset();
-          successMessage.classList.remove("hidden");
-          errorAlert.classList.add("hidden");
-          setTimeout(() => {
-            successMessage.classList.add("hidden");
-          }, 5000);
-        } else {
-          throw new Error("Error en el envío");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        errorAlert.classList.remove("hidden");
-        successMessage.classList.add("hidden");
-        setTimeout(() => {
-          errorAlert.classList.add("hidden");
-        }, 5000);
-      } finally {
-        // Re-enable submit button
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "Solicitar Inscripción";
-      }
+      // Build message
+      const message = `Hola, quiero agendar una cita, estos son los detalles :
+
+Nombres: ${nombres}
+Niño: ${niño}
+Día: ${formattedDate}
+Hora: ${formattedTime}`;
+
+      // WhatsApp number (51922935447)
+      const whatsappNumber = "51922935447";
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      // Open WhatsApp
+      window.open(whatsappUrl, "_blank");
+      
+      // Reset form
+      form.reset();
     });
   });
 </script>

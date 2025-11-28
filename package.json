@@ -9,20 +9,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/netlify": "6.4.0",
-    "@astrojs/rss": "4.0.12",
-    "@astrojs/sitemap": "3.4.1",
-    "@tailwindcss/vite": "^4.1.7",
+    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/netlify": "6.6.3",
+    "@astrojs/rss": "4.0.14",
+    "@astrojs/sitemap": "3.6.0",
+    "@tailwindcss/vite": "^4.1.17",
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
-    "astro": "5.10.1",
+    "astro": "5.16.2",
     "gsap": "^3.13.0",
     "split-type": "^0.3.4",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16",
-    "daisyui": "^5.0.37"
+    "@tailwindcss/typography": "^0.5.19",
+    "daisyui": "^5.5.5"
   }
 }
