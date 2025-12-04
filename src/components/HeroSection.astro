@@ -1,19 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import heroImage from "../../public/images/hero.png";
 ---
 
 <section class="relative min-h-screen bg-gray-800 text-white">
   <!-- Background Image con overlay -->
   <div class="absolute inset-0 z-0">
-    <Image
-      src={heroImage}
+    <img
+      src="https://i.ibb.co/ymX93DnF/475277179-8853965251396507-1773574427946217837-n.jpg"
       alt="Background image of a classroom with children"
-      quality="mid"
-      loading="eager"
-      decoding="async"
-      fetchpriority="high"
-      class="w-full h-full object-cover object-bottom"
+      class="w-full h-full object-cover object-center"
     />
   </div>
   <div class="absolute inset-0 bg-black opacity-50"></div>
@@ -32,9 +26,9 @@ import heroImage from "../../public/images/hero.png";
           id="form-inscripcion"
           method="post"
           action="#"
-          class="space-y-3 sm:space-y-4 bg-black/20 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/20 shadow-lg"
+          class="space-y-3 bg-white p-6 rounded-2xl"
         >
-          <h2 class="font-bold text-white text-center text-2xl">
+          <h2 class="font-bold text-primary mb-4 text-center text-2xl">
             Agenda tu cita
           </h2>
 
@@ -42,9 +36,9 @@ import heroImage from "../../public/images/hero.png";
           <div>
             <label
               for="nombres"
-              class="block text-sm font-medium text-white mb-2"
+              class="block text-sm font-medium text-primary mb-2"
             >
-              Tus Nombres <span class="text-red-400">*</span>
+              Nombres del Padre/Madre <span class="text-red-400">*</span>
             </label>
             <input
               type="text"
@@ -59,32 +53,33 @@ import heroImage from "../../public/images/hero.png";
               id="nombres-error"
               class="error-message text-red-400 text-sm mt-1 hidden"
             >
-              Ingrese sus nombres
+             Nombres del Padre/Madre
             </div>
           </div>
 
-          <!-- Niño -->
+          <!-- Edad -->
           <div>
             <label
-              for="niño"
-              class="block text-sm font-medium text-white mb-2"
+              for="edad"
+              class="block text-sm font-medium text-primary mb-2"
             >
-              Nombre del Niño/a <span class="text-red-400">*</span>
+              Edad del niño/a <span class="text-red-400">*</span>
             </label>
             <input
-              type="text"
-              id="niño"
-              name="niño"
-              placeholder="Nombre del Niño/a"
+              type="number"
+              id="edad"
+              name="edad"
+              placeholder="Edad"
               class="input input-bordered w-full"
               required
-              minlength="2"
+              min="1"
+              max="18"
             />
             <div
-              id="niño-error"
+              id="edad-error"
               class="error-message text-red-400 text-sm mt-1 hidden"
             >
-              Ingrese el nombre del niño
+              Ingrese la edad
             </div>
           </div>
 
@@ -92,7 +87,7 @@ import heroImage from "../../public/images/hero.png";
           <div>
             <label
               for="dia"
-              class="block text-sm font-medium text-white mb-2"
+              class="block text-sm font-medium text-primary mb-2"
             >
               Día <span class="text-red-400">*</span>
             </label>
@@ -116,7 +111,7 @@ import heroImage from "../../public/images/hero.png";
           <div>
             <label
               for="hora"
-              class="block text-sm font-medium text-white mb-2"
+                  class="block text-sm font-medium text-primary mb-2"
             >
               Hora <span class="text-red-400">*</span>
             </label>
@@ -139,9 +134,9 @@ import heroImage from "../../public/images/hero.png";
           <button
             type="submit"
             id="submit-inscripcion-btn"
-            class="w-full bg-secondary hover:bg-transparent border-2 border-secondary hover:text-secondary text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-full transition-colors duration-300 text-sm sm:text-base cursor-pointer"
+            class="btn btn-secondary btn-lg w-full"
           >
-            Enviar
+           Agendar
           </button>
         </form>
       </div>
@@ -217,7 +212,7 @@ import heroImage from "../../public/images/hero.png";
 
       const formData = new FormData(form);
       const nombres = formData.get("nombres") as string;
-      const niño = formData.get("niño") as string;
+      const edad = formData.get("edad") as string;
       const dia = formData.get("dia") as string;
       const hora = formData.get("hora") as string;
 
@@ -236,7 +231,7 @@ import heroImage from "../../public/images/hero.png";
       const message = `Hola, quiero agendar una cita, estos son los detalles :
 
 Nombres: ${nombres}
-Niño: ${niño}
+Edad: ${edad}
 Día: ${formattedDate}
 Hora: ${formattedTime}`;
 
