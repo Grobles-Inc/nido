@@ -7,7 +7,7 @@ import HeaderLink from "./HeaderLink.astro";
 	id="main-header"
 	class="fixed w-full py-6 backdrop-blur-sm bg-white px-6 top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-300"
 >
-	<div class="container max-w-7xl mx-auto flex items-center justify-between">
+	<div class="container max-w-6xl mx-auto flex items-center justify-between">
 		<div class="flex items-center">
 			<a href="/">
 				<img src={logoPrincipal.src} alt="Logo" class="h-10" />
@@ -130,7 +130,7 @@ import HeaderLink from "./HeaderLink.astro";
 			</ul>
 		</nav>
 
-		<div class="flex items-center">
+		<div class="flex items-center md:hidden">
 			<button
 				id="mobile-menu-button"
 				class="md:hidden flex items-center justify-center w-8 h-8 relative"
@@ -149,11 +149,7 @@ import HeaderLink from "./HeaderLink.astro";
 					class="w-6 h-6 absolute opacity-0 transition-opacity duration-300"
 				/>
 			</button>
-			<a
-				href="/contact"
-				class="btn btn-lg btn-secondary  transition-all duration-300"
-				>Contáctanos</a
-			>
+			
 		</div>
 	</div>
 
