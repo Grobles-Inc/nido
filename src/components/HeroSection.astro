@@ -8,6 +8,12 @@
 <div
 class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-full lg:pt-16 pb-8 "
 >
+<div class="success-message" id="success-message" style="display:none; background-color: #34d399; color: white; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+  ¡Cita agendada con éxito!
+</div>
+<div class="error-alert" id="error-alert" style="display:none; background-color: #f87171; color: white; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+  Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.
+</div>
 <!-- Grid adaptativo: vertical en móvil, horizontal en desktop -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8  items-center ">
   
@@ -148,6 +154,7 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
         </form>
       </div>
     </div>
+  
     <div class="hidden md:block">
       <img src="https://i.ibb.co/WvzVnhqq/Dise-os-Perulina-2.png" alt="Niños jugando" class="w-full h-full object-cover object-center rounded-l-xl" />
     </div>
@@ -158,15 +165,26 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    // 🚨 REEMPLAZA ESTA URL CON LA URL DE TU APPSCRIPT DEPLOYED 🚨
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3SaSVcNyGgvoNsWGEzYP9ikzvm-UsZW1BpbhN1JNsG3zjzNk9FpVqhvGmHdM8vDUZ/exec"; 
+    
     const form = document.getElementById("form-inscripcion") as HTMLFormElement;
     const submitBtn = document.getElementById(
       "submit-inscripcion-btn",
     ) as HTMLButtonElement;
 
+    // Elementos para el feedback (añádelos a tu HTML si no existen)
+    // <div id="success-message" class="success-message">Cita agendada con éxito.</div>
+    // <div id="error-alert" class="error-alert">Hubo un error al agendar la cita.</div>
+    const successMessage = document.getElementById("success-message") as HTMLDivElement;
+    const errorAlert = document.getElementById("error-alert") as HTMLDivElement;
+
     if (!form || !submitBtn) {
       console.error("Required DOM elements not found");
       return;
     }
+
+    // --- Lógica de validación (Mantenemos tu lógica) ---
 
     const showError = (inputId: string, show: boolean): void => {
       const input = document.getElementById(inputId) as HTMLInputElement;
@@ -188,16 +206,15 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
     };
 
     const validateField = (input: HTMLInputElement): boolean => {
+      // Tu lógica de validación
       if (input.required && !input.value) {
         showError(input.id, true);
         return false;
       }
-
       if ("minLength" in input && input.value.length < input.minLength) {
         showError(input.id, true);
         return false;
       }
-
       showError(input.id, false);
       return true;
     };
@@ -208,7 +225,9 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
       input.addEventListener("blur", () => validateField(input));
     });
 
-    form.addEventListener("submit", (e: SubmitEvent) => {
+    // --- Lógica de Envío a Apps Script ---
+
+    form.addEventListener("submit", async (e: SubmitEvent) => {
       e.preventDefault();
 
       let isValid = true;
@@ -221,42 +240,44 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
       if (!isValid) {
         return;
       }
-
-      const formData = new FormData(form);
-      const nombres = formData.get("nombres") as string;
-      const edad = formData.get("edad") as string;
-      const dia = formData.get("dia") as string;
-      const hora = formData.get("hora") as string;
-
-      // Format date as dd/mm/yyyy
-      const dateObj = new Date(dia);
-      const day = String(dateObj.getDate()).padStart(2, "0");
-      const month = String(dateObj.getMonth() + 1).padStart(2, "0");
-      const year = dateObj.getFullYear();
-      const formattedDate = `${day}/${month}/${year}`;
-
-      // Format time
-      const [hours, minutes] = hora.split(":");
-      const formattedTime = `${hours}:${minutes}`;
-
-      // Build message
-      const message = `Hola, quiero agendar una cita, estos son los detalles :
-
-Nombres: ${nombres}
-Edad: ${edad}
-Día: ${formattedDate}
-Hora: ${formattedTime}`;
-
-      // WhatsApp number (51922935447)
-      const whatsappNumber = "51922935447";
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-      // Open WhatsApp
-      window.open(whatsappUrl, "_blank");
       
-      // Reset form
-      form.reset();
+      // Deshabilitar botón
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "Agendando...";
+
+      try {
+        const formData = new FormData(form);
+        
+        // ENVÍO DE DATOS
+        const response = await fetch(SCRIPT_URL, {
+          method: "POST",
+          body: formData, // Envía como FormData para Apps Script
+        });
+
+        if (response.ok) {
+          form.reset();
+          if (successMessage) successMessage.style.display = "block";
+          if (errorAlert) errorAlert.style.display = "none";
+          setTimeout(() => {
+            if (successMessage) successMessage.style.display = "none";
+          }, 5000);
+        } else {
+          // Leer la respuesta si falla el Apps Script
+          const errorText = await response.text();
+          throw new Error(`Error en el servidor: ${response.status}. Detalle: ${errorText}`);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        if (errorAlert) errorAlert.style.display = "block";
+        if (successMessage) successMessage.style.display = "none";
+        setTimeout(() => {
+          if (errorAlert) errorAlert.style.display = "none";
+        }, 5000);
+      } finally {
+        // Re-habilitar botón
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Agendar";
+      }
     });
   });
 </script>

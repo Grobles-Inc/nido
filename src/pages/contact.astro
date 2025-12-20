@@ -7,33 +7,7 @@ import Page from "../layouts/Page.astro";
   description="¡Nos encantaría saber de ti! Ya sea que tengas preguntas, desee programar una visita o simplemente quieras decir hola, estamos aquí para ayudarte."
   heroImage="https://i.ibb.co/TD3C9JpM/IMG-9283.webp"
 >
-  <style>
-    .error-message {
-      color: #dc2626;
-      font-size: 0.875rem;
-      margin-top: 0.25rem;
-      display: none;
-    }
-    .input-error {
-      border-color: #dc2626 !important;
-    }
-    .success-message {
-      display: none;
-      background-color: #34d399;
-      color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .error-alert {
-      display: none;
-      background-color: #f87171;
-      color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-    }
-  </style>
+ 
 
   <main class="container mx-auto px-4 py-24 contact-main">
     <div class="max-w-3xl mx-auto contact-main-inner">
@@ -172,10 +146,10 @@ import Page from "../layouts/Page.astro";
         >
           Enviar mensaje
         </button>
-        <div class="success-message" id="success-message">
-          ¡Gracias por contactarnos! Te responderemos pronto.
+        <div class="success-message" id="success-message" style="display:none; background-color: #34d399; color: white; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+          ¡Cita agendada con éxito!
         </div>
-        <div class="error-alert" id="error-alert">
+        <div class="error-alert" id="error-alert" style="display:none; background-color: #f87171; color: white; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
           Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.
         </div>
       </form>
@@ -211,7 +185,7 @@ import Page from "../layouts/Page.astro";
             <!-- Teléfono -->
             <div class="flex items-center space-x-4">
               <div
-                class="w-12 h-12 bg-[#f6d397] rounded-full flex items-center justify-center flex-shrink-0"
+                class="w-12 h-12 bg-[#f6d397] rounded-full flex items-center justify-center hrink-0"
               >
                 <img
                   src="https://img.icons8.com/?size=128&id=42839&format=png"
@@ -230,7 +204,7 @@ import Page from "../layouts/Page.astro";
             <!-- Email -->
             <div class="flex items-center space-x-4">
               <div
-                class="w-12 h-12 bg-[#72caaf] rounded-full flex items-center justify-center flex-shrink-0 cursor-pointer transition-transform"
+                class="w-12 h-12 bg-[#72caaf] rounded-full flex items-center justify-center shrink-0 cursor-pointer transition-transform"
                 onclick="window.open('https://wa.me/51922935447', '_blank')"
               >
                 <img
@@ -250,7 +224,7 @@ import Page from "../layouts/Page.astro";
             <!-- Ubicación -->
             <div class="flex items-center space-x-4">
               <div
-                class="w-12 h-12 bg-[#ed7899] rounded-full flex items-center justify-center flex-shrink-0"
+                class="w-12 h-12 bg-[#ed7899] rounded-full flex items-center justify-center shrink-0"
               >
                 <img
                   src="https://img.icons8.com/?size=128&id=42814&format=png"
@@ -327,149 +301,105 @@ import Page from "../layouts/Page.astro";
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form-contacto") as HTMLFormElement;
-    const submitBtn = document.getElementById(
-      "submit-btn",
-    ) as HTMLButtonElement;
-    const successMessage = document.getElementById(
-      "success-message",
-    ) as HTMLDivElement;
-    const errorAlert = document.getElementById("error-alert") as HTMLDivElement;
+    const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+    const successMessage = document.getElementById("success-message");
+    const errorAlert = document.getElementById("error-alert");
+
+    // 🚨 REEMPLAZA ESTA URL CON LA NUEVA URL DE TU APPSCRIPT DEPLOYED 🚨
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbyROcj7SmMtlsA9Sik30T65mEbh9moh563wfVZ1U4wG9piPeEH4thjhva_drtT7-hn9/exec"; 
 
     if (!form || !submitBtn || !successMessage || !errorAlert) {
       console.error("Required DOM elements not found");
       return;
     }
 
-    // Function to show error message and highlight input
-    const showError = (inputId: string, show: boolean): void => {
-      const input = document.getElementById(inputId) as
-        | HTMLInputElement
-        | HTMLSelectElement
-        | HTMLTextAreaElement;
-      const errorElement = document.getElementById(
-        `${inputId}-error`,
-      ) as HTMLDivElement;
+    // --- Lógica Simplificada: SIN VALIDACIONES EN EL CLIENTE ---
 
-      if (!input || !errorElement) {
-        console.error(`Elements not found for id: ${inputId}`);
-        return;
-      }
-
-      if (show) {
-        input.classList.add("input-error");
-        errorElement.style.display = "block";
-      } else {
-        input.classList.remove("input-error");
-        errorElement.style.display = "none";
+    // La función showError se mantiene para borrar los mensajes de error existentes
+    const showError = (inputId: string, show: boolean) => {
+      const input = document.getElementById(inputId);
+      const errorElement = document.getElementById(`${inputId}-error`);
+      if (input && errorElement) {
+        if (show) {
+          input.classList.add("input-error");
+          errorElement.style.display = "block";
+        } else {
+          input.classList.remove("input-error");
+          errorElement.style.display = "none";
+        }
       }
     };
-
-    // Validate individual fields
-    const validateField = (
-      input: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
-    ): boolean => {
-      if (input.required && !input.value) {
-        showError(input.id, true);
-        return false;
-      }
-
-      if (input instanceof HTMLInputElement) {
-        if (input.type === "email" && input.value) {
-          const emailPattern =
-            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-          if (!emailPattern.test(input.value)) {
-            showError(input.id, true);
-            return false;
-          }
-        }
-
-        if (input.type === "tel" && input.value) {
-          const phonePattern =
-            /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/;
-          if (!phonePattern.test(input.value)) {
-            showError(input.id, true);
-            return false;
-          }
-        }
-      }
-
-      if (input instanceof HTMLSelectElement) {
-        if (!input.value) {
-          showError(input.id, true);
-          return false;
-        }
-        return true;
-      }
-
-      if ("minLength" in input && input.value.length < input.minLength) {
-        showError(input.id, true);
-        return false;
-      }
-
-      showError(input.id, false);
-      return true;
+    
+    // Limpiar visualmente todos los errores antes de enviar
+    const clearAllErrors = () => {
+        const errorElements = form.querySelectorAll('.error-message');
+        errorElements.forEach(el => el.style.display = 'none');
+        const inputErrors = form.querySelectorAll('.input-error');
+        inputErrors.forEach(el => el.classList.remove('input-error'));
     };
 
-    // Add input event listeners for real-time validation
-    const inputs = form.querySelectorAll<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >("input, select, textarea");
-    inputs.forEach((input) => {
-      input.addEventListener("input", () => validateField(input));
-      input.addEventListener("blur", () => validateField(input));
-    });
 
+    // --- Lógica de Envío a Apps Script ---
     form.addEventListener("submit", async (e: SubmitEvent) => {
       e.preventDefault();
 
-      // Validate all fields
-      let isValid = true;
-      inputs.forEach((input) => {
-        if (!validateField(input)) {
-          isValid = false;
-        }
-      });
-
-      if (!isValid) {
-        return;
-      }
-
-      // Disable submit button and show loading state
+      // Limpiar errores visuales antiguos
+      clearAllErrors();
+      
+      // Deshabilitar botón
       submitBtn.disabled = true;
       submitBtn.innerHTML = "Enviando...";
+      errorAlert.style.display = "none";
+      successMessage.style.display = "none";
+
 
       try {
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+        
+        // El único control de validación que queda es verificar los campos REQUIRED
+        const requiredInputs = form.querySelectorAll('[required]');
+        for (const input of requiredInputs) {
+            if (!input.value) {
+                showError(input.id, true);
+                throw new Error("Faltan campos requeridos."); // Bloquea el envío si falta un campo requerido por HTML
+            }
+        }
+        
+        // Convertir a formato URLSearchParams (compatible con e.parameter)
+        const data = new URLSearchParams(formData as any).toString();
 
-        const response = await fetch("/api/contact", {
+        const response = await fetch(SCRIPT_URL, {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: JSON.stringify(data),
+          body: data, // Enviar como string
         });
 
         if (response.ok) {
-          // Show success message
-          form.reset();
-          successMessage.style.display = "block";
-          errorAlert.style.display = "none";
-          setTimeout(() => {
-            successMessage.style.display = "none";
-          }, 5000);
+          const result = await response.json(); 
+          
+          if (result.status === "success") {
+            form.reset();
+            successMessage.style.display = "block";
+            setTimeout(() => {
+              successMessage.style.display = "none";
+            }, 5000);
+          } else {
+            throw new Error(result.message || "Error al registrar la data en Google Sheet.");
+          }
         } else {
-          throw new Error("Error en el envío");
+          throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
         }
       } catch (error) {
         console.error("Error:", error);
         errorAlert.style.display = "block";
-        successMessage.style.display = "none";
         setTimeout(() => {
           errorAlert.style.display = "none";
         }, 5000);
       } finally {
-        // Re-enable submit button
+        // Re-habilitar botón
         submitBtn.disabled = false;
         submitBtn.innerHTML = "Enviar mensaje";
       }
