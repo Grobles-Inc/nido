@@ -333,9 +333,9 @@ import Page from "../layouts/Page.astro";
     
     // Limpiar visualmente todos los errores antes de enviar
     const clearAllErrors = () => {
-        const errorElements = form.querySelectorAll('.error-message');
+        const errorElements = form.querySelectorAll<HTMLElement>('.error-message');
         errorElements.forEach(el => el.style.display = 'none');
-        const inputErrors = form.querySelectorAll('.input-error');
+        const inputErrors = form.querySelectorAll<HTMLElement>('.input-error');
         inputErrors.forEach(el => el.classList.remove('input-error'));
     };
 
@@ -358,7 +358,7 @@ import Page from "../layouts/Page.astro";
         const formData = new FormData(form);
         
         // El único control de validación que queda es verificar los campos REQUIRED
-        const requiredInputs = form.querySelectorAll('[required]');
+        const requiredInputs = form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[required]');
         for (const input of requiredInputs) {
             if (!input.value) {
                 showError(input.id, true);
