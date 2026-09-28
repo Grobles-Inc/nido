@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import aboutClassroom from "../assets/images/hero-2.webp";
 ---
 
 <section
@@ -51,13 +52,14 @@
       class="relative h-full flex justify-center items-center"
       data-aos="fade-up"
     >
-      <img
-        src="https://i.ibb.co/9kGwtK8c/Dise-os-Perulina.webp"
+      <Image
+        src={aboutClassroom}
         alt="Niños aprendiendo en el aula de Nido Perulina"
         class="h-[250px] md:h-[450px] w-full md:w-[900px] object-cover"
+        widths={[480, 768, 1024]}
+        sizes="(min-width: 768px) 50vw, 100vw"
         loading="lazy"
-        width="900"
-        height="450"
+        decoding="async"
       />
     </div>
   </div>

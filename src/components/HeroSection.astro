@@ -1,22 +1,46 @@
 ---
+import { Image, getImage } from "astro:assets";
+import heroSlide1 from "../assets/images/hero-1.png";
+import heroSlide2 from "../assets/images/hero-2.webp";
+import heroSlide3 from "../assets/images/hero-3.webp";
+
 const slides = [
   {
-    src: "https://i.ibb.co/WvzVnhqq/Dise-os-Perulina-2.png",
+    src: heroSlide1,
     alt: "Niños jugando y aprendiendo en Nido Perulina",
     eager: true,
   },
   {
-    src: "https://i.ibb.co/9kGwtK8c/Dise-os-Perulina.webp",
+    src: heroSlide2,
     alt: "Niños en actividad con sus maestras en el aula",
     eager: false,
   },
   {
-    src: "https://i.ibb.co/Nd04KSLR/4.webp",
+    src: heroSlide3,
     alt: "Maestras acompañando a los niños durante una actividad",
     eager: false,
   },
 ];
+
+const heroWidths = [480, 768, 1024, 1280];
+const heroSizes = "(min-width: 1024px) 50vw, calc(100vw - 2rem)";
+
+const heroPreload = await getImage({
+  src: heroSlide1,
+  widths: heroWidths,
+  sizes: heroSizes,
+  format: "webp",
+});
 ---
+
+<link
+  rel="preload"
+  as="image"
+  href={heroPreload.src}
+  imagesrcset={heroPreload.srcSet.attribute}
+  imagesizes={heroSizes}
+  fetchpriority="high"
+/>
 
 <section
   id="hero"
@@ -48,12 +72,14 @@ const slides = [
               }`}
               aria-hidden={i === 0 ? "false" : "true"}
             >
-              <img
+              <Image
                 src={slide.src}
                 alt={slide.alt}
-                width="1200"
-                height="900"
+                widths={heroWidths}
+                sizes={heroSizes}
+                format="webp"
                 loading={slide.eager ? "eager" : "lazy"}
+                decoding={slide.eager ? "auto" : "async"}
                 fetchpriority={slide.eager ? "high" : "auto"}
                 class="h-full w-full object-cover"
               />

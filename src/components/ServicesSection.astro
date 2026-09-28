@@ -1,5 +1,14 @@
 ---
+import { Image } from "astro:assets";
+import servicePrograma from "../assets/images/service-programa.jpg";
+import serviceTalleres from "../assets/images/service-talleres.jpg";
+import serviceFamiliar from "../assets/images/service-familiar.jpg";
+import serviceSeguimiento from "../assets/images/service-seguimiento.jpg";
+import serviceFormacion from "../assets/images/service-formacion.jpg";
+import serviceAlianzas from "../assets/images/service-alianzas.webp";
 
+const cardWidths = [400, 600, 800];
+const cardSizes = "(min-width: 768px) 33vw, 100vw";
 ---
 
 <section class="bg-[#eef8ff]" aria-labelledby="home-services-title">
@@ -28,11 +37,15 @@
           data-aos-delay="200"
         >
           <div class="relative h-56 w-full">
-            <img 
-              src="https://i.ibb.co/j7XHKJZ/488156696-18071212057848530-3556981661406938852-n.jpg" 
+            <Image
+              src={servicePrograma}
               alt="Niños felices y aprendiendo en un aula"
               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-             loading="lazy" />
+              widths={cardWidths}
+              sizes={cardSizes}
+              loading="lazy"
+              decoding="async"
+            />
             
           </div>
           
@@ -67,11 +80,15 @@
           data-aos-delay="300"
         >
           <div class="relative h-56 w-full">
-            <img 
-              src="https://i.ibb.co/zVSdb7Bx/infra-03.jpg" 
+            <Image
+              src={serviceTalleres}
               alt="Niños participando en talleres de música y arte"
               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-             loading="lazy" />
+              widths={cardWidths}
+              sizes={cardSizes}
+              loading="lazy"
+              decoding="async"
+            />
             
           </div>
           
@@ -106,11 +123,15 @@
           data-aos-delay="400"
         >
           <div class="relative h-56 w-full">
-            <img 
-              src="https://i.ibb.co/ksLH1Nbs/557937207-18088387330848530-3409952687837825813-n.jpg" 
+            <Image
+              src={serviceFamiliar}
               alt="Padres hablando con un consejero"
               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-             loading="lazy" />
+              widths={cardWidths}
+              sizes={cardSizes}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           
           <div class="p-6">
@@ -146,11 +167,15 @@
           data-aos-delay="500"
         >
           <div class="relative h-56 w-full">
-            <img 
-              src="https://i.ibb.co/7tPBsrSv/474634548-8832940333498999-1951378284454443928-n.jpg" 
+            <Image
+              src={serviceSeguimiento}
               alt="Equipo multidisciplinario revisando un gráfico de progreso"
               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-             loading="lazy" />
+              widths={cardWidths}
+              sizes={cardSizes}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           
           <div class="p-6">
@@ -183,11 +208,15 @@
           data-aos-delay="600"
         >
           <div class="relative h-56 w-full">
-            <img 
-              src="https://i.ibb.co/PvWJ7gZv/474625705-8832940336832332-6429931173364899101-n.jpg" 
+            <Image
+              src={serviceFormacion}
               alt="Profesores calificados en un entorno profesional"
               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-             loading="lazy" />
+              widths={cardWidths}
+              sizes={cardSizes}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           
           <div class="p-6">
@@ -220,11 +249,15 @@
           data-aos-delay="700"
         >
           <div class="relative h-56 w-full">
-            <img 
-              src="https://i.ibb.co/bqX1fV7/IMG-9486.webp" 
+            <Image
+              src={serviceAlianzas}
               alt="Personas dándose la mano en señal de alianza"
               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-             loading="lazy" />
+              widths={cardWidths}
+              sizes={cardSizes}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           
           <div class="p-6">

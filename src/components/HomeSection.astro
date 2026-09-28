@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import whyImage from "../assets/images/hero-3.webp";
+import faqImage from "../assets/images/home-faq.webp";
+
 interface Props {
   title?: string;
 }
@@ -101,11 +105,15 @@ interface Props {
 
       <div class="relative" data-aos="fade-up" data-aos-delay="200">
         <div class="relative overflow-hidden">
-          <img
-            src="https://i.ibb.co/Nd04KSLR/4.webp"
+          <Image
+            src={whyImage}
             alt="Maestras con niños"
             class="w-full h-[300px] md:h-[600px] object-cover transform transition-transform duration-500"
-           loading="lazy" />
+            widths={[480, 768, 1024, 1280]}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </div>
@@ -211,11 +219,15 @@ interface Props {
 
     <div class="grid md:grid-cols-2 gap-12 items-start">
       <div class="relative" data-aos="fade-up">
-        <img
-          src="https://i.ibb.co/BHLt94QP/5.webp"
+        <Image
+          src={faqImage}
           alt="Área de juegos con juguetes y estantes organizados"
           class="w-full h-auto object-cover"
-         loading="lazy" />
+          widths={[480, 768, 1024]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       <div class="space-y-4" data-aos="fade-up">

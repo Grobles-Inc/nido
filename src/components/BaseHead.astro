@@ -3,7 +3,6 @@ import { ClientRouter } from "astro:transitions";
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
-import "aos/dist/aos.css";
 import { SITE_TITLE, SITE_URL, SITE_AUTHOR, SITE_KEYWORDS } from "../consts";
 
 interface Props {
@@ -110,57 +109,29 @@ const structuredData = {
 <!-- Schema.org -->
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-<!-- AOS: se carga de forma lazy, fuera del critical path de renderizado -->
+<script is:inline>
+  document.documentElement.classList.add("js-anim");
+</script>
+
 <script>
-  let aosLoaded = false;
-  const prefersReducedMotion = () =>
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("aos-animate");
+          observer.unobserve(entry.target);
+        }
+      }
+    },
+    { rootMargin: "0px 0px -100px 0px" },
+  );
 
-  // Con movimiento reducido eliminamos data-aos para que el contenido
-  // nunca quede oculto (aos.css aplica opacity:0 a esos elementos).
-  function disableAOS() {
+  const scanAos = () => {
     document
-      .querySelectorAll("[data-aos]")
-      .forEach((element) => element.removeAttribute("data-aos"));
-  }
+      .querySelectorAll<HTMLElement>("[data-aos]:not(.aos-animate)")
+      .forEach((element) => observer.observe(element));
+  };
 
-  function loadAOS() {
-    if (aosLoaded) return;
-    aosLoaded = true;
-
-    if (prefersReducedMotion()) {
-      disableAOS();
-      return;
-    }
-
-    import("aos").then(({ default: AOS }) => {
-      AOS.init({
-        duration: 500,
-        once: true,
-        offset: 100,
-        easing: "ease-in-out",
-      });
-      (window as unknown as { AOS: typeof AOS }).AOS = AOS;
-    });
-  }
-
-  // Se carga en el primer momento libre tras el primer pintado
-  if ("requestIdleCallback" in window) {
-    window.requestIdleCallback(() => loadAOS(), { timeout: 1500 });
-  } else {
-    window.setTimeout(loadAOS, 800);
-  }
-
-  // Refresco tras navegaciones con ClientRouter
-  document.addEventListener("astro:page-load", () => {
-    if (prefersReducedMotion()) {
-      disableAOS();
-      return;
-    }
-    if (aosLoaded) {
-      (window as unknown as { AOS?: { refresh: () => void } }).AOS?.refresh();
-    } else {
-      loadAOS();
-    }
-  });
+  scanAos();
+  document.addEventListener("astro:page-load", scanAos);
 </script>
