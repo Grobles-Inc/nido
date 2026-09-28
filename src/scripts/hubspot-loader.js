@@ -1,4 +1,15 @@
+// Carga lazy de HubSpot para reducir el impacto en la carga inicial.
+// Se carga tras la primera interacción del usuario o, como respaldo, a los 3 segundos.
+let hubspotLoaded = false;
+
 function loadHubSpot() {
+  if (hubspotLoaded) return;
+  hubspotLoaded = true;
+
+  ["scroll", "mousemove", "touchstart"].forEach((event) =>
+    window.removeEventListener(event, loadHubSpot),
+  );
+
   const script = document.createElement("script");
   script.type = "text/javascript";
   script.id = "hs-script-loader";
@@ -6,14 +17,12 @@ function loadHubSpot() {
   script.defer = true;
   script.src = "//js-na1.hs-scripts.com/50255506.js";
   document.head.appendChild(script);
-
-  // Clean up the event listeners once the script is loaded
-  window.removeEventListener("scroll", loadHubSpot);
-  window.removeEventListener("mousemove", loadHubSpot);
-  window.removeEventListener("touchstart", loadHubSpot);
 }
 
-// Add event listeners to load the script on user interaction
-window.addEventListener("scroll", loadHubSpot, { once: true });
-window.addEventListener("mousemove", loadHubSpot, { once: true });
-window.addEventListener("touchstart", loadHubSpot, { once: true });
+["scroll", "mousemove", "touchstart"].forEach((event) =>
+  window.addEventListener(event, loadHubSpot, { once: true }),
+);
+
+window.setTimeout(loadHubSpot, 3000);
+
+export default loadHubSpot;

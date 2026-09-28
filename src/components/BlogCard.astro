@@ -34,7 +34,7 @@ const postId = href.split("/").filter(Boolean).pop();
       src={image}
       alt={`Imagen ilustrativa para el artículo: ${title}`}
       class="w-full h-full object-cover hover:scale-105 transition-all duration-300"
-    />
+     loading="lazy" />
   </figure>
   <div class="card-body p-4 rounded-b-2xl">
     <div class="flex items-center gap-2 mb-2">

@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import { ClientRouter } from "astro:transitions";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import CTASection from "../components/CTASection.astro";
+import { WHATSAPP_NUMBER } from "../consts";
 
 const { title, description, heroImage } = Astro.props;
 const ogImage = heroImage
@@ -27,12 +27,17 @@ const ogImage = heroImage
 			<meta name="twitter:card" content="summary_large_image" />
 			<link rel="canonical" href={Astro.url} />
 		</BaseHead>
-		<ClientRouter />
 	</head>
 
 	<body class="min-h-screen bg-base-100">
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
+		>
+			Saltar al contenido principal
+		</a>
 		<Header />
-		<main>
+		<main id="main-content">
 			{
 				heroImage && (
 					<figure class="relative w-full md:h-[600px] h-[400px] mb-16  overflow-hidden  ">
@@ -74,41 +79,27 @@ const ogImage = heroImage
 		</main>
 		<Footer />
 		<script>
-			// Load HubSpot after user interaction to reduce TBT
-			function loadHubSpot() {
-				const script = document.createElement("script");
-				script.type = "text/javascript";
-				script.id = "hs-script-loader";
-				script.async = true;
-				script.defer = true;
-				script.src = "//js-na1.hs-scripts.com/50255506.js";
-				document.head.appendChild(script);
-			}
-
-			// Load on first interaction
-			["scroll", "mousemove", "touchstart"].forEach((event) => {
-				window.addEventListener(event, loadHubSpot, { once: true });
-			});
-
-			// Fallback: load after 3 seconds
-			setTimeout(loadHubSpot, 3000);
+			// HubSpot se carga de forma lazy (interacción del usuario o 3s) para reducir el TBT
+			import "../scripts/hubspot-loader.js";
 		</script>
 
 		<!-- WhatsApp Floating Button -->
 		<a
-			href="https://wa.me/51922935447?text=Hola%20%E2%98%BA%EF%B8%8F.%20Nido%20Perulina%20le%20da%20la%20bienvenida.%20%C2%BFC%C3%B3mo%20podemos%20atenderle%3F"
+			href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, Nido Perulina. Quisiera más información.")}`}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="fixed bottom-16 -right-3 z-50 p-4 drop-shadow-lg  transition-colors duration-200"
+			class="fixed bottom-6 right-4 z-50 rounded-full drop-shadow-lg transition-transform duration-200 hover:scale-105"
 			aria-label="Contactar por WhatsApp"
 		>
 			<!-- WhatsApp icon -->
 			<img
 				src="https://img.icons8.com/?size=200&id=AltfLkFSP7XN&format=png&color=000000"
-				alt="WhatsApp"
-				class="size-20"
-				fetchpriority="high"
-				loading="eager"
+				alt=""
+				aria-hidden="true"
+				class="size-14 md:size-16"
+				width="64"
+				height="64"
+				loading="lazy"
 			/>
 		</a>
 	</body>

@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
@@ -46,6 +46,8 @@ const structuredData = {
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#ffffff" />
+<meta name="color-scheme" content="light" />
 <link rel="icon" type="image/svg+xml" href="/favicon.png" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
@@ -58,8 +60,8 @@ const structuredData = {
 <meta name="author" content={SITE_AUTHOR} />
 <meta name="keywords" content={SITE_KEYWORDS} />
 
-<!-- View Transitions -->
-<ViewTransitions />
+<!-- View Transitions (una sola vez, en todo el sitio) -->
+<ClientRouter />
 
 <!-- Font preloads -->
 <link
@@ -108,33 +110,57 @@ const structuredData = {
 <!-- Schema.org -->
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-<!-- AOS Lazy Loading -->
+<!-- AOS: se carga de forma lazy, fuera del critical path de renderizado -->
 <script>
-  // Lazy load AOS to reduce initial bundle size
   let aosLoaded = false;
+  const prefersReducedMotion = () =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Con movimiento reducido eliminamos data-aos para que el contenido
+  // nunca quede oculto (aos.css aplica opacity:0 a esos elementos).
+  function disableAOS() {
+    document
+      .querySelectorAll("[data-aos]")
+      .forEach((element) => element.removeAttribute("data-aos"));
+  }
 
   function loadAOS() {
     if (aosLoaded) return;
     aosLoaded = true;
 
-    import("aos").then((AOS) => {
-      AOS.default.init({
+    if (prefersReducedMotion()) {
+      disableAOS();
+      return;
+    }
+
+    import("aos").then(({ default: AOS }) => {
+      AOS.init({
         duration: 500,
         once: true,
         offset: 100,
         easing: "ease-in-out",
       });
+      (window as unknown as { AOS: typeof AOS }).AOS = AOS;
     });
   }
 
-  // Load AOS on first scroll or after 2 seconds
-  window.addEventListener("scroll", loadAOS, { once: true });
-  setTimeout(loadAOS, 2000);
+  // Se carga en el primer momento libre tras el primer pintado
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(() => loadAOS(), { timeout: 1500 });
+  } else {
+    window.setTimeout(loadAOS, 800);
+  }
 
-  // Refresh AOS on page navigation (for SPAs)
-  document.addEventListener("astro:page-load", function () {
-    if (aosLoaded && window.AOS) {
-      window.AOS.refresh();
+  // Refresco tras navegaciones con ClientRouter
+  document.addEventListener("astro:page-load", () => {
+    if (prefersReducedMotion()) {
+      disableAOS();
+      return;
+    }
+    if (aosLoaded) {
+      (window as unknown as { AOS?: { refresh: () => void } }).AOS?.refresh();
+    } else {
+      loadAOS();
     }
   });
 </script>

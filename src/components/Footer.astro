@@ -3,7 +3,7 @@ import logoPrincipal from "../assets/images/logoSecundario.png";
 const today = new Date();
 ---
 
-<footer class="bg-primary text-white py-20">
+<footer class="bg-primary text-white py-20" aria-label="Pie de página">
   <!-- Información de contacto -->
   <div class="container mx-auto max-w-7xl px-4">
     <div
@@ -17,7 +17,7 @@ const today = new Date();
         <div
           class="w-12 h-12 rounded-full border-2 border-dashed border-[#f6d397] flex items-center justify-center"
         >
-          <img src="https://img.icons8.com/?size=128&id=42839&format=png" alt="icono telefono" class="w-8 h-8">
+          <img src="https://img.icons8.com/?size=128&id=42839&format=png" alt="" aria-hidden="true" class="w-8 h-8" loading="lazy">
         </div>
         <div>
           <p class="text-white text-sm">Llámanos 24/7</p>
@@ -36,7 +36,7 @@ const today = new Date();
         <div
           class="w-12 h-12 rounded-full border-2 border-dashed border-[#72caaf] flex items-center justify-center"
         >
-          <img src="https://img.icons8.com/?size=128&id=42961&format=png" alt="icono whatsapp" class="w-8 h-8">
+          <img src="https://img.icons8.com/?size=128&id=42961&format=png" alt="" aria-hidden="true" class="w-8 h-8" loading="lazy">
         </div>
         <div>
           <p class="text-white text-sm">Escríbenos - WhatsApp</p>
@@ -59,7 +59,7 @@ const today = new Date();
         <div
           class="w-12 h-12 rounded-full border-2 border-dashed border-[#ed7899] flex items-center justify-center"
         >
-          <img src="https://img.icons8.com/?size=128&id=42814&format=png" alt="icono ubicación" class="w-8 h-8">
+          <img src="https://img.icons8.com/?size=128&id=42814&format=png" alt="" aria-hidden="true" class="w-8 h-8" loading="lazy">
         </div>
         <div>
           <p class="text-white text-sm">Ubicación</p>
@@ -75,7 +75,7 @@ const today = new Date();
     >
       <div class="md:col-span-1">
         <div class="flex items-center gap-2 mb-6">
-          <img src={logoPrincipal.src} alt="Logo" class="h-10" />
+          <img src={logoPrincipal.src} alt="Nido Perulina" class="h-10" />
         </div>
         <p class="text-lg text-secondary font-semibold mb-2">Horario de atención:</p>
         <p class="text-white">Lunes a Viernes: 7:00 AM - 6:00 PM</p>
@@ -140,6 +140,8 @@ const today = new Date();
         <a
           href="https://www.facebook.com/NidoPerulina"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Nido Perulina en Facebook"
           class="text-white hover:text-secondary"
         >
           <svg
@@ -162,6 +164,8 @@ const today = new Date();
         <a
           href="https://www.instagram.com/nidoperulina/"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Nido Perulina en Instagram"
           class="text-white hover:text-secondary"
         >
           <svg

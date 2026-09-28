@@ -1,5 +1,4 @@
 ---
-import CTASection from "../components/CTASection.astro";
 import Page from "../layouts/Page.astro";
 ---
 
@@ -131,13 +130,13 @@ import Page from "../layouts/Page.astro";
               src="https://i.ibb.co/XZBFL3JK/aulas.webp"
               alt="Alumno en aula"
               class="rounded-lg shadow-md"
-            />
+             loading="lazy" />
 
             <img
               src="https://i.ibb.co/39msk5P6/aulas-dos.webp"
               alt="Alumno en aula"
               class="rounded-lg shadow-md"
-            />
+             loading="lazy" />
           </div>
         </div>
         <label class="tab">
@@ -202,13 +201,13 @@ import Page from "../layouts/Page.astro";
               src="https://i.ibb.co/cKjpFwPJ/patio.png"
               alt="Patio central"
               class="rounded-lg shadow-md"
-            />
+             loading="lazy" />
 
             <img
               src="https://i.ibb.co/dqpQQ4S/patio-dos.png"
               alt="Niños jugando en el patio"
               class="rounded-lg shadow-md"
-            />
+             loading="lazy" />
           </div>
         </div>
         <label class="tab">
@@ -301,26 +300,29 @@ import Page from "../layouts/Page.astro";
       </div>
     </div>
   </div>
-  <CTASection />
 </Page>
 <script>
-  const container = document.getElementById("instagram-embed-container");
-  const placeholder = document.getElementById("instagram-placeholder");
+  function initInstagramEmbed() {
+    const container = document.getElementById("instagram-embed-container");
+    const placeholder = document.getElementById("instagram-placeholder");
+    if (!container || !placeholder || placeholder.dataset.ready === "true") return;
+    placeholder.dataset.ready = "true";
 
-  function loadInstagramEmbed() {
-    container!.innerHTML = `
+    placeholder.addEventListener("click", () => {
+      container.innerHTML = `
       <blockquote
         class="instagram-media"
         data-instgrm-permalink="https://www.instagram.com/reel/DK7Veucg-vk/?utm_source=ig_web_copy_link"
         data-instgrm-version="14"
       ></blockquote>
     `;
-    const script = document.createElement("script");
-    script.src = "//www.instagram.com/embed.js";
-    script.async = true;
-    container!.appendChild(script);
-    placeholder!.removeEventListener("click", loadInstagramEmbed);
+      const script = document.createElement("script");
+      script.src = "//www.instagram.com/embed.js";
+      script.async = true;
+      container.appendChild(script);
+      placeholder.remove();
+    });
   }
 
-  placeholder!.addEventListener("click", loadInstagramEmbed);
+  document.addEventListener("astro:page-load", initInstagramEmbed);
 </script>

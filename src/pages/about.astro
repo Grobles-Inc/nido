@@ -10,12 +10,18 @@ import Page from "../layouts/Page.astro";
 	description="Ofrecemos un espacio seguro y estimulante donde los niños crecen emocional, social e intelectualmente."
 	heroImage="https://i.ibb.co/BRjnGr1/IMG-9447.webp"
 >
-	<section class="md:py-16 md:px-16 px-6 bg-white mx-auto mt-16">
+	<section
+		class="md:py-16 md:px-16 px-6 bg-white mx-auto mt-16"
+		aria-labelledby="about-who-title"
+	>
 		<div class="container mx-auto grid md:grid-cols-2 items-center">
 			<div data-aos="fade-up">
-				<h3 class="text-4xl md:text-6xl font-bold mb-8 text-primary">
+				<h2
+					id="about-who-title"
+					class="text-4xl md:text-6xl font-bold mb-8 text-primary"
+				>
 					¿Quiénes somos?
-				</h3>
+				</h2>
 
 				<p class="mb-8 leading-7">
 					<span class="font-bold">Nido Perulina</span> es una institución educativa
@@ -34,7 +40,7 @@ import Page from "../layouts/Page.astro";
 				src="https://i.ibb.co/WvzVnhqq/Dise-os-Perulina-2.png"
 				alt="Niños jugando y aprendiendo"
 				class="my-20 md:my-0"
-			/>
+			 loading="lazy" />
 		</div>
 	</section>
 
@@ -73,9 +79,12 @@ import Page from "../layouts/Page.astro";
 
 	<section
 		class="container mx-auto px-6 py-24 grid md:grid-cols-2 gap-8 max-w-7xl"
+		aria-labelledby="about-mision-title"
 	>
 		<div class="bg-[#b8dfec] rounded-3xl shadow p-12" data-aos="fade-up">
-			<h3 class="text-6xl font-bold text-primary mb-8">Nuestra Misión</h3>
+			<h3 id="about-mision-title" class="text-6xl font-bold text-primary mb-8">
+				Nuestra Misión
+			</h3>
 			<p class="text-primary text-xl">
 				<span class="font-bold"
 					>Promover el desarrollo del aprendizaje y la creatividad</span
@@ -97,15 +106,20 @@ import Page from "../layouts/Page.astro";
 		</div>
 	</section>
 
-	<section class="container mx-auto px-4 py-12 max-w-7xl" data-aos="fade-up">
+	<section
+		class="container mx-auto px-4 py-12 max-w-7xl"
+		data-aos="fade-up"
+		aria-labelledby="about-core-title"
+	>
 		<div class="space-y-4">
-			<h3
+			<p
 				class="text-2xl md:text-3xl uppercase text-center text-accent"
 				data-aos="fade-up"
 			>
 				Lo que nos distingue
-			</h3>
+			</p>
 			<h2
+				id="about-core-title"
 				class="text-4xl md:text-6xl font-bold text-center text-primary"
 				data-aos="fade-up"
 			>
@@ -127,7 +141,7 @@ import Page from "../layouts/Page.astro";
 				class="rounded-2xl"
 				width={600}
 				height={600}
-			/>
+			 loading="lazy" />
 
 			<div class="grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-12 px-2">
 				<div
@@ -142,7 +156,7 @@ import Page from "../layouts/Page.astro";
 						height={80}
 						class="bg-blue-100 rounded-full p-5"
 					/>
-					<h4 class="font-bold text-4xl text-primary">Excelencia</h4>
+					<h3 class="font-bold text-4xl text-primary">Excelencia</h3>
 					<p class="text-center text-secondary">
 						Educación de alta calidad, personalizada y centrada en el desarrollo
 						integral.
@@ -160,7 +174,7 @@ import Page from "../layouts/Page.astro";
 						height={80}
 						class="bg-orange-100 rounded-full p-5"
 					/>
-					<h4 class="font-bold text-4xl text-primary">Innovación</h4>
+					<h3 class="font-bold text-4xl text-primary">Innovación</h3>
 					<p class="text-center text-secondary">
 						Metodología exclusiva "PRODIGIE" que estimula el aprendizaje ágil y
 						creativo.
@@ -178,7 +192,7 @@ import Page from "../layouts/Page.astro";
 						height={80}
 						class="bg-yellow-100 rounded-full p-5"
 					/>
-					<h4 class="font-bold text-4xl text-primary">Integralidad</h4>
+					<h3 class="font-bold text-4xl text-primary">Integralidad</h3>
 					<p class="text-center text-secondary">
 						Desarrollo emocional, cognitivo y psicomotor en armonía.
 					</p>
@@ -195,7 +209,7 @@ import Page from "../layouts/Page.astro";
 						height={80}
 						class="bg-green-100 rounded-full p-5"
 					/>
-					<h4 class="font-bold text-4xl text-primary">Accesibilidad</h4>
+					<h3 class="font-bold text-4xl text-primary">Accesibilidad</h3>
 					<p class="text-center text-secondary">
 						Educación de calidad al alcance de más familias, sin importar su
 						situación.
@@ -297,8 +311,12 @@ import Page from "../layouts/Page.astro";
 		);
 	};
 
-	// Animate all counters when they come into view
-	document.querySelectorAll(".counter").forEach((counter) => {
-		animateCounter(counter as HTMLElement);
-	});
+	// Animate all counters when they come into view (también tras navegaciones con ClientRouter)
+	function initCounters() {
+		document.querySelectorAll(".counter").forEach((counter) => {
+			animateCounter(counter as HTMLElement);
+		});
+	}
+
+	document.addEventListener("astro:page-load", initCounters);
 </script>

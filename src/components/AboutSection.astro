@@ -2,17 +2,23 @@
 
 ---
 
-<section class="px-4 bg-white max-w-7xl mx-auto mt-8">
+<section
+  class="px-4 bg-white max-w-7xl mx-auto mt-8"
+  aria-labelledby="home-about-title"
+>
   <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div class="col_1">
       <div data-aos="fade-up">
-        <h2 class="text-secondary uppercase text-lg font-medium mb-4">
+        <p class="text-secondary uppercase text-lg font-medium mb-4">
           Sobre Nosotros
-        </h2>
+        </p>
 
-        <h3 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+        <h2
+          id="home-about-title"
+          class="text-4xl md:text-5xl font-bold text-primary mb-6"
+        >
           Comprometidos con el Crecimiento de tu Hijo
-        </h3>
+        </h2>
 
         <p class="mb-8 leading-7 text-xl">
           <span class="font-bold">Nido Perulina</span> es una institución educativa
@@ -47,8 +53,11 @@
     >
       <img
         src="https://i.ibb.co/9kGwtK8c/Dise-os-Perulina.webp"
-        alt="Niños aprendiendo"
+        alt="Niños aprendiendo en el aula de Nido Perulina"
         class="h-[250px] md:h-[450px] w-full md:w-[900px] object-cover"
+        loading="lazy"
+        width="900"
+        height="450"
       />
     </div>
   </div>
@@ -97,7 +106,8 @@
   };
 
   window.addEventListener("scroll", startCounterAnimations);
-  document.addEventListener("DOMContentLoaded", startCounterAnimations);
+  document.addEventListener("astro:page-load", startCounterAnimations);
+  startCounterAnimations();
 </script>
 
 <style>

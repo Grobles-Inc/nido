@@ -9,13 +9,13 @@ import HeaderLink from "./HeaderLink.astro";
 >
 	<div class="container max-w-6xl mx-auto flex items-center justify-between">
 		<div class="flex items-center">
-			<a href="/">
-				<img src={logoPrincipal.src} alt="Logo" class="h-10" />
+			<a href="/" aria-label="Nido Perulina - Ir al inicio">
+				<img src={logoPrincipal.src} alt="Nido Perulina" class="h-10" />
 			</a>
 		</div>
 
 		<!-- Navegación de escritorio -->
-		<nav class="hidden md:block">
+		<nav class="hidden md:block" aria-label="Navegación principal">
 			<ul class="flex space-x-8 font-semibold">
 				<li>
 					<HeaderLink
@@ -139,20 +139,25 @@ import HeaderLink from "./HeaderLink.astro";
 			<button
 				id="mobile-menu-button"
 				class="md:hidden flex items-center justify-center w-8 h-8 relative"
+				aria-label="Abrir menú de navegación"
+				aria-expanded="false"
+				aria-controls="mobile-menu"
 			>
 				<img
 					id="menu-icon"
 					src="https://img.icons8.com/?size=100&id=8113&format=png"
-					alt="menu"
+					alt=""
+					aria-hidden="true"
 					class="w-6 h-6 transition-opacity duration-300"
-				/>
+				 loading="lazy" />
 
 				<img
 					id="close-icon"
 					src="https://img.icons8.com/?size=100&id=8112&format=png&color=000000"
-					alt="closemenu"
+					alt=""
+					aria-hidden="true"
 					class="w-6 h-6 absolute opacity-0 transition-opacity duration-300"
-				/>
+				 loading="lazy" />
 			</button>
 			
 		</div>
@@ -161,19 +166,24 @@ import HeaderLink from "./HeaderLink.astro";
 	<!-- Navegación móvil -->
 	<nav
 		id="mobile-menu"
+		aria-label="Navegación móvil"
+		aria-hidden="true"
+		inert
 		class="md:hidden fixed top-0 right-0 w-full h-0 bg-white overflow-hidden transition-all duration-300 ease-in-out shadow-lg"
 	>
 		<div class="flex items-center justify-between p-6">
-			<img src={logoPrincipal.src} alt="Logo" class="h-10" />
+			<img src={logoPrincipal.src} alt="Nido Perulina" class="h-10" />
 			<button
 				id="mobile-menu-close"
+				aria-label="Cerrar menú de navegación"
 				class="text-gray-800 flex items-center justify-center w-8 h-8"
 			>
 				<img
 					src="https://img.icons8.com/?size=160&id=XBRxNqBV78jJ&format=png"
-					alt="closemenu"
+					alt=""
+					aria-hidden="true"
 					class="w-6 h-6"
-				/>
+				 loading="lazy" />
 			</button>
 		</div>
 		<ul class="flex flex-col space-y-6 p-6 font-semibold">
@@ -299,66 +309,81 @@ import HeaderLink from "./HeaderLink.astro";
 </header>
 
 <script is:inline>
-	let lastScrollY = window.scrollY;
+	(function () {
+		let lastScrollY = window.scrollY;
 
-	window.addEventListener("load", () => {
-		const header = document.getElementById("main-header");
-		const mobileMenuButton = document.getElementById("mobile-menu-button");
-		const mobileMenuClose = document.getElementById("mobile-menu-close");
-		const mobileMenu = document.getElementById("mobile-menu");
-		const menuIcon = document.getElementById("menu-icon");
-		const closeIcon = document.getElementById("close-icon");
+		function initHeader() {
+			const header = document.getElementById("main-header");
+			const mobileMenuButton = document.getElementById("mobile-menu-button");
+			const mobileMenuClose = document.getElementById("mobile-menu-close");
+			const mobileMenu = document.getElementById("mobile-menu");
+			const menuIcon = document.getElementById("menu-icon");
+			const closeIcon = document.getElementById("close-icon");
 
-		if (
-			!header ||
-			!mobileMenuButton ||
-			!mobileMenu ||
-			!menuIcon ||
-			!closeIcon ||
-			!mobileMenuClose
-		)
-			return;
+			if (
+				!header ||
+				!mobileMenuButton ||
+				!mobileMenu ||
+				!menuIcon ||
+				!closeIcon ||
+				!mobileMenuClose
+			)
+				return;
 
-		let isMenuOpen = false;
+			// Evita registrar dos veces los listeners en navegaciones con ClientRouter
+			if (header.dataset.headerReady === "true") return;
+			header.dataset.headerReady = "true";
 
-		const toggleMenu = (open) => {
-			isMenuOpen = open;
-			if (open) {
-				mobileMenu.style.height = "100vh";
-				menuIcon.style.opacity = "0";
-				closeIcon.style.opacity = "1";
-				document.body.style.overflow = "hidden";
-			} else {
-				mobileMenu.style.height = "0";
-				menuIcon.style.opacity = "1";
-				closeIcon.style.opacity = "0";
-				document.body.style.overflow = "";
-			}
-		};
+			let isMenuOpen = false;
 
-		mobileMenuButton.addEventListener("click", () => toggleMenu(!isMenuOpen));
-		mobileMenuClose.addEventListener("click", () => toggleMenu(false));
-
-		const mobileLinks = mobileMenu.getElementsByTagName("a");
-		Array.from(mobileLinks).forEach((link) => {
-			link.addEventListener("click", () => toggleMenu(false));
-		});
-
-		window.addEventListener("scroll", () => {
-			const currentScrollY = window.scrollY;
-
-			if (currentScrollY > lastScrollY && currentScrollY > 100) {
-				// Ocultar header al hacer scroll hacia abajo
-				header.classList.add("-translate-y-full");
-				if (isMenuOpen) {
-					toggleMenu(false);
+			const toggleMenu = (open) => {
+				isMenuOpen = open;
+				if (open) {
+					mobileMenu.style.height = "100dvh";
+					mobileMenu.removeAttribute("inert");
+					mobileMenu.setAttribute("aria-hidden", "false");
+					mobileMenuButton.setAttribute("aria-expanded", "true");
+					menuIcon.style.opacity = "0";
+					closeIcon.style.opacity = "1";
+					document.body.style.overflow = "hidden";
+				} else {
+					mobileMenu.style.height = "0";
+					mobileMenu.setAttribute("inert", "");
+					mobileMenu.setAttribute("aria-hidden", "true");
+					mobileMenuButton.setAttribute("aria-expanded", "false");
+					menuIcon.style.opacity = "1";
+					closeIcon.style.opacity = "0";
+					document.body.style.overflow = "";
 				}
-			} else {
-				// Mostrar header al hacer scroll hacia arriba
-				header.classList.remove("-translate-y-full");
-			}
+			};
 
-			lastScrollY = currentScrollY;
-		});
-	});
+			mobileMenuButton.addEventListener("click", () => toggleMenu(!isMenuOpen));
+			mobileMenuClose.addEventListener("click", () => toggleMenu(false));
+
+			const mobileLinks = mobileMenu.getElementsByTagName("a");
+			Array.from(mobileLinks).forEach((link) => {
+				link.addEventListener("click", () => toggleMenu(false));
+			});
+
+			window.addEventListener("scroll", () => {
+				const currentScrollY = window.scrollY;
+
+				if (currentScrollY > lastScrollY && currentScrollY > 100) {
+					// Ocultar header al hacer scroll hacia abajo
+					header.classList.add("-translate-y-full");
+					if (isMenuOpen) {
+						toggleMenu(false);
+					}
+				} else {
+					// Mostrar header al hacer scroll hacia arriba
+					header.classList.remove("-translate-y-full");
+				}
+
+				lastScrollY = currentScrollY;
+			});
+		}
+
+		initHeader();
+		document.addEventListener("astro:page-load", initHeader);
+	})();
 </script>

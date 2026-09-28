@@ -11,15 +11,6 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      proxy: {
-        '/api/contact': {
-          target: 'https://script.google.com',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api\/contact/, '/macros/s/AKfycbyrYzqQU0QwI7tjay9xaFEiHr0aCsMCtsVmf-rP9xKkLz3DLZ5fvW9e2xVVO8hPZhQb/exec')
-        }
-      }
-    }
   },
   adapter: netlify(),
   image: {
@@ -39,7 +30,7 @@ export default defineConfig({
       },
       {
         protocol: "https",
-        hostname: "i.bb.co",
+        hostname: "i.ibb.co",
       },
       {
         protocol: "https",

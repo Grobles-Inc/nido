@@ -9,3 +9,7 @@ export const SITE_KEYWORDS = 'educación infantil, guardería, preescolar, desar
 
 export const SITE_AUTHOR = 'Nido Perulina';
 export const SITE_URL = 'https://nidoperulina.edu.pe'; 
+
+// Contacto directo (formularios → WhatsApp)
+export const WHATSAPP_NUMBER = '51922935447';
+export const WHATSAPP_DISPLAY = '+51 922 935 447';

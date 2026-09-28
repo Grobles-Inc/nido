@@ -4,6 +4,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import CTASection from "../components/CTASection.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
@@ -35,8 +36,17 @@ const ogImage = heroImage
 	</head>
 
 	<body class="min-h-screen bg-base-100">
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
+		>
+			Saltar al contenido principal
+		</a>
 		<Header />
-		<main class="container mx-auto md:px-4 md:py-8 lg:py-12">
+		<main
+			id="main-content"
+			class="container mx-auto md:px-4 md:py-8 lg:py-12"
+		>
 			<article
 				class="max-w-4xl mt-28 mx-auto"
 				itemscope
@@ -105,7 +115,7 @@ const ogImage = heroImage
 								alt={`Imagen principal para el artículo: ${title}`}
 								class="w-full min-h-[400px] object-cover "
 								itemprop="image"
-							/>
+							 loading="lazy" />
 						)
 					}
 					<div class="divider my-8" role="separator"></div>
@@ -115,83 +125,12 @@ const ogImage = heroImage
 					</div>
 				</div>
 			</article>
-			<section class="relative md:my-20 py-20 px-4">
-				<div
-					class="absolute inset-0 w-full h-full bg-[#fe753b] md:rounded-[40px] mx-auto max-w-7xl"
-					data-aos="zoom-in"
-					data-aos-delay="100"
-				>
-				</div>
-				<img
-					src="/addons/a.png"
-					alt="addons"
-					class="absolute md:top-10 top-2 md:left-64 left-4"
-					width={100}
-					height={100}
-					data-aos="fade-up"
-					data-aos-delay="800"
-				/>
-				<img
-					src="/addons/e.png"
-					alt="addons"
-					class="absolute bottom-10 md:left-48 right-4"
-					width={100}
-					height={100}
-					data-aos="fade-up"
-					data-aos-delay="800"
-				/>
-				<img
-					src="/addons/i.png"
-					alt="addons"
-					class="absolute bottom-10 md:right-48"
-					width={100}
-					height={100}
-					data-aos="fade-up"
-					data-aos-delay="800"
-				/>
-				<img
-					src="/addons/u.png"
-					alt="addons"
-					class="absolute top-5 md:right-36 right-4"
-					width={100}
-					height={100}
-					data-aos="fade-up"
-					data-aos-delay="800"
-				/>
-
-				<div class="container mx-auto relative">
-					<div class="flex flex-col items-center text-center text-white">
-						<h2 class="text-4xl md:text-5xl font-bold mb-6" id="title">
-							¡Dale a tu hijo el mejor Comienzo!
-						</h2>
-
-						<p
-							class="text-lg mb-10 max-w-2xl"
-							data-aos="fade-up"
-							data-aos-delay="300"
-						>
-							Con educadores experimentados, un ambiente seguro y estimulante, y
-							un enfoque en el crecimiento individual.
-						</p>
-
-						<a
-							href="/contact"
-							class="btn bg-white text-black border-none hover:text-orange-500 normal-case text-lg px-8 py-6"
-							data-aos="fade-up"
-							data-aos-delay="400"
-						>
-							Consultar Ahora
-						</a>
-					</div>
-				</div>
-			</section>
+			<CTASection />
 		</main>
 		<Footer />
-		<script
-			type="text/javascript"
-			id="hs-script-loader"
-			async
-			defer
-			src="//js-na1.hs-scripts.com/50255506.js"></script>
+		<script>
+			// HubSpot se carga de forma lazy (interacción del usuario o 3s) para reducir el TBT
+			import "../scripts/hubspot-loader.js";
+		</script>
 	</body>
 </html>

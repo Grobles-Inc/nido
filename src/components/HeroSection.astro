@@ -1,33 +1,148 @@
 ---
+const slides = [
+  {
+    src: "https://i.ibb.co/WvzVnhqq/Dise-os-Perulina-2.png",
+    alt: "Niños jugando y aprendiendo en Nido Perulina",
+    eager: true,
+  },
+  {
+    src: "https://i.ibb.co/9kGwtK8c/Dise-os-Perulina.webp",
+    alt: "Niños en actividad con sus maestras en el aula",
+    eager: false,
+  },
+  {
+    src: "https://i.ibb.co/Nd04KSLR/4.webp",
+    alt: "Maestras acompañando a los niños durante una actividad",
+    eager: false,
+  },
+];
 ---
 
-<section class="relative min-h-screen  text-white md:bg-rose-100">
-
-</section>
-
-<div
-class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-full lg:pt-16 pb-8 "
+<section
+  id="hero"
+  class="relative min-h-screen overflow-hidden pt-24 pb-14 lg:pt-32"
+  aria-labelledby="hero-title"
 >
-<div class="success-message" id="success-message" style="display:none; background-color: #34d399; color: white; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
-  ¡Cita agendada con éxito!
-</div>
-<div class="error-alert" id="error-alert" style="display:none; background-color: #f87171; color: white; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
-  Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.
-</div>
-<!-- Grid adaptativo: vertical en móvil, horizontal en desktop -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8  items-center ">
-  
- 
-    <!-- Segunda columna: Formulario de inscripción -->
-    <div class="flex items-center justify-center ">
-      <div class="w-full max-w-md ">
+  <h1 id="hero-title" class="sr-only">
+    Nido Perulina — Educación infantil de calidad en Lima
+  </h1>
+
+  <div
+    class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 lg:gap-14"
+  >
+    <!-- Carrusel de imágenes -->
+    <div
+      class="relative w-full overflow-hidden rounded-2xl shadow-xl"
+      role="region"
+      aria-roledescription="carrusel"
+      aria-label="Imágenes de Nido Perulina"
+      data-carousel
+    >
+      <div class="relative aspect-[16/10] w-full lg:aspect-[4/3]">
+        {
+          slides.map((slide, i) => (
+            <div
+              data-slide
+              class={`absolute inset-0 transition-opacity duration-700 ease-out ${
+                i === 0 ? "opacity-100" : "pointer-events-none opacity-0"
+              }`}
+              aria-hidden={i === 0 ? "false" : "true"}
+            >
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                width="1200"
+                height="900"
+                loading={slide.eager ? "eager" : "lazy"}
+                fetchpriority={slide.eager ? "high" : "auto"}
+                class="h-full w-full object-cover"
+              />
+            </div>
+          ))
+        }
+
+        <!-- Degradado inferior para legibilidad de los controles -->
+        <div
+          class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"
+          aria-hidden="true"
+        >
+        </div>
+
+        <button
+          type="button"
+          data-carousel-prev
+          class="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-primary shadow-md transition hover:bg-white"
+          aria-label="Imagen anterior"
+        >
+          <svg
+            aria-hidden="true"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button
+          type="button"
+          data-carousel-next
+          class="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-primary shadow-md transition hover:bg-white"
+          aria-label="Imagen siguiente"
+        >
+          <svg
+            aria-hidden="true"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <div
+          class="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2"
+        >
+          {
+            slides.map((_, i) => (
+              <button
+                type="button"
+                data-carousel-dot={i}
+                aria-label={`Ir a la imagen ${i + 1}`}
+                aria-current={i === 0 ? "true" : "false"}
+                class={`h-2.5 w-2.5 rounded-full transition ${
+                  i === 0 ? "bg-white" : "bg-white/50"
+                }`}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario de inscripción -->
+    <div class="flex items-center justify-center">
+      <div class="w-full max-w-md">
         <form
           id="form-inscripcion"
           method="post"
           action="#"
-          class="space-y-3 bg-white p-6 rounded-2xl shadow-xl border border-gray-200"
+          class="space-y-3 rounded-2xl border border-gray-200 bg-white p-6 shadow-xl"
+          novalidate
         >
-          <h2 class="font-bold text-primary mb-4 text-center text-2xl">
+          <h2
+            class="mb-4 text-center text-2xl font-bold text-primary"
+            id="form-inscripcion-title"
+          >
             Agenda tu cita
           </h2>
 
@@ -35,7 +150,7 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
           <div>
             <label
               for="nombres"
-              class="block text-sm font-medium text-primary mb-2"
+              class="mb-2 block text-sm font-medium text-primary"
             >
               Nombres del Padre/Madre <span class="text-red-400">*</span>
             </label>
@@ -44,24 +159,25 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
               id="nombres"
               name="nombres"
               placeholder="Nombres"
+              autocomplete="name"
               class="input input-bordered w-full"
+              aria-required="true"
+              aria-describedby="nombres-error"
               required
               minlength="3"
             />
             <div
               id="nombres-error"
-              class="error-message text-red-400 text-sm mt-1 hidden"
+              class="error-message mt-1 hidden text-sm text-red-400"
+              role="alert"
             >
-             Nombres del Padre/Madre
+              Ingrese los nombres del padre/madre
             </div>
           </div>
 
           <!-- Edad -->
           <div>
-            <label
-              for="edad"
-              class="block text-sm font-medium text-primary mb-2"
-            >
+            <label for="edad" class="mb-2 block text-sm font-medium text-primary">
               Edad del niño/a <span class="text-red-400">*</span>
             </label>
             <input
@@ -70,27 +186,17 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
               name="edad"
               placeholder="Edad"
               class="input input-bordered w-full"
+              inputmode="numeric"
+              aria-required="true"
+              aria-describedby="edad-error"
               required
               min="1"
               max="18"
-              inputmode="numeric"
-              style="appearance: textfield; -moz-appearance: textfield;"
-              onwheel="this.blur()"
             />
-            <style>
-              /* Hide increment/decrement arrows in number inputs for all browsers */
-              input[type=number]::-webkit-inner-spin-button, 
-              input[type=number]::-webkit-outer-spin-button { 
-                -webkit-appearance: none;
-                margin: 0;
-              }
-              input[type=number] {
-                -moz-appearance: textfield;
-              }
-            </style>
             <div
               id="edad-error"
-              class="error-message text-red-400 text-sm mt-1 hidden"
+              class="error-message mt-1 hidden text-sm text-red-400"
+              role="alert"
             >
               Ingrese la edad
             </div>
@@ -98,23 +204,22 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
 
           <!-- Día -->
           <div>
-            <label
-              for="dia"
-              class="block text-sm font-medium text-primary mb-2"
-            >
+            <label for="dia" class="mb-2 block text-sm font-medium text-primary">
               Día <span class="text-red-400">*</span>
             </label>
             <input
               type="date"
               id="dia"
               name="dia"
-              placeholder="Día"
               class="input input-bordered w-full"
+              aria-required="true"
+              aria-describedby="dia-error"
               required
             />
             <div
               id="dia-error"
-              class="error-message text-red-400 text-sm mt-1 hidden"
+              class="error-message mt-1 hidden text-sm text-red-400"
+              role="alert"
             >
               Seleccione un día
             </div>
@@ -122,23 +227,22 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
 
           <!-- Hora -->
           <div>
-            <label
-              for="hora"
-                  class="block text-sm font-medium text-primary mb-2"
-            >
+            <label for="hora" class="mb-2 block text-sm font-medium text-primary">
               Hora <span class="text-red-400">*</span>
             </label>
             <input
               type="time"
               id="hora"
               name="hora"
-              placeholder="Hora"
               class="input input-bordered w-full"
+              aria-required="true"
+              aria-describedby="hora-error"
               required
             />
             <div
               id="hora-error"
-              class="error-message text-red-400 text-sm mt-1 hidden"
+              class="error-message mt-1 hidden text-sm text-red-400"
+              role="alert"
             >
               Seleccione una hora
             </div>
@@ -149,135 +253,205 @@ class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto w-fu
             id="submit-inscripcion-btn"
             class="btn btn-secondary btn-lg w-full"
           >
-           Agendar
+            Agendar por WhatsApp
           </button>
+
+          <p
+            id="form-inscripcion-feedback"
+            class="hidden rounded-lg px-4 py-3 text-center text-white"
+            aria-live="polite"
+          >
+          </p>
         </form>
       </div>
     </div>
-  
-    <div class="hidden md:block">
-      <img src="https://i.ibb.co/WvzVnhqq/Dise-os-Perulina-2.png" alt="Niños jugando" class="w-full h-full object-cover object-center rounded-l-xl" />
-    </div>
-    
   </div>
-  </div>
-</div>
+</section>
+
+<style>
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+</style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // 🚨 REEMPLAZA ESTA URL CON LA URL DE TU APPSCRIPT DEPLOYED 🚨
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3SaSVcNyGgvoNsWGEzYP9ikzvm-UsZW1BpbhN1JNsG3zjzNk9FpVqhvGmHdM8vDUZ/exec"; 
-    
-    const form = document.getElementById("form-inscripcion") as HTMLFormElement;
+  import { openWhatsApp, setFormFeedback } from "../scripts/whatsapp";
+
+  function initCarousel(root: HTMLElement) {
+    if (root.dataset.carouselReady === "true") return;
+    root.dataset.carouselReady = "true";
+
+    const slides = Array.from(root.querySelectorAll<HTMLElement>("[data-slide]"));
+    const dots = Array.from(
+      root.querySelectorAll<HTMLButtonElement>("[data-carousel-dot]"),
+    );
+    if (slides.length < 2) return;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    let index = 0;
+    let timer: number | undefined;
+
+    const goTo = (next: number) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const active = i === index;
+        slide.classList.toggle("opacity-100", active);
+        slide.classList.toggle("opacity-0", !active);
+        slide.classList.toggle("pointer-events-none", !active);
+        slide.setAttribute("aria-hidden", String(!active));
+      });
+      dots.forEach((dot, i) => {
+        const active = i === index;
+        dot.setAttribute("aria-current", String(active));
+        dot.classList.toggle("bg-white", active);
+        dot.classList.toggle("bg-white/50", !active);
+      });
+    };
+
+    const stop = () => {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = undefined;
+      }
+    };
+
+    const start = () => {
+      if (reduceMotion) return;
+      stop();
+      timer = window.setInterval(() => goTo(index + 1), 5000);
+    };
+
+    root
+      .querySelector("[data-carousel-prev]")
+      ?.addEventListener("click", () => {
+        goTo(index - 1);
+        start();
+      });
+    root
+      .querySelector("[data-carousel-next]")
+      ?.addEventListener("click", () => {
+        goTo(index + 1);
+        start();
+      });
+    dots.forEach((dot, i) =>
+      dot.addEventListener("click", () => {
+        goTo(i);
+        start();
+      }),
+    );
+
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", start);
+    root.addEventListener("keydown", (event) => {
+      const key = (event as KeyboardEvent).key;
+      if (key === "ArrowLeft") {
+        goTo(index - 1);
+        start();
+      }
+      if (key === "ArrowRight") {
+        goTo(index + 1);
+        start();
+      }
+    });
+
+    goTo(0);
+    start();
+  }
+
+  function initHeroForm() {
+    const form = document.getElementById("form-inscripcion") as HTMLFormElement | null;
     const submitBtn = document.getElementById(
       "submit-inscripcion-btn",
-    ) as HTMLButtonElement;
+    ) as HTMLButtonElement | null;
+    const feedback = document.getElementById(
+      "form-inscripcion-feedback",
+    ) as HTMLParagraphElement | null;
 
-    // Elementos para el feedback (añádelos a tu HTML si no existen)
-    // <div id="success-message" class="success-message">Cita agendada con éxito.</div>
-    // <div id="error-alert" class="error-alert">Hubo un error al agendar la cita.</div>
-    const successMessage = document.getElementById("success-message") as HTMLDivElement;
-    const errorAlert = document.getElementById("error-alert") as HTMLDivElement;
+    if (!form || !submitBtn || !feedback) return;
+    if (form.dataset.whatsappReady === "true") return;
+    form.dataset.whatsappReady = "true";
 
-    if (!form || !submitBtn) {
-      console.error("Required DOM elements not found");
-      return;
-    }
-
-    // --- Lógica de validación (Mantenemos tu lógica) ---
-
-    const showError = (inputId: string, show: boolean): void => {
-      const input = document.getElementById(inputId) as HTMLInputElement;
-      const errorElement = document.getElementById(
-        `${inputId}-error`,
-      ) as HTMLDivElement;
-
-      if (!input || !errorElement) {
-        return;
-      }
-
-      if (show) {
-        input.classList.add("input-error");
-        errorElement.classList.remove("hidden");
-      } else {
-        input.classList.remove("input-error");
-        errorElement.classList.add("hidden");
-      }
+    const showFieldError = (input: HTMLInputElement, show: boolean) => {
+      const error = document.getElementById(`${input.id}-error`);
+      input.classList.toggle("input-error", show);
+      input.setAttribute("aria-invalid", String(show));
+      error?.classList.toggle("hidden", !show);
     };
 
     const validateField = (input: HTMLInputElement): boolean => {
-      // Tu lógica de validación
-      if (input.required && !input.value) {
-        showError(input.id, true);
-        return false;
+      const value = input.value.trim();
+      let valid = true;
+
+      if (input.required && !value) valid = false;
+      if (valid && input.minLength > 0 && value.length < input.minLength)
+        valid = false;
+      if (valid && input.type === "number") {
+        const number = Number(value);
+        const min = input.min ? Number(input.min) : -Infinity;
+        const max = input.max ? Number(input.max) : Infinity;
+        if (Number.isNaN(number) || number < min || number > max) valid = false;
       }
-      if ("minLength" in input && input.value.length < input.minLength) {
-        showError(input.id, true);
-        return false;
-      }
-      showError(input.id, false);
-      return true;
+      if (valid && input.type === "date" && Number.isNaN(Date.parse(value)))
+        valid = false;
+      if (valid && input.type === "time" && !/^\d{2}:\d{2}$/.test(value))
+        valid = false;
+
+      showFieldError(input, !valid);
+      return valid;
     };
 
-    const inputs = form.querySelectorAll<HTMLInputElement>("input");
+    const inputs = Array.from(form.querySelectorAll<HTMLInputElement>("input"));
     inputs.forEach((input) => {
-      input.addEventListener("input", () => validateField(input));
+      input.addEventListener("input", () => {
+        if (input.getAttribute("aria-invalid") === "true") validateField(input);
+      });
       input.addEventListener("blur", () => validateField(input));
     });
 
-    // --- Lógica de Envío a Apps Script ---
+    const setFeedback = (message: string, success: boolean) =>
+      setFormFeedback(feedback, message, success);
 
-    form.addEventListener("submit", async (e: SubmitEvent) => {
-      e.preventDefault();
+    form.addEventListener("submit", (event: SubmitEvent) => {
+      event.preventDefault();
 
-      let isValid = true;
-      inputs.forEach((input) => {
-        if (!validateField(input)) {
-          isValid = false;
-        }
-      });
-
+      const isValid = inputs.map((input) => validateField(input)).every(Boolean);
       if (!isValid) {
+        inputs.find((input) => input.getAttribute("aria-invalid") === "true")?.focus();
+        setFeedback("Revise los campos marcados e intente de nuevo.", false);
         return;
       }
-      
-      // Deshabilitar botón
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = "Agendando...";
 
-      try {
-        const formData = new FormData(form);
-        
-        // ENVÍO DE DATOS
-        const response = await fetch(SCRIPT_URL, {
-          method: "POST",
-          body: formData, // Envía como FormData para Apps Script
-        });
+      const data = new FormData(form);
+      openWhatsApp([
+        "*Nido Perulina - Agenda tu cita*",
+        `Padre/Madre: ${data.get("nombres")}`,
+        `Edad del niño/a: ${data.get("edad")}`,
+        `Día: ${data.get("dia")}`,
+        `Hora: ${data.get("hora")}`,
+      ]);
 
-        if (response.ok) {
-          form.reset();
-          if (successMessage) successMessage.style.display = "block";
-          if (errorAlert) errorAlert.style.display = "none";
-          setTimeout(() => {
-            if (successMessage) successMessage.style.display = "none";
-          }, 5000);
-        } else {
-          // Leer la respuesta si falla el Apps Script
-          const errorText = await response.text();
-          throw new Error(`Error en el servidor: ${response.status}. Detalle: ${errorText}`);
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        if (errorAlert) errorAlert.style.display = "block";
-        if (successMessage) successMessage.style.display = "none";
-        setTimeout(() => {
-          if (errorAlert) errorAlert.style.display = "none";
-        }, 5000);
-      } finally {
-        // Re-habilitar botón
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "Agendar";
-      }
+      form.reset();
+      inputs.forEach((input) => showFieldError(input, false));
+      setFeedback("Abrimos WhatsApp con su solicitud. Si no se abre, escríbanos al 922 935 447.", true);
     });
-  });
+  }
+
+  function initHero() {
+    document
+      .querySelectorAll<HTMLElement>("[data-carousel]")
+      .forEach(initCarousel);
+    initHeroForm();
+  }
+
+  document.addEventListener("astro:page-load", initHero);
 </script>
