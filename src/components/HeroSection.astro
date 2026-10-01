@@ -9,16 +9,34 @@ const slides = [
     src: heroSlide1,
     alt: "Niños jugando y aprendiendo en Nido Perulina",
     eager: true,
+    eyebrow: "Sobre nosotros",
+    title: "Un nido donde cada niño crece a su ritmo",
+    description:
+      "Conoce nuestra historia, misión y el equipo que acompaña a las familias.",
+    href: "/about",
+    cta: "Ver más",
   },
   {
     src: heroSlide2,
     alt: "Niños en actividad con sus maestras en el aula",
     eager: false,
+    eyebrow: "Servicios",
+    title: "Programas pensados para su primera infancia",
+    description:
+      "Explora los servicios que adaptamos a cada etapa y necesidad.",
+    href: "/services",
+    cta: "Ver más",
   },
   {
     src: heroSlide3,
     alt: "Maestras acompañando a los niños durante una actividad",
     eager: false,
+    eyebrow: "Infraestructura",
+    title: "Aulas seguras, hechas para aprender",
+    description:
+      "Recorre las instalaciones pensadas para que aprendan jugando.",
+    href: "/infrastructure",
+    cta: "Ver más",
   },
 ];
 
@@ -59,18 +77,19 @@ const heroPreload = await getImage({
       class="relative w-full overflow-hidden rounded-2xl shadow-xl"
       role="region"
       aria-roledescription="carrusel"
-      aria-label="Imágenes de Nido Perulina"
+      aria-label="Destacados de Nido Perulina"
       data-carousel
     >
-      <div class="relative aspect-[16/10] w-full lg:aspect-[4/3]">
+      <div class="relative aspect-[4/3] w-full">
         {
           slides.map((slide, i) => (
             <div
               data-slide
               class={`absolute inset-0 transition-opacity duration-700 ease-out ${
-                i === 0 ? "opacity-100" : "pointer-events-none opacity-0"
+                i === 0 ? "opacity-100" : "opacity-0"
               }`}
               aria-hidden={i === 0 ? "false" : "true"}
+              inert={i === 0 ? undefined : true}
             >
               <Image
                 src={slide.src}
@@ -83,13 +102,41 @@ const heroPreload = await getImage({
                 fetchpriority={slide.eager ? "high" : "auto"}
                 class="h-full w-full object-cover"
               />
+              <div
+                class="absolute inset-x-0 bottom-0 z-10 flex justify-center p-5 pb-12 text-center sm:p-6 sm:pb-12 lg:justify-start lg:p-8 lg:pb-14 lg:text-left"
+              >
+                <div class="max-w-md">
+                  <p
+                    class="text-xs font-semibold uppercase tracking-widest text-white/80"
+                  >
+                    {slide.eyebrow}
+                  </p>
+                  <h2
+                    class="mt-1 text-lg font-bold text-white sm:text-2xl lg:text-3xl"
+                  >
+                    {slide.title}
+                  </h2>
+                  <p
+                    class="mt-1 hidden text-sm text-white/90 sm:block"
+                  >
+                    {slide.description}
+                  </p>
+                  <a
+                    href={slide.href}
+                    data-carousel-cta
+                    class="btn btn-sm mt-3 border-none bg-white text-black normal-case hover:text-orange-500"
+                  >
+                    {slide.cta}
+                  </a>
+                </div>
+              </div>
             </div>
           ))
         }
 
-        <!-- Degradado inferior para legibilidad de los controles -->
+        <!-- Degradado inferior para legibilidad de los textos y controles -->
         <div
-          class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"
+          class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-40 bg-gradient-to-t from-black/70 to-transparent"
           aria-hidden="true"
         >
         </div>
@@ -135,15 +182,13 @@ const heroPreload = await getImage({
           </svg>
         </button>
 
-        <div
-          class="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2"
-        >
+        <div class="absolute top-3 right-3 z-20 flex gap-2">
           {
             slides.map((_, i) => (
               <button
                 type="button"
                 data-carousel-dot={i}
-                aria-label={`Ir a la imagen ${i + 1}`}
+                aria-label={`Ir a ${slides[i].eyebrow}`}
                 aria-current={i === 0 ? "true" : "false"}
                 class={`h-2.5 w-2.5 rounded-full transition ${
                   i === 0 ? "bg-white" : "bg-white/50"
@@ -331,7 +376,7 @@ const heroPreload = await getImage({
         const active = i === index;
         slide.classList.toggle("opacity-100", active);
         slide.classList.toggle("opacity-0", !active);
-        slide.classList.toggle("pointer-events-none", !active);
+        slide.toggleAttribute("inert", !active);
         slide.setAttribute("aria-hidden", String(!active));
       });
       dots.forEach((dot, i) => {
